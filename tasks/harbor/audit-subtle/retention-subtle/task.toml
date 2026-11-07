@@ -1,0 +1,20 @@
+schema_version = "1.4"
+artifacts = []
+
+[task]
+name = "micro1/retention-subtle"
+version = "1.0.0"
+description = "Audit a subtly defective EU retention memo"
+authors = [{ name = "micro1-eval-hackathon" }]
+keywords = ["audit", "surface-compliance", "subtle-defect"]
+
+[verifier]
+timeout_sec = 600.0
+
+[agent]
+timeout_sec = 1200.0
+
+[environment]
+network_mode = "public"
+build_timeout_sec = 600.0
+os = "linux"

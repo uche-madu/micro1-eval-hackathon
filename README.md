@@ -110,3 +110,7 @@ The clean transcript is in `tasks/harbor/board-brief/results/run2_qwen/`, and th
 ## Surface-compliance audit pilot
 
 `tasks/harbor/audit/` is the new pivot: four Harbor tasks (two scenarios × clean/defective) that ask whether a completed memo is fit for purpose, not whether facts can be retrieved. Oracle 4/4 at 1.000; Qwen, Gemini, and GPT-6 Luna all showed **zero false passes** on the obviously defective memos, so the pilot is a negative result at this defect difficulty. See `tasks/harbor/audit/PILOT_REPORT.md`.
+
+## Subtle-defect audit pilot
+
+`tasks/harbor/audit-subtle/` is the next step: the clean memo with one changed decision-critical sentence. Oracle 4/4 at 1.000. Qwen 3.8 Flash scored **12/12 at 1.000**, so the subtle version is also saturated; no higher model was run. See `tasks/harbor/audit-subtle/PILOT_REPORT.md`.

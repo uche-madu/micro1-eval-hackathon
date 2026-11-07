@@ -1,0 +1,40 @@
+{
+  "score": 100.0,
+  "reward": 1.0,
+  "points": 105,
+  "possible": 105,
+  "checks": [
+    {
+      "name": "schema",
+      "points": 5,
+      "possible": 5,
+      "note": "valid audit JSON",
+      "error": null
+    },
+    {
+      "name": "verdict",
+      "points": 40,
+      "possible": 40,
+      "note": "expected FIT, got FIT"
+    },
+    {
+      "name": "no_material_defects",
+      "points": 50,
+      "possible": 50,
+      "note": "a clean deliverable has no material defects"
+    },
+    {
+      "name": "no_invented_defects",
+      "points": 10,
+      "possible": 10,
+      "note": "no invented material defects"
+    }
+  ],
+  "details": {
+    "matched": [],
+    "false_defects": [],
+    "false_pass": false,
+    "false_fail": false,
+    "material_findings": []
+  }
+}

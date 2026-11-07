@@ -1,0 +1,41 @@
+{
+  "condition": "defective",
+  "verdict": "NOT_FIT",
+  "defects": [
+    {
+      "id": "S1",
+      "problem_type": "unsupported_recommendation",
+      "problem_types": [
+        "unsupported_recommendation",
+        "date_or_authority_error"
+      ],
+      "section": [
+        "recommendation",
+        "bottom line"
+      ],
+      "required_terms": [
+        [
+          "after launch",
+          "post launch",
+          "post-launch"
+        ],
+        [
+          "system configuration",
+          "trust page",
+          "export",
+          "configuration"
+        ]
+      ],
+      "why_terms": [
+        [
+          "stale",
+          "before launch",
+          "precondition",
+          "dpo",
+          "rely",
+          "not current"
+        ]
+      ]
+    }
+  ]
+}

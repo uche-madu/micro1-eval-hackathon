@@ -1,0 +1,12 @@
+{
+  "verdict": "NOT_FIT",
+  "findings": [
+    {
+      "section": "Recommendation",
+      "problem_type": "unsupported_recommendation",
+      "severity": "material",
+      "evidence": "The Board should approve the draft remediation plan as written and close the incidents once it is signed",
+      "why_it_matters": "The draft plan is not approved, and the root-cause note recommends a different set of controls. Approving it as written and closing before verification is unsupported."
+    }
+  ]
+}

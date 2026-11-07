@@ -1,0 +1,51 @@
+{
+  "score": 100.0,
+  "reward": 1.0,
+  "points": 105,
+  "possible": 105,
+  "checks": [
+    {
+      "name": "schema",
+      "points": 5,
+      "possible": 5,
+      "note": "valid audit JSON",
+      "error": null
+    },
+    {
+      "name": "verdict",
+      "points": 40,
+      "possible": 40,
+      "note": "expected NOT_FIT, got NOT_FIT"
+    },
+    {
+      "name": "defect_detection",
+      "points": 40,
+      "possible": 40,
+      "note": "the seeded subtle defect is identified"
+    },
+    {
+      "name": "why_it_matters",
+      "points": 20,
+      "possible": 20,
+      "note": "the decision consequence is explained"
+    }
+  ],
+  "details": {
+    "matched": [
+      {
+        "defect": "S1",
+        "finding": {
+          "section": "Recommendation",
+          "problem_type": "unsupported_recommendation",
+          "severity": "material",
+          "evidence": "Proceed with the Q3 launch. The signed amendment controls, so the system configuration and the public trust page can be updated after launch; no customer-facing impact is expected.",
+          "why_it_matters": "This reverses the memo\u2019s own precondition and the DPO instruction not to rely on the stale system export until configuration is updated, so approving launch on this basis is unsafe and may communicate the wrong retention period."
+        },
+        "why_ok": true
+      }
+    ],
+    "false_defects": [],
+    "false_pass": false,
+    "false_fail": false
+  }
+}

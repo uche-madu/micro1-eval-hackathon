@@ -143,3 +143,20 @@ harbor run -p tasks/harbor -a oracle --yes
 **Artifacts:** `tasks/harbor/audit/PILOT_REPORT.md`, `tasks/harbor/audit/results/audit_*.json`, and representative transcripts under `tasks/harbor/audit/results/transcripts/`.
 
 The two earlier pilots remain frozen; see `FREEZE.md`.
+
+## Pilot 4 — subtle-defect audit
+
+**Question:** if the defective deliverable is the clean memo with one changed decision-critical sentence, does Qwen still catch it?
+
+**Design:** four Harbor tasks under `tasks/harbor/audit-subtle/` — retention/incident × clean/subtle. The subtle memo is otherwise correct.
+
+**Oracle:** 4/4 at **1.000**.
+
+**Qwen 3.8 Flash:** **12/12 at 1.000** after correcting one why-term false negative (raw: 11×1.000, 1×0.8095). False pass **0**, false fail **0**.
+
+- The 0.8095 trial caught the defect and explained it with "verify" / "rollback-script"; the gold accepted only "verification" / "root-cause." Re-graded to 1.000.
+- The single changed recommendation still creates an internal contradiction with the memo body, so the model sees it.
+
+**Decision:** stop. One model passing is enough to establish the difficulty; no higher model was run. If the direction continues, the next test must be **pure omission** or a plausible recommendation with an unstated assumption, not another wording change that contradicts the body.
+
+**Artifacts:** `tasks/harbor/audit-subtle/PILOT_REPORT.md`, `tasks/harbor/audit-subtle/results/transcripts/`.

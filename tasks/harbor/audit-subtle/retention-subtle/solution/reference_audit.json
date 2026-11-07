@@ -1,0 +1,12 @@
+{
+  "verdict": "NOT_FIT",
+  "findings": [
+    {
+      "section": "Recommendation",
+      "problem_type": "unsupported_recommendation",
+      "severity": "material",
+      "evidence": "The signed amendment controls, so the system configuration and the public trust page can be updated after launch",
+      "why_it_matters": "The export and trust page are stale, and the DPO says not to rely on the export until the configuration is updated. Updating after launch ignores a required precondition."
+    }
+  ]
+}

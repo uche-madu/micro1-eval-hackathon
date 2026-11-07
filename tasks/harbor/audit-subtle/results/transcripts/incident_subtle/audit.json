@@ -1,0 +1,12 @@
+{
+  "verdict": "NOT_FIT",
+  "findings": [
+    {
+      "section": "Recommendation",
+      "problem_type": "unsupported_recommendation",
+      "severity": "material",
+      "evidence": "The Board should approve the draft remediation plan as written and close the incidents once it is signed. No further plan is needed.",
+      "why_it_matters": "The draft plan addresses only certificate management and does not remediate the separate INC-032 rollback-script failure or verify that fixes are in place, so approving it as written would not support incident closure."
+    }
+  ]
+}
