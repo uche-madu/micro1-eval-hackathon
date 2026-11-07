@@ -1,0 +1,4779 @@
+{
+  "run_id": "pilot_results_open_cheap_regraded",
+  "summary": {
+    "opencode-go/deepseek-v4.1-flash": {
+      "production_open": {
+        "calls": 6,
+        "items": 72,
+        "accuracy": 1.0,
+        "strict": 0.5972,
+        "overreach": 0,
+        "signature": 0,
+        "inconsistencies": 0,
+        "tags": {},
+        "summary_mean": 0.9167,
+        "parse_errors": 0
+      }
+    },
+    "opencode-go/qwen3.8-flash": {
+      "production_open": {
+        "calls": 6,
+        "items": 72,
+        "accuracy": 1.0,
+        "strict": 0.5278,
+        "overreach": 0,
+        "signature": 0,
+        "inconsistencies": 0,
+        "tags": {},
+        "summary_mean": 1.0,
+        "parse_errors": 0
+      }
+    }
+  },
+  "records": [
+    {
+      "run_id": "open_cheap",
+      "timestamp": "2026-11-07T12:36:38+00:00",
+      "model": "opencode-go/deepseek-v4.1-flash",
+      "task": "T1",
+      "condition": "production_open",
+      "trial": 1,
+      "prompt_sha256": "e8f1a66f6ffd019ec8b39c0ddc250c417a42cfc4fdd389062c9818787ea2733e",
+      "prompt_chars": 5736,
+      "raw_chars": 1400,
+      "raw": "{\"items\":[{\"item_id\":\"P1\",\"answer\":\"18 months\",\"evidence_ids\":[\"D3\",\"D9\"],\"qualifier\":\"\"},{\"item_id\":\"P2\",\"answer\":\"12 months\",\"evidence_ids\":[\"D3\",\"D2\"],\"qualifier\":\"\"},{\"item_id\":\"P3\",\"answer\":\"12 months\",\"evidence_ids\":[\"D2\",\"D3\"],\"qualifier\":\"\"},{\"item_id\":\"P4\",\"answer\":\"24 months\",\"evidence_ids\":[\"D1\"],\"qualifier\":\"\"},{\"item_id\":\"P5\",\"answer\":\"no\",\"evidence_ids\":[\"D4\"],\"qualifier\":\"\"},{\"item_id\":\"P6\",\"answer\":\"35 days\",\"evidence_ids\":[\"D8\"],\"qualifier\":\"\"},{\"item_id\":\"P7\",\"answer\":\"no\",\"evidence_ids\":[\"D1\",\"D8\"],\"qualifier\":\"\"},{\"item_id\":\"P8\",\"answer\":\"no\",\"evidence_ids\":[\"D7\",\"D6\",\"D3\"],\"qualifier\":\"\"},{\"item_id\":\"P9\",\"answer\":\"signed Amendment A\",\"evidence_ids\":[\"D3\",\"D9\"],\"qualifier\":\"\"},{\"item_id\":\"P10\",\"answer\":\"yes\",\"evidence_ids\":[\"D3\"],\"qualifier\":\"\"},{\"item_id\":\"P11\",\"answer\":\"12 months\",\"evidence_ids\":[\"D5\"],\"qualifier\":\"\"},{\"item_id\":\"P12\",\"answer\":\"no\",\"evidence_ids\":[\"D5\",\"D10\",\"D6\"],\"qualifier\":\"\"}],\"summary\":\"Signed Amendment A controls EU retention for accounts opened on or after 1 January 2026, setting 18 months effective 1 March 2026; accounts opened before that date remain at 12 months. The system-of-record export and public trust page still show 12 months and are stale for 2026 accounts. Draft Amendment B is unsigned and has no effect, while standard retention is 24 months and backups are retained 35 days outside the Enterprise Data Retention Policy.\"}",
+      "usage": {
+        "prompt_tokens": 1361,
+        "completion_tokens": 2407,
+        "total_tokens": 3768,
+        "prompt_tokens_details": {
+          "cached_tokens": 1280
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 1989
+        },
+        "cost": 0,
+        "opencode": {
+          "billing_source": "go",
+          "list_cost": 0.00146019,
+          "allowance": 0.00087611,
+          "tokens": {
+            "input": 81,
+            "output": 2407,
+            "reasoning": 1989,
+            "cache_read": 1280,
+            "cache_write_5m": 0,
+            "cache_write_1h": 0
+          }
+        }
+      },
+      "cost": 0,
+      "latency_s": 29.501,
+      "attempts": [
+        {
+          "attempt": 1,
+          "latency_s": 29.501,
+          "error": null
+        }
+      ],
+      "provider_error": null,
+      "grade": {
+        "n": 12,
+        "mean_score": 0.95,
+        "accuracy": 1.0,
+        "strict": 0.6667,
+        "extra_penalty": 0.0,
+        "duplicates": [],
+        "extras": [],
+        "missing": [],
+        "rows": [
+          {
+            "id": "P1",
+            "gold": "18 months",
+            "model": "18 months",
+            "answer_ok": true,
+            "answer_match": "exact",
+            "evidence_kind": "superset",
+            "evidence_ids": [
+              "D3",
+              "D9"
+            ],
+            "gold_evidence_sets": [
+              [
+                "D3"
+              ]
+            ],
+            "qualifier_ok": true,
+            "qualifier": "",
+            "score": 0.85,
+            "strict": false,
+            "tags": [],
+            "overreach": false
+          },
+          {
+            "id": "P2",
+            "gold": "12 months",
+            "model": "12 months",
+            "answer_ok": true,
+            "answer_match": "exact",
+            "evidence_kind": "superset",
+            "evidence_ids": [
+              "D2",
+              "D3"
+            ],
+            "gold_evidence_sets": [
+              [
+                "D2"
+              ],
+              [
+                "D3"
+              ]
+            ],
+            "qualifier_ok": true,
+            "qualifier": "",
+            "score": 0.85,
+            "strict": false,
+            "tags": [],
+            "overreach": false
+          },
+          {
+            "id": "P3",
+            "gold": "12 months",
+            "model": "12 months",
+            "answer_ok": true,
+            "answer_match": "exact",
+            "evidence_kind": "exact",
+            "evidence_ids": [
+              "D2",
+              "D3"
+            ],
+            "gold_evidence_sets": [
+              [
+                "D2",
+                "D3"
+              ],
+              [
+                "D2"
+              ]
+            ],
+            "qualifier_ok": true,
+            "qualifier": "",
+            "score": 1.0,
+            "strict": true,
+            "tags": [],
+            "overreach": false
+          },
+          {
+            "id": "P4",
+            "gold": "24 months",
+            "model": "24 months",
+            "answer_ok": true,
+            "answer_match": "exact",
+            "evidence_kind": "exact",
+            "evidence_ids": [
+              "D1"
+            ],
+            "gold_evidence_sets": [
+              [
+                "D1"
+              ]
+            ],
+            "qualifier_ok": true,
+            "qualifier": "",
+            "score": 1.0,
+            "strict": true,
+            "tags": [],
+            "overreach": false
+          },
+          {
+            "id": "P5",
+            "gold": "no",
+            "model": "no",
+            "answer_ok": true,
+            "answer_match": "exact",
+            "evidence_kind": "exact",
+            "evidence_ids": [
+              "D4"
+            ],
+            "gold_evidence_sets": [
+              [
+                "D4",
+                "D11"
+              ],
+              [
+                "D4"
+              ],
+              [
+                "D11"
+              ]
+            ],
+            "qualifier_ok": true,
+            "qualifier": "",
+            "score": 1.0,
+            "strict": true,
+            "tags": [],
+            "overreach": false
+          },
+          {
+            "id": "P6",
+            "gold": "35 days",
+            "model": "35 days",
+            "answer_ok": true,
+            "answer_match": "exact",
+            "evidence_kind": "exact",
+            "evidence_ids": [
+              "D8"
+            ],
+            "gold_evidence_sets": [
+              [
+                "D8"
+              ]
+            ],
+            "qualifier_ok": true,
+            "qualifier": "",
+            "score": 1.0,
+            "strict": true,
+            "tags": [],
+            "overreach": false
+          },
+          {
+            "id": "P7",
+            "gold": "no",
+            "model": "no",
+            "answer_ok": true,
+            "answer_match": "exact",
+            "evidence_kind": "exact",
+            "evidence_ids": [
+              "D1",
+              "D8"
+            ],
+            "gold_evidence_sets": [
+              [
+                "D1",
+                "D8"
+              ],
+              [
+                "D1"
+              ],
+              [
+                "D8"
+              ]
+            ],
+            "qualifier_ok": true,
+            "qualifier": "",
+            "score": 1.0,
+            "strict": true,
+            "tags": [],
+            "overreach": false
+          },
+          {
+            "id": "P8",
+            "gold": "no",
+            "model": "no",
+            "answer_ok": true,
+            "answer_match": "exact",
+            "evidence_kind": "superset",
+            "evidence_ids": [
+              "D3",
+              "D6",
+              "D7"
+            ],
+            "gold_evidence_sets": [
+              [
+                "D6",
+                "D7"
+              ],
+              [
+                "D6"
+              ],
+              [
+                "D7"
+              ]
+            ],
+            "qualifier_ok": true,
+            "qualifier": "",
+            "score": 0.85,
+            "strict": false,
+            "tags": [],
+            "overreach": false
+          },
+          {
+            "id": "P9",
+            "gold": "Amendment A",
+            "model": "signed Amendment A",
+            "answer_ok": true,
+            "answer_match": "exact",
+            "evidence_kind": "superset",
+            "evidence_ids": [
+              "D3",
+              "D9"
+            ],
+            "gold_evidence_sets": [
+              [
+                "D3",
+                "D6",
+                "D9"
+              ],
+              [
+                "D3"
+              ],
+              [
+                "D6"
+              ],
+              [
+                "D9"
+              ]
+            ],
+            "qualifier_ok": true,
+            "qualifier": "",
+            "score": 0.85,
+            "strict": false,
+            "tags": [],
+            "overreach": false
+          },
+          {
+            "id": "P10",
+            "gold": "yes",
+            "model": "yes",
+            "answer_ok": true,
+            "answer_match": "exact",
+            "evidence_kind": "exact",
+            "evidence_ids": [
+              "D3"
+            ],
+            "gold_evidence_sets": [
+              [
+                "D3"
+              ]
+            ],
+            "qualifier_ok": true,
+            "qualifier": "",
+            "score": 1.0,
+            "strict": true,
+            "tags": [],
+            "overreach": false
+          },
+          {
+            "id": "P11",
+            "gold": "12 months",
+            "model": "12 months",
+            "answer_ok": true,
+            "answer_match": "exact",
+            "evidence_kind": "exact",
+            "evidence_ids": [
+              "D5"
+            ],
+            "gold_evidence_sets": [
+              [
+                "D5"
+              ]
+            ],
+            "qualifier_ok": true,
+            "qualifier": "",
+            "score": 1.0,
+            "strict": true,
+            "tags": [],
+            "overreach": false
+          },
+          {
+            "id": "P12",
+            "gold": "no",
+            "model": "no",
+            "answer_ok": true,
+            "answer_match": "exact",
+            "evidence_kind": "exact",
+            "evidence_ids": [
+              "D10",
+              "D5",
+              "D6"
+            ],
+            "gold_evidence_sets": [
+              [
+                "D5",
+                "D6",
+                "D10"
+              ],
+              [
+                "D5"
+              ],
+              [
+                "D6"
+              ],
+              [
+                "D10"
+              ]
+            ],
+            "qualifier_ok": true,
+            "qualifier": "",
+            "score": 1.0,
+            "strict": true,
+            "tags": [],
+            "overreach": false
+          }
+        ],
+        "summary": {
+          "text": "Signed Amendment A controls EU retention for accounts opened on or after 1 January 2026, setting 18 months effective 1 March 2026; accounts opened before that date remain at 12 months. The system-of-record export and public trust page still show 12 months and are stale for 2026 accounts. Draft Amendment B is unsigned and has no effect, while standard retention is 24 months and backups are retained 35 days outside the Enterprise Data Retention Policy.",
+          "required_ok": true,
+          "forbidden_hits": [],
+          "score": 1.0
+        },
+        "inconsistencies": [],
+        "inconsistency_count": 0,
+        "condition": "production"
+      }
+    },
+    {
+      "run_id": "open_cheap",
+      "timestamp": "2026-11-07T12:36:49+00:00",
+      "model": "opencode-go/deepseek-v4.1-flash",
+      "task": "T1",
+      "condition": "production_open",
+      "trial": 3,
+      "prompt_sha256": "e8f1a66f6ffd019ec8b39c0ddc250c417a42cfc4fdd389062c9818787ea2733e",
+      "prompt_chars": 5736,
+      "raw_chars": 1489,
+      "raw": "{\"items\":[{\"item_id\":\"P1\",\"answer\":\"18 months\",\"evidence_ids\":[\"D3\",\"D6\",\"D9\"],\"qualifier\":\"\"},{\"item_id\":\"P2\",\"answer\":\"12 months\",\"evidence_ids\":[\"D3\"],\"qualifier\":\"\"},{\"item_id\":\"P3\",\"answer\":\"12 months\",\"evidence_ids\":[\"D2\",\"D3\"],\"qualifier\":\"\"},{\"item_id\":\"P4\",\"answer\":\"24 months\",\"evidence_ids\":[\"D1\"],\"qualifier\":\"\"},{\"item_id\":\"P5\",\"answer\":\"no\",\"evidence_ids\":[\"D4\",\"D11\"],\"qualifier\":\"\"},{\"item_id\":\"P6\",\"answer\":\"35 days\",\"evidence_ids\":[\"D8\"],\"qualifier\":\"\"},{\"item_id\":\"P7\",\"answer\":\"no\",\"evidence_ids\":[\"D1\",\"D8\"],\"qualifier\":\"\"},{\"item_id\":\"P8\",\"answer\":\"no\",\"evidence_ids\":[\"D6\",\"D7\",\"D3\"],\"qualifier\":\"for accounts opened on or after 2026-01-01\"},{\"item_id\":\"P9\",\"answer\":\"signed Amendment A\",\"evidence_ids\":[\"D3\",\"D6\",\"D9\"],\"qualifier\":\"\"},{\"item_id\":\"P10\",\"answer\":\"yes\",\"evidence_ids\":[\"D3\",\"D10\"],\"qualifier\":\"\"},{\"item_id\":\"P11\",\"answer\":\"12 months\",\"evidence_ids\":[\"D5\",\"D10\"],\"qualifier\":\"\"},{\"item_id\":\"P12\",\"answer\":\"no\",\"evidence_ids\":[\"D10\",\"D6\",\"D5\"],\"qualifier\":\"\"}],\"summary\":\"Signed Amendment A controls EU retention for accounts opened on or after 1 January 2026 and sets an 18-month period effective 1 March 2026; earlier EU accounts remain at 12 months. Standard retention is 24 months, while backups are retained 35 days and are outside the Enterprise Data Retention Policy. The system-of-record export and public trust page still show 12 months for EU retention and are not current for 2026 accounts. Draft Amendment B is unsigned and has no effect.\"}",
+      "usage": {
+        "prompt_tokens": 1361,
+        "completion_tokens": 3461,
+        "total_tokens": 4822,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 3012
+        },
+        "cost": 0,
+        "opencode": {
+          "billing_source": "go",
+          "list_cost": 0.00228075,
+          "allowance": 0.00136845,
+          "tokens": {
+            "input": 1361,
+            "output": 3461,
+            "reasoning": 3012,
+            "cache_read": 0,
+            "cache_write_5m": 0,
+            "cache_write_1h": 0
+          }
+        }
+      },
+      "cost": 0,
+      "latency_s": 40.031,
+      "attempts": [
+        {
+          "attempt": 1,
+          "latency_s": 40.031,
+          "error": null
+        }
+      ],
+      "provider_error": null,
+      "grade": {
+        "n": 12,
+        "mean_score": 0.95,
+        "accuracy": 1.0,
+        "strict": 0.6667,
+        "extra_penalty": 0.0,
+        "duplicates": [],
+        "extras": [],
+        "missing": [],
+        "rows": [
+          {
+            "id": "P1",
+            "gold": "18 months",
+            "model": "18 months",
+            "answer_ok": true,
+            "answer_match": "exact",
+            "evidence_kind": "superset",
+            "evidence_ids": [
+              "D3",
+              "D6",
+              "D9"
+            ],
+            "gold_evidence_sets": [
+              [
+                "D3"
+              ]
+            ],
+            "qualifier_ok": true,
+            "qualifier": "",
+            "score": 0.85,
+            "strict": false,
+            "tags": [],
+            "overreach": false
+          },
+          {
+            "id": "P2",
+            "gold": "12 months",
+            "model": "12 months",
+            "answer_ok": true,
+            "answer_match": "exact",
+            "evidence_kind": "exact",
+            "evidence_ids": [
+              "D3"
+            ],
+            "gold_evidence_sets": [
+              [
+                "D2"
+              ],
+              [
+                "D3"
+              ]
+            ],
+            "qualifier_ok": true,
+            "qualifier": "",
+            "score": 1.0,
+            "strict": true,
+            "tags": [],
+            "overreach": false
+          },
+          {
+            "id": "P3",
+            "gold": "12 months",
+            "model": "12 months",
+            "answer_ok": true,
+            "answer_match": "exact",
+            "evidence_kind": "exact",
+            "evidence_ids": [
+              "D2",
+              "D3"
+            ],
+            "gold_evidence_sets": [
+              [
+                "D2",
+                "D3"
+              ],
+              [
+                "D2"
+              ]
+            ],
+            "qualifier_ok": true,
+            "qualifier": "",
+            "score": 1.0,
+            "strict": true,
+            "tags": [],
+            "overreach": false
+          },
+          {
+            "id": "P4",
+            "gold": "24 months",
+            "model": "24 months",
+            "answer_ok": true,
+            "answer_match": "exact",
+            "evidence_kind": "exact",
+            "evidence_ids": [
+              "D1"
+            ],
+            "gold_evidence_sets": [
+              [
+                "D1"
+              ]
+            ],
+            "qualifier_ok": true,
+            "qualifier": "",
+            "score": 1.0,
+            "strict": true,
+            "tags": [],
+            "overreach": false
+          },
+          {
+            "id": "P5",
+            "gold": "no",
+            "model": "no",
+            "answer_ok": true,
+            "answer_match": "exact",
+            "evidence_kind": "exact",
+            "evidence_ids": [
+              "D11",
+              "D4"
+            ],
+            "gold_evidence_sets": [
+              [
+                "D4",
+                "D11"
+              ],
+              [
+                "D4"
+              ],
+              [
+                "D11"
+              ]
+            ],
+            "qualifier_ok": true,
+            "qualifier": "",
+            "score": 1.0,
+            "strict": true,
+            "tags": [],
+            "overreach": false
+          },
+          {
+            "id": "P6",
+            "gold": "35 days",
+            "model": "35 days",
+            "answer_ok": true,
+            "answer_match": "exact",
+            "evidence_kind": "exact",
+            "evidence_ids": [
+              "D8"
+            ],
+            "gold_evidence_sets": [
+              [
+                "D8"
+              ]
+            ],
+            "qualifier_ok": true,
+            "qualifier": "",
+            "score": 1.0,
+            "strict": true,
+            "tags": [],
+            "overreach": false
+          },
+          {
+            "id": "P7",
+            "gold": "no",
+            "model": "no",
+            "answer_ok": true,
+            "answer_match": "exact",
+            "evidence_kind": "exact",
+            "evidence_ids": [
+              "D1",
+              "D8"
+            ],
+            "gold_evidence_sets": [
+              [
+                "D1",
+                "D8"
+              ],
+              [
+                "D1"
+              ],
+              [
+                "D8"
+              ]
+            ],
+            "qualifier_ok": true,
+            "qualifier": "",
+            "score": 1.0,
+            "strict": true,
+            "tags": [],
+            "overreach": false
+          },
+          {
+            "id": "P8",
+            "gold": "no",
+            "model": "no",
+            "answer_ok": true,
+            "answer_match": "exact",
+            "evidence_kind": "superset",
+            "evidence_ids": [
+              "D3",
+              "D6",
+              "D7"
+            ],
+            "gold_evidence_sets": [
+              [
+                "D6",
+                "D7"
+              ],
+              [
+                "D6"
+              ],
+              [
+                "D7"
+              ]
+            ],
+            "qualifier_ok": true,
+            "qualifier": "for accounts opened on or after 2026-01-01",
+            "score": 0.85,
+            "strict": false,
+            "tags": [],
+            "overreach": false
+          },
+          {
+            "id": "P9",
+            "gold": "Amendment A",
+            "model": "signed Amendment A",
+            "answer_ok": true,
+            "answer_match": "exact",
+            "evidence_kind": "exact",
+            "evidence_ids": [
+              "D3",
+              "D6",
+              "D9"
+            ],
+            "gold_evidence_sets": [
+              [
+                "D3",
+                "D6",
+                "D9"
+              ],
+              [
+                "D3"
+              ],
+              [
+                "D6"
+              ],
+              [
+                "D9"
+              ]
+            ],
+            "qualifier_ok": true,
+            "qualifier": "",
+            "score": 1.0,
+            "strict": true,
+            "tags": [],
+            "overreach": false
+          },
+          {
+            "id": "P10",
+            "gold": "yes",
+            "model": "yes",
+            "answer_ok": true,
+            "answer_match": "exact",
+            "evidence_kind": "superset",
+            "evidence_ids": [
+              "D10",
+              "D3"
+            ],
+            "gold_evidence_sets": [
+              [
+                "D3"
+              ]
+            ],
+            "qualifier_ok": true,
+            "qualifier": "",
+            "score": 0.85,
+            "strict": false,
+            "tags": [],
+            "overreach": false
+          },
+          {
+            "id": "P11",
+            "gold": "12 months",
+            "model": "12 months",
+            "answer_ok": true,
+            "answer_match": "exact",
+            "evidence_kind": "superset",
+            "evidence_ids": [
+              "D10",
+              "D5"
+            ],
+            "gold_evidence_sets": [
+              [
+                "D5"
+              ]
+            ],
+            "qualifier_ok": true,
+            "qualifier": "",
+            "score": 0.85,
+            "strict": false,
+            "tags": [],
+            "overreach": false
+          },
+          {
+            "id": "P12",
+            "gold": "no",
+            "model": "no",
+            "answer_ok": true,
+            "answer_match": "exact",
+            "evidence_kind": "exact",
+            "evidence_ids": [
+              "D10",
+              "D5",
+              "D6"
+            ],
+            "gold_evidence_sets": [
+              [
+                "D5",
+                "D6",
+                "D10"
+              ],
+              [
+                "D5"
+              ],
+              [
+                "D6"
+              ],
+              [
+                "D10"
+              ]
+            ],
+            "qualifier_ok": true,
+            "qualifier": "",
+            "score": 1.0,
+            "strict": true,
+            "tags": [],
+            "overreach": false
+          }
+        ],
+        "summary": {
+          "text": "Signed Amendment A controls EU retention for accounts opened on or after 1 January 2026 and sets an 18-month period effective 1 March 2026; earlier EU accounts remain at 12 months. Standard retention is 24 months, while backups are retained 35 days and are outside the Enterprise Data Retention Policy. The system-of-record export and public trust page still show 12 months for EU retention and are not current for 2026 accounts. Draft Amendment B is unsigned and has no effect.",
+          "required_ok": false,
+          "forbidden_hits": [],
+          "score": 0.5
+        },
+        "inconsistencies": [],
+        "inconsistency_count": 0,
+        "condition": "production"
+      }
+    },
+    {
+      "run_id": "open_cheap",
+      "timestamp": "2026-11-07T12:37:10+00:00",
+      "model": "opencode-go/deepseek-v4.1-flash",
+      "task": "T1",
+      "condition": "production_open",
+      "trial": 2,
+      "prompt_sha256": "e8f1a66f6ffd019ec8b39c0ddc250c417a42cfc4fdd389062c9818787ea2733e",
+      "prompt_chars": 5736,
+      "raw_chars": 1503,
+      "raw": "{\"items\":[{\"item_id\":\"P1\",\"answer\":\"18 months\",\"evidence_ids\":[\"D3\"],\"qualifier\":\"\"},{\"item_id\":\"P2\",\"answer\":\"12 months\",\"evidence_ids\":[\"D3\"],\"qualifier\":\"\"},{\"item_id\":\"P3\",\"answer\":\"12 months\",\"evidence_ids\":[\"D2\",\"D3\"],\"qualifier\":\"Amendment A effective 2026-03-01\"},{\"item_id\":\"P4\",\"answer\":\"24 months\",\"evidence_ids\":[\"D1\"],\"qualifier\":\"\"},{\"item_id\":\"P5\",\"answer\":\"no\",\"evidence_ids\":[\"D4\",\"D11\"],\"qualifier\":\"\"},{\"item_id\":\"P6\",\"answer\":\"35 days\",\"evidence_ids\":[\"D8\"],\"qualifier\":\"\"},{\"item_id\":\"P7\",\"answer\":\"no\",\"evidence_ids\":[\"D1\",\"D8\"],\"qualifier\":\"\"},{\"item_id\":\"P8\",\"answer\":\"no\",\"evidence_ids\":[\"D3\",\"D6\",\"D7\"],\"qualifier\":\"shows 12 months\"},{\"item_id\":\"P9\",\"answer\":\"Amendment A\",\"evidence_ids\":[\"D3\",\"D6\",\"D9\"],\"qualifier\":\"signed; accounts opened on/after 2026-01-01\"},{\"item_id\":\"P10\",\"answer\":\"yes\",\"evidence_ids\":[\"D3\",\"D10\"],\"qualifier\":\"effective 2026-03-01; signed 2026-05-05\"},{\"item_id\":\"P11\",\"answer\":\"12 months\",\"evidence_ids\":[\"D5\",\"D10\"],\"qualifier\":\"\"},{\"item_id\":\"P12\",\"answer\":\"no\",\"evidence_ids\":[\"D5\",\"D10\"],\"qualifier\":\"stale for accounts opened on/after 2026-01-01\"}],\"summary\":\"Under signed Amendment A, EU retention is 18 months for accounts opened on or after 1 January 2026, while pre-2026 accounts remain at 12 months; standard retention is 24 months and backups are 35 days. The system-of-record export and public trust page still show 12 months for EU, so they are not current for accounts opened in 2026. Draft Amendment B is unsigned and has no effect.\"}",
+      "usage": {
+        "prompt_tokens": 1361,
+        "completion_tokens": 5271,
+        "total_tokens": 6632,
+        "prompt_tokens_details": {
+          "cached_tokens": 256
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 4798
+        },
+        "cost": 0,
+        "opencode": {
+          "billing_source": "go",
+          "list_cost": 0.00332912,
+          "allowance": 0.00199747,
+          "tokens": {
+            "input": 1105,
+            "output": 5271,
+            "reasoning": 4798,
+            "cache_read": 256,
+            "cache_write_5m": 0,
+            "cache_write_1h": 0
+          }
+        }
+      },
+      "cost": 0,
+      "latency_s": 61.171,
+      "attempts": [
+        {
+          "attempt": 1,
+          "latency_s": 61.171,
+          "error": null
+        }
+      ],
+      "provider_error": null,
+      "grade": {
+        "n": 12,
+        "mean_score": 0.95,
+        "accuracy": 1.0,
+        "strict": 0.6667,
+        "extra_penalty": 0.0,
+        "duplicates": [],
+        "extras": [],
+        "missing": [],
+        "rows": [
+          {
+            "id": "P1",
+            "gold": "18 months",
+            "model": "18 months",
+            "answer_ok": true,
+            "answer_match": "exact",
+            "evidence_kind": "exact",
+            "evidence_ids": [
+              "D3"
+            ],
+            "gold_evidence_sets": [
+              [
+                "D3"
+              ]
+            ],
+            "qualifier_ok": true,
+            "qualifier": "",
+            "score": 1.0,
+            "strict": true,
+            "tags": [],
+            "overreach": false
+          },
+          {
+            "id": "P2",
+            "gold": "12 months",
+            "model": "12 months",
+            "answer_ok": true,
+            "answer_match": "exact",
+            "evidence_kind": "exact",
+            "evidence_ids": [
+              "D3"
+            ],
+            "gold_evidence_sets": [
+              [
+                "D2"
+              ],
+              [
+                "D3"
+              ]
+            ],
+            "qualifier_ok": true,
+            "qualifier": "",
+            "score": 1.0,
+            "strict": true,
+            "tags": [],
+            "overreach": false
+          },
+          {
+            "id": "P3",
+            "gold": "12 months",
+            "model": "12 months",
+            "answer_ok": true,
+            "answer_match": "exact",
+            "evidence_kind": "exact",
+            "evidence_ids": [
+              "D2",
+              "D3"
+            ],
+            "gold_evidence_sets": [
+              [
+                "D2",
+                "D3"
+              ],
+              [
+                "D2"
+              ]
+            ],
+            "qualifier_ok": true,
+            "qualifier": "Amendment A effective 2026-03-01",
+            "score": 1.0,
+            "strict": true,
+            "tags": [],
+            "overreach": false
+          },
+          {
+            "id": "P4",
+            "gold": "24 months",
+            "model": "24 months",
+            "answer_ok": true,
+            "answer_match": "exact",
+            "evidence_kind": "exact",
+            "evidence_ids": [
+              "D1"
+            ],
+            "gold_evidence_sets": [
+              [
+                "D1"
+              ]
+            ],
+            "qualifier_ok": true,
+            "qualifier": "",
+            "score": 1.0,
+            "strict": true,
+            "tags": [],
+            "overreach": false
+          },
+          {
+            "id": "P5",
+            "gold": "no",
+            "model": "no",
+            "answer_ok": true,
+            "answer_match": "exact",
+            "evidence_kind": "exact",
+            "evidence_ids": [
+              "D11",
+              "D4"
+            ],
+            "gold_evidence_sets": [
+              [
+                "D4",
+                "D11"
+              ],
+              [
+                "D4"
+              ],
+              [
+                "D11"
+              ]
+            ],
+            "qualifier_ok": true,
+            "qualifier": "",
+            "score": 1.0,
+            "strict": true,
+            "tags": [],
+            "overreach": false
+          },
+          {
+            "id": "P6",
+            "gold": "35 days",
+            "model": "35 days",
+            "answer_ok": true,
+            "answer_match": "exact",
+            "evidence_kind": "exact",
+            "evidence_ids": [
+              "D8"
+            ],
+            "gold_evidence_sets": [
+              [
+                "D8"
+              ]
+            ],
+            "qualifier_ok": true,
+            "qualifier": "",
+            "score": 1.0,
+            "strict": true,
+            "tags": [],
+            "overreach": false
+          },
+          {
+            "id": "P7",
+            "gold": "no",
+            "model": "no",
+            "answer_ok": true,
+            "answer_match": "exact",
+            "evidence_kind": "exact",
+            "evidence_ids": [
+              "D1",
+              "D8"
+            ],
+            "gold_evidence_sets": [
+              [
+                "D1",
+                "D8"
+              ],
+              [
+                "D1"
+              ],
+              [
+                "D8"
+              ]
+            ],
+            "qualifier_ok": true,
+            "qualifier": "",
+            "score": 1.0,
+            "strict": true,
+            "tags": [],
+            "overreach": false
+          },
+          {
+            "id": "P8",
+            "gold": "no",
+            "model": "no",
+            "answer_ok": true,
+            "answer_match": "exact",
+            "evidence_kind": "superset",
+            "evidence_ids": [
+              "D3",
+              "D6",
+              "D7"
+            ],
+            "gold_evidence_sets": [
+              [
+                "D6",
+                "D7"
+              ],
+              [
+                "D6"
+              ],
+              [
+                "D7"
+              ]
+            ],
+            "qualifier_ok": true,
+            "qualifier": "shows 12 months",
+            "score": 0.85,
+            "strict": false,
+            "tags": [],
+            "overreach": false
+          },
+          {
+            "id": "P9",
+            "gold": "Amendment A",
+            "model": "Amendment A",
+            "answer_ok": true,
+            "answer_match": "exact",
+            "evidence_kind": "exact",
+            "evidence_ids": [
+              "D3",
+              "D6",
+              "D9"
+            ],
+            "gold_evidence_sets": [
+              [
+                "D3",
+                "D6",
+                "D9"
+              ],
+              [
+                "D3"
+              ],
+              [
+                "D6"
+              ],
+              [
+                "D9"
+              ]
+            ],
+            "qualifier_ok": true,
+            "qualifier": "signed; accounts opened on/after 2026-01-01",
+            "score": 1.0,
+            "strict": true,
+            "tags": [],
+            "overreach": false
+          },
+          {
+            "id": "P10",
+            "gold": "yes",
+            "model": "yes",
+            "answer_ok": true,
+            "answer_match": "exact",
+            "evidence_kind": "superset",
+            "evidence_ids": [
+              "D10",
+              "D3"
+            ],
+            "gold_evidence_sets": [
+              [
+                "D3"
+              ]
+            ],
+            "qualifier_ok": true,
+            "qualifier": "effective 2026-03-01; signed 2026-05-05",
+            "score": 0.85,
+            "strict": false,
+            "tags": [],
+            "overreach": false
+          },
+          {
+            "id": "P11",
+            "gold": "12 months",
+            "model": "12 months",
+            "answer_ok": true,
+            "answer_match": "exact",
+            "evidence_kind": "superset",
+            "evidence_ids": [
+              "D10",
+              "D5"
+            ],
+            "gold_evidence_sets": [
+              [
+                "D5"
+              ]
+            ],
+            "qualifier_ok": true,
+            "qualifier": "",
+            "score": 0.85,
+            "strict": false,
+            "tags": [],
+            "overreach": false
+          },
+          {
+            "id": "P12",
+            "gold": "no",
+            "model": "no",
+            "answer_ok": true,
+            "answer_match": "exact",
+            "evidence_kind": "superset",
+            "evidence_ids": [
+              "D10",
+              "D5"
+            ],
+            "gold_evidence_sets": [
+              [
+                "D5",
+                "D6",
+                "D10"
+              ],
+              [
+                "D5"
+              ],
+              [
+                "D6"
+              ],
+              [
+                "D10"
+              ]
+            ],
+            "qualifier_ok": true,
+            "qualifier": "stale for accounts opened on/after 2026-01-01",
+            "score": 0.85,
+            "strict": false,
+            "tags": [],
+            "overreach": false
+          }
+        ],
+        "summary": {
+          "text": "Under signed Amendment A, EU retention is 18 months for accounts opened on or after 1 January 2026, while pre-2026 accounts remain at 12 months; standard retention is 24 months and backups are 35 days. The system-of-record export and public trust page still show 12 months for EU, so they are not current for accounts opened in 2026. Draft Amendment B is unsigned and has no effect.",
+          "required_ok": true,
+          "forbidden_hits": [],
+          "score": 1.0
+        },
+        "inconsistencies": [],
+        "inconsistency_count": 0,
+        "condition": "production"
+      }
+    },
+    {
+      "run_id": "open_cheap",
+      "timestamp": "2026-11-07T12:37:29+00:00",
+      "model": "opencode-go/deepseek-v4.1-flash",
+      "task": "T2",
+      "condition": "production_open",
+      "trial": 1,
+      "prompt_sha256": "771dda5481405c200a1292bf3a3c50e1060fbe3a3d98c480c05aec3c642afc28",
+      "prompt_chars": 5333,
+      "raw_chars": 1687,
+      "raw": "{\"items\": [{\"item_id\": \"P1\", \"answer\": \"2\", \"evidence_ids\": [\"I1\", \"I2\", \"I8\", \"I10\"], \"qualifier\": \"\"}, {\"item_id\": \"P2\", \"answer\": \"75\", \"evidence_ids\": [\"I1\"], \"qualifier\": \"\"}, {\"item_id\": \"P3\", \"answer\": \"expired TLS certificate\", \"evidence_ids\": [\"I1\", \"I3\"], \"qualifier\": \"\"}, {\"item_id\": \"P4\", \"answer\": \"failed rollback of CHG-441\", \"evidence_ids\": [\"I2\", \"I6\"], \"qualifier\": \"\"}, {\"item_id\": \"P5\", \"answer\": \"15,500\", \"evidence_ids\": [\"I8\"], \"qualifier\": \"\"}, {\"item_id\": \"P6\", \"answer\": \"no\", \"evidence_ids\": [\"I2\", \"I6\", \"I8\", \"I10\"], \"qualifier\": \"\"}, {\"item_id\": \"P7\", \"answer\": \"no\", \"evidence_ids\": [\"I8\", \"I10\"], \"qualifier\": \"\"}, {\"item_id\": \"P8\", \"answer\": \"no\", \"evidence_ids\": [\"I9\", \"I10\"], \"qualifier\": \"\"}, {\"item_id\": \"P9\", \"answer\": \"rotate certificates automatically; re-enable expiry alerts; add weekly certificate inventory check\", \"evidence_ids\": [\"I3\"], \"qualifier\": \"\"}, {\"item_id\": \"P10\", \"answer\": \"no\", \"evidence_ids\": [\"I2\", \"I6\", \"I8\", \"I10\"], \"qualifier\": \"\"}, {\"item_id\": \"P11\", \"answer\": \"45\", \"evidence_ids\": [\"I2\"], \"qualifier\": \"\"}, {\"item_id\": \"P12\", \"answer\": \"incompatible schema change in the rollback script\", \"evidence_ids\": [\"I6\"], \"qualifier\": \"\"}], \"summary\": \"Two distinct outages occurred in March 2026: INC-031 on 2 March lasted 75 minutes and was caused by an expired edge gateway TLS certificate, while INC-032 on 4 March lasted 45 minutes and was caused by a failed rollback of CHG-441. The two incidents had different root causes and together caused 15,500 failed customer transactions. The executive email's single-event description is not supported by the incident records, and the draft remediation plan remains unapproved.\"}",
+      "usage": {
+        "prompt_tokens": 1341,
+        "completion_tokens": 1617,
+        "total_tokens": 2958,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 1082
+        },
+        "cost": 0,
+        "opencode": {
+          "billing_source": "go",
+          "list_cost": 0.00117135,
+          "allowance": 0.00070281,
+          "tokens": {
+            "input": 1341,
+            "output": 1617,
+            "reasoning": 1082,
+            "cache_read": 0,
+            "cache_write_5m": 0,
+            "cache_write_1h": 0
+          }
+        }
+      },
+      "cost": 0,
+      "latency_s": 19.089,
+      "attempts": [
+        {
+          "attempt": 1,
+          "latency_s": 19.089,
+          "error": null
+        }
+      ],
+      "provider_error": null,
+      "grade": {
+        "n": 12,
+        "mean_score": 0.9625,
+        "accuracy": 1.0,
+        "strict": 0.5833,
+        "extra_penalty": 0.0,
+        "duplicates": [],
+        "extras": [],
+        "missing": [],
+        "rows": [
+          {
+            "id": "P1",
+            "gold": "2",
+            "model": "2",
+            "answer_ok": true,
+            "answer_match": "exact",
+            "evidence_kind": "superset",
+            "evidence_ids": [
+              "I1",
+              "I10",
+              "I2",
+              "I8"
+            ],
+            "gold_evidence_sets": [
+              [
+                "I1",
+                "I2",
+                "I8"
+              ],
+              [
+                "I8"
+              ],
+              [
+                "I1",
+                "I2"
+              ]
+            ],
+            "qualifier_ok": true,
+            "qualifier": "",
+            "score": 0.85,
+            "strict": false,
+            "tags": [],
+            "overreach": false
+          },
+          {
+            "id": "P2",
+            "gold": "75",
+            "model": "75",
+            "answer_ok": true,
+            "answer_match": "exact",
+            "evidence_kind": "exact",
+            "evidence_ids": [
+              "I1"
+            ],
+            "gold_evidence_sets": [
+              [
+                "I1"
+              ]
+            ],
+            "qualifier_ok": true,
+            "qualifier": "",
+            "score": 1.0,
+            "strict": true,
+            "tags": [],
+            "overreach": false
+          },
+          {
+            "id": "P3",
+            "gold": "expired TLS certificate",
+            "model": "expired TLS certificate",
+            "answer_ok": true,
+            "answer_match": "exact",
+            "evidence_kind": "exact",
+            "evidence_ids": [
+              "I1",
+              "I3"
+            ],
+            "gold_evidence_sets": [
+              [
+                "I1",
+                "I3"
+              ],
+              [
+                "I1"
+              ],
+              [
+                "I3"
+              ]
+            ],
+            "qualifier_ok": true,
+            "qualifier": "",
+            "score": 1.0,
+            "strict": true,
+            "tags": [],
+            "overreach": false
+          },
+          {
+            "id": "P4",
+            "gold": "failed rollback",
+            "model": "failed rollback of CHG-441",
+            "answer_ok": true,
+            "answer_match": "contained",
+            "evidence_kind": "exact",
+            "evidence_ids": [
+              "I2",
+              "I6"
+            ],
+            "gold_evidence_sets": [
+              [
+                "I2",
+                "I6"
+              ],
+              [
+                "I2"
+              ],
+              [
+                "I6"
+              ]
+            ],
+            "qualifier_ok": true,
+            "qualifier": "",
+            "score": 1.0,
+            "strict": false,
+            "tags": [],
+            "overreach": false
+          },
+          {
+            "id": "P5",
+            "gold": "15500",
+            "model": "15,500",
+            "answer_ok": true,
+            "answer_match": "exact",
+            "evidence_kind": "exact",
+            "evidence_ids": [
+              "I8"
+            ],
+            "gold_evidence_sets": [
+              [
+                "I8"
+              ]
+            ],
+            "qualifier_ok": true,
+            "qualifier": "",
+            "score": 1.0,
+            "strict": true,
+            "tags": [],
+            "overreach": false
+          },
+          {
+            "id": "P6",
+            "gold": "no",
+            "model": "no",
+            "answer_ok": true,
+            "answer_match": "exact",
+            "evidence_kind": "superset",
+            "evidence_ids": [
+              "I10",
+              "I2",
+              "I6",
+              "I8"
+            ],
+            "gold_evidence_sets": [
+              [
+                "I2",
+                "I6"
+              ],
+              [
+                "I2"
+              ],
+              [
+                "I6"
+              ]
+            ],
+            "qualifier_ok": true,
+            "qualifier": "",
+            "score": 0.85,
+            "strict": false,
+            "tags": [],
+            "overreach": false
+          },
+          {
+            "id": "P7",
+            "gold": "no",
+            "model": "no",
+            "answer_ok": true,
+            "answer_match": "exact",
+            "evidence_kind": "exact",
+            "evidence_ids": [
+              "I10",
+              "I8"
+            ],
+            "gold_evidence_sets": [
+              [
+                "I8",
+                "I10"
+              ],
+              [
+                "I8"
+              ],
+              [
+                "I10"
+              ]
+            ],
+            "qualifier_ok": true,
+            "qualifier": "",
+            "score": 1.0,
+            "strict": true,
+            "tags": [],
+            "overreach": false
+          },
+          {
+            "id": "P8",
+            "gold": "no",
+            "model": "no",
+            "answer_ok": true,
+            "answer_match": "exact",
+            "evidence_kind": "exact",
+            "evidence_ids": [
+              "I10",
+              "I9"
+            ],
+            "gold_evidence_sets": [
+              [
+                "I9",
+                "I10"
+              ],
+              [
+                "I9"
+              ],
+              [
+                "I10"
+              ]
+            ],
+            "qualifier_ok": true,
+            "qualifier": "",
+            "score": 1.0,
+            "strict": true,
+            "tags": [],
+            "overreach": false
+          },
+          {
+            "id": "P9",
+            "gold": "rotate certificates and re-enable expiry alerts",
+            "model": "rotate certificates automatically; re-enable expiry alerts; add weekly certificate inventory check",
+            "answer_ok": true,
+            "answer_match": "contained",
+            "evidence_kind": "exact",
+            "evidence_ids": [
+              "I3"
+            ],
+            "gold_evidence_sets": [
+              [
+                "I3"
+              ]
+            ],
+            "qualifier_ok": true,
+            "qualifier": "",
+            "score": 1.0,
+            "strict": false,
+            "tags": [],
+            "overreach": false
+          },
+          {
+            "id": "P10",
+            "gold": "no",
+            "model": "no",
+            "answer_ok": true,
+            "answer_match": "exact",
+            "evidence_kind": "superset",
+            "evidence_ids": [
+              "I10",
+              "I2",
+              "I6",
+              "I8"
+            ],
+            "gold_evidence_sets": [
+              [
+                "I2",
+                "I8",
+                "I10"
+              ],
+              [
+                "I2"
+              ],
+              [
+                "I8"
+              ],
+              [
+                "I10"
+              ]
+            ],
+            "qualifier_ok": true,
+            "qualifier": "",
+            "score": 0.85,
+            "strict": false,
+            "tags": [],
+            "overreach": false
+          },
+          {
+            "id": "P11",
+            "gold": "45",
+            "model": "45",
+            "answer_ok": true,
+            "answer_match": "exact",
+            "evidence_kind": "exact",
+            "evidence_ids": [
+              "I2"
+            ],
+            "gold_evidence_sets": [
+              [
+                "I2"
+              ]
+            ],
+            "qualifier_ok": true,
+            "qualifier": "",
+            "score": 1.0,
+            "strict": true,
+            "tags": [],
+            "overreach": false
+          },
+          {
+            "id": "P12",
+            "gold": "incompatible schema change in the rollback script",
+            "model": "incompatible schema change in the rollback script",
+            "answer_ok": true,
+            "answer_match": "exact",
+            "evidence_kind": "exact",
+            "evidence_ids": [
+              "I6"
+            ],
+            "gold_evidence_sets": [
+              [
+                "I6"
+              ]
+            ],
+            "qualifier_ok": true,
+            "qualifier": "",
+            "score": 1.0,
+            "strict": true,
+            "tags": [],
+            "overreach": false
+          }
+        ],
+        "summary": {
+          "text": "Two distinct outages occurred in March 2026: INC-031 on 2 March lasted 75 minutes and was caused by an expired edge gateway TLS certificate, while INC-032 on 4 March lasted 45 minutes and was caused by a failed rollback of CHG-441. The two incidents had different root causes and together caused 15,500 failed customer transactions. The executive email's single-event description is not supported by the incident records, and the draft remediation plan remains unapproved.",
+          "required_ok": true,
+          "forbidden_hits": [],
+          "score": 1.0
+        },
+        "inconsistencies": [],
+        "inconsistency_count": 0,
+        "condition": "production"
+      }
+    },
+    {
+      "run_id": "open_cheap",
+      "timestamp": "2026-11-07T12:37:32+00:00",
+      "model": "opencode-go/qwen3.8-flash",
+      "task": "T1",
+      "condition": "production_open",
+      "trial": 1,
+      "prompt_sha256": "e8f1a66f6ffd019ec8b39c0ddc250c417a42cfc4fdd389062c9818787ea2733e",
+      "prompt_chars": 5736,
+      "raw_chars": 2065,
+      "raw": "{\n  \"items\": [\n    {\n      \"item_id\": \"P1\",\n      \"answer\": \"18 months\",\n      \"evidence_ids\": [\"D3\", \"D9\"],\n      \"qualifier\": \"\"\n    },\n    {\n      \"item_id\": \"P2\",\n      \"answer\": \"12 months\",\n      \"evidence_ids\": [\"D3\", \"D2\"],\n      \"qualifier\": \"\"\n    },\n    {\n      \"item_id\": \"P3\",\n      \"answer\": \"12 months\",\n      \"evidence_ids\": [\"D2\", \"D3\"],\n      \"qualifier\": \"\"\n    },\n    {\n      \"item_id\": \"P4\",\n      \"answer\": \"24 months\",\n      \"evidence_ids\": [\"D1\"],\n      \"qualifier\": \"after contract termination\"\n    },\n    {\n      \"item_id\": \"P5\",\n      \"answer\": \"no\",\n      \"evidence_ids\": [\"D4\", \"D11\"],\n      \"qualifier\": \"\"\n    },\n    {\n      \"item_id\": \"P6\",\n      \"answer\": \"35 days\",\n      \"evidence_ids\": [\"D8\"],\n      \"qualifier\": \"\"\n    },\n    {\n      \"item_id\": \"P7\",\n      \"answer\": \"no\",\n      \"evidence_ids\": [\"D1\", \"D8\"],\n      \"qualifier\": \"\"\n    },\n    {\n      \"item_id\": \"P8\",\n      \"answer\": \"no\",\n      \"evidence_ids\": [\"D7\", \"D3\"],\n      \"qualifier\": \"for accounts opened on or after 1 January 2026\"\n    },\n    {\n      \"item_id\": \"P9\",\n      \"answer\": \"signed Amendment A\",\n      \"evidence_ids\": [\"D3\", \"D9\"],\n      \"qualifier\": \"\"\n    },\n    {\n      \"item_id\": \"P10\",\n      \"answer\": \"yes\",\n      \"evidence_ids\": [\"D3\"],\n      \"qualifier\": \"\"\n    },\n    {\n      \"item_id\": \"P11\",\n      \"answer\": \"12 months\",\n      \"evidence_ids\": [\"D5\", \"D10\"],\n      \"qualifier\": \"\"\n    },\n    {\n      \"item_id\": \"P12\",\n      \"answer\": \"no\",\n      \"evidence_ids\": [\"D10\", \"D5\", \"D3\"],\n      \"qualifier\": \"\"\n    }\n  ],\n  \"summary\": \"As of 15 June 2026, signed Amendment A controls EU retention for accounts opened on or after 1 January 2026, setting 18 months effective 1 March 2026. Accounts opened before 1 January 2026 remain at 12 months under the EU Retention Addendum. The system-of-record export shows 12 months and is stale for accounts opened on or after 1 January 2026, and the public trust page snapshot also shows 12 months. Draft Amendment B has no effect, and backup retention is 35 days outside the Enterprise Data Retention Policy.\"\n}",
+      "usage": {
+        "prompt_tokens": 1555,
+        "completion_tokens": 11221,
+        "total_tokens": 12776,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 10480
+        },
+        "cost": 0,
+        "opencode": {
+          "billing_source": "go",
+          "list_cost": 0.00550712,
+          "allowance": 0.01101424,
+          "tokens": {
+            "input": 1555,
+            "output": 11221,
+            "reasoning": 10480,
+            "cache_read": 0,
+            "cache_write_5m": 0,
+            "cache_write_1h": 0
+          }
+        }
+      },
+      "cost": 0,
+      "latency_s": 82.867,
+      "attempts": [
+        {
+          "attempt": 1,
+          "latency_s": 82.867,
+          "error": null
+        }
+      ],
+      "provider_error": null,
+      "grade": {
+        "n": 12,
+        "mean_score": 0.925,
+        "accuracy": 1.0,
+        "strict": 0.5,
+        "extra_penalty": 0.0,
+        "duplicates": [],
+        "extras": [],
+        "missing": [],
+        "rows": [
+          {
+            "id": "P1",
+            "gold": "18 months",
+            "model": "18 months",
+            "answer_ok": true,
+            "answer_match": "exact",
+            "evidence_kind": "superset",
+            "evidence_ids": [
+              "D3",
+              "D9"
+            ],
+            "gold_evidence_sets": [
+              [
+                "D3"
+              ]
+            ],
+            "qualifier_ok": true,
+            "qualifier": "",
+            "score": 0.85,
+            "strict": false,
+            "tags": [],
+            "overreach": false
+          },
+          {
+            "id": "P2",
+            "gold": "12 months",
+            "model": "12 months",
+            "answer_ok": true,
+            "answer_match": "exact",
+            "evidence_kind": "superset",
+            "evidence_ids": [
+              "D2",
+              "D3"
+            ],
+            "gold_evidence_sets": [
+              [
+                "D2"
+              ],
+              [
+                "D3"
+              ]
+            ],
+            "qualifier_ok": true,
+            "qualifier": "",
+            "score": 0.85,
+            "strict": false,
+            "tags": [],
+            "overreach": false
+          },
+          {
+            "id": "P3",
+            "gold": "12 months",
+            "model": "12 months",
+            "answer_ok": true,
+            "answer_match": "exact",
+            "evidence_kind": "exact",
+            "evidence_ids": [
+              "D2",
+              "D3"
+            ],
+            "gold_evidence_sets": [
+              [
+                "D2",
+                "D3"
+              ],
+              [
+                "D2"
+              ]
+            ],
+            "qualifier_ok": true,
+            "qualifier": "",
+            "score": 1.0,
+            "strict": true,
+            "tags": [],
+            "overreach": false
+          },
+          {
+            "id": "P4",
+            "gold": "24 months",
+            "model": "24 months",
+            "answer_ok": true,
+            "answer_match": "exact",
+            "evidence_kind": "exact",
+            "evidence_ids": [
+              "D1"
+            ],
+            "gold_evidence_sets": [
+              [
+                "D1"
+              ]
+            ],
+            "qualifier_ok": true,
+            "qualifier": "after contract termination",
+            "score": 1.0,
+            "strict": true,
+            "tags": [],
+            "overreach": false
+          },
+          {
+            "id": "P5",
+            "gold": "no",
+            "model": "no",
+            "answer_ok": true,
+            "answer_match": "exact",
+            "evidence_kind": "exact",
+            "evidence_ids": [
+              "D11",
+              "D4"
+            ],
+            "gold_evidence_sets": [
+              [
+                "D4",
+                "D11"
+              ],
+              [
+                "D4"
+              ],
+              [
+                "D11"
+              ]
+            ],
+            "qualifier_ok": true,
+            "qualifier": "",
+            "score": 1.0,
+            "strict": true,
+            "tags": [],
+            "overreach": false
+          },
+          {
+            "id": "P6",
+            "gold": "35 days",
+            "model": "35 days",
+            "answer_ok": true,
+            "answer_match": "exact",
+            "evidence_kind": "exact",
+            "evidence_ids": [
+              "D8"
+            ],
+            "gold_evidence_sets": [
+              [
+                "D8"
+              ]
+            ],
+            "qualifier_ok": true,
+            "qualifier": "",
+            "score": 1.0,
+            "strict": true,
+            "tags": [],
+            "overreach": false
+          },
+          {
+            "id": "P7",
+            "gold": "no",
+            "model": "no",
+            "answer_ok": true,
+            "answer_match": "exact",
+            "evidence_kind": "exact",
+            "evidence_ids": [
+              "D1",
+              "D8"
+            ],
+            "gold_evidence_sets": [
+              [
+                "D1",
+                "D8"
+              ],
+              [
+                "D1"
+              ],
+              [
+                "D8"
+              ]
+            ],
+            "qualifier_ok": true,
+            "qualifier": "",
+            "score": 1.0,
+            "strict": true,
+            "tags": [],
+            "overreach": false
+          },
+          {
+            "id": "P8",
+            "gold": "no",
+            "model": "no",
+            "answer_ok": true,
+            "answer_match": "exact",
+            "evidence_kind": "superset",
+            "evidence_ids": [
+              "D3",
+              "D7"
+            ],
+            "gold_evidence_sets": [
+              [
+                "D6",
+                "D7"
+              ],
+              [
+                "D6"
+              ],
+              [
+                "D7"
+              ]
+            ],
+            "qualifier_ok": true,
+            "qualifier": "for accounts opened on or after 1 January 2026",
+            "score": 0.85,
+            "strict": false,
+            "tags": [],
+            "overreach": false
+          },
+          {
+            "id": "P9",
+            "gold": "Amendment A",
+            "model": "signed Amendment A",
+            "answer_ok": true,
+            "answer_match": "exact",
+            "evidence_kind": "superset",
+            "evidence_ids": [
+              "D3",
+              "D9"
+            ],
+            "gold_evidence_sets": [
+              [
+                "D3",
+                "D6",
+                "D9"
+              ],
+              [
+                "D3"
+              ],
+              [
+                "D6"
+              ],
+              [
+                "D9"
+              ]
+            ],
+            "qualifier_ok": true,
+            "qualifier": "",
+            "score": 0.85,
+            "strict": false,
+            "tags": [],
+            "overreach": false
+          },
+          {
+            "id": "P10",
+            "gold": "yes",
+            "model": "yes",
+            "answer_ok": true,
+            "answer_match": "exact",
+            "evidence_kind": "exact",
+            "evidence_ids": [
+              "D3"
+            ],
+            "gold_evidence_sets": [
+              [
+                "D3"
+              ]
+            ],
+            "qualifier_ok": true,
+            "qualifier": "",
+            "score": 1.0,
+            "strict": true,
+            "tags": [],
+            "overreach": false
+          },
+          {
+            "id": "P11",
+            "gold": "12 months",
+            "model": "12 months",
+            "answer_ok": true,
+            "answer_match": "exact",
+            "evidence_kind": "superset",
+            "evidence_ids": [
+              "D10",
+              "D5"
+            ],
+            "gold_evidence_sets": [
+              [
+                "D5"
+              ]
+            ],
+            "qualifier_ok": true,
+            "qualifier": "",
+            "score": 0.85,
+            "strict": false,
+            "tags": [],
+            "overreach": false
+          },
+          {
+            "id": "P12",
+            "gold": "no",
+            "model": "no",
+            "answer_ok": true,
+            "answer_match": "exact",
+            "evidence_kind": "superset",
+            "evidence_ids": [
+              "D10",
+              "D3",
+              "D5"
+            ],
+            "gold_evidence_sets": [
+              [
+                "D5",
+                "D6",
+                "D10"
+              ],
+              [
+                "D5"
+              ],
+              [
+                "D6"
+              ],
+              [
+                "D10"
+              ]
+            ],
+            "qualifier_ok": true,
+            "qualifier": "",
+            "score": 0.85,
+            "strict": false,
+            "tags": [],
+            "overreach": false
+          }
+        ],
+        "summary": {
+          "text": "As of 15 June 2026, signed Amendment A controls EU retention for accounts opened on or after 1 January 2026, setting 18 months effective 1 March 2026. Accounts opened before 1 January 2026 remain at 12 months under the EU Retention Addendum. The system-of-record export shows 12 months and is stale for accounts opened on or after 1 January 2026, and the public trust page snapshot also shows 12 months. Draft Amendment B has no effect, and backup retention is 35 days outside the Enterprise Data Retention Policy.",
+          "required_ok": true,
+          "forbidden_hits": [],
+          "score": 1.0
+        },
+        "inconsistencies": [],
+        "inconsistency_count": 0,
+        "condition": "production"
+      }
+    },
+    {
+      "run_id": "open_cheap",
+      "timestamp": "2026-11-07T12:37:34+00:00",
+      "model": "opencode-go/qwen3.8-flash",
+      "task": "T1",
+      "condition": "production_open",
+      "trial": 3,
+      "prompt_sha256": "e8f1a66f6ffd019ec8b39c0ddc250c417a42cfc4fdd389062c9818787ea2733e",
+      "prompt_chars": 5736,
+      "raw_chars": 1975,
+      "raw": "{\n  \"items\": [\n    {\n      \"item_id\": \"P1\",\n      \"answer\": \"18 months\",\n      \"evidence_ids\": [\"D3\", \"D9\"],\n      \"qualifier\": \"\"\n    },\n    {\n      \"item_id\": \"P2\",\n      \"answer\": \"12 months\",\n      \"evidence_ids\": [\"D3\", \"D2\"],\n      \"qualifier\": \"\"\n    },\n    {\n      \"item_id\": \"P3\",\n      \"answer\": \"12 months\",\n      \"evidence_ids\": [\"D2\", \"D3\"],\n      \"qualifier\": \"\"\n    },\n    {\n      \"item_id\": \"P4\",\n      \"answer\": \"24 months\",\n      \"evidence_ids\": [\"D1\"],\n      \"qualifier\": \"\"\n    },\n    {\n      \"item_id\": \"P5\",\n      \"answer\": \"no\",\n      \"evidence_ids\": [\"D4\", \"D11\"],\n      \"qualifier\": \"\"\n    },\n    {\n      \"item_id\": \"P6\",\n      \"answer\": \"35 days\",\n      \"evidence_ids\": [\"D8\"],\n      \"qualifier\": \"\"\n    },\n    {\n      \"item_id\": \"P7\",\n      \"answer\": \"no\",\n      \"evidence_ids\": [\"D1\", \"D8\"],\n      \"qualifier\": \"\"\n    },\n    {\n      \"item_id\": \"P8\",\n      \"answer\": \"no\",\n      \"evidence_ids\": [\"D7\", \"D3\"],\n      \"qualifier\": \"for accounts opened on or after 1 January 2026\"\n    },\n    {\n      \"item_id\": \"P9\",\n      \"answer\": \"signed Amendment A\",\n      \"evidence_ids\": [\"D3\", \"D9\"],\n      \"qualifier\": \"\"\n    },\n    {\n      \"item_id\": \"P10\",\n      \"answer\": \"yes\",\n      \"evidence_ids\": [\"D3\"],\n      \"qualifier\": \"\"\n    },\n    {\n      \"item_id\": \"P11\",\n      \"answer\": \"12 months\",\n      \"evidence_ids\": [\"D5\"],\n      \"qualifier\": \"\"\n    },\n    {\n      \"item_id\": \"P12\",\n      \"answer\": \"no\",\n      \"evidence_ids\": [\"D5\", \"D10\", \"D3\"],\n      \"qualifier\": \"\"\n    }\n  ],\n  \"summary\": \"Signed Amendment A controls EU retention for accounts opened on or after 1 January 2026, setting 18 months effective 1 March 2026 despite being signed on 5 May 2026. Accounts opened before 1 January 2026 remain subject to 12 months. The system-of-record export and public trust page still show 12 months and are not current for 2026 accounts. Draft Amendment B has no effect; standard retention is 24 months, and backups are separately retained for 35 days.\"\n}",
+      "usage": {
+        "prompt_tokens": 1555,
+        "completion_tokens": 6203,
+        "total_tokens": 7758,
+        "prompt_tokens_details": {
+          "cached_tokens": 1024
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 5488
+        },
+        "cost": 0,
+        "opencode": {
+          "billing_source": "go",
+          "list_cost": 0.00301144,
+          "allowance": 0.00602289,
+          "tokens": {
+            "input": 531,
+            "output": 6203,
+            "reasoning": 5488,
+            "cache_read": 1024,
+            "cache_write_5m": 0,
+            "cache_write_1h": 0
+          }
+        }
+      },
+      "cost": 0,
+      "latency_s": 44.922,
+      "attempts": [
+        {
+          "attempt": 1,
+          "latency_s": 44.922,
+          "error": null
+        }
+      ],
+      "provider_error": null,
+      "grade": {
+        "n": 12,
+        "mean_score": 0.9375,
+        "accuracy": 1.0,
+        "strict": 0.5833,
+        "extra_penalty": 0.0,
+        "duplicates": [],
+        "extras": [],
+        "missing": [],
+        "rows": [
+          {
+            "id": "P1",
+            "gold": "18 months",
+            "model": "18 months",
+            "answer_ok": true,
+            "answer_match": "exact",
+            "evidence_kind": "superset",
+            "evidence_ids": [
+              "D3",
+              "D9"
+            ],
+            "gold_evidence_sets": [
+              [
+                "D3"
+              ]
+            ],
+            "qualifier_ok": true,
+            "qualifier": "",
+            "score": 0.85,
+            "strict": false,
+            "tags": [],
+            "overreach": false
+          },
+          {
+            "id": "P2",
+            "gold": "12 months",
+            "model": "12 months",
+            "answer_ok": true,
+            "answer_match": "exact",
+            "evidence_kind": "superset",
+            "evidence_ids": [
+              "D2",
+              "D3"
+            ],
+            "gold_evidence_sets": [
+              [
+                "D2"
+              ],
+              [
+                "D3"
+              ]
+            ],
+            "qualifier_ok": true,
+            "qualifier": "",
+            "score": 0.85,
+            "strict": false,
+            "tags": [],
+            "overreach": false
+          },
+          {
+            "id": "P3",
+            "gold": "12 months",
+            "model": "12 months",
+            "answer_ok": true,
+            "answer_match": "exact",
+            "evidence_kind": "exact",
+            "evidence_ids": [
+              "D2",
+              "D3"
+            ],
+            "gold_evidence_sets": [
+              [
+                "D2",
+                "D3"
+              ],
+              [
+                "D2"
+              ]
+            ],
+            "qualifier_ok": true,
+            "qualifier": "",
+            "score": 1.0,
+            "strict": true,
+            "tags": [],
+            "overreach": false
+          },
+          {
+            "id": "P4",
+            "gold": "24 months",
+            "model": "24 months",
+            "answer_ok": true,
+            "answer_match": "exact",
+            "evidence_kind": "exact",
+            "evidence_ids": [
+              "D1"
+            ],
+            "gold_evidence_sets": [
+              [
+                "D1"
+              ]
+            ],
+            "qualifier_ok": true,
+            "qualifier": "",
+            "score": 1.0,
+            "strict": true,
+            "tags": [],
+            "overreach": false
+          },
+          {
+            "id": "P5",
+            "gold": "no",
+            "model": "no",
+            "answer_ok": true,
+            "answer_match": "exact",
+            "evidence_kind": "exact",
+            "evidence_ids": [
+              "D11",
+              "D4"
+            ],
+            "gold_evidence_sets": [
+              [
+                "D4",
+                "D11"
+              ],
+              [
+                "D4"
+              ],
+              [
+                "D11"
+              ]
+            ],
+            "qualifier_ok": true,
+            "qualifier": "",
+            "score": 1.0,
+            "strict": true,
+            "tags": [],
+            "overreach": false
+          },
+          {
+            "id": "P6",
+            "gold": "35 days",
+            "model": "35 days",
+            "answer_ok": true,
+            "answer_match": "exact",
+            "evidence_kind": "exact",
+            "evidence_ids": [
+              "D8"
+            ],
+            "gold_evidence_sets": [
+              [
+                "D8"
+              ]
+            ],
+            "qualifier_ok": true,
+            "qualifier": "",
+            "score": 1.0,
+            "strict": true,
+            "tags": [],
+            "overreach": false
+          },
+          {
+            "id": "P7",
+            "gold": "no",
+            "model": "no",
+            "answer_ok": true,
+            "answer_match": "exact",
+            "evidence_kind": "exact",
+            "evidence_ids": [
+              "D1",
+              "D8"
+            ],
+            "gold_evidence_sets": [
+              [
+                "D1",
+                "D8"
+              ],
+              [
+                "D1"
+              ],
+              [
+                "D8"
+              ]
+            ],
+            "qualifier_ok": true,
+            "qualifier": "",
+            "score": 1.0,
+            "strict": true,
+            "tags": [],
+            "overreach": false
+          },
+          {
+            "id": "P8",
+            "gold": "no",
+            "model": "no",
+            "answer_ok": true,
+            "answer_match": "exact",
+            "evidence_kind": "superset",
+            "evidence_ids": [
+              "D3",
+              "D7"
+            ],
+            "gold_evidence_sets": [
+              [
+                "D6",
+                "D7"
+              ],
+              [
+                "D6"
+              ],
+              [
+                "D7"
+              ]
+            ],
+            "qualifier_ok": true,
+            "qualifier": "for accounts opened on or after 1 January 2026",
+            "score": 0.85,
+            "strict": false,
+            "tags": [],
+            "overreach": false
+          },
+          {
+            "id": "P9",
+            "gold": "Amendment A",
+            "model": "signed Amendment A",
+            "answer_ok": true,
+            "answer_match": "exact",
+            "evidence_kind": "superset",
+            "evidence_ids": [
+              "D3",
+              "D9"
+            ],
+            "gold_evidence_sets": [
+              [
+                "D3",
+                "D6",
+                "D9"
+              ],
+              [
+                "D3"
+              ],
+              [
+                "D6"
+              ],
+              [
+                "D9"
+              ]
+            ],
+            "qualifier_ok": true,
+            "qualifier": "",
+            "score": 0.85,
+            "strict": false,
+            "tags": [],
+            "overreach": false
+          },
+          {
+            "id": "P10",
+            "gold": "yes",
+            "model": "yes",
+            "answer_ok": true,
+            "answer_match": "exact",
+            "evidence_kind": "exact",
+            "evidence_ids": [
+              "D3"
+            ],
+            "gold_evidence_sets": [
+              [
+                "D3"
+              ]
+            ],
+            "qualifier_ok": true,
+            "qualifier": "",
+            "score": 1.0,
+            "strict": true,
+            "tags": [],
+            "overreach": false
+          },
+          {
+            "id": "P11",
+            "gold": "12 months",
+            "model": "12 months",
+            "answer_ok": true,
+            "answer_match": "exact",
+            "evidence_kind": "exact",
+            "evidence_ids": [
+              "D5"
+            ],
+            "gold_evidence_sets": [
+              [
+                "D5"
+              ]
+            ],
+            "qualifier_ok": true,
+            "qualifier": "",
+            "score": 1.0,
+            "strict": true,
+            "tags": [],
+            "overreach": false
+          },
+          {
+            "id": "P12",
+            "gold": "no",
+            "model": "no",
+            "answer_ok": true,
+            "answer_match": "exact",
+            "evidence_kind": "superset",
+            "evidence_ids": [
+              "D10",
+              "D3",
+              "D5"
+            ],
+            "gold_evidence_sets": [
+              [
+                "D5",
+                "D6",
+                "D10"
+              ],
+              [
+                "D5"
+              ],
+              [
+                "D6"
+              ],
+              [
+                "D10"
+              ]
+            ],
+            "qualifier_ok": true,
+            "qualifier": "",
+            "score": 0.85,
+            "strict": false,
+            "tags": [],
+            "overreach": false
+          }
+        ],
+        "summary": {
+          "text": "Signed Amendment A controls EU retention for accounts opened on or after 1 January 2026, setting 18 months effective 1 March 2026 despite being signed on 5 May 2026. Accounts opened before 1 January 2026 remain subject to 12 months. The system-of-record export and public trust page still show 12 months and are not current for 2026 accounts. Draft Amendment B has no effect; standard retention is 24 months, and backups are separately retained for 35 days.",
+          "required_ok": true,
+          "forbidden_hits": [],
+          "score": 1.0
+        },
+        "inconsistencies": [],
+        "inconsistency_count": 0,
+        "condition": "production"
+      }
+    },
+    {
+      "run_id": "open_cheap",
+      "timestamp": "2026-11-07T12:37:57+00:00",
+      "model": "opencode-go/qwen3.8-flash",
+      "task": "T2",
+      "condition": "production_open",
+      "trial": 1,
+      "prompt_sha256": "771dda5481405c200a1292bf3a3c50e1060fbe3a3d98c480c05aec3c642afc28",
+      "prompt_chars": 5333,
+      "raw_chars": 2368,
+      "raw": "{\n  \"items\": [\n    {\n      \"item_id\": \"P1\",\n      \"answer\": 2,\n      \"evidence_ids\": [\n        \"I1\",\n        \"I2\",\n        \"I8\",\n        \"I10\"\n      ],\n      \"qualifier\": \"\"\n    },\n    {\n      \"item_id\": \"P2\",\n      \"answer\": 75,\n      \"evidence_ids\": [\n        \"I1\"\n      ],\n      \"qualifier\": \"\"\n    },\n    {\n      \"item_id\": \"P3\",\n      \"answer\": \"expired TLS certificate on the edge gateway\",\n      \"evidence_ids\": [\n        \"I1\"\n      ],\n      \"qualifier\": \"\"\n    },\n    {\n      \"item_id\": \"P4\",\n      \"answer\": \"failed rollback of configuration change CHG-441\",\n      \"evidence_ids\": [\n        \"I2\"\n      ],\n      \"qualifier\": \"\"\n    },\n    {\n      \"item_id\": \"P5\",\n      \"answer\": 15500,\n      \"evidence_ids\": [\n        \"I8\"\n      ],\n      \"qualifier\": \"\"\n    },\n    {\n      \"item_id\": \"P6\",\n      \"answer\": \"no\",\n      \"evidence_ids\": [\n        \"I2\",\n        \"I6\",\n        \"I8\",\n        \"I10\"\n      ],\n      \"qualifier\": \"\"\n    },\n    {\n      \"item_id\": \"P7\",\n      \"answer\": \"no\",\n      \"evidence_ids\": [\n        \"I8\",\n        \"I10\"\n      ],\n      \"qualifier\": \"\"\n    },\n    {\n      \"item_id\": \"P8\",\n      \"answer\": \"no\",\n      \"evidence_ids\": [\n        \"I9\",\n        \"I10\"\n      ],\n      \"qualifier\": \"\"\n    },\n    {\n      \"item_id\": \"P9\",\n      \"answer\": \"rotate certificates automatically, re-enable expiry alerts, and add a weekly certificate inventory check\",\n      \"evidence_ids\": [\n        \"I3\"\n      ],\n      \"qualifier\": \"\"\n    },\n    {\n      \"item_id\": \"P10\",\n      \"answer\": \"no\",\n      \"evidence_ids\": [\n        \"I1\",\n        \"I2\",\n        \"I8\",\n        \"I10\"\n      ],\n      \"qualifier\": \"\"\n    },\n    {\n      \"item_id\": \"P11\",\n      \"answer\": 45,\n      \"evidence_ids\": [\n        \"I2\"\n      ],\n      \"qualifier\": \"\"\n    },\n    {\n      \"item_id\": \"P12\",\n      \"answer\": \"incompatible schema change in the rollback script\",\n      \"evidence_ids\": [\n        \"I6\"\n      ],\n      \"qualifier\": \"\"\n    }\n  ],\n  \"summary\": \"The approved incident records show two distinct March 2026 outages: INC-031 lasted 75 minutes and was caused by an expired TLS certificate, while INC-032 lasted 45 minutes and was caused by a failed rollback of CHG-441. Customer impact totals 15,500 failed transactions across the two incidents. The executive email\u2019s single-event description is not supported by the incident records, and the remediation plan remains unapproved.\"\n}",
+      "usage": {
+        "prompt_tokens": 1533,
+        "completion_tokens": 3087,
+        "total_tokens": 4620,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 2270
+        },
+        "cost": 0,
+        "opencode": {
+          "billing_source": "go",
+          "list_cost": 0.00168084,
+          "allowance": 0.00336168,
+          "tokens": {
+            "input": 1533,
+            "output": 3087,
+            "reasoning": 2270,
+            "cache_read": 0,
+            "cache_write_5m": 0,
+            "cache_write_1h": 0
+          }
+        }
+      },
+      "cost": 0,
+      "latency_s": 23.605,
+      "attempts": [
+        {
+          "attempt": 1,
+          "latency_s": 23.605,
+          "error": null
+        }
+      ],
+      "provider_error": null,
+      "grade": {
+        "n": 12,
+        "mean_score": 0.9625,
+        "accuracy": 1.0,
+        "strict": 0.5,
+        "extra_penalty": 0.0,
+        "duplicates": [],
+        "extras": [],
+        "missing": [],
+        "rows": [
+          {
+            "id": "P1",
+            "gold": "2",
+            "model": 2,
+            "answer_ok": true,
+            "answer_match": "exact",
+            "evidence_kind": "superset",
+            "evidence_ids": [
+              "I1",
+              "I10",
+              "I2",
+              "I8"
+            ],
+            "gold_evidence_sets": [
+              [
+                "I1",
+                "I2",
+                "I8"
+              ],
+              [
+                "I8"
+              ],
+              [
+                "I1",
+                "I2"
+              ]
+            ],
+            "qualifier_ok": true,
+            "qualifier": "",
+            "score": 0.85,
+            "strict": false,
+            "tags": [],
+            "overreach": false
+          },
+          {
+            "id": "P2",
+            "gold": "75",
+            "model": 75,
+            "answer_ok": true,
+            "answer_match": "exact",
+            "evidence_kind": "exact",
+            "evidence_ids": [
+              "I1"
+            ],
+            "gold_evidence_sets": [
+              [
+                "I1"
+              ]
+            ],
+            "qualifier_ok": true,
+            "qualifier": "",
+            "score": 1.0,
+            "strict": true,
+            "tags": [],
+            "overreach": false
+          },
+          {
+            "id": "P3",
+            "gold": "expired TLS certificate",
+            "model": "expired TLS certificate on the edge gateway",
+            "answer_ok": true,
+            "answer_match": "contained",
+            "evidence_kind": "exact",
+            "evidence_ids": [
+              "I1"
+            ],
+            "gold_evidence_sets": [
+              [
+                "I1",
+                "I3"
+              ],
+              [
+                "I1"
+              ],
+              [
+                "I3"
+              ]
+            ],
+            "qualifier_ok": true,
+            "qualifier": "",
+            "score": 1.0,
+            "strict": false,
+            "tags": [],
+            "overreach": false
+          },
+          {
+            "id": "P4",
+            "gold": "failed rollback",
+            "model": "failed rollback of configuration change CHG-441",
+            "answer_ok": true,
+            "answer_match": "contained",
+            "evidence_kind": "exact",
+            "evidence_ids": [
+              "I2"
+            ],
+            "gold_evidence_sets": [
+              [
+                "I2",
+                "I6"
+              ],
+              [
+                "I2"
+              ],
+              [
+                "I6"
+              ]
+            ],
+            "qualifier_ok": true,
+            "qualifier": "",
+            "score": 1.0,
+            "strict": false,
+            "tags": [],
+            "overreach": false
+          },
+          {
+            "id": "P5",
+            "gold": "15500",
+            "model": 15500,
+            "answer_ok": true,
+            "answer_match": "exact",
+            "evidence_kind": "exact",
+            "evidence_ids": [
+              "I8"
+            ],
+            "gold_evidence_sets": [
+              [
+                "I8"
+              ]
+            ],
+            "qualifier_ok": true,
+            "qualifier": "",
+            "score": 1.0,
+            "strict": true,
+            "tags": [],
+            "overreach": false
+          },
+          {
+            "id": "P6",
+            "gold": "no",
+            "model": "no",
+            "answer_ok": true,
+            "answer_match": "exact",
+            "evidence_kind": "superset",
+            "evidence_ids": [
+              "I10",
+              "I2",
+              "I6",
+              "I8"
+            ],
+            "gold_evidence_sets": [
+              [
+                "I2",
+                "I6"
+              ],
+              [
+                "I2"
+              ],
+              [
+                "I6"
+              ]
+            ],
+            "qualifier_ok": true,
+            "qualifier": "",
+            "score": 0.85,
+            "strict": false,
+            "tags": [],
+            "overreach": false
+          },
+          {
+            "id": "P7",
+            "gold": "no",
+            "model": "no",
+            "answer_ok": true,
+            "answer_match": "exact",
+            "evidence_kind": "exact",
+            "evidence_ids": [
+              "I10",
+              "I8"
+            ],
+            "gold_evidence_sets": [
+              [
+                "I8",
+                "I10"
+              ],
+              [
+                "I8"
+              ],
+              [
+                "I10"
+              ]
+            ],
+            "qualifier_ok": true,
+            "qualifier": "",
+            "score": 1.0,
+            "strict": true,
+            "tags": [],
+            "overreach": false
+          },
+          {
+            "id": "P8",
+            "gold": "no",
+            "model": "no",
+            "answer_ok": true,
+            "answer_match": "exact",
+            "evidence_kind": "exact",
+            "evidence_ids": [
+              "I10",
+              "I9"
+            ],
+            "gold_evidence_sets": [
+              [
+                "I9",
+                "I10"
+              ],
+              [
+                "I9"
+              ],
+              [
+                "I10"
+              ]
+            ],
+            "qualifier_ok": true,
+            "qualifier": "",
+            "score": 1.0,
+            "strict": true,
+            "tags": [],
+            "overreach": false
+          },
+          {
+            "id": "P9",
+            "gold": "rotate certificates and re-enable expiry alerts",
+            "model": "rotate certificates automatically, re-enable expiry alerts, and add a weekly certificate inventory check",
+            "answer_ok": true,
+            "answer_match": "contained",
+            "evidence_kind": "exact",
+            "evidence_ids": [
+              "I3"
+            ],
+            "gold_evidence_sets": [
+              [
+                "I3"
+              ]
+            ],
+            "qualifier_ok": true,
+            "qualifier": "",
+            "score": 1.0,
+            "strict": false,
+            "tags": [],
+            "overreach": false
+          },
+          {
+            "id": "P10",
+            "gold": "no",
+            "model": "no",
+            "answer_ok": true,
+            "answer_match": "exact",
+            "evidence_kind": "superset",
+            "evidence_ids": [
+              "I1",
+              "I10",
+              "I2",
+              "I8"
+            ],
+            "gold_evidence_sets": [
+              [
+                "I2",
+                "I8",
+                "I10"
+              ],
+              [
+                "I2"
+              ],
+              [
+                "I8"
+              ],
+              [
+                "I10"
+              ]
+            ],
+            "qualifier_ok": true,
+            "qualifier": "",
+            "score": 0.85,
+            "strict": false,
+            "tags": [],
+            "overreach": false
+          },
+          {
+            "id": "P11",
+            "gold": "45",
+            "model": 45,
+            "answer_ok": true,
+            "answer_match": "exact",
+            "evidence_kind": "exact",
+            "evidence_ids": [
+              "I2"
+            ],
+            "gold_evidence_sets": [
+              [
+                "I2"
+              ]
+            ],
+            "qualifier_ok": true,
+            "qualifier": "",
+            "score": 1.0,
+            "strict": true,
+            "tags": [],
+            "overreach": false
+          },
+          {
+            "id": "P12",
+            "gold": "incompatible schema change in the rollback script",
+            "model": "incompatible schema change in the rollback script",
+            "answer_ok": true,
+            "answer_match": "exact",
+            "evidence_kind": "exact",
+            "evidence_ids": [
+              "I6"
+            ],
+            "gold_evidence_sets": [
+              [
+                "I6"
+              ]
+            ],
+            "qualifier_ok": true,
+            "qualifier": "",
+            "score": 1.0,
+            "strict": true,
+            "tags": [],
+            "overreach": false
+          }
+        ],
+        "summary": {
+          "text": "The approved incident records show two distinct March 2026 outages: INC-031 lasted 75 minutes and was caused by an expired TLS certificate, while INC-032 lasted 45 minutes and was caused by a failed rollback of CHG-441. Customer impact totals 15,500 failed transactions across the two incidents. The executive email\u2019s single-event description is not supported by the incident records, and the remediation plan remains unapproved.",
+          "required_ok": true,
+          "forbidden_hits": [],
+          "score": 1.0
+        },
+        "inconsistencies": [],
+        "inconsistency_count": 0,
+        "condition": "production"
+      }
+    },
+    {
+      "run_id": "open_cheap",
+      "timestamp": "2026-11-07T12:38:08+00:00",
+      "model": "opencode-go/deepseek-v4.1-flash",
+      "task": "T2",
+      "condition": "production_open",
+      "trial": 2,
+      "prompt_sha256": "771dda5481405c200a1292bf3a3c50e1060fbe3a3d98c480c05aec3c642afc28",
+      "prompt_chars": 5333,
+      "raw_chars": 1749,
+      "raw": "{\"items\":[{\"item_id\":\"P1\",\"answer\":\"2\",\"evidence_ids\":[\"I1\",\"I2\",\"I8\",\"I10\"],\"qualifier\":\"\"},{\"item_id\":\"P2\",\"answer\":\"75\",\"evidence_ids\":[\"I1\"],\"qualifier\":\"\"},{\"item_id\":\"P3\",\"answer\":\"expired TLS certificate on the edge gateway\",\"evidence_ids\":[\"I1\"],\"qualifier\":\"\"},{\"item_id\":\"P4\",\"answer\":\"failed rollback of CHG-441\",\"evidence_ids\":[\"I2\",\"I6\"],\"qualifier\":\"\"},{\"item_id\":\"P5\",\"answer\":\"15,500\",\"evidence_ids\":[\"I8\"],\"qualifier\":\"\"},{\"item_id\":\"P6\",\"answer\":\"no\",\"evidence_ids\":[\"I2\",\"I6\",\"I8\",\"I10\"],\"qualifier\":\"\"},{\"item_id\":\"P7\",\"answer\":\"no\",\"evidence_ids\":[\"I1\",\"I2\",\"I8\",\"I10\"],\"qualifier\":\"\"},{\"item_id\":\"P8\",\"answer\":\"no\",\"evidence_ids\":[\"I9\",\"I10\"],\"qualifier\":\"\"},{\"item_id\":\"P9\",\"answer\":\"rotate certificates automatically; re-enable expiry alerts; add a weekly certificate inventory check\",\"evidence_ids\":[\"I3\"],\"qualifier\":\"\"},{\"item_id\":\"P10\",\"answer\":\"no\",\"evidence_ids\":[\"I8\",\"I10\"],\"qualifier\":\"\"},{\"item_id\":\"P11\",\"answer\":\"45\",\"evidence_ids\":[\"I2\"],\"qualifier\":\"\"},{\"item_id\":\"P12\",\"answer\":\"incompatible schema change in the rollback script\",\"evidence_ids\":[\"I6\"],\"qualifier\":\"\"}],\"summary\":\"Meridian Payments had two distinct March 2026 outages: INC-031 lasted 75 minutes on 2 March and was caused by an expired edge gateway TLS certificate, while INC-032 lasted 45 minutes on 4 March and was caused by a failed rollback of CHG-441. Together they resulted in 15,500 failed customer transactions. The 4 March outage was not caused by the certificate expiry, and the executive email's single-event description is not supported by the incident records. The remediation plan is not approved; the root-cause note recommends automatic certificate rotation, re-enabling expiry alerts, and a weekly certificate inventory check.\"}",
+      "usage": {
+        "prompt_tokens": 1341,
+        "completion_tokens": 3315,
+        "total_tokens": 4656,
+        "prompt_tokens_details": {
+          "cached_tokens": 1280
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 2823
+        },
+        "cost": 0,
+        "opencode": {
+          "billing_source": "go",
+          "list_cost": 0.00200199,
+          "allowance": 0.00120119,
+          "tokens": {
+            "input": 61,
+            "output": 3315,
+            "reasoning": 2823,
+            "cache_read": 1280,
+            "cache_write_5m": 0,
+            "cache_write_1h": 0
+          }
+        }
+      },
+      "cost": 0,
+      "latency_s": 38.693,
+      "attempts": [
+        {
+          "attempt": 1,
+          "latency_s": 38.693,
+          "error": null
+        }
+      ],
+      "provider_error": null,
+      "grade": {
+        "n": 12,
+        "mean_score": 0.95,
+        "accuracy": 1.0,
+        "strict": 0.4167,
+        "extra_penalty": 0.0,
+        "duplicates": [],
+        "extras": [],
+        "missing": [],
+        "rows": [
+          {
+            "id": "P1",
+            "gold": "2",
+            "model": "2",
+            "answer_ok": true,
+            "answer_match": "exact",
+            "evidence_kind": "superset",
+            "evidence_ids": [
+              "I1",
+              "I10",
+              "I2",
+              "I8"
+            ],
+            "gold_evidence_sets": [
+              [
+                "I1",
+                "I2",
+                "I8"
+              ],
+              [
+                "I8"
+              ],
+              [
+                "I1",
+                "I2"
+              ]
+            ],
+            "qualifier_ok": true,
+            "qualifier": "",
+            "score": 0.85,
+            "strict": false,
+            "tags": [],
+            "overreach": false
+          },
+          {
+            "id": "P2",
+            "gold": "75",
+            "model": "75",
+            "answer_ok": true,
+            "answer_match": "exact",
+            "evidence_kind": "exact",
+            "evidence_ids": [
+              "I1"
+            ],
+            "gold_evidence_sets": [
+              [
+                "I1"
+              ]
+            ],
+            "qualifier_ok": true,
+            "qualifier": "",
+            "score": 1.0,
+            "strict": true,
+            "tags": [],
+            "overreach": false
+          },
+          {
+            "id": "P3",
+            "gold": "expired TLS certificate",
+            "model": "expired TLS certificate on the edge gateway",
+            "answer_ok": true,
+            "answer_match": "contained",
+            "evidence_kind": "exact",
+            "evidence_ids": [
+              "I1"
+            ],
+            "gold_evidence_sets": [
+              [
+                "I1",
+                "I3"
+              ],
+              [
+                "I1"
+              ],
+              [
+                "I3"
+              ]
+            ],
+            "qualifier_ok": true,
+            "qualifier": "",
+            "score": 1.0,
+            "strict": false,
+            "tags": [],
+            "overreach": false
+          },
+          {
+            "id": "P4",
+            "gold": "failed rollback",
+            "model": "failed rollback of CHG-441",
+            "answer_ok": true,
+            "answer_match": "contained",
+            "evidence_kind": "exact",
+            "evidence_ids": [
+              "I2",
+              "I6"
+            ],
+            "gold_evidence_sets": [
+              [
+                "I2",
+                "I6"
+              ],
+              [
+                "I2"
+              ],
+              [
+                "I6"
+              ]
+            ],
+            "qualifier_ok": true,
+            "qualifier": "",
+            "score": 1.0,
+            "strict": false,
+            "tags": [],
+            "overreach": false
+          },
+          {
+            "id": "P5",
+            "gold": "15500",
+            "model": "15,500",
+            "answer_ok": true,
+            "answer_match": "exact",
+            "evidence_kind": "exact",
+            "evidence_ids": [
+              "I8"
+            ],
+            "gold_evidence_sets": [
+              [
+                "I8"
+              ]
+            ],
+            "qualifier_ok": true,
+            "qualifier": "",
+            "score": 1.0,
+            "strict": true,
+            "tags": [],
+            "overreach": false
+          },
+          {
+            "id": "P6",
+            "gold": "no",
+            "model": "no",
+            "answer_ok": true,
+            "answer_match": "exact",
+            "evidence_kind": "superset",
+            "evidence_ids": [
+              "I10",
+              "I2",
+              "I6",
+              "I8"
+            ],
+            "gold_evidence_sets": [
+              [
+                "I2",
+                "I6"
+              ],
+              [
+                "I2"
+              ],
+              [
+                "I6"
+              ]
+            ],
+            "qualifier_ok": true,
+            "qualifier": "",
+            "score": 0.85,
+            "strict": false,
+            "tags": [],
+            "overreach": false
+          },
+          {
+            "id": "P7",
+            "gold": "no",
+            "model": "no",
+            "answer_ok": true,
+            "answer_match": "exact",
+            "evidence_kind": "superset",
+            "evidence_ids": [
+              "I1",
+              "I10",
+              "I2",
+              "I8"
+            ],
+            "gold_evidence_sets": [
+              [
+                "I8",
+                "I10"
+              ],
+              [
+                "I8"
+              ],
+              [
+                "I10"
+              ]
+            ],
+            "qualifier_ok": true,
+            "qualifier": "",
+            "score": 0.85,
+            "strict": false,
+            "tags": [],
+            "overreach": false
+          },
+          {
+            "id": "P8",
+            "gold": "no",
+            "model": "no",
+            "answer_ok": true,
+            "answer_match": "exact",
+            "evidence_kind": "exact",
+            "evidence_ids": [
+              "I10",
+              "I9"
+            ],
+            "gold_evidence_sets": [
+              [
+                "I9",
+                "I10"
+              ],
+              [
+                "I9"
+              ],
+              [
+                "I10"
+              ]
+            ],
+            "qualifier_ok": true,
+            "qualifier": "",
+            "score": 1.0,
+            "strict": true,
+            "tags": [],
+            "overreach": false
+          },
+          {
+            "id": "P9",
+            "gold": "rotate certificates and re-enable expiry alerts",
+            "model": "rotate certificates automatically; re-enable expiry alerts; add a weekly certificate inventory check",
+            "answer_ok": true,
+            "answer_match": "contained",
+            "evidence_kind": "exact",
+            "evidence_ids": [
+              "I3"
+            ],
+            "gold_evidence_sets": [
+              [
+                "I3"
+              ]
+            ],
+            "qualifier_ok": true,
+            "qualifier": "",
+            "score": 1.0,
+            "strict": false,
+            "tags": [],
+            "overreach": false
+          },
+          {
+            "id": "P10",
+            "gold": "no",
+            "model": "no",
+            "answer_ok": true,
+            "answer_match": "exact",
+            "evidence_kind": "superset",
+            "evidence_ids": [
+              "I10",
+              "I8"
+            ],
+            "gold_evidence_sets": [
+              [
+                "I2",
+                "I8",
+                "I10"
+              ],
+              [
+                "I2"
+              ],
+              [
+                "I8"
+              ],
+              [
+                "I10"
+              ]
+            ],
+            "qualifier_ok": true,
+            "qualifier": "",
+            "score": 0.85,
+            "strict": false,
+            "tags": [],
+            "overreach": false
+          },
+          {
+            "id": "P11",
+            "gold": "45",
+            "model": "45",
+            "answer_ok": true,
+            "answer_match": "exact",
+            "evidence_kind": "exact",
+            "evidence_ids": [
+              "I2"
+            ],
+            "gold_evidence_sets": [
+              [
+                "I2"
+              ]
+            ],
+            "qualifier_ok": true,
+            "qualifier": "",
+            "score": 1.0,
+            "strict": true,
+            "tags": [],
+            "overreach": false
+          },
+          {
+            "id": "P12",
+            "gold": "incompatible schema change in the rollback script",
+            "model": "incompatible schema change in the rollback script",
+            "answer_ok": true,
+            "answer_match": "exact",
+            "evidence_kind": "exact",
+            "evidence_ids": [
+              "I6"
+            ],
+            "gold_evidence_sets": [
+              [
+                "I6"
+              ]
+            ],
+            "qualifier_ok": true,
+            "qualifier": "",
+            "score": 1.0,
+            "strict": true,
+            "tags": [],
+            "overreach": false
+          }
+        ],
+        "summary": {
+          "text": "Meridian Payments had two distinct March 2026 outages: INC-031 lasted 75 minutes on 2 March and was caused by an expired edge gateway TLS certificate, while INC-032 lasted 45 minutes on 4 March and was caused by a failed rollback of CHG-441. Together they resulted in 15,500 failed customer transactions. The 4 March outage was not caused by the certificate expiry, and the executive email's single-event description is not supported by the incident records. The remediation plan is not approved; the root-cause note recommends automatic certificate rotation, re-enabling expiry alerts, and a weekly certificate inventory check.",
+          "required_ok": true,
+          "forbidden_hits": [],
+          "score": 1.0
+        },
+        "inconsistencies": [],
+        "inconsistency_count": 0,
+        "condition": "production"
+      }
+    },
+    {
+      "run_id": "open_cheap",
+      "timestamp": "2026-11-07T12:38:10+00:00",
+      "model": "opencode-go/deepseek-v4.1-flash",
+      "task": "T2",
+      "condition": "production_open",
+      "trial": 3,
+      "prompt_sha256": "771dda5481405c200a1292bf3a3c50e1060fbe3a3d98c480c05aec3c642afc28",
+      "prompt_chars": 5333,
+      "raw_chars": 1610,
+      "raw": "{\"items\":[{\"item_id\":\"P1\",\"answer\":\"2\",\"evidence_ids\":[\"I1\",\"I2\",\"I10\"],\"qualifier\":\"\"},{\"item_id\":\"P2\",\"answer\":\"75\",\"evidence_ids\":[\"I1\"],\"qualifier\":\"\"},{\"item_id\":\"P3\",\"answer\":\"expired TLS certificate on the edge gateway\",\"evidence_ids\":[\"I1\"],\"qualifier\":\"\"},{\"item_id\":\"P4\",\"answer\":\"failed rollback of configuration change CHG-441\",\"evidence_ids\":[\"I2\",\"I6\"],\"qualifier\":\"\"},{\"item_id\":\"P5\",\"answer\":\"15,500\",\"evidence_ids\":[\"I8\"],\"qualifier\":\"\"},{\"item_id\":\"P6\",\"answer\":\"no\",\"evidence_ids\":[\"I2\",\"I6\"],\"qualifier\":\"\"},{\"item_id\":\"P7\",\"answer\":\"no\",\"evidence_ids\":[\"I10\"],\"qualifier\":\"\"},{\"item_id\":\"P8\",\"answer\":\"no\",\"evidence_ids\":[\"I9\",\"I10\"],\"qualifier\":\"\"},{\"item_id\":\"P9\",\"answer\":\"automatic certificate rotation; re-enable expiry alerts; weekly certificate inventory check\",\"evidence_ids\":[\"I3\"],\"qualifier\":\"\"},{\"item_id\":\"P10\",\"answer\":\"no\",\"evidence_ids\":[\"I8\",\"I10\"],\"qualifier\":\"\"},{\"item_id\":\"P11\",\"answer\":\"45\",\"evidence_ids\":[\"I2\"],\"qualifier\":\"\"},{\"item_id\":\"P12\",\"answer\":\"incompatible schema change in the rollback script\",\"evidence_ids\":[\"I6\"],\"qualifier\":\"\"}],\"summary\":\"In March 2026 there were two distinct outages: INC-031 on 2 March for 75 minutes due to an expired TLS certificate on the edge gateway, and INC-032 on 4 March for 45 minutes due to a failed rollback of CHG-441. Together they caused 15,500 failed customer transactions. The incident records do not support a single-event framing, and the draft remediation plan is not approved. The root-cause note recommends automatic certificate rotation, re-enabling expiry alerts, and a weekly certificate inventory check.\"}",
+      "usage": {
+        "prompt_tokens": 1341,
+        "completion_tokens": 3245,
+        "total_tokens": 4586,
+        "prompt_tokens_details": {
+          "cached_tokens": 1280
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 2790
+        },
+        "cost": 0,
+        "opencode": {
+          "billing_source": "go",
+          "list_cost": 0.00195999,
+          "allowance": 0.00117599,
+          "tokens": {
+            "input": 61,
+            "output": 3245,
+            "reasoning": 2790,
+            "cache_read": 1280,
+            "cache_write_5m": 0,
+            "cache_write_1h": 0
+          }
+        }
+      },
+      "cost": 0,
+      "latency_s": 38.498,
+      "attempts": [
+        {
+          "attempt": 1,
+          "latency_s": 38.498,
+          "error": null
+        }
+      ],
+      "provider_error": null,
+      "grade": {
+        "n": 12,
+        "mean_score": 0.975,
+        "accuracy": 1.0,
+        "strict": 0.5833,
+        "extra_penalty": 0.0,
+        "duplicates": [],
+        "extras": [],
+        "missing": [],
+        "rows": [
+          {
+            "id": "P1",
+            "gold": "2",
+            "model": "2",
+            "answer_ok": true,
+            "answer_match": "exact",
+            "evidence_kind": "superset",
+            "evidence_ids": [
+              "I1",
+              "I10",
+              "I2"
+            ],
+            "gold_evidence_sets": [
+              [
+                "I1",
+                "I2",
+                "I8"
+              ],
+              [
+                "I8"
+              ],
+              [
+                "I1",
+                "I2"
+              ]
+            ],
+            "qualifier_ok": true,
+            "qualifier": "",
+            "score": 0.85,
+            "strict": false,
+            "tags": [],
+            "overreach": false
+          },
+          {
+            "id": "P2",
+            "gold": "75",
+            "model": "75",
+            "answer_ok": true,
+            "answer_match": "exact",
+            "evidence_kind": "exact",
+            "evidence_ids": [
+              "I1"
+            ],
+            "gold_evidence_sets": [
+              [
+                "I1"
+              ]
+            ],
+            "qualifier_ok": true,
+            "qualifier": "",
+            "score": 1.0,
+            "strict": true,
+            "tags": [],
+            "overreach": false
+          },
+          {
+            "id": "P3",
+            "gold": "expired TLS certificate",
+            "model": "expired TLS certificate on the edge gateway",
+            "answer_ok": true,
+            "answer_match": "contained",
+            "evidence_kind": "exact",
+            "evidence_ids": [
+              "I1"
+            ],
+            "gold_evidence_sets": [
+              [
+                "I1",
+                "I3"
+              ],
+              [
+                "I1"
+              ],
+              [
+                "I3"
+              ]
+            ],
+            "qualifier_ok": true,
+            "qualifier": "",
+            "score": 1.0,
+            "strict": false,
+            "tags": [],
+            "overreach": false
+          },
+          {
+            "id": "P4",
+            "gold": "failed rollback",
+            "model": "failed rollback of configuration change CHG-441",
+            "answer_ok": true,
+            "answer_match": "contained",
+            "evidence_kind": "exact",
+            "evidence_ids": [
+              "I2",
+              "I6"
+            ],
+            "gold_evidence_sets": [
+              [
+                "I2",
+                "I6"
+              ],
+              [
+                "I2"
+              ],
+              [
+                "I6"
+              ]
+            ],
+            "qualifier_ok": true,
+            "qualifier": "",
+            "score": 1.0,
+            "strict": false,
+            "tags": [],
+            "overreach": false
+          },
+          {
+            "id": "P5",
+            "gold": "15500",
+            "model": "15,500",
+            "answer_ok": true,
+            "answer_match": "exact",
+            "evidence_kind": "exact",
+            "evidence_ids": [
+              "I8"
+            ],
+            "gold_evidence_sets": [
+              [
+                "I8"
+              ]
+            ],
+            "qualifier_ok": true,
+            "qualifier": "",
+            "score": 1.0,
+            "strict": true,
+            "tags": [],
+            "overreach": false
+          },
+          {
+            "id": "P6",
+            "gold": "no",
+            "model": "no",
+            "answer_ok": true,
+            "answer_match": "exact",
+            "evidence_kind": "exact",
+            "evidence_ids": [
+              "I2",
+              "I6"
+            ],
+            "gold_evidence_sets": [
+              [
+                "I2",
+                "I6"
+              ],
+              [
+                "I2"
+              ],
+              [
+                "I6"
+              ]
+            ],
+            "qualifier_ok": true,
+            "qualifier": "",
+            "score": 1.0,
+            "strict": true,
+            "tags": [],
+            "overreach": false
+          },
+          {
+            "id": "P7",
+            "gold": "no",
+            "model": "no",
+            "answer_ok": true,
+            "answer_match": "exact",
+            "evidence_kind": "exact",
+            "evidence_ids": [
+              "I10"
+            ],
+            "gold_evidence_sets": [
+              [
+                "I8",
+                "I10"
+              ],
+              [
+                "I8"
+              ],
+              [
+                "I10"
+              ]
+            ],
+            "qualifier_ok": true,
+            "qualifier": "",
+            "score": 1.0,
+            "strict": true,
+            "tags": [],
+            "overreach": false
+          },
+          {
+            "id": "P8",
+            "gold": "no",
+            "model": "no",
+            "answer_ok": true,
+            "answer_match": "exact",
+            "evidence_kind": "exact",
+            "evidence_ids": [
+              "I10",
+              "I9"
+            ],
+            "gold_evidence_sets": [
+              [
+                "I9",
+                "I10"
+              ],
+              [
+                "I9"
+              ],
+              [
+                "I10"
+              ]
+            ],
+            "qualifier_ok": true,
+            "qualifier": "",
+            "score": 1.0,
+            "strict": true,
+            "tags": [],
+            "overreach": false
+          },
+          {
+            "id": "P9",
+            "gold": "rotate certificates and re-enable expiry alerts",
+            "model": "automatic certificate rotation; re-enable expiry alerts; weekly certificate inventory check",
+            "answer_ok": true,
+            "answer_match": "contained",
+            "evidence_kind": "exact",
+            "evidence_ids": [
+              "I3"
+            ],
+            "gold_evidence_sets": [
+              [
+                "I3"
+              ]
+            ],
+            "qualifier_ok": true,
+            "qualifier": "",
+            "score": 1.0,
+            "strict": false,
+            "tags": [],
+            "overreach": false
+          },
+          {
+            "id": "P10",
+            "gold": "no",
+            "model": "no",
+            "answer_ok": true,
+            "answer_match": "exact",
+            "evidence_kind": "superset",
+            "evidence_ids": [
+              "I10",
+              "I8"
+            ],
+            "gold_evidence_sets": [
+              [
+                "I2",
+                "I8",
+                "I10"
+              ],
+              [
+                "I2"
+              ],
+              [
+                "I8"
+              ],
+              [
+                "I10"
+              ]
+            ],
+            "qualifier_ok": true,
+            "qualifier": "",
+            "score": 0.85,
+            "strict": false,
+            "tags": [],
+            "overreach": false
+          },
+          {
+            "id": "P11",
+            "gold": "45",
+            "model": "45",
+            "answer_ok": true,
+            "answer_match": "exact",
+            "evidence_kind": "exact",
+            "evidence_ids": [
+              "I2"
+            ],
+            "gold_evidence_sets": [
+              [
+                "I2"
+              ]
+            ],
+            "qualifier_ok": true,
+            "qualifier": "",
+            "score": 1.0,
+            "strict": true,
+            "tags": [],
+            "overreach": false
+          },
+          {
+            "id": "P12",
+            "gold": "incompatible schema change in the rollback script",
+            "model": "incompatible schema change in the rollback script",
+            "answer_ok": true,
+            "answer_match": "exact",
+            "evidence_kind": "exact",
+            "evidence_ids": [
+              "I6"
+            ],
+            "gold_evidence_sets": [
+              [
+                "I6"
+              ]
+            ],
+            "qualifier_ok": true,
+            "qualifier": "",
+            "score": 1.0,
+            "strict": true,
+            "tags": [],
+            "overreach": false
+          }
+        ],
+        "summary": {
+          "text": "In March 2026 there were two distinct outages: INC-031 on 2 March for 75 minutes due to an expired TLS certificate on the edge gateway, and INC-032 on 4 March for 45 minutes due to a failed rollback of CHG-441. Together they caused 15,500 failed customer transactions. The incident records do not support a single-event framing, and the draft remediation plan is not approved. The root-cause note recommends automatic certificate rotation, re-enabling expiry alerts, and a weekly certificate inventory check.",
+          "required_ok": true,
+          "forbidden_hits": [],
+          "score": 1.0
+        },
+        "inconsistencies": [],
+        "inconsistency_count": 0,
+        "condition": "production"
+      }
+    },
+    {
+      "run_id": "open_cheap",
+      "timestamp": "2026-11-07T12:38:14+00:00",
+      "model": "opencode-go/qwen3.8-flash",
+      "task": "T1",
+      "condition": "production_open",
+      "trial": 2,
+      "prompt_sha256": "e8f1a66f6ffd019ec8b39c0ddc250c417a42cfc4fdd389062c9818787ea2733e",
+      "prompt_chars": 5736,
+      "raw_chars": 1988,
+      "raw": "{\n  \"items\": [\n    {\n      \"item_id\": \"P1\",\n      \"answer\": \"18 months\",\n      \"evidence_ids\": [\"D3\", \"D9\"],\n      \"qualifier\": \"\"\n    },\n    {\n      \"item_id\": \"P2\",\n      \"answer\": \"12 months\",\n      \"evidence_ids\": [\"D2\", \"D3\"],\n      \"qualifier\": \"\"\n    },\n    {\n      \"item_id\": \"P3\",\n      \"answer\": \"12 months\",\n      \"evidence_ids\": [\"D2\", \"D3\"],\n      \"qualifier\": \"\"\n    },\n    {\n      \"item_id\": \"P4\",\n      \"answer\": \"24 months\",\n      \"evidence_ids\": [\"D1\"],\n      \"qualifier\": \"\"\n    },\n    {\n      \"item_id\": \"P5\",\n      \"answer\": \"no\",\n      \"evidence_ids\": [\"D4\", \"D11\"],\n      \"qualifier\": \"\"\n    },\n    {\n      \"item_id\": \"P6\",\n      \"answer\": \"35 days\",\n      \"evidence_ids\": [\"D8\"],\n      \"qualifier\": \"\"\n    },\n    {\n      \"item_id\": \"P7\",\n      \"answer\": \"no\",\n      \"evidence_ids\": [\"D1\", \"D8\"],\n      \"qualifier\": \"\"\n    },\n    {\n      \"item_id\": \"P8\",\n      \"answer\": \"no\",\n      \"evidence_ids\": [\"D3\", \"D6\", \"D7\"],\n      \"qualifier\": \"for accounts opened on or after 1 January 2026\"\n    },\n    {\n      \"item_id\": \"P9\",\n      \"answer\": \"Amendment A\",\n      \"evidence_ids\": [\"D3\", \"D6\", \"D9\"],\n      \"qualifier\": \"\"\n    },\n    {\n      \"item_id\": \"P10\",\n      \"answer\": \"yes\",\n      \"evidence_ids\": [\"D3\", \"D10\"],\n      \"qualifier\": \"\"\n    },\n    {\n      \"item_id\": \"P11\",\n      \"answer\": \"12 months\",\n      \"evidence_ids\": [\"D5\", \"D10\"],\n      \"qualifier\": \"\"\n    },\n    {\n      \"item_id\": \"P12\",\n      \"answer\": \"no\",\n      \"evidence_ids\": [\"D5\", \"D6\", \"D10\"],\n      \"qualifier\": \"\"\n    }\n  ],\n  \"summary\": \"Signed Amendment A controls EU retention and sets 18 months for accounts opened on or after 1 January 2026, effective 1 March 2026, while earlier accounts remain at 12 months. Standard retention is 24 months, and backups are retained for 35 days outside the Enterprise Data Retention Policy. The available public trust page snapshot and system-of-record export still show 12 months for EU accounts, and Draft Amendment B is unsigned and has no effect.\"\n}",
+      "usage": {
+        "prompt_tokens": 1555,
+        "completion_tokens": 13094,
+        "total_tokens": 14649,
+        "prompt_tokens_details": {
+          "cached_tokens": 1024
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 12377
+        },
+        "cost": 0,
+        "opencode": {
+          "billing_source": "go",
+          "list_cost": 0.00625021,
+          "allowance": 0.01250043,
+          "tokens": {
+            "input": 531,
+            "output": 13094,
+            "reasoning": 12377,
+            "cache_read": 1024,
+            "cache_write_5m": 0,
+            "cache_write_1h": 0
+          }
+        }
+      },
+      "cost": 0,
+      "latency_s": 96.024,
+      "attempts": [
+        {
+          "attempt": 1,
+          "latency_s": 96.024,
+          "error": null
+        }
+      ],
+      "provider_error": null,
+      "grade": {
+        "n": 12,
+        "mean_score": 0.9375,
+        "accuracy": 1.0,
+        "strict": 0.5833,
+        "extra_penalty": 0.0,
+        "duplicates": [],
+        "extras": [],
+        "missing": [],
+        "rows": [
+          {
+            "id": "P1",
+            "gold": "18 months",
+            "model": "18 months",
+            "answer_ok": true,
+            "answer_match": "exact",
+            "evidence_kind": "superset",
+            "evidence_ids": [
+              "D3",
+              "D9"
+            ],
+            "gold_evidence_sets": [
+              [
+                "D3"
+              ]
+            ],
+            "qualifier_ok": true,
+            "qualifier": "",
+            "score": 0.85,
+            "strict": false,
+            "tags": [],
+            "overreach": false
+          },
+          {
+            "id": "P2",
+            "gold": "12 months",
+            "model": "12 months",
+            "answer_ok": true,
+            "answer_match": "exact",
+            "evidence_kind": "superset",
+            "evidence_ids": [
+              "D2",
+              "D3"
+            ],
+            "gold_evidence_sets": [
+              [
+                "D2"
+              ],
+              [
+                "D3"
+              ]
+            ],
+            "qualifier_ok": true,
+            "qualifier": "",
+            "score": 0.85,
+            "strict": false,
+            "tags": [],
+            "overreach": false
+          },
+          {
+            "id": "P3",
+            "gold": "12 months",
+            "model": "12 months",
+            "answer_ok": true,
+            "answer_match": "exact",
+            "evidence_kind": "exact",
+            "evidence_ids": [
+              "D2",
+              "D3"
+            ],
+            "gold_evidence_sets": [
+              [
+                "D2",
+                "D3"
+              ],
+              [
+                "D2"
+              ]
+            ],
+            "qualifier_ok": true,
+            "qualifier": "",
+            "score": 1.0,
+            "strict": true,
+            "tags": [],
+            "overreach": false
+          },
+          {
+            "id": "P4",
+            "gold": "24 months",
+            "model": "24 months",
+            "answer_ok": true,
+            "answer_match": "exact",
+            "evidence_kind": "exact",
+            "evidence_ids": [
+              "D1"
+            ],
+            "gold_evidence_sets": [
+              [
+                "D1"
+              ]
+            ],
+            "qualifier_ok": true,
+            "qualifier": "",
+            "score": 1.0,
+            "strict": true,
+            "tags": [],
+            "overreach": false
+          },
+          {
+            "id": "P5",
+            "gold": "no",
+            "model": "no",
+            "answer_ok": true,
+            "answer_match": "exact",
+            "evidence_kind": "exact",
+            "evidence_ids": [
+              "D11",
+              "D4"
+            ],
+            "gold_evidence_sets": [
+              [
+                "D4",
+                "D11"
+              ],
+              [
+                "D4"
+              ],
+              [
+                "D11"
+              ]
+            ],
+            "qualifier_ok": true,
+            "qualifier": "",
+            "score": 1.0,
+            "strict": true,
+            "tags": [],
+            "overreach": false
+          },
+          {
+            "id": "P6",
+            "gold": "35 days",
+            "model": "35 days",
+            "answer_ok": true,
+            "answer_match": "exact",
+            "evidence_kind": "exact",
+            "evidence_ids": [
+              "D8"
+            ],
+            "gold_evidence_sets": [
+              [
+                "D8"
+              ]
+            ],
+            "qualifier_ok": true,
+            "qualifier": "",
+            "score": 1.0,
+            "strict": true,
+            "tags": [],
+            "overreach": false
+          },
+          {
+            "id": "P7",
+            "gold": "no",
+            "model": "no",
+            "answer_ok": true,
+            "answer_match": "exact",
+            "evidence_kind": "exact",
+            "evidence_ids": [
+              "D1",
+              "D8"
+            ],
+            "gold_evidence_sets": [
+              [
+                "D1",
+                "D8"
+              ],
+              [
+                "D1"
+              ],
+              [
+                "D8"
+              ]
+            ],
+            "qualifier_ok": true,
+            "qualifier": "",
+            "score": 1.0,
+            "strict": true,
+            "tags": [],
+            "overreach": false
+          },
+          {
+            "id": "P8",
+            "gold": "no",
+            "model": "no",
+            "answer_ok": true,
+            "answer_match": "exact",
+            "evidence_kind": "superset",
+            "evidence_ids": [
+              "D3",
+              "D6",
+              "D7"
+            ],
+            "gold_evidence_sets": [
+              [
+                "D6",
+                "D7"
+              ],
+              [
+                "D6"
+              ],
+              [
+                "D7"
+              ]
+            ],
+            "qualifier_ok": true,
+            "qualifier": "for accounts opened on or after 1 January 2026",
+            "score": 0.85,
+            "strict": false,
+            "tags": [],
+            "overreach": false
+          },
+          {
+            "id": "P9",
+            "gold": "Amendment A",
+            "model": "Amendment A",
+            "answer_ok": true,
+            "answer_match": "exact",
+            "evidence_kind": "exact",
+            "evidence_ids": [
+              "D3",
+              "D6",
+              "D9"
+            ],
+            "gold_evidence_sets": [
+              [
+                "D3",
+                "D6",
+                "D9"
+              ],
+              [
+                "D3"
+              ],
+              [
+                "D6"
+              ],
+              [
+                "D9"
+              ]
+            ],
+            "qualifier_ok": true,
+            "qualifier": "",
+            "score": 1.0,
+            "strict": true,
+            "tags": [],
+            "overreach": false
+          },
+          {
+            "id": "P10",
+            "gold": "yes",
+            "model": "yes",
+            "answer_ok": true,
+            "answer_match": "exact",
+            "evidence_kind": "superset",
+            "evidence_ids": [
+              "D10",
+              "D3"
+            ],
+            "gold_evidence_sets": [
+              [
+                "D3"
+              ]
+            ],
+            "qualifier_ok": true,
+            "qualifier": "",
+            "score": 0.85,
+            "strict": false,
+            "tags": [],
+            "overreach": false
+          },
+          {
+            "id": "P11",
+            "gold": "12 months",
+            "model": "12 months",
+            "answer_ok": true,
+            "answer_match": "exact",
+            "evidence_kind": "superset",
+            "evidence_ids": [
+              "D10",
+              "D5"
+            ],
+            "gold_evidence_sets": [
+              [
+                "D5"
+              ]
+            ],
+            "qualifier_ok": true,
+            "qualifier": "",
+            "score": 0.85,
+            "strict": false,
+            "tags": [],
+            "overreach": false
+          },
+          {
+            "id": "P12",
+            "gold": "no",
+            "model": "no",
+            "answer_ok": true,
+            "answer_match": "exact",
+            "evidence_kind": "exact",
+            "evidence_ids": [
+              "D10",
+              "D5",
+              "D6"
+            ],
+            "gold_evidence_sets": [
+              [
+                "D5",
+                "D6",
+                "D10"
+              ],
+              [
+                "D5"
+              ],
+              [
+                "D6"
+              ],
+              [
+                "D10"
+              ]
+            ],
+            "qualifier_ok": true,
+            "qualifier": "",
+            "score": 1.0,
+            "strict": true,
+            "tags": [],
+            "overreach": false
+          }
+        ],
+        "summary": {
+          "text": "Signed Amendment A controls EU retention and sets 18 months for accounts opened on or after 1 January 2026, effective 1 March 2026, while earlier accounts remain at 12 months. Standard retention is 24 months, and backups are retained for 35 days outside the Enterprise Data Retention Policy. The available public trust page snapshot and system-of-record export still show 12 months for EU accounts, and Draft Amendment B is unsigned and has no effect.",
+          "required_ok": true,
+          "forbidden_hits": [],
+          "score": 1.0
+        },
+        "inconsistencies": [],
+        "inconsistency_count": 0,
+        "condition": "production"
+      }
+    },
+    {
+      "run_id": "open_cheap",
+      "timestamp": "2026-11-07T12:38:34+00:00",
+      "model": "opencode-go/qwen3.8-flash",
+      "task": "T2",
+      "condition": "production_open",
+      "trial": 2,
+      "prompt_sha256": "771dda5481405c200a1292bf3a3c50e1060fbe3a3d98c480c05aec3c642afc28",
+      "prompt_chars": 5333,
+      "raw_chars": 2111,
+      "raw": "{\n  \"items\": [\n    {\n      \"item_id\": \"P1\",\n      \"answer\": \"2\",\n      \"evidence_ids\": [\"I1\", \"I2\", \"I8\", \"I10\"],\n      \"qualifier\": \"\"\n    },\n    {\n      \"item_id\": \"P2\",\n      \"answer\": \"75\",\n      \"evidence_ids\": [\"I1\"],\n      \"qualifier\": \"\"\n    },\n    {\n      \"item_id\": \"P3\",\n      \"answer\": \"expired TLS certificate on the edge gateway\",\n      \"evidence_ids\": [\"I1\"],\n      \"qualifier\": \"\"\n    },\n    {\n      \"item_id\": \"P4\",\n      \"answer\": \"failed rollback of configuration change CHG-441\",\n      \"evidence_ids\": [\"I2\"],\n      \"qualifier\": \"\"\n    },\n    {\n      \"item_id\": \"P5\",\n      \"answer\": \"15500\",\n      \"evidence_ids\": [\"I8\"],\n      \"qualifier\": \"\"\n    },\n    {\n      \"item_id\": \"P6\",\n      \"answer\": \"no\",\n      \"evidence_ids\": [\"I2\", \"I6\", \"I10\"],\n      \"qualifier\": \"\"\n    },\n    {\n      \"item_id\": \"P7\",\n      \"answer\": \"no\",\n      \"evidence_ids\": [\"I1\", \"I2\", \"I8\", \"I10\"],\n      \"qualifier\": \"\"\n    },\n    {\n      \"item_id\": \"P8\",\n      \"answer\": \"no\",\n      \"evidence_ids\": [\"I9\", \"I10\"],\n      \"qualifier\": \"\"\n    },\n    {\n      \"item_id\": \"P9\",\n      \"answer\": \"rotate certificates automatically, re-enable expiry alerts, and add a weekly certificate inventory check\",\n      \"evidence_ids\": [\"I3\"],\n      \"qualifier\": \"\"\n    },\n    {\n      \"item_id\": \"P10\",\n      \"answer\": \"no\",\n      \"evidence_ids\": [\"I1\", \"I2\", \"I8\", \"I10\"],\n      \"qualifier\": \"\"\n    },\n    {\n      \"item_id\": \"P11\",\n      \"answer\": \"45\",\n      \"evidence_ids\": [\"I2\"],\n      \"qualifier\": \"\"\n    },\n    {\n      \"item_id\": \"P12\",\n      \"answer\": \"incompatible schema change in the rollback script\",\n      \"evidence_ids\": [\"I6\"],\n      \"qualifier\": \"\"\n    }\n  ],\n  \"summary\": \"The incident records show two distinct March 2026 outages: INC-031 on 2 March lasted 75 minutes and was caused by an expired TLS certificate on the edge gateway, and INC-032 on 4 March lasted 45 minutes and was caused by a failed rollback of configuration change CHG-441. Total failed transactions were 15,500 across the two incidents. The single-event certificate framing is not supported, and the draft remediation plan is not approved.\"\n}",
+      "usage": {
+        "prompt_tokens": 1533,
+        "completion_tokens": 4892,
+        "total_tokens": 6425,
+        "prompt_tokens_details": {
+          "cached_tokens": 1024
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 4158
+        },
+        "cost": 0,
+        "opencode": {
+          "billing_source": "go",
+          "list_cost": 0.00239197,
+          "allowance": 0.00478395,
+          "tokens": {
+            "input": 509,
+            "output": 4892,
+            "reasoning": 4158,
+            "cache_read": 1024,
+            "cache_write_5m": 0,
+            "cache_write_1h": 0
+          }
+        }
+      },
+      "cost": 0,
+      "latency_s": 36.104,
+      "attempts": [
+        {
+          "attempt": 1,
+          "latency_s": 36.104,
+          "error": null
+        }
+      ],
+      "provider_error": null,
+      "grade": {
+        "n": 12,
+        "mean_score": 0.95,
+        "accuracy": 1.0,
+        "strict": 0.4167,
+        "extra_penalty": 0.0,
+        "duplicates": [],
+        "extras": [],
+        "missing": [],
+        "rows": [
+          {
+            "id": "P1",
+            "gold": "2",
+            "model": "2",
+            "answer_ok": true,
+            "answer_match": "exact",
+            "evidence_kind": "superset",
+            "evidence_ids": [
+              "I1",
+              "I10",
+              "I2",
+              "I8"
+            ],
+            "gold_evidence_sets": [
+              [
+                "I1",
+                "I2",
+                "I8"
+              ],
+              [
+                "I8"
+              ],
+              [
+                "I1",
+                "I2"
+              ]
+            ],
+            "qualifier_ok": true,
+            "qualifier": "",
+            "score": 0.85,
+            "strict": false,
+            "tags": [],
+            "overreach": false
+          },
+          {
+            "id": "P2",
+            "gold": "75",
+            "model": "75",
+            "answer_ok": true,
+            "answer_match": "exact",
+            "evidence_kind": "exact",
+            "evidence_ids": [
+              "I1"
+            ],
+            "gold_evidence_sets": [
+              [
+                "I1"
+              ]
+            ],
+            "qualifier_ok": true,
+            "qualifier": "",
+            "score": 1.0,
+            "strict": true,
+            "tags": [],
+            "overreach": false
+          },
+          {
+            "id": "P3",
+            "gold": "expired TLS certificate",
+            "model": "expired TLS certificate on the edge gateway",
+            "answer_ok": true,
+            "answer_match": "contained",
+            "evidence_kind": "exact",
+            "evidence_ids": [
+              "I1"
+            ],
+            "gold_evidence_sets": [
+              [
+                "I1",
+                "I3"
+              ],
+              [
+                "I1"
+              ],
+              [
+                "I3"
+              ]
+            ],
+            "qualifier_ok": true,
+            "qualifier": "",
+            "score": 1.0,
+            "strict": false,
+            "tags": [],
+            "overreach": false
+          },
+          {
+            "id": "P4",
+            "gold": "failed rollback",
+            "model": "failed rollback of configuration change CHG-441",
+            "answer_ok": true,
+            "answer_match": "contained",
+            "evidence_kind": "exact",
+            "evidence_ids": [
+              "I2"
+            ],
+            "gold_evidence_sets": [
+              [
+                "I2",
+                "I6"
+              ],
+              [
+                "I2"
+              ],
+              [
+                "I6"
+              ]
+            ],
+            "qualifier_ok": true,
+            "qualifier": "",
+            "score": 1.0,
+            "strict": false,
+            "tags": [],
+            "overreach": false
+          },
+          {
+            "id": "P5",
+            "gold": "15500",
+            "model": "15500",
+            "answer_ok": true,
+            "answer_match": "exact",
+            "evidence_kind": "exact",
+            "evidence_ids": [
+              "I8"
+            ],
+            "gold_evidence_sets": [
+              [
+                "I8"
+              ]
+            ],
+            "qualifier_ok": true,
+            "qualifier": "",
+            "score": 1.0,
+            "strict": true,
+            "tags": [],
+            "overreach": false
+          },
+          {
+            "id": "P6",
+            "gold": "no",
+            "model": "no",
+            "answer_ok": true,
+            "answer_match": "exact",
+            "evidence_kind": "superset",
+            "evidence_ids": [
+              "I10",
+              "I2",
+              "I6"
+            ],
+            "gold_evidence_sets": [
+              [
+                "I2",
+                "I6"
+              ],
+              [
+                "I2"
+              ],
+              [
+                "I6"
+              ]
+            ],
+            "qualifier_ok": true,
+            "qualifier": "",
+            "score": 0.85,
+            "strict": false,
+            "tags": [],
+            "overreach": false
+          },
+          {
+            "id": "P7",
+            "gold": "no",
+            "model": "no",
+            "answer_ok": true,
+            "answer_match": "exact",
+            "evidence_kind": "superset",
+            "evidence_ids": [
+              "I1",
+              "I10",
+              "I2",
+              "I8"
+            ],
+            "gold_evidence_sets": [
+              [
+                "I8",
+                "I10"
+              ],
+              [
+                "I8"
+              ],
+              [
+                "I10"
+              ]
+            ],
+            "qualifier_ok": true,
+            "qualifier": "",
+            "score": 0.85,
+            "strict": false,
+            "tags": [],
+            "overreach": false
+          },
+          {
+            "id": "P8",
+            "gold": "no",
+            "model": "no",
+            "answer_ok": true,
+            "answer_match": "exact",
+            "evidence_kind": "exact",
+            "evidence_ids": [
+              "I10",
+              "I9"
+            ],
+            "gold_evidence_sets": [
+              [
+                "I9",
+                "I10"
+              ],
+              [
+                "I9"
+              ],
+              [
+                "I10"
+              ]
+            ],
+            "qualifier_ok": true,
+            "qualifier": "",
+            "score": 1.0,
+            "strict": true,
+            "tags": [],
+            "overreach": false
+          },
+          {
+            "id": "P9",
+            "gold": "rotate certificates and re-enable expiry alerts",
+            "model": "rotate certificates automatically, re-enable expiry alerts, and add a weekly certificate inventory check",
+            "answer_ok": true,
+            "answer_match": "contained",
+            "evidence_kind": "exact",
+            "evidence_ids": [
+              "I3"
+            ],
+            "gold_evidence_sets": [
+              [
+                "I3"
+              ]
+            ],
+            "qualifier_ok": true,
+            "qualifier": "",
+            "score": 1.0,
+            "strict": false,
+            "tags": [],
+            "overreach": false
+          },
+          {
+            "id": "P10",
+            "gold": "no",
+            "model": "no",
+            "answer_ok": true,
+            "answer_match": "exact",
+            "evidence_kind": "superset",
+            "evidence_ids": [
+              "I1",
+              "I10",
+              "I2",
+              "I8"
+            ],
+            "gold_evidence_sets": [
+              [
+                "I2",
+                "I8",
+                "I10"
+              ],
+              [
+                "I2"
+              ],
+              [
+                "I8"
+              ],
+              [
+                "I10"
+              ]
+            ],
+            "qualifier_ok": true,
+            "qualifier": "",
+            "score": 0.85,
+            "strict": false,
+            "tags": [],
+            "overreach": false
+          },
+          {
+            "id": "P11",
+            "gold": "45",
+            "model": "45",
+            "answer_ok": true,
+            "answer_match": "exact",
+            "evidence_kind": "exact",
+            "evidence_ids": [
+              "I2"
+            ],
+            "gold_evidence_sets": [
+              [
+                "I2"
+              ]
+            ],
+            "qualifier_ok": true,
+            "qualifier": "",
+            "score": 1.0,
+            "strict": true,
+            "tags": [],
+            "overreach": false
+          },
+          {
+            "id": "P12",
+            "gold": "incompatible schema change in the rollback script",
+            "model": "incompatible schema change in the rollback script",
+            "answer_ok": true,
+            "answer_match": "exact",
+            "evidence_kind": "exact",
+            "evidence_ids": [
+              "I6"
+            ],
+            "gold_evidence_sets": [
+              [
+                "I6"
+              ]
+            ],
+            "qualifier_ok": true,
+            "qualifier": "",
+            "score": 1.0,
+            "strict": true,
+            "tags": [],
+            "overreach": false
+          }
+        ],
+        "summary": {
+          "text": "The incident records show two distinct March 2026 outages: INC-031 on 2 March lasted 75 minutes and was caused by an expired TLS certificate on the edge gateway, and INC-032 on 4 March lasted 45 minutes and was caused by a failed rollback of configuration change CHG-441. Total failed transactions were 15,500 across the two incidents. The single-event certificate framing is not supported, and the draft remediation plan is not approved.",
+          "required_ok": true,
+          "forbidden_hits": [],
+          "score": 1.0
+        },
+        "inconsistencies": [],
+        "inconsistency_count": 0,
+        "condition": "production"
+      }
+    },
+    {
+      "run_id": "open_cheap",
+      "timestamp": "2026-11-07T12:38:40+00:00",
+      "model": "opencode-go/qwen3.8-flash",
+      "task": "T2",
+      "condition": "production_open",
+      "trial": 3,
+      "prompt_sha256": "771dda5481405c200a1292bf3a3c50e1060fbe3a3d98c480c05aec3c642afc28",
+      "prompt_chars": 5333,
+      "raw_chars": 2360,
+      "raw": "{\n  \"items\": [\n    {\n      \"item_id\": \"P1\",\n      \"answer\": \"2\",\n      \"evidence_ids\": [\n        \"I1\",\n        \"I2\",\n        \"I8\",\n        \"I10\"\n      ],\n      \"qualifier\": \"\"\n    },\n    {\n      \"item_id\": \"P2\",\n      \"answer\": \"75\",\n      \"evidence_ids\": [\n        \"I1\"\n      ],\n      \"qualifier\": \"\"\n    },\n    {\n      \"item_id\": \"P3\",\n      \"answer\": \"expired TLS certificate on the edge gateway\",\n      \"evidence_ids\": [\n        \"I1\",\n        \"I3\"\n      ],\n      \"qualifier\": \"\"\n    },\n    {\n      \"item_id\": \"P4\",\n      \"answer\": \"failed rollback of configuration change CHG-441\",\n      \"evidence_ids\": [\n        \"I2\",\n        \"I6\"\n      ],\n      \"qualifier\": \"\"\n    },\n    {\n      \"item_id\": \"P5\",\n      \"answer\": \"15,500\",\n      \"evidence_ids\": [\n        \"I8\"\n      ],\n      \"qualifier\": \"\"\n    },\n    {\n      \"item_id\": \"P6\",\n      \"answer\": \"no\",\n      \"evidence_ids\": [\n        \"I2\",\n        \"I6\",\n        \"I8\",\n        \"I10\"\n      ],\n      \"qualifier\": \"\"\n    },\n    {\n      \"item_id\": \"P7\",\n      \"answer\": \"no\",\n      \"evidence_ids\": [\n        \"I8\",\n        \"I10\"\n      ],\n      \"qualifier\": \"\"\n    },\n    {\n      \"item_id\": \"P8\",\n      \"answer\": \"no\",\n      \"evidence_ids\": [\n        \"I9\",\n        \"I10\"\n      ],\n      \"qualifier\": \"\"\n    },\n    {\n      \"item_id\": \"P9\",\n      \"answer\": \"rotate certificates automatically, re-enable expiry alerts, and add a weekly certificate inventory check\",\n      \"evidence_ids\": [\n        \"I3\"\n      ],\n      \"qualifier\": \"\"\n    },\n    {\n      \"item_id\": \"P10\",\n      \"answer\": \"no\",\n      \"evidence_ids\": [\n        \"I2\",\n        \"I8\",\n        \"I10\"\n      ],\n      \"qualifier\": \"\"\n    },\n    {\n      \"item_id\": \"P11\",\n      \"answer\": \"45\",\n      \"evidence_ids\": [\n        \"I2\"\n      ],\n      \"qualifier\": \"\"\n    },\n    {\n      \"item_id\": \"P12\",\n      \"answer\": \"incompatible schema change in the rollback script\",\n      \"evidence_ids\": [\n        \"I6\"\n      ],\n      \"qualifier\": \"\"\n    }\n  ],\n  \"summary\": \"The incident records show two distinct March 2026 outages: INC-031 on 2 March, caused by an expired TLS certificate on the edge gateway, and INC-032 on 4 March, caused by a failed rollback of configuration change CHG-441. Together they produced 15,500 failed customer transactions. The single certificate-event framing is not supported by the records. The draft remediation plan remains unapproved.\"\n}",
+      "usage": {
+        "prompt_tokens": 1533,
+        "completion_tokens": 4265,
+        "total_tokens": 5798,
+        "prompt_tokens_details": {
+          "cached_tokens": 1024
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 3446
+        },
+        "cost": 0,
+        "opencode": {
+          "billing_source": "go",
+          "list_cost": 0.00209728,
+          "allowance": 0.00419457,
+          "tokens": {
+            "input": 509,
+            "output": 4265,
+            "reasoning": 3446,
+            "cache_read": 1024,
+            "cache_write_5m": 0,
+            "cache_write_1h": 0
+          }
+        }
+      },
+      "cost": 0,
+      "latency_s": 32.262,
+      "attempts": [
+        {
+          "attempt": 1,
+          "latency_s": 32.262,
+          "error": null
+        }
+      ],
+      "provider_error": null,
+      "grade": {
+        "n": 12,
+        "mean_score": 0.975,
+        "accuracy": 1.0,
+        "strict": 0.5833,
+        "extra_penalty": 0.0,
+        "duplicates": [],
+        "extras": [],
+        "missing": [],
+        "rows": [
+          {
+            "id": "P1",
+            "gold": "2",
+            "model": "2",
+            "answer_ok": true,
+            "answer_match": "exact",
+            "evidence_kind": "superset",
+            "evidence_ids": [
+              "I1",
+              "I10",
+              "I2",
+              "I8"
+            ],
+            "gold_evidence_sets": [
+              [
+                "I1",
+                "I2",
+                "I8"
+              ],
+              [
+                "I8"
+              ],
+              [
+                "I1",
+                "I2"
+              ]
+            ],
+            "qualifier_ok": true,
+            "qualifier": "",
+            "score": 0.85,
+            "strict": false,
+            "tags": [],
+            "overreach": false
+          },
+          {
+            "id": "P2",
+            "gold": "75",
+            "model": "75",
+            "answer_ok": true,
+            "answer_match": "exact",
+            "evidence_kind": "exact",
+            "evidence_ids": [
+              "I1"
+            ],
+            "gold_evidence_sets": [
+              [
+                "I1"
+              ]
+            ],
+            "qualifier_ok": true,
+            "qualifier": "",
+            "score": 1.0,
+            "strict": true,
+            "tags": [],
+            "overreach": false
+          },
+          {
+            "id": "P3",
+            "gold": "expired TLS certificate",
+            "model": "expired TLS certificate on the edge gateway",
+            "answer_ok": true,
+            "answer_match": "contained",
+            "evidence_kind": "exact",
+            "evidence_ids": [
+              "I1",
+              "I3"
+            ],
+            "gold_evidence_sets": [
+              [
+                "I1",
+                "I3"
+              ],
+              [
+                "I1"
+              ],
+              [
+                "I3"
+              ]
+            ],
+            "qualifier_ok": true,
+            "qualifier": "",
+            "score": 1.0,
+            "strict": false,
+            "tags": [],
+            "overreach": false
+          },
+          {
+            "id": "P4",
+            "gold": "failed rollback",
+            "model": "failed rollback of configuration change CHG-441",
+            "answer_ok": true,
+            "answer_match": "contained",
+            "evidence_kind": "exact",
+            "evidence_ids": [
+              "I2",
+              "I6"
+            ],
+            "gold_evidence_sets": [
+              [
+                "I2",
+                "I6"
+              ],
+              [
+                "I2"
+              ],
+              [
+                "I6"
+              ]
+            ],
+            "qualifier_ok": true,
+            "qualifier": "",
+            "score": 1.0,
+            "strict": false,
+            "tags": [],
+            "overreach": false
+          },
+          {
+            "id": "P5",
+            "gold": "15500",
+            "model": "15,500",
+            "answer_ok": true,
+            "answer_match": "exact",
+            "evidence_kind": "exact",
+            "evidence_ids": [
+              "I8"
+            ],
+            "gold_evidence_sets": [
+              [
+                "I8"
+              ]
+            ],
+            "qualifier_ok": true,
+            "qualifier": "",
+            "score": 1.0,
+            "strict": true,
+            "tags": [],
+            "overreach": false
+          },
+          {
+            "id": "P6",
+            "gold": "no",
+            "model": "no",
+            "answer_ok": true,
+            "answer_match": "exact",
+            "evidence_kind": "superset",
+            "evidence_ids": [
+              "I10",
+              "I2",
+              "I6",
+              "I8"
+            ],
+            "gold_evidence_sets": [
+              [
+                "I2",
+                "I6"
+              ],
+              [
+                "I2"
+              ],
+              [
+                "I6"
+              ]
+            ],
+            "qualifier_ok": true,
+            "qualifier": "",
+            "score": 0.85,
+            "strict": false,
+            "tags": [],
+            "overreach": false
+          },
+          {
+            "id": "P7",
+            "gold": "no",
+            "model": "no",
+            "answer_ok": true,
+            "answer_match": "exact",
+            "evidence_kind": "exact",
+            "evidence_ids": [
+              "I10",
+              "I8"
+            ],
+            "gold_evidence_sets": [
+              [
+                "I8",
+                "I10"
+              ],
+              [
+                "I8"
+              ],
+              [
+                "I10"
+              ]
+            ],
+            "qualifier_ok": true,
+            "qualifier": "",
+            "score": 1.0,
+            "strict": true,
+            "tags": [],
+            "overreach": false
+          },
+          {
+            "id": "P8",
+            "gold": "no",
+            "model": "no",
+            "answer_ok": true,
+            "answer_match": "exact",
+            "evidence_kind": "exact",
+            "evidence_ids": [
+              "I10",
+              "I9"
+            ],
+            "gold_evidence_sets": [
+              [
+                "I9",
+                "I10"
+              ],
+              [
+                "I9"
+              ],
+              [
+                "I10"
+              ]
+            ],
+            "qualifier_ok": true,
+            "qualifier": "",
+            "score": 1.0,
+            "strict": true,
+            "tags": [],
+            "overreach": false
+          },
+          {
+            "id": "P9",
+            "gold": "rotate certificates and re-enable expiry alerts",
+            "model": "rotate certificates automatically, re-enable expiry alerts, and add a weekly certificate inventory check",
+            "answer_ok": true,
+            "answer_match": "contained",
+            "evidence_kind": "exact",
+            "evidence_ids": [
+              "I3"
+            ],
+            "gold_evidence_sets": [
+              [
+                "I3"
+              ]
+            ],
+            "qualifier_ok": true,
+            "qualifier": "",
+            "score": 1.0,
+            "strict": false,
+            "tags": [],
+            "overreach": false
+          },
+          {
+            "id": "P10",
+            "gold": "no",
+            "model": "no",
+            "answer_ok": true,
+            "answer_match": "exact",
+            "evidence_kind": "exact",
+            "evidence_ids": [
+              "I10",
+              "I2",
+              "I8"
+            ],
+            "gold_evidence_sets": [
+              [
+                "I2",
+                "I8",
+                "I10"
+              ],
+              [
+                "I2"
+              ],
+              [
+                "I8"
+              ],
+              [
+                "I10"
+              ]
+            ],
+            "qualifier_ok": true,
+            "qualifier": "",
+            "score": 1.0,
+            "strict": true,
+            "tags": [],
+            "overreach": false
+          },
+          {
+            "id": "P11",
+            "gold": "45",
+            "model": "45",
+            "answer_ok": true,
+            "answer_match": "exact",
+            "evidence_kind": "exact",
+            "evidence_ids": [
+              "I2"
+            ],
+            "gold_evidence_sets": [
+              [
+                "I2"
+              ]
+            ],
+            "qualifier_ok": true,
+            "qualifier": "",
+            "score": 1.0,
+            "strict": true,
+            "tags": [],
+            "overreach": false
+          },
+          {
+            "id": "P12",
+            "gold": "incompatible schema change in the rollback script",
+            "model": "incompatible schema change in the rollback script",
+            "answer_ok": true,
+            "answer_match": "exact",
+            "evidence_kind": "exact",
+            "evidence_ids": [
+              "I6"
+            ],
+            "gold_evidence_sets": [
+              [
+                "I6"
+              ]
+            ],
+            "qualifier_ok": true,
+            "qualifier": "",
+            "score": 1.0,
+            "strict": true,
+            "tags": [],
+            "overreach": false
+          }
+        ],
+        "summary": {
+          "text": "The incident records show two distinct March 2026 outages: INC-031 on 2 March, caused by an expired TLS certificate on the edge gateway, and INC-032 on 4 March, caused by a failed rollback of configuration change CHG-441. Together they produced 15,500 failed customer transactions. The single certificate-event framing is not supported by the records. The draft remediation plan remains unapproved.",
+          "required_ok": true,
+          "forbidden_hits": [],
+          "score": 1.0
+        },
+        "inconsistencies": [],
+        "inconsistency_count": 0,
+        "condition": "production"
+      }
+    }
+  ]
+}

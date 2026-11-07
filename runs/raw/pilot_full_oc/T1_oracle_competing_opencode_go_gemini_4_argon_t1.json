@@ -1,0 +1,42 @@
+{
+  "prompt": "You are preparing a brief from a source pack.\n\nUse ONLY the sources below. Do not use general knowledge or assumptions.\nAs-of date: 2026-06-15\nContext: You are preparing a retention brief for the Chief Operating Officer of Northwind Cloud Services. The source pack is the only permitted evidence. Some documents are approved, some are operational exports, one is an unsigned draft, and one is an informal email. Dates matter.\n\nAUTHORITY NOTE\nApproved policies, addenda, signed amendments and approved schedules are authoritative. A signed amendment controls over an operational export. An unsigned draft has no effect. An informal email cannot change authority.\n\nDECISIVE EXCERPTS\n\n[D1] Standard customer data is retained for 24 months after contract termination. For customers in the European Union, the retention period is 12 months after contract termination. Backups are governed separately by the Backup Retention Schedule and are out of scope of this policy.\n\n[D2] Effective 1 July 2025, EU customer data is retained for 12 months after contract termination.\n\n[D3] The EU retention period is amended from 12 months to 18 months, effective 1 March 2026. This change applies only to accounts opened on or after 1 January 2026. Accounts opened before 1 January 2026 remain subject to the 12-month period in the Addendum. Signed 5 May 2026.\n\n[D4] DRAFT - NOT APPROVED. This draft proposes to amend the EU retention period to 24 months for all EU accounts, effective 1 September 2026. It has not been signed or approved.\n\n[D5] EU retention: 12 months. Standard retention: 24 months. Source: configuration table last updated 2025-11-30.\n\n[D6] The public trust page has not yet been updated to reflect Amendment A. The signed Amendment A is the controlling document for EU retention. Please do not rely on the system export for the new EU period until the configuration is updated.\n\n[D7] Data retention: Standard accounts 24 months. EU accounts 12 months. Backups 35 days.\n\n[D8] Backups of enterprise customer data are retained for 35 days. Backups are not part of the Enterprise Data Retention Policy.\n\n[D9] In the event of a conflict, a signed amendment controls over an operational export.\n\n[D10] The system-of-record export still shows 12 months for EU retention. Amendment A was signed on 5 May 2026 and is effective from 1 March 2026. The export is stale for accounts opened on or after 1 January 2026.\n\n[D11] The Board did not approve Draft Amendment B, which had not been circulated.\n\nADDITIONAL EXCERPTS (true statements that may or may not be relevant)\n\n[D12] Please use the system export for EU retention. The amendment is not in the system yet, so 12 months is the number to quote.\n\n[D4] This draft proposes to amend the EU retention period to 24 months for all EU accounts.\n\n[D1] Standard customer data is retained for 24 months after contract termination.\n\n[D7] EU accounts 12 months.\n\nQUESTIONS\nP1. What is the EU retention period for accounts opened in 2026, as of 2026-06-15?\nOptions: 12 months / 18 months / 24 months / insufficient\nP2. What is the EU retention period for accounts opened in 2024, as of 2026-06-15?\nOptions: 12 months / 18 months / 24 months / insufficient\nP3. What was the EU retention period for accounts opened in 2026 on 2026-02-15?\nOptions: 12 months / 18 months / 24 months / insufficient\nP4. What is the standard (non-EU) retention period?\nOptions: 12 months / 18 months / 24 months / 35 days / insufficient\nP5. Is Draft Amendment B in effect?\nOptions: yes / no / insufficient\nP6. What is the backup retention period?\nOptions: 18 months / 24 months / 35 days / insufficient\nP7. Are backups covered by the Enterprise Data Retention Policy?\nOptions: yes / no / insufficient\nP8. Does the public trust page show the current EU retention period?\nOptions: yes / no / insufficient\nP9. Which record controls the EU retention period for accounts opened in 2026?\nOptions: Amendment A / system-of-record export / Draft Amendment B / public trust page / insufficient\nP10. Did the EU retention change take effect before Amendment A was signed?\nOptions: yes / no / insufficient\nP11. What EU retention value does the system-of-record export show?\nOptions: 12 months / 18 months / 24 months / insufficient\nP12. Is the system-of-record export current for accounts opened in 2026?\nOptions: yes / no / insufficient\n\nFor each question, derive the conclusion yourself. Do not repeat the question. Choose exactly one option.\nIf the sources do not establish an answer, choose \"insufficient\".\nIf the conclusion is true only with a material limit, put that limit in the \"qualifier\" field.\n\n\nAlso write a 2-4 sentence executive summary of the position, using only the sources.\n\nReturn ONLY JSON in this shape:\n{\"items\": [{\"item_id\": \"P1\", \"answer\": \"<one option>\", \"evidence_ids\": [\"D1\"], \"qualifier\": \"\"}], \"summary\": \"<2-4 sentences>\"}\nUse exactly one answer per item. Do not add commentary outside the JSON.\n",
+  "raw": "",
+  "model": "opencode-go/gemini-4-argon",
+  "task": "T1",
+  "condition": "oracle_competing",
+  "trial": 1,
+  "response": {
+    "content": null,
+    "model": "opencode-go/gemini-4-argon",
+    "usage": {},
+    "cost": null,
+    "latency_s": 203.673,
+    "attempts": [
+      {
+        "attempt": 1,
+        "latency_s": 185.59,
+        "error": "TimeoutError: The read operation timed out"
+      },
+      {
+        "attempt": 2,
+        "latency_s": 15.047,
+        "error": "URLError: <urlopen error [Errno -3] Temporary failure in name resolution>"
+      }
+    ],
+    "error": "URLError: <urlopen error [Errno -3] Temporary failure in name resolution>",
+    "provider_response_id": null
+  },
+  "grade": {
+    "condition": "production",
+    "parse_error": "empty_response",
+    "n": 12,
+    "mean_score": 0.0,
+    "accuracy": 0.0,
+    "strict": 0.0,
+    "rows": [],
+    "summary": null,
+    "extras": [],
+    "missing": [],
+    "duplicates": []
+  }
+}

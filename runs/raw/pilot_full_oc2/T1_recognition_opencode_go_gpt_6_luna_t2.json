@@ -1,0 +1,381 @@
+{
+  "prompt": "You are auditing a set of claims against a source pack.\n\nUse ONLY the sources below. Do not use general knowledge or assumptions.\nAs-of date: 2026-06-15\nContext: You are preparing a retention brief for the Chief Operating Officer of Northwind Cloud Services. The source pack is the only permitted evidence. Some documents are approved, some are operational exports, one is an unsigned draft, and one is an informal email. Dates matter.\n\nAUTHORITY NOTE\nApproved policies, addenda, signed amendments and approved schedules are authoritative. A signed amendment controls over an operational export. An unsigned draft has no effect. An informal email cannot change authority.\n\nSOURCE PACK\n[D1 | policy | 2025-01-10 | Enterprise Data Retention Policy (v3)]\nThis policy applies to all enterprise customer data processed by Northwind Cloud Services. Standard customer data is retained for 24 months after contract termination. For customers in the European Union, the retention period is 12 months after contract termination. Backups are governed separately by the Backup Retention Schedule and are out of scope of this policy. The policy is reviewed annually by the Data Protection Officer.\n\n[D2 | addendum | 2025-06-01 | EU Retention Addendum]\nThis addendum supplements the Enterprise Data Retention Policy for customers in the European Union. Effective 1 July 2025, EU customer data is retained for 12 months after contract termination. This addendum does not change the standard retention period or the backup schedule.\n\n[D3 | contract_amendment | 2026-05-05 | Amendment A to the EU Retention Addendum]\nNorthwind Cloud Services and the EU customer representative agree to amend the EU Retention Addendum. The EU retention period is amended from 12 months to 18 months, effective 1 March 2026. This change applies only to accounts opened on or after 1 January 2026. Accounts opened before 1 January 2026 remain subject to the 12-month period in the Addendum. Signed 5 May 2026.\n\n[D4 | draft | 2026-06-01 | Draft Amendment B (unsigned)]\nDRAFT - NOT APPROVED. This draft proposes to amend the EU retention period to 24 months for all EU accounts, effective 1 September 2026. It has not been signed or approved by either party.\n\n[D5 | system_export | 2026-04-15 | System-of-record export - Retention]\nEU retention: 12 months. Standard retention: 24 months. Source: configuration table last updated 2025-11-30. The export is generated nightly; configuration changes are applied by the platform team after approval.\n\n[D6 | email | 2026-04-20 | Email from Data Protection Officer]\nThe public trust page has not yet been updated to reflect Amendment A. The signed Amendment A is the controlling document for EU retention. Please do not rely on the system export for the new EU period until the configuration is updated.\n\n[D7 | web_snapshot | 2026-04-18 | Public trust page snapshot]\nData retention: Standard accounts 24 months. EU accounts 12 months. Backups 35 days.\n\n[D8 | schedule | 2025-11-01 | Backup Retention Schedule]\nBackups of enterprise customer data are retained for 35 days. Backups are not part of the Enterprise Data Retention Policy. The schedule is reviewed annually by the Security team.\n\n[D9 | contract | 2026-01-15 | Vendor contract excerpt - Data processing]\nFor EU accounts, the parties agree to the retention schedule set out in the Enterprise Data Retention Policy and its EU addenda, as amended from time to time. In the event of a conflict, a signed amendment controls over an operational export.\n\n[D10 | audit_note | 2026-05-20 | Internal audit note]\nObservation: the system-of-record export still shows 12 months for EU retention. Amendment A was signed on 5 May 2026 and is effective from 1 March 2026. The export is stale for accounts opened on or after 1 January 2026. No action has been taken to update the configuration.\n\n[D11 | minutes | 2026-01-15 | Board minutes excerpt]\nThe Board noted the proposed EU retention amendment and delegated signature to the Chief Legal Officer. The Board did not approve Draft Amendment B, which had not been circulated.\n\n[D12 | email | 2026-02-10 | Sales operations email]\nPlease use the system export for EU retention. The amendment is not in the system yet, so 12 months is the number to quote.\n\nCLAIMS\nC1. For EU accounts opened in 2024, the retention period is 12 months.\nC2. For EU accounts opened in 2026, the retention period is 18 months.\nC3. For EU accounts opened in 2026, the retention period was 18 months in February 2026.\nC4. For EU accounts opened in 2026, the retention period is 24 months.\nC5. The standard (non-EU) retention period is 24 months.\nC6. Customer data is retained for 24 months.\nC7. Backups are retained for 35 days.\nC8. Backups are covered by the Enterprise Data Retention Policy.\nC9. The public trust page shows the current EU retention period.\nC10. The system-of-record export is the controlling record for EU retention.\nC11. The EU retention change took effect before Amendment A was signed.\nC12. Draft Amendment B is in effect.\n\nFor each claim return exactly one verdict:\n- SUPPORTED: the sources establish the claim exactly as stated, at the as-of date, for the stated population.\n- SUPPORTED_WITH_QUALIFIER: the claim is true only with a material exception, scope limit, or time bound; state the qualifier.\n- CONTRADICTED: an authoritative source states the opposite or a different value for the stated population/time.\n- INSUFFICIENT: no authoritative source establishes the claim.\n\n\nReturn ONLY JSON in this shape:\n{\"claims\": [{\"claim_id\": \"C1\", \"verdict\": \"SUPPORTED\", \"evidence_ids\": [\"D1\"], \"qualifier\": \"\"}]}\nUse exactly one verdict per claim. Do not add commentary outside the JSON.\n",
+  "raw": "{\"claims\":[{\"claim_id\":\"C1\",\"verdict\":\"SUPPORTED\",\"evidence_ids\":[\"D3\"],\"qualifier\":\"\"},{\"claim_id\":\"C2\",\"verdict\":\"SUPPORTED\",\"evidence_ids\":[\"D3\"],\"qualifier\":\"\"},{\"claim_id\":\"C3\",\"verdict\":\"CONTRADICTED\",\"evidence_ids\":[\"D3\"],\"qualifier\":\"\"},{\"claim_id\":\"C4\",\"verdict\":\"CONTRADICTED\",\"evidence_ids\":[\"D3\",\"D4\"],\"qualifier\":\"\"},{\"claim_id\":\"C5\",\"verdict\":\"SUPPORTED\",\"evidence_ids\":[\"D1\"],\"qualifier\":\"\"},{\"claim_id\":\"C6\",\"verdict\":\"SUPPORTED_WITH_QUALIFIER\",\"evidence_ids\":[\"D1\",\"D3\",\"D8\"],\"qualifier\":\"The 24-month period applies to standard non-EU customer data. EU retention is 12 months for accounts opened before 1 January 2026 and 18 months for accounts opened on or after that date; backups are governed separately.\"},{\"claim_id\":\"C7\",\"verdict\":\"SUPPORTED\",\"evidence_ids\":[\"D8\"],\"qualifier\":\"\"},{\"claim_id\":\"C8\",\"verdict\":\"CONTRADICTED\",\"evidence_ids\":[\"D1\",\"D8\"],\"qualifier\":\"\"},{\"claim_id\":\"C9\",\"verdict\":\"CONTRADICTED\",\"evidence_ids\":[\"D3\",\"D6\",\"D7\",\"D10\"],\"qualifier\":\"\"},{\"claim_id\":\"C10\",\"verdict\":\"CONTRADICTED\",\"evidence_ids\":[\"D6\",\"D9\"],\"qualifier\":\"\"},{\"claim_id\":\"C11\",\"verdict\":\"SUPPORTED\",\"evidence_ids\":[\"D3\"],\"qualifier\":\"\"},{\"claim_id\":\"C12\",\"verdict\":\"CONTRADICTED\",\"evidence_ids\":[\"D4\",\"D11\"],\"qualifier\":\"\"}]}",
+  "model": "opencode-go/gpt-6-luna",
+  "task": "T1",
+  "condition": "recognition",
+  "trial": 2,
+  "response": {
+    "content": "{\"claims\":[{\"claim_id\":\"C1\",\"verdict\":\"SUPPORTED\",\"evidence_ids\":[\"D3\"],\"qualifier\":\"\"},{\"claim_id\":\"C2\",\"verdict\":\"SUPPORTED\",\"evidence_ids\":[\"D3\"],\"qualifier\":\"\"},{\"claim_id\":\"C3\",\"verdict\":\"CONTRADICTED\",\"evidence_ids\":[\"D3\"],\"qualifier\":\"\"},{\"claim_id\":\"C4\",\"verdict\":\"CONTRADICTED\",\"evidence_ids\":[\"D3\",\"D4\"],\"qualifier\":\"\"},{\"claim_id\":\"C5\",\"verdict\":\"SUPPORTED\",\"evidence_ids\":[\"D1\"],\"qualifier\":\"\"},{\"claim_id\":\"C6\",\"verdict\":\"SUPPORTED_WITH_QUALIFIER\",\"evidence_ids\":[\"D1\",\"D3\",\"D8\"],\"qualifier\":\"The 24-month period applies to standard non-EU customer data. EU retention is 12 months for accounts opened before 1 January 2026 and 18 months for accounts opened on or after that date; backups are governed separately.\"},{\"claim_id\":\"C7\",\"verdict\":\"SUPPORTED\",\"evidence_ids\":[\"D8\"],\"qualifier\":\"\"},{\"claim_id\":\"C8\",\"verdict\":\"CONTRADICTED\",\"evidence_ids\":[\"D1\",\"D8\"],\"qualifier\":\"\"},{\"claim_id\":\"C9\",\"verdict\":\"CONTRADICTED\",\"evidence_ids\":[\"D3\",\"D6\",\"D7\",\"D10\"],\"qualifier\":\"\"},{\"claim_id\":\"C10\",\"verdict\":\"CONTRADICTED\",\"evidence_ids\":[\"D6\",\"D9\"],\"qualifier\":\"\"},{\"claim_id\":\"C11\",\"verdict\":\"SUPPORTED\",\"evidence_ids\":[\"D3\"],\"qualifier\":\"\"},{\"claim_id\":\"C12\",\"verdict\":\"CONTRADICTED\",\"evidence_ids\":[\"D4\",\"D11\"],\"qualifier\":\"\"}]}",
+    "model": "opencode-go/gpt-6-luna",
+    "usage": {
+      "prompt_tokens": 1314,
+      "completion_tokens": 1606,
+      "total_tokens": 2920,
+      "prompt_tokens_details": {
+        "cached_tokens": 1311
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1205
+      },
+      "cost": 0,
+      "opencode": {
+        "billing_source": "go",
+        "list_cost": 0.00081641,
+        "allowance": 0.00326564,
+        "tokens": {
+          "input": 3,
+          "output": 1606,
+          "reasoning": 1205,
+          "cache_read": 1311,
+          "cache_write_5m": 0,
+          "cache_write_1h": 0
+        }
+      }
+    },
+    "cost": 0,
+    "latency_s": 16.407,
+    "attempts": [
+      {
+        "attempt": 1,
+        "latency_s": 16.407,
+        "error": null
+      }
+    ],
+    "error": null,
+    "provider_response_id": "chatcmpl-27255277239b431c9325ca506dc70459"
+  },
+  "grade": {
+    "n": 12,
+    "mean_score": 0.9625,
+    "accuracy": 1.0,
+    "strict": 0.75,
+    "extra_penalty": 0.0,
+    "duplicates": [],
+    "extras": [],
+    "missing": [],
+    "rows": [
+      {
+        "id": "C1",
+        "gold": "SUPPORTED",
+        "model": "SUPPORTED",
+        "answer_ok": true,
+        "evidence_kind": "exact",
+        "evidence_ids": [
+          "D3"
+        ],
+        "gold_evidence_sets": [
+          [
+            "D2"
+          ],
+          [
+            "D3"
+          ]
+        ],
+        "qualifier_ok": true,
+        "qualifier": "",
+        "score": 1.0,
+        "strict": true,
+        "tags": [],
+        "overreach": false
+      },
+      {
+        "id": "C2",
+        "gold": "SUPPORTED",
+        "model": "SUPPORTED",
+        "answer_ok": true,
+        "evidence_kind": "exact",
+        "evidence_ids": [
+          "D3"
+        ],
+        "gold_evidence_sets": [
+          [
+            "D3"
+          ]
+        ],
+        "qualifier_ok": true,
+        "qualifier": "",
+        "score": 1.0,
+        "strict": true,
+        "tags": [],
+        "overreach": false
+      },
+      {
+        "id": "C3",
+        "gold": "CONTRADICTED",
+        "model": "CONTRADICTED",
+        "answer_ok": true,
+        "evidence_kind": "exact",
+        "evidence_ids": [
+          "D3"
+        ],
+        "gold_evidence_sets": [
+          [
+            "D2",
+            "D3"
+          ],
+          [
+            "D2"
+          ],
+          [
+            "D3"
+          ]
+        ],
+        "qualifier_ok": true,
+        "qualifier": "",
+        "score": 1.0,
+        "strict": true,
+        "tags": [],
+        "overreach": false
+      },
+      {
+        "id": "C4",
+        "gold": "CONTRADICTED",
+        "model": "CONTRADICTED",
+        "answer_ok": true,
+        "evidence_kind": "exact",
+        "evidence_ids": [
+          "D3",
+          "D4"
+        ],
+        "gold_evidence_sets": [
+          [
+            "D3",
+            "D4"
+          ],
+          [
+            "D3"
+          ],
+          [
+            "D4"
+          ]
+        ],
+        "qualifier_ok": true,
+        "qualifier": "",
+        "score": 1.0,
+        "strict": true,
+        "tags": [],
+        "overreach": false
+      },
+      {
+        "id": "C5",
+        "gold": "SUPPORTED",
+        "model": "SUPPORTED",
+        "answer_ok": true,
+        "evidence_kind": "exact",
+        "evidence_ids": [
+          "D1"
+        ],
+        "gold_evidence_sets": [
+          [
+            "D1"
+          ]
+        ],
+        "qualifier_ok": true,
+        "qualifier": "",
+        "score": 1.0,
+        "strict": true,
+        "tags": [],
+        "overreach": false
+      },
+      {
+        "id": "C6",
+        "gold": "SUPPORTED_WITH_QUALIFIER",
+        "model": "SUPPORTED_WITH_QUALIFIER",
+        "answer_ok": true,
+        "evidence_kind": "superset",
+        "evidence_ids": [
+          "D1",
+          "D3",
+          "D8"
+        ],
+        "gold_evidence_sets": [
+          [
+            "D1",
+            "D2",
+            "D3"
+          ],
+          [
+            "D1",
+            "D3"
+          ]
+        ],
+        "qualifier_ok": true,
+        "qualifier": "The 24-month period applies to standard non-EU customer data. EU retention is 12 months for accounts opened before 1 January 2026 and 18 months for accounts opened on or after that date; backups are governed separately.",
+        "score": 0.85,
+        "strict": false,
+        "tags": [],
+        "overreach": false
+      },
+      {
+        "id": "C7",
+        "gold": "SUPPORTED",
+        "model": "SUPPORTED",
+        "answer_ok": true,
+        "evidence_kind": "exact",
+        "evidence_ids": [
+          "D8"
+        ],
+        "gold_evidence_sets": [
+          [
+            "D8"
+          ]
+        ],
+        "qualifier_ok": true,
+        "qualifier": "",
+        "score": 1.0,
+        "strict": true,
+        "tags": [],
+        "overreach": false
+      },
+      {
+        "id": "C8",
+        "gold": "CONTRADICTED",
+        "model": "CONTRADICTED",
+        "answer_ok": true,
+        "evidence_kind": "exact",
+        "evidence_ids": [
+          "D1",
+          "D8"
+        ],
+        "gold_evidence_sets": [
+          [
+            "D1",
+            "D8"
+          ],
+          [
+            "D1"
+          ],
+          [
+            "D8"
+          ]
+        ],
+        "qualifier_ok": true,
+        "qualifier": "",
+        "score": 1.0,
+        "strict": true,
+        "tags": [],
+        "overreach": false
+      },
+      {
+        "id": "C9",
+        "gold": "CONTRADICTED",
+        "model": "CONTRADICTED",
+        "answer_ok": true,
+        "evidence_kind": "superset",
+        "evidence_ids": [
+          "D10",
+          "D3",
+          "D6",
+          "D7"
+        ],
+        "gold_evidence_sets": [
+          [
+            "D6",
+            "D7"
+          ],
+          [
+            "D6"
+          ],
+          [
+            "D7"
+          ]
+        ],
+        "qualifier_ok": true,
+        "qualifier": "",
+        "score": 0.85,
+        "strict": false,
+        "tags": [],
+        "overreach": false
+      },
+      {
+        "id": "C10",
+        "gold": "CONTRADICTED",
+        "model": "CONTRADICTED",
+        "answer_ok": true,
+        "evidence_kind": "superset",
+        "evidence_ids": [
+          "D6",
+          "D9"
+        ],
+        "gold_evidence_sets": [
+          [
+            "D3",
+            "D6",
+            "D9",
+            "D10"
+          ],
+          [
+            "D3"
+          ],
+          [
+            "D6"
+          ],
+          [
+            "D9"
+          ],
+          [
+            "D10"
+          ]
+        ],
+        "qualifier_ok": true,
+        "qualifier": "",
+        "score": 0.85,
+        "strict": false,
+        "tags": [],
+        "overreach": false
+      },
+      {
+        "id": "C11",
+        "gold": "SUPPORTED",
+        "model": "SUPPORTED",
+        "answer_ok": true,
+        "evidence_kind": "exact",
+        "evidence_ids": [
+          "D3"
+        ],
+        "gold_evidence_sets": [
+          [
+            "D3"
+          ]
+        ],
+        "qualifier_ok": true,
+        "qualifier": "",
+        "score": 1.0,
+        "strict": true,
+        "tags": [],
+        "overreach": false
+      },
+      {
+        "id": "C12",
+        "gold": "CONTRADICTED",
+        "model": "CONTRADICTED",
+        "answer_ok": true,
+        "evidence_kind": "exact",
+        "evidence_ids": [
+          "D11",
+          "D4"
+        ],
+        "gold_evidence_sets": [
+          [
+            "D4",
+            "D11"
+          ],
+          [
+            "D4"
+          ],
+          [
+            "D11"
+          ]
+        ],
+        "qualifier_ok": true,
+        "qualifier": "",
+        "score": 1.0,
+        "strict": true,
+        "tags": [],
+        "overreach": false
+      }
+    ],
+    "condition": "recognition"
+  }
+}

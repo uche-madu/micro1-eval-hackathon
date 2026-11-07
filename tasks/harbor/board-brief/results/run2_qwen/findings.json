@@ -1,0 +1,125 @@
+{
+  "findings": [
+    {
+      "finding_id": "F1",
+      "statement": "For EU accounts opened on or after 1 January 2026, Amendment A changes the EU retention period from the Addendum's 12 months after contract termination to 18 months, effective 1 March 2026.",
+      "evidence_ids": [
+        "D2",
+        "D3"
+      ],
+      "qualifier": "Applies only to EU accounts opened on or after 1 January 2026; accounts opened before that date remain subject to the 12-month Addendum period."
+    },
+    {
+      "finding_id": "F2",
+      "statement": "For EU accounts opened before 1 January 2026, the EU retention period remains 12 months after contract termination under the Addendum.",
+      "evidence_ids": [
+        "D2",
+        "D3"
+      ],
+      "qualifier": "Applies only to EU accounts opened before 1 January 2026."
+    },
+    {
+      "finding_id": "F3",
+      "statement": "Standard customer data is retained for 24 months after contract termination.",
+      "evidence_ids": [
+        "D1"
+      ],
+      "qualifier": "Applies to standard customer data under the Enterprise Data Retention Policy, not to EU accounts governed by the EU addendum and Amendment A."
+    },
+    {
+      "finding_id": "F4",
+      "statement": "Draft Amendment B is unsigned and not approved and has no effect.",
+      "evidence_ids": [
+        "D4",
+        "D11"
+      ],
+      "qualifier": "The proposed 24-month EU retention period remains a draft proposal only."
+    },
+    {
+      "finding_id": "F5",
+      "statement": "The public trust page snapshot does not reflect the current EU position because it still shows EU accounts at 12 months while signed Amendment A controls.",
+      "evidence_ids": [
+        "D6",
+        "D7",
+        "D3"
+      ],
+      "qualifier": "The snapshot is dated 18 April 2026 and the statement addresses whether it reflects Amendment A."
+    },
+    {
+      "finding_id": "F6",
+      "statement": "The system-of-record export is not current or controlling for EU retention; it shows 12 months, while signed Amendment A controls and the export is stale for accounts opened on or after 1 January 2026.",
+      "evidence_ids": [
+        "D5",
+        "D6",
+        "D10"
+      ],
+      "qualifier": "For EU retention, particularly accounts opened on or after 1 January 2026; the export is dated 15 April 2026."
+    },
+    {
+      "finding_id": "F7",
+      "statement": "Backups of enterprise customer data are retained for 35 days and are not covered by the Enterprise Data Retention Policy.",
+      "evidence_ids": [
+        "D8",
+        "D1"
+      ],
+      "qualifier": "Applies to backups governed by the Backup Retention Schedule, not to customer data retention under the policy."
+    },
+    {
+      "finding_id": "F8",
+      "statement": "Amendment A's effective date of 1 March 2026 precedes its signature date of 5 May 2026.",
+      "evidence_ids": [
+        "D3",
+        "D10"
+      ],
+      "qualifier": "For Amendment A to the EU Retention Addendum."
+    },
+    {
+      "finding_id": "F9",
+      "statement": "Two distinct incidents occurred in March 2026.",
+      "evidence_ids": [
+        "I8",
+        "I10"
+      ],
+      "qualifier": "The incidents are INC-031 and INC-032; the record identifies separate events with different causes."
+    },
+    {
+      "finding_id": "F10",
+      "statement": "INC-031 occurred on 2 March 2026, lasted 75 minutes from 14:05 UTC to 15:20 UTC, had an expired TLS certificate as root cause, and involved 12,400 failed transactions.",
+      "evidence_ids": [
+        "I1",
+        "I3",
+        "I8"
+      ],
+      "qualifier": "The certificate expired because the renewal job was not running and the expiry alert was disabled on 1 March 2026."
+    },
+    {
+      "finding_id": "F11",
+      "statement": "INC-032 occurred on 4 March 2026, lasted 45 minutes from 09:10 UTC to 09:55 UTC, had a failed rollback of CHG-441 as root cause, and involved 3,100 failed transactions.",
+      "evidence_ids": [
+        "I2",
+        "I6",
+        "I8"
+      ],
+      "qualifier": "The rollback failure was caused by an incompatible schema change in the rollback script and was unrelated to the certificate incident."
+    },
+    {
+      "finding_id": "F12",
+      "statement": "Total failed transactions were 15,500 across two distinct incidents, and the incidents had different root causes.",
+      "evidence_ids": [
+        "I8",
+        "I10"
+      ],
+      "qualifier": "The total covers INC-031 and INC-032 in March 2026."
+    },
+    {
+      "finding_id": "F13",
+      "statement": "The remediation plan is a draft and not approved; the INC-031 root-cause note recommends automatic certificate rotation, re-enabled expiry alerts, and a weekly certificate inventory check.",
+      "evidence_ids": [
+        "I3",
+        "I9",
+        "I10"
+      ],
+      "qualifier": "The draft plan proposes moving certificate management to Platform, retiring the renewal job, and adding a quarterly audit, but approval is pending."
+    }
+  ]
+}

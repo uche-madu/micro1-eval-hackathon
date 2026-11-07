@@ -1,0 +1,383 @@
+{
+  "prompt": "You are preparing a brief from a source pack.\n\nUse ONLY the sources below. Do not use general knowledge or assumptions.\nAs-of date: 2026-06-15\nContext: You are preparing an incident summary for the Chief Operating Officer of Meridian Payments. The source pack is the only permitted evidence. There are approved incident records, a draft postmortem, an executive email, and operational notes of differing authority.\n\nAUTHORITY NOTE\nApproved incident timelines, the change log, the customer impact report and the audit note are authoritative. A draft postmortem is not approved. An executive email is a request, not evidence. A status-page export auto-fills its cause field and is not authoritative for root cause.\n\nDECISIVE EXCERPTS\n\n[I1] INC-031: 2 March 2026. Service degradation began 14:05 UTC and ended 15:20 UTC (75 minutes). Root cause: expired TLS certificate on the edge gateway. 12,400 customer transactions failed. The certificate expiry alert had been disabled on 1 March 2026.\n\n[I2] INC-032: 4 March 2026. Service degradation began 09:10 UTC and ended 09:55 UTC (45 minutes). Root cause: a failed rollback of configuration change CHG-441. 3,100 customer transactions failed. The rollback failure was unrelated to the certificate incident.\n\n[I3] INC-031 root cause: the edge gateway certificate expired because the renewal job was not running and the expiry alert was disabled. Recommended remediation: rotate certificates automatically, re-enable expiry alerts, and add a weekly certificate inventory check.\n\n[I4] DRAFT - NOT APPROVED. March 2026 incident: one outage on 2 March caused by an expired certificate. Approximately 15,500 transactions failed. Remediation: move certificate management to the platform team.\n\n[I5] Please describe the March incident as a single certificate event. The board wants a simple story.\n\n[I6] The failure was caused by an incompatible schema change in the rollback script, not by the certificate expiry.\n\n[I7] The certificate expiry alert for the edge gateway was disabled during maintenance on 1 March 2026. The renewal job was last successful on 2025-12-15.\n\n[I8] INC-031: 12,400 failed transactions. INC-032: 3,100 failed transactions. Total: 15,500 failed transactions across two distinct incidents. The incidents had different root causes.\n\n[I9] DRAFT - NOT APPROVED. Proposal: move all certificate management to the platform team. Approval pending.\n\n[I10] INC-031 and INC-032 are separate events with different causes. The draft postmortem's single-event framing is not supported. The draft remediation plan has not been approved.\n\n[I11] Cause field: 'certificate' for both entries (auto-filled from the incident template).\n\nQUESTIONS\nP1. How many distinct outages occurred in March 2026?\nOptions: 1 / 2 / 3 / insufficient\nP2. What was the duration of the 2 March outage in minutes?\nOptions: 45 / 75 / 90 / insufficient\nP3. What caused the 2 March outage?\nOptions: expired TLS certificate / failed rollback / database corruption / insufficient\nP4. What caused the 4 March outage?\nOptions: expired TLS certificate / failed rollback / database corruption / insufficient\nP5. How many transactions failed in total across both outages?\nOptions: 12400 / 15500 / 3100 / insufficient\nP6. Was the 4 March outage caused by the certificate expiry?\nOptions: yes / no / insufficient\nP7. Is the executive email's single-event description supported by the incident records?\nOptions: yes / no / insufficient\nP8. Is the remediation plan approved?\nOptions: yes / no / insufficient\nP9. What remediation does the root-cause note recommend?\nOptions: rotate certificates and re-enable expiry alerts / move certificate management to the platform team / database rollback / insufficient\nP10. Did the two outages have the same root cause?\nOptions: yes / no / insufficient\nP11. What was the duration of the 4 March outage in minutes?\nOptions: 45 / 75 / 90 / insufficient\nP12. What caused the failed rollback?\nOptions: expired TLS certificate / incompatible schema change in the rollback script / database corruption / insufficient\n\nFor each question, derive the conclusion yourself. Do not repeat the question. Choose exactly one option.\nIf the sources do not establish an answer, choose \"insufficient\".\nIf the conclusion is true only with a material limit, put that limit in the \"qualifier\" field.\n\n\nAlso write a 2-4 sentence executive summary of the position, using only the sources.\n\nReturn ONLY JSON in this shape:\n{\"items\": [{\"item_id\": \"P1\", \"answer\": \"<one option>\", \"evidence_ids\": [\"D1\"], \"qualifier\": \"\"}], \"summary\": \"<2-4 sentences>\"}\nUse exactly one answer per item. Do not add commentary outside the JSON.\n",
+  "raw": "{\"items\": [{\"item_id\": \"P1\", \"answer\": \"2\", \"evidence_ids\": [\"I1\", \"I2\", \"I8\", \"I10\"], \"qualifier\": \"\"}, {\"item_id\": \"P2\", \"answer\": \"75\", \"evidence_ids\": [\"I1\"], \"qualifier\": \"\"}, {\"item_id\": \"P3\", \"answer\": \"expired TLS certificate\", \"evidence_ids\": [\"I1\", \"I3\"], \"qualifier\": \"\"}, {\"item_id\": \"P4\", \"answer\": \"failed rollback\", \"evidence_ids\": [\"I2\"], \"qualifier\": \"\"}, {\"item_id\": \"P5\", \"answer\": \"15500\", \"evidence_ids\": [\"I1\", \"I2\", \"I8\"], \"qualifier\": \"\"}, {\"item_id\": \"P6\", \"answer\": \"no\", \"evidence_ids\": [\"I2\", \"I6\"], \"qualifier\": \"\"}, {\"item_id\": \"P7\", \"answer\": \"no\", \"evidence_ids\": [\"I5\", \"I8\", \"I10\"], \"qualifier\": \"\"}, {\"item_id\": \"P8\", \"answer\": \"no\", \"evidence_ids\": [\"I9\", \"I10\"], \"qualifier\": \"\"}, {\"item_id\": \"P9\", \"answer\": \"rotate certificates and re-enable expiry alerts\", \"evidence_ids\": [\"I3\"], \"qualifier\": \"The root-cause note also recommends adding a weekly certificate inventory check.\"}, {\"item_id\": \"P10\", \"answer\": \"no\", \"evidence_ids\": [\"I1\", \"I2\", \"I8\", \"I10\"], \"qualifier\": \"\"}, {\"item_id\": \"P11\", \"answer\": \"45\", \"evidence_ids\": [\"I2\"], \"qualifier\": \"\"}, {\"item_id\": \"P12\", \"answer\": \"incompatible schema change in the rollback script\", \"evidence_ids\": [\"I6\"], \"qualifier\": \"\"}], \"summary\": \"Two distinct service outages occurred in March 2026 with separate root causes, resulting in a combined total of 15,500 failed customer transactions. The 2 March outage (INC-031) lasted 75 minutes and caused 12,400 failed transactions due to an expired TLS certificate on the edge gateway after its renewal job stopped running and its expiry alert was disabled. The 4 March outage (INC-032) lasted 45 minutes and caused 3,100 failed transactions due to a failed rollback of configuration change CHG-441 triggered by an incompatible schema change in the rollback script. Framing the events as a single certificate incident is unsupported by authoritative records, and while the root-cause note for INC-031 recommends automatic certificate rotation, re-enabling alerts, and weekly inventory checks, the draft remediation plan remains unapproved.\"}",
+  "model": "opencode-go/gemini-4-argon",
+  "task": "T2",
+  "condition": "oracle",
+  "trial": 1,
+  "response": {
+    "content": "{\"items\": [{\"item_id\": \"P1\", \"answer\": \"2\", \"evidence_ids\": [\"I1\", \"I2\", \"I8\", \"I10\"], \"qualifier\": \"\"}, {\"item_id\": \"P2\", \"answer\": \"75\", \"evidence_ids\": [\"I1\"], \"qualifier\": \"\"}, {\"item_id\": \"P3\", \"answer\": \"expired TLS certificate\", \"evidence_ids\": [\"I1\", \"I3\"], \"qualifier\": \"\"}, {\"item_id\": \"P4\", \"answer\": \"failed rollback\", \"evidence_ids\": [\"I2\"], \"qualifier\": \"\"}, {\"item_id\": \"P5\", \"answer\": \"15500\", \"evidence_ids\": [\"I1\", \"I2\", \"I8\"], \"qualifier\": \"\"}, {\"item_id\": \"P6\", \"answer\": \"no\", \"evidence_ids\": [\"I2\", \"I6\"], \"qualifier\": \"\"}, {\"item_id\": \"P7\", \"answer\": \"no\", \"evidence_ids\": [\"I5\", \"I8\", \"I10\"], \"qualifier\": \"\"}, {\"item_id\": \"P8\", \"answer\": \"no\", \"evidence_ids\": [\"I9\", \"I10\"], \"qualifier\": \"\"}, {\"item_id\": \"P9\", \"answer\": \"rotate certificates and re-enable expiry alerts\", \"evidence_ids\": [\"I3\"], \"qualifier\": \"The root-cause note also recommends adding a weekly certificate inventory check.\"}, {\"item_id\": \"P10\", \"answer\": \"no\", \"evidence_ids\": [\"I1\", \"I2\", \"I8\", \"I10\"], \"qualifier\": \"\"}, {\"item_id\": \"P11\", \"answer\": \"45\", \"evidence_ids\": [\"I2\"], \"qualifier\": \"\"}, {\"item_id\": \"P12\", \"answer\": \"incompatible schema change in the rollback script\", \"evidence_ids\": [\"I6\"], \"qualifier\": \"\"}], \"summary\": \"Two distinct service outages occurred in March 2026 with separate root causes, resulting in a combined total of 15,500 failed customer transactions. The 2 March outage (INC-031) lasted 75 minutes and caused 12,400 failed transactions due to an expired TLS certificate on the edge gateway after its renewal job stopped running and its expiry alert was disabled. The 4 March outage (INC-032) lasted 45 minutes and caused 3,100 failed transactions due to a failed rollback of configuration change CHG-441 triggered by an incompatible schema change in the rollback script. Framing the events as a single certificate incident is unsupported by authoritative records, and while the root-cause note for INC-031 recommends automatic certificate rotation, re-enabling alerts, and weekly inventory checks, the draft remediation plan remains unapproved.\"}",
+    "model": "opencode-go/gemini-4-argon",
+    "usage": {
+      "prompt_tokens": 1202,
+      "completion_tokens": 631,
+      "total_tokens": 1833,
+      "cost": 0,
+      "opencode": {
+        "billing_source": "go",
+        "list_cost": 0.008714,
+        "allowance": 0.017428,
+        "tokens": {
+          "input": 1202,
+          "output": 631,
+          "reasoning": 0,
+          "cache_read": 0,
+          "cache_write_5m": 0,
+          "cache_write_1h": 0
+        }
+      }
+    },
+    "cost": 0,
+    "latency_s": 12.773,
+    "attempts": [
+      {
+        "attempt": 1,
+        "latency_s": 12.773,
+        "error": null
+      }
+    ],
+    "error": null,
+    "provider_response_id": "chatcmpl-1a90f4471fdb4f74bedb208e9988e9a4"
+  },
+  "grade": {
+    "n": 12,
+    "mean_score": 0.95,
+    "accuracy": 1.0,
+    "strict": 0.6667,
+    "extra_penalty": 0.0,
+    "duplicates": [],
+    "extras": [],
+    "missing": [],
+    "rows": [
+      {
+        "id": "P1",
+        "gold": "2",
+        "model": "2",
+        "answer_ok": true,
+        "evidence_kind": "superset",
+        "evidence_ids": [
+          "I1",
+          "I10",
+          "I2",
+          "I8"
+        ],
+        "gold_evidence_sets": [
+          [
+            "I1",
+            "I2",
+            "I8"
+          ],
+          [
+            "I8"
+          ],
+          [
+            "I1",
+            "I2"
+          ]
+        ],
+        "qualifier_ok": true,
+        "qualifier": "",
+        "score": 0.85,
+        "strict": false,
+        "tags": [],
+        "overreach": false
+      },
+      {
+        "id": "P2",
+        "gold": "75",
+        "model": "75",
+        "answer_ok": true,
+        "evidence_kind": "exact",
+        "evidence_ids": [
+          "I1"
+        ],
+        "gold_evidence_sets": [
+          [
+            "I1"
+          ]
+        ],
+        "qualifier_ok": true,
+        "qualifier": "",
+        "score": 1.0,
+        "strict": true,
+        "tags": [],
+        "overreach": false
+      },
+      {
+        "id": "P3",
+        "gold": "expired TLS certificate",
+        "model": "expired TLS certificate",
+        "answer_ok": true,
+        "evidence_kind": "exact",
+        "evidence_ids": [
+          "I1",
+          "I3"
+        ],
+        "gold_evidence_sets": [
+          [
+            "I1",
+            "I3"
+          ],
+          [
+            "I1"
+          ],
+          [
+            "I3"
+          ]
+        ],
+        "qualifier_ok": true,
+        "qualifier": "",
+        "score": 1.0,
+        "strict": true,
+        "tags": [],
+        "overreach": false
+      },
+      {
+        "id": "P4",
+        "gold": "failed rollback",
+        "model": "failed rollback",
+        "answer_ok": true,
+        "evidence_kind": "exact",
+        "evidence_ids": [
+          "I2"
+        ],
+        "gold_evidence_sets": [
+          [
+            "I2",
+            "I6"
+          ],
+          [
+            "I2"
+          ],
+          [
+            "I6"
+          ]
+        ],
+        "qualifier_ok": true,
+        "qualifier": "",
+        "score": 1.0,
+        "strict": true,
+        "tags": [],
+        "overreach": false
+      },
+      {
+        "id": "P5",
+        "gold": "15500",
+        "model": "15500",
+        "answer_ok": true,
+        "evidence_kind": "superset",
+        "evidence_ids": [
+          "I1",
+          "I2",
+          "I8"
+        ],
+        "gold_evidence_sets": [
+          [
+            "I8"
+          ]
+        ],
+        "qualifier_ok": true,
+        "qualifier": "",
+        "score": 0.85,
+        "strict": false,
+        "tags": [],
+        "overreach": false
+      },
+      {
+        "id": "P6",
+        "gold": "no",
+        "model": "no",
+        "answer_ok": true,
+        "evidence_kind": "exact",
+        "evidence_ids": [
+          "I2",
+          "I6"
+        ],
+        "gold_evidence_sets": [
+          [
+            "I2",
+            "I6"
+          ],
+          [
+            "I2"
+          ],
+          [
+            "I6"
+          ]
+        ],
+        "qualifier_ok": true,
+        "qualifier": "",
+        "score": 1.0,
+        "strict": true,
+        "tags": [],
+        "overreach": false
+      },
+      {
+        "id": "P7",
+        "gold": "no",
+        "model": "no",
+        "answer_ok": true,
+        "evidence_kind": "superset",
+        "evidence_ids": [
+          "I10",
+          "I5",
+          "I8"
+        ],
+        "gold_evidence_sets": [
+          [
+            "I8",
+            "I10"
+          ],
+          [
+            "I8"
+          ],
+          [
+            "I10"
+          ]
+        ],
+        "qualifier_ok": true,
+        "qualifier": "",
+        "score": 0.85,
+        "strict": false,
+        "tags": [],
+        "overreach": false
+      },
+      {
+        "id": "P8",
+        "gold": "no",
+        "model": "no",
+        "answer_ok": true,
+        "evidence_kind": "exact",
+        "evidence_ids": [
+          "I10",
+          "I9"
+        ],
+        "gold_evidence_sets": [
+          [
+            "I9",
+            "I10"
+          ],
+          [
+            "I9"
+          ],
+          [
+            "I10"
+          ]
+        ],
+        "qualifier_ok": true,
+        "qualifier": "",
+        "score": 1.0,
+        "strict": true,
+        "tags": [],
+        "overreach": false
+      },
+      {
+        "id": "P9",
+        "gold": "rotate certificates and re-enable expiry alerts",
+        "model": "rotate certificates and re-enable expiry alerts",
+        "answer_ok": true,
+        "evidence_kind": "exact",
+        "evidence_ids": [
+          "I3"
+        ],
+        "gold_evidence_sets": [
+          [
+            "I3"
+          ]
+        ],
+        "qualifier_ok": true,
+        "qualifier": "The root-cause note also recommends adding a weekly certificate inventory check.",
+        "score": 1.0,
+        "strict": true,
+        "tags": [],
+        "overreach": false
+      },
+      {
+        "id": "P10",
+        "gold": "no",
+        "model": "no",
+        "answer_ok": true,
+        "evidence_kind": "superset",
+        "evidence_ids": [
+          "I1",
+          "I10",
+          "I2",
+          "I8"
+        ],
+        "gold_evidence_sets": [
+          [
+            "I2",
+            "I8",
+            "I10"
+          ],
+          [
+            "I2"
+          ],
+          [
+            "I8"
+          ],
+          [
+            "I10"
+          ]
+        ],
+        "qualifier_ok": true,
+        "qualifier": "",
+        "score": 0.85,
+        "strict": false,
+        "tags": [],
+        "overreach": false
+      },
+      {
+        "id": "P11",
+        "gold": "45",
+        "model": "45",
+        "answer_ok": true,
+        "evidence_kind": "exact",
+        "evidence_ids": [
+          "I2"
+        ],
+        "gold_evidence_sets": [
+          [
+            "I2"
+          ]
+        ],
+        "qualifier_ok": true,
+        "qualifier": "",
+        "score": 1.0,
+        "strict": true,
+        "tags": [],
+        "overreach": false
+      },
+      {
+        "id": "P12",
+        "gold": "incompatible schema change in the rollback script",
+        "model": "incompatible schema change in the rollback script",
+        "answer_ok": true,
+        "evidence_kind": "exact",
+        "evidence_ids": [
+          "I6"
+        ],
+        "gold_evidence_sets": [
+          [
+            "I6"
+          ]
+        ],
+        "qualifier_ok": true,
+        "qualifier": "",
+        "score": 1.0,
+        "strict": true,
+        "tags": [],
+        "overreach": false
+      }
+    ],
+    "summary": {
+      "text": "Two distinct service outages occurred in March 2026 with separate root causes, resulting in a combined total of 15,500 failed customer transactions. The 2 March outage (INC-031) lasted 75 minutes and caused 12,400 failed transactions due to an expired TLS certificate on the edge gateway after its renewal job stopped running and its expiry alert was disabled. The 4 March outage (INC-032) lasted 45 minutes and caused 3,100 failed transactions due to a failed rollback of configuration change CHG-441 triggered by an incompatible schema change in the rollback script. Framing the events as a single certificate incident is unsupported by authoritative records, and while the root-cause note for INC-031 recommends automatic certificate rotation, re-enabling alerts, and weekly inventory checks, the draft remediation plan remains unapproved.",
+      "required_ok": false,
+      "forbidden_hits": [],
+      "score": 0.5
+    },
+    "inconsistencies": [],
+    "inconsistency_count": 0,
+    "condition": "production"
+  }
+}

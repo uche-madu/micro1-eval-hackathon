@@ -1,0 +1,393 @@
+{
+  "prompt": "You are drafting the findings section of a brief from a source pack.\n\nUse ONLY the sources below. Do not use general knowledge or assumptions.\nAs-of date: 2026-06-15\nContext: You are preparing a retention brief for the Chief Operating Officer of Northwind Cloud Services. The source pack is the only permitted evidence. Some documents are approved, some are operational exports, one is an unsigned draft, and one is an informal email. Dates matter.\n\nAUTHORITY NOTE\nApproved policies, addenda, signed amendments and approved schedules are authoritative. A signed amendment controls over an operational export. An unsigned draft has no effect. An informal email cannot change authority.\n\nSOURCE PACK\n[D1 | policy | 2025-01-10 | Enterprise Data Retention Policy (v3)]\nThis policy applies to all enterprise customer data processed by Northwind Cloud Services. Standard customer data is retained for 24 months after contract termination. For customers in the European Union, the retention period is 12 months after contract termination. Backups are governed separately by the Backup Retention Schedule and are out of scope of this policy. The policy is reviewed annually by the Data Protection Officer.\n\n[D2 | addendum | 2025-06-01 | EU Retention Addendum]\nThis addendum supplements the Enterprise Data Retention Policy for customers in the European Union. Effective 1 July 2025, EU customer data is retained for 12 months after contract termination. This addendum does not change the standard retention period or the backup schedule.\n\n[D3 | contract_amendment | 2026-05-05 | Amendment A to the EU Retention Addendum]\nNorthwind Cloud Services and the EU customer representative agree to amend the EU Retention Addendum. The EU retention period is amended from 12 months to 18 months, effective 1 March 2026. This change applies only to accounts opened on or after 1 January 2026. Accounts opened before 1 January 2026 remain subject to the 12-month period in the Addendum. Signed 5 May 2026.\n\n[D4 | draft | 2026-06-01 | Draft Amendment B (unsigned)]\nDRAFT - NOT APPROVED. This draft proposes to amend the EU retention period to 24 months for all EU accounts, effective 1 September 2026. It has not been signed or approved by either party.\n\n[D5 | system_export | 2026-04-15 | System-of-record export - Retention]\nEU retention: 12 months. Standard retention: 24 months. Source: configuration table last updated 2025-11-30. The export is generated nightly; configuration changes are applied by the platform team after approval.\n\n[D6 | email | 2026-04-20 | Email from Data Protection Officer]\nThe public trust page has not yet been updated to reflect Amendment A. The signed Amendment A is the controlling document for EU retention. Please do not rely on the system export for the new EU period until the configuration is updated.\n\n[D7 | web_snapshot | 2026-04-18 | Public trust page snapshot]\nData retention: Standard accounts 24 months. EU accounts 12 months. Backups 35 days.\n\n[D8 | schedule | 2025-11-01 | Backup Retention Schedule]\nBackups of enterprise customer data are retained for 35 days. Backups are not part of the Enterprise Data Retention Policy. The schedule is reviewed annually by the Security team.\n\n[D9 | contract | 2026-01-15 | Vendor contract excerpt - Data processing]\nFor EU accounts, the parties agree to the retention schedule set out in the Enterprise Data Retention Policy and its EU addenda, as amended from time to time. In the event of a conflict, a signed amendment controls over an operational export.\n\n[D10 | audit_note | 2026-05-20 | Internal audit note]\nObservation: the system-of-record export still shows 12 months for EU retention. Amendment A was signed on 5 May 2026 and is effective from 1 March 2026. The export is stale for accounts opened on or after 1 January 2026. No action has been taken to update the configuration.\n\n[D11 | minutes | 2026-01-15 | Board minutes excerpt]\nThe Board noted the proposed EU retention amendment and delegated signature to the Chief Legal Officer. The Board did not approve Draft Amendment B, which had not been circulated.\n\n[D12 | email | 2026-02-10 | Sales operations email]\nPlease use the system export for EU retention. The amendment is not in the system yet, so 12 months is the number to quote.\n\nREQUIRED FINDINGS\nP1. What is the EU retention period for accounts opened in 2026, as of 2026-06-15?\nP2. What is the EU retention period for accounts opened in 2024, as of 2026-06-15?\nP3. What was the EU retention period for accounts opened in 2026 on 2026-02-15?\nP4. What is the standard (non-EU) retention period?\nP5. Is Draft Amendment B in effect?\nP6. What is the backup retention period?\nP7. Are backups covered by the Enterprise Data Retention Policy?\nP8. Does the public trust page show the current EU retention period?\nP9. Which record controls the EU retention period for accounts opened in 2026?\nP10. Did the EU retention change take effect before Amendment A was signed?\nP11. What EU retention value does the system-of-record export show?\nP12. Is the system-of-record export current for accounts opened in 2026?\n\nFor each finding, derive the conclusion yourself. Answer with the shortest exact value\n(a number, a period, a date, a cause, or yes/no). Do not write a sentence.\nIf the sources do not establish an answer, write \"insufficient\".\nIf the conclusion is true only with a material limit, put that limit in the \"qualifier\" field.\n\n\nAlso write a 2-4 sentence executive summary of the position, using only the sources.\n\nReturn ONLY JSON in this shape:\n{\"items\": [{\"item_id\": \"P1\", \"answer\": \"<short value>\", \"evidence_ids\": [\"D1\"], \"qualifier\": \"\"}], \"summary\": \"<2-4 sentences>\"}\nUse exactly one answer per item. Do not add commentary outside the JSON.\n",
+  "raw": "{\"items\":[{\"item_id\":\"P1\",\"answer\":\"18 months\",\"evidence_ids\":[\"D3\"],\"qualifier\":\"\"},{\"item_id\":\"P2\",\"answer\":\"12 months\",\"evidence_ids\":[\"D3\"],\"qualifier\":\"\"},{\"item_id\":\"P3\",\"answer\":\"12 months\",\"evidence_ids\":[\"D2\",\"D3\"],\"qualifier\":\"Amendment A effective 2026-03-01\"},{\"item_id\":\"P4\",\"answer\":\"24 months\",\"evidence_ids\":[\"D1\"],\"qualifier\":\"\"},{\"item_id\":\"P5\",\"answer\":\"no\",\"evidence_ids\":[\"D4\",\"D11\"],\"qualifier\":\"\"},{\"item_id\":\"P6\",\"answer\":\"35 days\",\"evidence_ids\":[\"D8\"],\"qualifier\":\"\"},{\"item_id\":\"P7\",\"answer\":\"no\",\"evidence_ids\":[\"D1\",\"D8\"],\"qualifier\":\"\"},{\"item_id\":\"P8\",\"answer\":\"no\",\"evidence_ids\":[\"D3\",\"D6\",\"D7\"],\"qualifier\":\"shows 12 months\"},{\"item_id\":\"P9\",\"answer\":\"Amendment A\",\"evidence_ids\":[\"D3\",\"D6\",\"D9\"],\"qualifier\":\"signed; accounts opened on/after 2026-01-01\"},{\"item_id\":\"P10\",\"answer\":\"yes\",\"evidence_ids\":[\"D3\",\"D10\"],\"qualifier\":\"effective 2026-03-01; signed 2026-05-05\"},{\"item_id\":\"P11\",\"answer\":\"12 months\",\"evidence_ids\":[\"D5\",\"D10\"],\"qualifier\":\"\"},{\"item_id\":\"P12\",\"answer\":\"no\",\"evidence_ids\":[\"D5\",\"D10\"],\"qualifier\":\"stale for accounts opened on/after 2026-01-01\"}],\"summary\":\"Under signed Amendment A, EU retention is 18 months for accounts opened on or after 1 January 2026, while pre-2026 accounts remain at 12 months; standard retention is 24 months and backups are 35 days. The system-of-record export and public trust page still show 12 months for EU, so they are not current for accounts opened in 2026. Draft Amendment B is unsigned and has no effect.\"}",
+  "model": "opencode-go/deepseek-v4.1-flash",
+  "task": "T1",
+  "condition": "production_open",
+  "trial": 2,
+  "response": {
+    "content": "{\"items\":[{\"item_id\":\"P1\",\"answer\":\"18 months\",\"evidence_ids\":[\"D3\"],\"qualifier\":\"\"},{\"item_id\":\"P2\",\"answer\":\"12 months\",\"evidence_ids\":[\"D3\"],\"qualifier\":\"\"},{\"item_id\":\"P3\",\"answer\":\"12 months\",\"evidence_ids\":[\"D2\",\"D3\"],\"qualifier\":\"Amendment A effective 2026-03-01\"},{\"item_id\":\"P4\",\"answer\":\"24 months\",\"evidence_ids\":[\"D1\"],\"qualifier\":\"\"},{\"item_id\":\"P5\",\"answer\":\"no\",\"evidence_ids\":[\"D4\",\"D11\"],\"qualifier\":\"\"},{\"item_id\":\"P6\",\"answer\":\"35 days\",\"evidence_ids\":[\"D8\"],\"qualifier\":\"\"},{\"item_id\":\"P7\",\"answer\":\"no\",\"evidence_ids\":[\"D1\",\"D8\"],\"qualifier\":\"\"},{\"item_id\":\"P8\",\"answer\":\"no\",\"evidence_ids\":[\"D3\",\"D6\",\"D7\"],\"qualifier\":\"shows 12 months\"},{\"item_id\":\"P9\",\"answer\":\"Amendment A\",\"evidence_ids\":[\"D3\",\"D6\",\"D9\"],\"qualifier\":\"signed; accounts opened on/after 2026-01-01\"},{\"item_id\":\"P10\",\"answer\":\"yes\",\"evidence_ids\":[\"D3\",\"D10\"],\"qualifier\":\"effective 2026-03-01; signed 2026-05-05\"},{\"item_id\":\"P11\",\"answer\":\"12 months\",\"evidence_ids\":[\"D5\",\"D10\"],\"qualifier\":\"\"},{\"item_id\":\"P12\",\"answer\":\"no\",\"evidence_ids\":[\"D5\",\"D10\"],\"qualifier\":\"stale for accounts opened on/after 2026-01-01\"}],\"summary\":\"Under signed Amendment A, EU retention is 18 months for accounts opened on or after 1 January 2026, while pre-2026 accounts remain at 12 months; standard retention is 24 months and backups are 35 days. The system-of-record export and public trust page still show 12 months for EU, so they are not current for accounts opened in 2026. Draft Amendment B is unsigned and has no effect.\"}",
+    "model": "opencode-go/deepseek-v4.1-flash",
+    "usage": {
+      "prompt_tokens": 1361,
+      "completion_tokens": 5271,
+      "total_tokens": 6632,
+      "prompt_tokens_details": {
+        "cached_tokens": 256
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 4798
+      },
+      "cost": 0,
+      "opencode": {
+        "billing_source": "go",
+        "list_cost": 0.00332912,
+        "allowance": 0.00199747,
+        "tokens": {
+          "input": 1105,
+          "output": 5271,
+          "reasoning": 4798,
+          "cache_read": 256,
+          "cache_write_5m": 0,
+          "cache_write_1h": 0
+        }
+      }
+    },
+    "cost": 0,
+    "latency_s": 61.171,
+    "attempts": [
+      {
+        "attempt": 1,
+        "latency_s": 61.171,
+        "error": null
+      }
+    ],
+    "error": null,
+    "provider_response_id": "gw-f0b3575f9cc-b72525"
+  },
+  "grade": {
+    "n": 12,
+    "mean_score": 0.95,
+    "accuracy": 1.0,
+    "strict": 0.6667,
+    "extra_penalty": 0.0,
+    "duplicates": [],
+    "extras": [],
+    "missing": [],
+    "rows": [
+      {
+        "id": "P1",
+        "gold": "18 months",
+        "model": "18 months",
+        "answer_ok": true,
+        "answer_match": "exact",
+        "evidence_kind": "exact",
+        "evidence_ids": [
+          "D3"
+        ],
+        "gold_evidence_sets": [
+          [
+            "D3"
+          ]
+        ],
+        "qualifier_ok": true,
+        "qualifier": "",
+        "score": 1.0,
+        "strict": true,
+        "tags": [],
+        "overreach": false
+      },
+      {
+        "id": "P2",
+        "gold": "12 months",
+        "model": "12 months",
+        "answer_ok": true,
+        "answer_match": "exact",
+        "evidence_kind": "exact",
+        "evidence_ids": [
+          "D3"
+        ],
+        "gold_evidence_sets": [
+          [
+            "D2"
+          ],
+          [
+            "D3"
+          ]
+        ],
+        "qualifier_ok": true,
+        "qualifier": "",
+        "score": 1.0,
+        "strict": true,
+        "tags": [],
+        "overreach": false
+      },
+      {
+        "id": "P3",
+        "gold": "12 months",
+        "model": "12 months",
+        "answer_ok": true,
+        "answer_match": "exact",
+        "evidence_kind": "exact",
+        "evidence_ids": [
+          "D2",
+          "D3"
+        ],
+        "gold_evidence_sets": [
+          [
+            "D2",
+            "D3"
+          ],
+          [
+            "D2"
+          ]
+        ],
+        "qualifier_ok": true,
+        "qualifier": "Amendment A effective 2026-03-01",
+        "score": 1.0,
+        "strict": true,
+        "tags": [],
+        "overreach": false
+      },
+      {
+        "id": "P4",
+        "gold": "24 months",
+        "model": "24 months",
+        "answer_ok": true,
+        "answer_match": "exact",
+        "evidence_kind": "exact",
+        "evidence_ids": [
+          "D1"
+        ],
+        "gold_evidence_sets": [
+          [
+            "D1"
+          ]
+        ],
+        "qualifier_ok": true,
+        "qualifier": "",
+        "score": 1.0,
+        "strict": true,
+        "tags": [],
+        "overreach": false
+      },
+      {
+        "id": "P5",
+        "gold": "no",
+        "model": "no",
+        "answer_ok": true,
+        "answer_match": "exact",
+        "evidence_kind": "exact",
+        "evidence_ids": [
+          "D11",
+          "D4"
+        ],
+        "gold_evidence_sets": [
+          [
+            "D4",
+            "D11"
+          ],
+          [
+            "D4"
+          ],
+          [
+            "D11"
+          ]
+        ],
+        "qualifier_ok": true,
+        "qualifier": "",
+        "score": 1.0,
+        "strict": true,
+        "tags": [],
+        "overreach": false
+      },
+      {
+        "id": "P6",
+        "gold": "35 days",
+        "model": "35 days",
+        "answer_ok": true,
+        "answer_match": "exact",
+        "evidence_kind": "exact",
+        "evidence_ids": [
+          "D8"
+        ],
+        "gold_evidence_sets": [
+          [
+            "D8"
+          ]
+        ],
+        "qualifier_ok": true,
+        "qualifier": "",
+        "score": 1.0,
+        "strict": true,
+        "tags": [],
+        "overreach": false
+      },
+      {
+        "id": "P7",
+        "gold": "no",
+        "model": "no",
+        "answer_ok": true,
+        "answer_match": "exact",
+        "evidence_kind": "exact",
+        "evidence_ids": [
+          "D1",
+          "D8"
+        ],
+        "gold_evidence_sets": [
+          [
+            "D1",
+            "D8"
+          ],
+          [
+            "D1"
+          ],
+          [
+            "D8"
+          ]
+        ],
+        "qualifier_ok": true,
+        "qualifier": "",
+        "score": 1.0,
+        "strict": true,
+        "tags": [],
+        "overreach": false
+      },
+      {
+        "id": "P8",
+        "gold": "no",
+        "model": "no",
+        "answer_ok": true,
+        "answer_match": "exact",
+        "evidence_kind": "superset",
+        "evidence_ids": [
+          "D3",
+          "D6",
+          "D7"
+        ],
+        "gold_evidence_sets": [
+          [
+            "D6",
+            "D7"
+          ],
+          [
+            "D6"
+          ],
+          [
+            "D7"
+          ]
+        ],
+        "qualifier_ok": true,
+        "qualifier": "shows 12 months",
+        "score": 0.85,
+        "strict": false,
+        "tags": [],
+        "overreach": false
+      },
+      {
+        "id": "P9",
+        "gold": "Amendment A",
+        "model": "Amendment A",
+        "answer_ok": true,
+        "answer_match": "exact",
+        "evidence_kind": "exact",
+        "evidence_ids": [
+          "D3",
+          "D6",
+          "D9"
+        ],
+        "gold_evidence_sets": [
+          [
+            "D3",
+            "D6",
+            "D9"
+          ],
+          [
+            "D3"
+          ],
+          [
+            "D6"
+          ],
+          [
+            "D9"
+          ]
+        ],
+        "qualifier_ok": true,
+        "qualifier": "signed; accounts opened on/after 2026-01-01",
+        "score": 1.0,
+        "strict": true,
+        "tags": [],
+        "overreach": false
+      },
+      {
+        "id": "P10",
+        "gold": "yes",
+        "model": "yes",
+        "answer_ok": true,
+        "answer_match": "exact",
+        "evidence_kind": "superset",
+        "evidence_ids": [
+          "D10",
+          "D3"
+        ],
+        "gold_evidence_sets": [
+          [
+            "D3"
+          ]
+        ],
+        "qualifier_ok": true,
+        "qualifier": "effective 2026-03-01; signed 2026-05-05",
+        "score": 0.85,
+        "strict": false,
+        "tags": [],
+        "overreach": false
+      },
+      {
+        "id": "P11",
+        "gold": "12 months",
+        "model": "12 months",
+        "answer_ok": true,
+        "answer_match": "exact",
+        "evidence_kind": "superset",
+        "evidence_ids": [
+          "D10",
+          "D5"
+        ],
+        "gold_evidence_sets": [
+          [
+            "D5"
+          ]
+        ],
+        "qualifier_ok": true,
+        "qualifier": "",
+        "score": 0.85,
+        "strict": false,
+        "tags": [],
+        "overreach": false
+      },
+      {
+        "id": "P12",
+        "gold": "no",
+        "model": "no",
+        "answer_ok": true,
+        "answer_match": "exact",
+        "evidence_kind": "superset",
+        "evidence_ids": [
+          "D10",
+          "D5"
+        ],
+        "gold_evidence_sets": [
+          [
+            "D5",
+            "D6",
+            "D10"
+          ],
+          [
+            "D5"
+          ],
+          [
+            "D6"
+          ],
+          [
+            "D10"
+          ]
+        ],
+        "qualifier_ok": true,
+        "qualifier": "stale for accounts opened on/after 2026-01-01",
+        "score": 0.85,
+        "strict": false,
+        "tags": [],
+        "overreach": false
+      }
+    ],
+    "summary": {
+      "text": "Under signed Amendment A, EU retention is 18 months for accounts opened on or after 1 January 2026, while pre-2026 accounts remain at 12 months; standard retention is 24 months and backups are 35 days. The system-of-record export and public trust page still show 12 months for EU, so they are not current for accounts opened in 2026. Draft Amendment B is unsigned and has no effect.",
+      "required_ok": true,
+      "forbidden_hits": [],
+      "score": 1.0
+    },
+    "inconsistencies": [],
+    "inconsistency_count": 0,
+    "condition": "production"
+  }
+}

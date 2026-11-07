@@ -1,0 +1,409 @@
+{
+  "run_id": "oc_qwen",
+  "summary": {
+    "opencode-go/qwen3.8-flash": {
+      "production": {
+        "calls": 1,
+        "items": 12,
+        "accuracy": 1.0,
+        "strict": 0.4167,
+        "overreach": 0,
+        "signature": 0,
+        "inconsistencies": 0,
+        "tags": {},
+        "summary_mean": 1.0,
+        "parse_errors": 0
+      }
+    }
+  },
+  "records": [
+    {
+      "run_id": "oc_qwen",
+      "timestamp": "2026-11-07T11:59:13+00:00",
+      "model": "opencode-go/qwen3.8-flash",
+      "task": "T1",
+      "condition": "production",
+      "trial": 1,
+      "prompt_sha256": "66b1fe83175fff99abbc656597c29badde34c443d5311940ac4c01264560d50b",
+      "prompt_chars": 6272,
+      "raw_chars": 2506,
+      "raw": "{\n  \"items\": [\n    {\n      \"item_id\": \"P1\",\n      \"answer\": \"18 months\",\n      \"evidence_ids\": [\"D3\", \"D9\", \"D6\", \"D10\"],\n      \"qualifier\": \"For accounts opened on or after 1 January 2026.\"\n    },\n    {\n      \"item_id\": \"P2\",\n      \"answer\": \"12 months\",\n      \"evidence_ids\": [\"D3\", \"D2\", \"D1\"],\n      \"qualifier\": \"For accounts opened before 1 January 2026.\"\n    },\n    {\n      \"item_id\": \"P3\",\n      \"answer\": \"12 months\",\n      \"evidence_ids\": [\"D2\", \"D3\"],\n      \"qualifier\": \"On 2026-02-15, Amendment A had not yet become effective.\"\n    },\n    {\n      \"item_id\": \"P4\",\n      \"answer\": \"24 months\",\n      \"evidence_ids\": [\"D1\", \"D2\", \"D5\"],\n      \"qualifier\": \"Standard customer data retention after contract termination.\"\n    },\n    {\n      \"item_id\": \"P5\",\n      \"answer\": \"no\",\n      \"evidence_ids\": [\"D4\", \"D11\"],\n      \"qualifier\": \"\"\n    },\n    {\n      \"item_id\": \"P6\",\n      \"answer\": \"35 days\",\n      \"evidence_ids\": [\"D8\", \"D7\"],\n      \"qualifier\": \"\"\n    },\n    {\n      \"item_id\": \"P7\",\n      \"answer\": \"no\",\n      \"evidence_ids\": [\"D1\", \"D8\"],\n      \"qualifier\": \"\"\n    },\n    {\n      \"item_id\": \"P8\",\n      \"answer\": \"no\",\n      \"evidence_ids\": [\"D7\", \"D3\", \"D6\"],\n      \"qualifier\": \"No for accounts opened on or after 1 January 2026; it remains 12 months for earlier accounts.\"\n    },\n    {\n      \"item_id\": \"P9\",\n      \"answer\": \"Amendment A\",\n      \"evidence_ids\": [\"D3\", \"D9\", \"D6\"],\n      \"qualifier\": \"For accounts opened on or after 1 January 2026.\"\n    },\n    {\n      \"item_id\": \"P10\",\n      \"answer\": \"yes\",\n      \"evidence_ids\": [\"D3\", \"D10\"],\n      \"qualifier\": \"Amendment A was effective 1 March 2026 but signed 5 May 2026.\"\n    },\n    {\n      \"item_id\": \"P11\",\n      \"answer\": \"12 months\",\n      \"evidence_ids\": [\"D5\"],\n      \"qualifier\": \"\"\n    },\n    {\n      \"item_id\": \"P12\",\n      \"answer\": \"no\",\n      \"evidence_ids\": [\"D10\", \"D6\", \"D3\"],\n      \"qualifier\": \"For accounts opened on or after 1 January 2026.\"\n    }\n  ],\n  \"summary\": \"As of 2026-06-15, signed Amendment A controls EU retention for accounts opened on or after 1 January 2026 at 18 months, while accounts opened before 1 January 2026 remain at 12 months under the EU Retention Addendum. Draft Amendment B has no effect because it is unsigned and was not approved. Standard retention remains 24 months, and backups remain 35 days and are outside the Enterprise Data Retention Policy. The system-of-record export and public trust page still show 12 months and are not current for 2026-opened EU accounts.\"\n}",
+      "usage": {
+        "prompt_tokens": 1711,
+        "completion_tokens": 6288,
+        "total_tokens": 7999,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 5397
+        },
+        "cost": 0,
+        "opencode": {
+          "billing_source": "go",
+          "list_cost": 0.00321201,
+          "allowance": 0.00642402,
+          "tokens": {
+            "input": 1711,
+            "output": 6288,
+            "reasoning": 5397,
+            "cache_read": 0,
+            "cache_write_5m": 0,
+            "cache_write_1h": 0
+          }
+        }
+      },
+      "cost": 0,
+      "latency_s": 43.888,
+      "attempts": [
+        {
+          "attempt": 1,
+          "latency_s": 43.888,
+          "error": null
+        }
+      ],
+      "provider_error": null,
+      "grade": {
+        "n": 12,
+        "mean_score": 0.9125,
+        "accuracy": 1.0,
+        "strict": 0.4167,
+        "extra_penalty": 0.0,
+        "duplicates": [],
+        "extras": [],
+        "missing": [],
+        "rows": [
+          {
+            "id": "P1",
+            "gold": "18 months",
+            "model": "18 months",
+            "answer_ok": true,
+            "evidence_kind": "superset",
+            "evidence_ids": [
+              "D10",
+              "D3",
+              "D6",
+              "D9"
+            ],
+            "gold_evidence_sets": [
+              [
+                "D3"
+              ]
+            ],
+            "qualifier_ok": true,
+            "qualifier": "For accounts opened on or after 1 January 2026.",
+            "score": 0.85,
+            "strict": false,
+            "tags": [],
+            "overreach": false
+          },
+          {
+            "id": "P2",
+            "gold": "12 months",
+            "model": "12 months",
+            "answer_ok": true,
+            "evidence_kind": "superset",
+            "evidence_ids": [
+              "D1",
+              "D2",
+              "D3"
+            ],
+            "gold_evidence_sets": [
+              [
+                "D2"
+              ],
+              [
+                "D3"
+              ]
+            ],
+            "qualifier_ok": true,
+            "qualifier": "For accounts opened before 1 January 2026.",
+            "score": 0.85,
+            "strict": false,
+            "tags": [],
+            "overreach": false
+          },
+          {
+            "id": "P3",
+            "gold": "12 months",
+            "model": "12 months",
+            "answer_ok": true,
+            "evidence_kind": "exact",
+            "evidence_ids": [
+              "D2",
+              "D3"
+            ],
+            "gold_evidence_sets": [
+              [
+                "D2",
+                "D3"
+              ],
+              [
+                "D2"
+              ]
+            ],
+            "qualifier_ok": true,
+            "qualifier": "On 2026-02-15, Amendment A had not yet become effective.",
+            "score": 1.0,
+            "strict": true,
+            "tags": [],
+            "overreach": false
+          },
+          {
+            "id": "P4",
+            "gold": "24 months",
+            "model": "24 months",
+            "answer_ok": true,
+            "evidence_kind": "superset",
+            "evidence_ids": [
+              "D1",
+              "D2",
+              "D5"
+            ],
+            "gold_evidence_sets": [
+              [
+                "D1"
+              ]
+            ],
+            "qualifier_ok": true,
+            "qualifier": "Standard customer data retention after contract termination.",
+            "score": 0.85,
+            "strict": false,
+            "tags": [],
+            "overreach": false
+          },
+          {
+            "id": "P5",
+            "gold": "no",
+            "model": "no",
+            "answer_ok": true,
+            "evidence_kind": "exact",
+            "evidence_ids": [
+              "D11",
+              "D4"
+            ],
+            "gold_evidence_sets": [
+              [
+                "D4",
+                "D11"
+              ],
+              [
+                "D4"
+              ],
+              [
+                "D11"
+              ]
+            ],
+            "qualifier_ok": true,
+            "qualifier": "",
+            "score": 1.0,
+            "strict": true,
+            "tags": [],
+            "overreach": false
+          },
+          {
+            "id": "P6",
+            "gold": "35 days",
+            "model": "35 days",
+            "answer_ok": true,
+            "evidence_kind": "superset",
+            "evidence_ids": [
+              "D7",
+              "D8"
+            ],
+            "gold_evidence_sets": [
+              [
+                "D8"
+              ]
+            ],
+            "qualifier_ok": true,
+            "qualifier": "",
+            "score": 0.85,
+            "strict": false,
+            "tags": [],
+            "overreach": false
+          },
+          {
+            "id": "P7",
+            "gold": "no",
+            "model": "no",
+            "answer_ok": true,
+            "evidence_kind": "exact",
+            "evidence_ids": [
+              "D1",
+              "D8"
+            ],
+            "gold_evidence_sets": [
+              [
+                "D1",
+                "D8"
+              ],
+              [
+                "D1"
+              ],
+              [
+                "D8"
+              ]
+            ],
+            "qualifier_ok": true,
+            "qualifier": "",
+            "score": 1.0,
+            "strict": true,
+            "tags": [],
+            "overreach": false
+          },
+          {
+            "id": "P8",
+            "gold": "no",
+            "model": "no",
+            "answer_ok": true,
+            "evidence_kind": "superset",
+            "evidence_ids": [
+              "D3",
+              "D6",
+              "D7"
+            ],
+            "gold_evidence_sets": [
+              [
+                "D6",
+                "D7"
+              ],
+              [
+                "D6"
+              ],
+              [
+                "D7"
+              ]
+            ],
+            "qualifier_ok": true,
+            "qualifier": "No for accounts opened on or after 1 January 2026; it remains 12 months for earlier accounts.",
+            "score": 0.85,
+            "strict": false,
+            "tags": [],
+            "overreach": false
+          },
+          {
+            "id": "P9",
+            "gold": "Amendment A",
+            "model": "Amendment A",
+            "answer_ok": true,
+            "evidence_kind": "exact",
+            "evidence_ids": [
+              "D3",
+              "D6",
+              "D9"
+            ],
+            "gold_evidence_sets": [
+              [
+                "D3",
+                "D6",
+                "D9"
+              ],
+              [
+                "D3"
+              ],
+              [
+                "D6"
+              ],
+              [
+                "D9"
+              ]
+            ],
+            "qualifier_ok": true,
+            "qualifier": "For accounts opened on or after 1 January 2026.",
+            "score": 1.0,
+            "strict": true,
+            "tags": [],
+            "overreach": false
+          },
+          {
+            "id": "P10",
+            "gold": "yes",
+            "model": "yes",
+            "answer_ok": true,
+            "evidence_kind": "superset",
+            "evidence_ids": [
+              "D10",
+              "D3"
+            ],
+            "gold_evidence_sets": [
+              [
+                "D3"
+              ]
+            ],
+            "qualifier_ok": true,
+            "qualifier": "Amendment A was effective 1 March 2026 but signed 5 May 2026.",
+            "score": 0.85,
+            "strict": false,
+            "tags": [],
+            "overreach": false
+          },
+          {
+            "id": "P11",
+            "gold": "12 months",
+            "model": "12 months",
+            "answer_ok": true,
+            "evidence_kind": "exact",
+            "evidence_ids": [
+              "D5"
+            ],
+            "gold_evidence_sets": [
+              [
+                "D5"
+              ]
+            ],
+            "qualifier_ok": true,
+            "qualifier": "",
+            "score": 1.0,
+            "strict": true,
+            "tags": [],
+            "overreach": false
+          },
+          {
+            "id": "P12",
+            "gold": "no",
+            "model": "no",
+            "answer_ok": true,
+            "evidence_kind": "superset",
+            "evidence_ids": [
+              "D10",
+              "D3",
+              "D6"
+            ],
+            "gold_evidence_sets": [
+              [
+                "D5",
+                "D6",
+                "D10"
+              ],
+              [
+                "D5"
+              ],
+              [
+                "D6"
+              ],
+              [
+                "D10"
+              ]
+            ],
+            "qualifier_ok": true,
+            "qualifier": "For accounts opened on or after 1 January 2026.",
+            "score": 0.85,
+            "strict": false,
+            "tags": [],
+            "overreach": false
+          }
+        ],
+        "summary": {
+          "text": "As of 2026-06-15, signed Amendment A controls EU retention for accounts opened on or after 1 January 2026 at 18 months, while accounts opened before 1 January 2026 remain at 12 months under the EU Retention Addendum. Draft Amendment B has no effect because it is unsigned and was not approved. Standard retention remains 24 months, and backups remain 35 days and are outside the Enterprise Data Retention Policy. The system-of-record export and public trust page still show 12 months and are not current for 2026-opened EU accounts.",
+          "required_ok": true,
+          "forbidden_hits": [],
+          "score": 1.0
+        },
+        "inconsistencies": [],
+        "inconsistency_count": 0,
+        "condition": "production"
+      }
+    }
+  ]
+}

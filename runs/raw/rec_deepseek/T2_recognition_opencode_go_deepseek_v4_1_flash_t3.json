@@ -1,0 +1,420 @@
+{
+  "prompt": "You are auditing a set of claims against a source pack.\n\nUse ONLY the sources below. Do not use general knowledge or assumptions.\nAs-of date: 2026-06-15\nContext: You are preparing an incident summary for the Chief Operating Officer of Meridian Payments. The source pack is the only permitted evidence. There are approved incident records, a draft postmortem, an executive email, and operational notes of differing authority.\n\nAUTHORITY NOTE\nApproved incident timelines, the change log, the customer impact report and the audit note are authoritative. A draft postmortem is not approved. An executive email is a request, not evidence. A status-page export auto-fills its cause field and is not authoritative for root cause.\n\nSOURCE PACK\n[I1 | incident_timeline | 2026-03-02 | Incident INC-031 timeline]\nIncident INC-031: 2 March 2026. Service degradation began 14:05 UTC and ended 15:20 UTC (75 minutes). Root cause: expired TLS certificate on the edge gateway. 12,400 customer transactions failed. The certificate expiry alert had been disabled on 1 March 2026 during maintenance.\n\n[I2 | incident_timeline | 2026-03-04 | Incident INC-032 timeline]\nIncident INC-032: 4 March 2026. Service degradation began 09:10 UTC and ended 09:55 UTC (45 minutes). Root cause: a failed rollback of configuration change CHG-441. 3,100 customer transactions failed. The rollback failure was unrelated to the certificate incident.\n\n[I3 | root_cause_note | 2026-03-03 | Root-cause note for INC-031]\nINC-031 root cause: the edge gateway certificate expired because the renewal job was not running and the expiry alert was disabled. Recommended remediation: rotate certificates automatically, re-enable expiry alerts, and add a weekly certificate inventory check.\n\n[I4 | draft_postmortem | 2026-03-05 | Draft postmortem (not approved)]\nDRAFT - NOT APPROVED. March 2026 incident: one outage on 2 March caused by an expired certificate. Approximately 15,500 transactions failed. Remediation: move certificate management to the platform team.\n\n[I5 | email | 2026-03-06 | Executive email]\nPlease describe the March incident as a single certificate event. The board wants a simple story. We can mention the second event separately if legal insists.\n\n[I6 | change_log | 2026-03-04 | Change log CHG-441]\nCHG-441: configuration change to the routing layer, deployed 4 March 2026 08:40 UTC. Rollback initiated 09:05 UTC; rollback failed at 09:12 UTC. The failure was caused by an incompatible schema change in the rollback script, not by the certificate expiry.\n\n[I7 | monitoring_note | 2026-03-01 | Monitoring note]\nThe certificate expiry alert for the edge gateway was disabled during maintenance on 1 March 2026. The renewal job was last successful on 2025-12-15. No alert fired before the 2 March incident.\n\n[I8 | impact_report | 2026-03-07 | Customer impact report]\nINC-031: 12,400 failed transactions. INC-032: 3,100 failed transactions. Total: 15,500 failed transactions across two distinct incidents. The incidents had different root causes.\n\n[I9 | draft_plan | 2026-03-08 | Draft remediation plan (not approved)]\nDRAFT - NOT APPROVED. Proposal: move all certificate management to the platform team, retire the current renewal job, and add a quarterly audit. Owner: Platform. Approval pending.\n\n[I10 | audit_note | 2026-03-10 | Audit note on the March incidents]\nReview of the March incidents: INC-031 and INC-032 are separate events with different causes. The draft postmortem's single-event framing is not supported. The draft remediation plan has not been approved. The executive email's request to simplify the narrative is not evidence.\n\n[I11 | status_export | 2026-03-04 | Status page export]\nStatus history: 2 March 14:05-15:20 degraded; 4 March 09:10-09:55 degraded. Cause field: 'certificate' for both entries (auto-filled from the incident template).\n\n[I12 | chat | 2026-03-04 | On-call chat excerpt]\nOn-call: certificate issue again? The alert was disabled, so probably. Let's just call it the cert incident for the board.\n\nCLAIMS\nC1. There was one outage in March 2026.\nC2. The 2 March outage lasted 75 minutes.\nC3. The 4 March outage was caused by the expired certificate.\nC4. Both outages were caused by certificate expiry.\nC5. The rollback failure caused database corruption.\nC6. 15,500 transactions failed across the two incidents.\nC7. The 4 March outage affected 3,100 transactions.\nC8. The certificate expiry alert was disabled before the 2 March outage.\nC9. The executive email's single-event description is supported by the incident records.\nC10. The remediation plan is approved.\nC11. Moving certificate management to the platform team is the approved remediation.\nC12. The two incidents had different root causes.\n\nFor each claim return exactly one verdict:\n- SUPPORTED: the sources establish the claim exactly as stated, at the as-of date, for the stated population.\n- SUPPORTED_WITH_QUALIFIER: the claim is true only with a material exception, scope limit, or time bound; state the qualifier.\n- CONTRADICTED: an authoritative source states the opposite or a different value for the stated population/time.\n- INSUFFICIENT: no authoritative source establishes the claim.\n\n\nReturn ONLY JSON in this shape:\n{\"claims\": [{\"claim_id\": \"C1\", \"verdict\": \"SUPPORTED\", \"evidence_ids\": [\"D1\"], \"qualifier\": \"\"}]}\nUse exactly one verdict per claim. Do not add commentary outside the JSON.\n",
+  "raw": "{\"claims\":[{\"claim_id\":\"C1\",\"verdict\":\"CONTRADICTED\",\"evidence_ids\":[\"I1\",\"I2\",\"I8\",\"I10\"],\"qualifier\":\"\"},{\"claim_id\":\"C2\",\"verdict\":\"SUPPORTED\",\"evidence_ids\":[\"I1\"],\"qualifier\":\"\"},{\"claim_id\":\"C3\",\"verdict\":\"CONTRADICTED\",\"evidence_ids\":[\"I2\",\"I6\",\"I10\"],\"qualifier\":\"\"},{\"claim_id\":\"C4\",\"verdict\":\"CONTRADICTED\",\"evidence_ids\":[\"I2\",\"I8\",\"I10\"],\"qualifier\":\"\"},{\"claim_id\":\"C5\",\"verdict\":\"INSUFFICIENT\",\"evidence_ids\":[],\"qualifier\":\"\"},{\"claim_id\":\"C6\",\"verdict\":\"SUPPORTED\",\"evidence_ids\":[\"I8\"],\"qualifier\":\"\"},{\"claim_id\":\"C7\",\"verdict\":\"SUPPORTED\",\"evidence_ids\":[\"I2\",\"I8\"],\"qualifier\":\"\"},{\"claim_id\":\"C8\",\"verdict\":\"SUPPORTED\",\"evidence_ids\":[\"I1\"],\"qualifier\":\"\"},{\"claim_id\":\"C9\",\"verdict\":\"CONTRADICTED\",\"evidence_ids\":[\"I2\",\"I8\",\"I10\"],\"qualifier\":\"\"},{\"claim_id\":\"C10\",\"verdict\":\"CONTRADICTED\",\"evidence_ids\":[\"I9\",\"I10\"],\"qualifier\":\"\"},{\"claim_id\":\"C11\",\"verdict\":\"CONTRADICTED\",\"evidence_ids\":[\"I9\",\"I10\"],\"qualifier\":\"\"},{\"claim_id\":\"C12\",\"verdict\":\"SUPPORTED\",\"evidence_ids\":[\"I8\",\"I10\"],\"qualifier\":\"\"}]}",
+  "model": "opencode-go/deepseek-v4.1-flash",
+  "task": "T2",
+  "condition": "recognition",
+  "trial": 3,
+  "response": {
+    "content": "{\"claims\":[{\"claim_id\":\"C1\",\"verdict\":\"CONTRADICTED\",\"evidence_ids\":[\"I1\",\"I2\",\"I8\",\"I10\"],\"qualifier\":\"\"},{\"claim_id\":\"C2\",\"verdict\":\"SUPPORTED\",\"evidence_ids\":[\"I1\"],\"qualifier\":\"\"},{\"claim_id\":\"C3\",\"verdict\":\"CONTRADICTED\",\"evidence_ids\":[\"I2\",\"I6\",\"I10\"],\"qualifier\":\"\"},{\"claim_id\":\"C4\",\"verdict\":\"CONTRADICTED\",\"evidence_ids\":[\"I2\",\"I8\",\"I10\"],\"qualifier\":\"\"},{\"claim_id\":\"C5\",\"verdict\":\"INSUFFICIENT\",\"evidence_ids\":[],\"qualifier\":\"\"},{\"claim_id\":\"C6\",\"verdict\":\"SUPPORTED\",\"evidence_ids\":[\"I8\"],\"qualifier\":\"\"},{\"claim_id\":\"C7\",\"verdict\":\"SUPPORTED\",\"evidence_ids\":[\"I2\",\"I8\"],\"qualifier\":\"\"},{\"claim_id\":\"C8\",\"verdict\":\"SUPPORTED\",\"evidence_ids\":[\"I1\"],\"qualifier\":\"\"},{\"claim_id\":\"C9\",\"verdict\":\"CONTRADICTED\",\"evidence_ids\":[\"I2\",\"I8\",\"I10\"],\"qualifier\":\"\"},{\"claim_id\":\"C10\",\"verdict\":\"CONTRADICTED\",\"evidence_ids\":[\"I9\",\"I10\"],\"qualifier\":\"\"},{\"claim_id\":\"C11\",\"verdict\":\"CONTRADICTED\",\"evidence_ids\":[\"I9\",\"I10\"],\"qualifier\":\"\"},{\"claim_id\":\"C12\",\"verdict\":\"SUPPORTED\",\"evidence_ids\":[\"I8\",\"I10\"],\"qualifier\":\"\"}]}",
+    "model": "opencode-go/deepseek-v4.1-flash",
+    "usage": {
+      "prompt_tokens": 1340,
+      "completion_tokens": 5925,
+      "total_tokens": 7265,
+      "prompt_tokens_details": {
+        "cached_tokens": 1280
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 5556
+      },
+      "cost": 0,
+      "opencode": {
+        "billing_source": "go",
+        "list_cost": 0.00356784,
+        "allowance": 0.0021407,
+        "tokens": {
+          "input": 60,
+          "output": 5925,
+          "reasoning": 5556,
+          "cache_read": 1280,
+          "cache_write_5m": 0,
+          "cache_write_1h": 0
+        }
+      }
+    },
+    "cost": 0,
+    "latency_s": 71.776,
+    "attempts": [
+      {
+        "attempt": 1,
+        "latency_s": 71.776,
+        "error": null
+      }
+    ],
+    "error": null,
+    "provider_response_id": "gw-fcb97948d36-be604d"
+  },
+  "grade": {
+    "n": 12,
+    "mean_score": 0.9125,
+    "accuracy": 1.0,
+    "strict": 0.5,
+    "extra_penalty": 0.0,
+    "duplicates": [],
+    "extras": [],
+    "missing": [],
+    "rows": [
+      {
+        "id": "C1",
+        "gold": "CONTRADICTED",
+        "model": "CONTRADICTED",
+        "answer_ok": true,
+        "answer_match": "exact",
+        "evidence_kind": "superset",
+        "evidence_ids": [
+          "I1",
+          "I10",
+          "I2",
+          "I8"
+        ],
+        "gold_evidence_sets": [
+          [
+            "I1",
+            "I2",
+            "I8"
+          ],
+          [
+            "I1",
+            "I2"
+          ],
+          [
+            "I8"
+          ]
+        ],
+        "qualifier_ok": true,
+        "qualifier": "",
+        "score": 0.85,
+        "strict": false,
+        "tags": [],
+        "overreach": false
+      },
+      {
+        "id": "C2",
+        "gold": "SUPPORTED",
+        "model": "SUPPORTED",
+        "answer_ok": true,
+        "answer_match": "exact",
+        "evidence_kind": "exact",
+        "evidence_ids": [
+          "I1"
+        ],
+        "gold_evidence_sets": [
+          [
+            "I1"
+          ]
+        ],
+        "qualifier_ok": true,
+        "qualifier": "",
+        "score": 1.0,
+        "strict": true,
+        "tags": [],
+        "overreach": false
+      },
+      {
+        "id": "C3",
+        "gold": "CONTRADICTED",
+        "model": "CONTRADICTED",
+        "answer_ok": true,
+        "answer_match": "exact",
+        "evidence_kind": "superset",
+        "evidence_ids": [
+          "I10",
+          "I2",
+          "I6"
+        ],
+        "gold_evidence_sets": [
+          [
+            "I2",
+            "I6"
+          ],
+          [
+            "I2"
+          ],
+          [
+            "I6"
+          ]
+        ],
+        "qualifier_ok": true,
+        "qualifier": "",
+        "score": 0.85,
+        "strict": false,
+        "tags": [],
+        "overreach": false
+      },
+      {
+        "id": "C4",
+        "gold": "CONTRADICTED",
+        "model": "CONTRADICTED",
+        "answer_ok": true,
+        "answer_match": "exact",
+        "evidence_kind": "superset",
+        "evidence_ids": [
+          "I10",
+          "I2",
+          "I8"
+        ],
+        "gold_evidence_sets": [
+          [
+            "I2",
+            "I6",
+            "I10"
+          ],
+          [
+            "I2",
+            "I6"
+          ],
+          [
+            "I8"
+          ],
+          [
+            "I10"
+          ],
+          [
+            "I2"
+          ],
+          [
+            "I6"
+          ]
+        ],
+        "qualifier_ok": true,
+        "qualifier": "",
+        "score": 0.85,
+        "strict": false,
+        "tags": [],
+        "overreach": false
+      },
+      {
+        "id": "C5",
+        "gold": "INSUFFICIENT",
+        "model": "INSUFFICIENT",
+        "answer_ok": true,
+        "answer_match": "exact",
+        "evidence_kind": "wrong",
+        "evidence_ids": [],
+        "gold_evidence_sets": [
+          [
+            "I6"
+          ]
+        ],
+        "qualifier_ok": true,
+        "qualifier": "",
+        "score": 0.7,
+        "strict": false,
+        "tags": [
+          "evidence_identification"
+        ],
+        "overreach": false
+      },
+      {
+        "id": "C6",
+        "gold": "SUPPORTED",
+        "model": "SUPPORTED",
+        "answer_ok": true,
+        "answer_match": "exact",
+        "evidence_kind": "exact",
+        "evidence_ids": [
+          "I8"
+        ],
+        "gold_evidence_sets": [
+          [
+            "I8"
+          ]
+        ],
+        "qualifier_ok": true,
+        "qualifier": "",
+        "score": 1.0,
+        "strict": true,
+        "tags": [],
+        "overreach": false
+      },
+      {
+        "id": "C7",
+        "gold": "SUPPORTED",
+        "model": "SUPPORTED",
+        "answer_ok": true,
+        "answer_match": "exact",
+        "evidence_kind": "exact",
+        "evidence_ids": [
+          "I2",
+          "I8"
+        ],
+        "gold_evidence_sets": [
+          [
+            "I2",
+            "I8"
+          ],
+          [
+            "I2"
+          ],
+          [
+            "I8"
+          ]
+        ],
+        "qualifier_ok": true,
+        "qualifier": "",
+        "score": 1.0,
+        "strict": true,
+        "tags": [],
+        "overreach": false
+      },
+      {
+        "id": "C8",
+        "gold": "SUPPORTED",
+        "model": "SUPPORTED",
+        "answer_ok": true,
+        "answer_match": "exact",
+        "evidence_kind": "exact",
+        "evidence_ids": [
+          "I1"
+        ],
+        "gold_evidence_sets": [
+          [
+            "I1",
+            "I7"
+          ],
+          [
+            "I1"
+          ],
+          [
+            "I7"
+          ]
+        ],
+        "qualifier_ok": true,
+        "qualifier": "",
+        "score": 1.0,
+        "strict": true,
+        "tags": [],
+        "overreach": false
+      },
+      {
+        "id": "C9",
+        "gold": "CONTRADICTED",
+        "model": "CONTRADICTED",
+        "answer_ok": true,
+        "answer_match": "exact",
+        "evidence_kind": "superset",
+        "evidence_ids": [
+          "I10",
+          "I2",
+          "I8"
+        ],
+        "gold_evidence_sets": [
+          [
+            "I8",
+            "I10"
+          ],
+          [
+            "I8"
+          ],
+          [
+            "I10"
+          ]
+        ],
+        "qualifier_ok": true,
+        "qualifier": "",
+        "score": 0.85,
+        "strict": false,
+        "tags": [],
+        "overreach": false
+      },
+      {
+        "id": "C10",
+        "gold": "CONTRADICTED",
+        "model": "CONTRADICTED",
+        "answer_ok": true,
+        "answer_match": "exact",
+        "evidence_kind": "exact",
+        "evidence_ids": [
+          "I10",
+          "I9"
+        ],
+        "gold_evidence_sets": [
+          [
+            "I9",
+            "I10"
+          ],
+          [
+            "I9"
+          ],
+          [
+            "I10"
+          ]
+        ],
+        "qualifier_ok": true,
+        "qualifier": "",
+        "score": 1.0,
+        "strict": true,
+        "tags": [],
+        "overreach": false
+      },
+      {
+        "id": "C11",
+        "gold": "CONTRADICTED",
+        "model": "CONTRADICTED",
+        "answer_ok": true,
+        "answer_match": "exact",
+        "evidence_kind": "exact",
+        "evidence_ids": [
+          "I10",
+          "I9"
+        ],
+        "gold_evidence_sets": [
+          [
+            "I9",
+            "I10"
+          ],
+          [
+            "I9"
+          ],
+          [
+            "I10"
+          ]
+        ],
+        "qualifier_ok": true,
+        "qualifier": "",
+        "score": 1.0,
+        "strict": true,
+        "tags": [],
+        "overreach": false
+      },
+      {
+        "id": "C12",
+        "gold": "SUPPORTED",
+        "model": "SUPPORTED",
+        "answer_ok": true,
+        "answer_match": "exact",
+        "evidence_kind": "superset",
+        "evidence_ids": [
+          "I10",
+          "I8"
+        ],
+        "gold_evidence_sets": [
+          [
+            "I1",
+            "I2",
+            "I8",
+            "I10"
+          ],
+          [
+            "I1",
+            "I2"
+          ],
+          [
+            "I8"
+          ],
+          [
+            "I10"
+          ]
+        ],
+        "qualifier_ok": true,
+        "qualifier": "",
+        "score": 0.85,
+        "strict": false,
+        "tags": [],
+        "overreach": false
+      }
+    ],
+    "condition": "recognition"
+  }
+}

@@ -1,0 +1,379 @@
+{
+  "prompt": "You are preparing a brief from a source pack.\n\nUse ONLY the sources below. Do not use general knowledge or assumptions.\nAs-of date: 2026-06-15\nContext: You are preparing a retention brief for the Chief Operating Officer of Northwind Cloud Services. The source pack is the only permitted evidence. Some documents are approved, some are operational exports, one is an unsigned draft, and one is an informal email. Dates matter.\n\nAUTHORITY NOTE\nApproved policies, addenda, signed amendments and approved schedules are authoritative. A signed amendment controls over an operational export. An unsigned draft has no effect. An informal email cannot change authority.\n\nDECISIVE EXCERPTS\n\n[D1] Standard customer data is retained for 24 months after contract termination. For customers in the European Union, the retention period is 12 months after contract termination. Backups are governed separately by the Backup Retention Schedule and are out of scope of this policy.\n\n[D2] Effective 1 July 2025, EU customer data is retained for 12 months after contract termination.\n\n[D3] The EU retention period is amended from 12 months to 18 months, effective 1 March 2026. This change applies only to accounts opened on or after 1 January 2026. Accounts opened before 1 January 2026 remain subject to the 12-month period in the Addendum. Signed 5 May 2026.\n\n[D4] DRAFT - NOT APPROVED. This draft proposes to amend the EU retention period to 24 months for all EU accounts, effective 1 September 2026. It has not been signed or approved.\n\n[D5] EU retention: 12 months. Standard retention: 24 months. Source: configuration table last updated 2025-11-30.\n\n[D6] The public trust page has not yet been updated to reflect Amendment A. The signed Amendment A is the controlling document for EU retention. Please do not rely on the system export for the new EU period until the configuration is updated.\n\n[D7] Data retention: Standard accounts 24 months. EU accounts 12 months. Backups 35 days.\n\n[D8] Backups of enterprise customer data are retained for 35 days. Backups are not part of the Enterprise Data Retention Policy.\n\n[D9] In the event of a conflict, a signed amendment controls over an operational export.\n\n[D10] The system-of-record export still shows 12 months for EU retention. Amendment A was signed on 5 May 2026 and is effective from 1 March 2026. The export is stale for accounts opened on or after 1 January 2026.\n\n[D11] The Board did not approve Draft Amendment B, which had not been circulated.\n\nQUESTIONS\nP1. What is the EU retention period for accounts opened in 2026, as of 2026-06-15?\nOptions: 12 months / 18 months / 24 months / insufficient\nP2. What is the EU retention period for accounts opened in 2024, as of 2026-06-15?\nOptions: 12 months / 18 months / 24 months / insufficient\nP3. What was the EU retention period for accounts opened in 2026 on 2026-02-15?\nOptions: 12 months / 18 months / 24 months / insufficient\nP4. What is the standard (non-EU) retention period?\nOptions: 12 months / 18 months / 24 months / 35 days / insufficient\nP5. Is Draft Amendment B in effect?\nOptions: yes / no / insufficient\nP6. What is the backup retention period?\nOptions: 18 months / 24 months / 35 days / insufficient\nP7. Are backups covered by the Enterprise Data Retention Policy?\nOptions: yes / no / insufficient\nP8. Does the public trust page show the current EU retention period?\nOptions: yes / no / insufficient\nP9. Which record controls the EU retention period for accounts opened in 2026?\nOptions: Amendment A / system-of-record export / Draft Amendment B / public trust page / insufficient\nP10. Did the EU retention change take effect before Amendment A was signed?\nOptions: yes / no / insufficient\nP11. What EU retention value does the system-of-record export show?\nOptions: 12 months / 18 months / 24 months / insufficient\nP12. Is the system-of-record export current for accounts opened in 2026?\nOptions: yes / no / insufficient\n\nFor each question, derive the conclusion yourself. Do not repeat the question. Choose exactly one option.\nIf the sources do not establish an answer, choose \"insufficient\".\nIf the conclusion is true only with a material limit, put that limit in the \"qualifier\" field.\n\n\nAlso write a 2-4 sentence executive summary of the position, using only the sources.\n\nReturn ONLY JSON in this shape:\n{\"items\": [{\"item_id\": \"P1\", \"answer\": \"<one option>\", \"evidence_ids\": [\"D1\"], \"qualifier\": \"\"}], \"summary\": \"<2-4 sentences>\"}\nUse exactly one answer per item. Do not add commentary outside the JSON.\n",
+  "raw": "{\"items\":[{\"item_id\":\"P1\",\"answer\":\"18 months\",\"evidence_ids\":[\"D3\"],\"qualifier\":\"For accounts opened on or after 1 January 2026; effective 1 March 2026.\"},{\"item_id\":\"P2\",\"answer\":\"12 months\",\"evidence_ids\":[\"D3\"],\"qualifier\":\"Accounts opened before 1 January 2026 remain subject to the 12-month period.\"},{\"item_id\":\"P3\",\"answer\":\"12 months\",\"evidence_ids\":[\"D2\",\"D3\"],\"qualifier\":\"As of 15 February 2026, before the amendment\u2019s 1 March 2026 effective date.\"},{\"item_id\":\"P4\",\"answer\":\"24 months\",\"evidence_ids\":[\"D1\"],\"qualifier\":\"Standard, non-EU customer data.\"},{\"item_id\":\"P5\",\"answer\":\"no\",\"evidence_ids\":[\"D4\",\"D11\"],\"qualifier\":\"\"},{\"item_id\":\"P6\",\"answer\":\"35 days\",\"evidence_ids\":[\"D8\"],\"qualifier\":\"For backups of enterprise customer data.\"},{\"item_id\":\"P7\",\"answer\":\"no\",\"evidence_ids\":[\"D8\"],\"qualifier\":\"\"},{\"item_id\":\"P8\",\"answer\":\"no\",\"evidence_ids\":[\"D6\"],\"qualifier\":\"The public trust page has not been updated to reflect Amendment A.\"},{\"item_id\":\"P9\",\"answer\":\"Amendment A\",\"evidence_ids\":[\"D3\",\"D9\",\"D10\"],\"qualifier\":\"For accounts opened on or after 1 January 2026.\"},{\"item_id\":\"P10\",\"answer\":\"yes\",\"evidence_ids\":[\"D3\"],\"qualifier\":\"Effective 1 March 2026; signed 5 May 2026.\"},{\"item_id\":\"P11\",\"answer\":\"12 months\",\"evidence_ids\":[\"D10\"],\"qualifier\":\"\"},{\"item_id\":\"P12\",\"answer\":\"no\",\"evidence_ids\":[\"D10\"],\"qualifier\":\"The export is stale for accounts opened on or after 1 January 2026.\"}],\"summary\":\"As of 15 June 2026, Amendment A sets EU retention at 18 months for accounts opened on or after 1 January 2026, effective 1 March; accounts opened before that date remain at 12 months. Standard non-EU retention is 24 months, and enterprise backups are retained for 35 days outside the Enterprise Data Retention Policy. The system export and public trust page are stale for the amended EU period, and Draft Amendment B is not in effect.\"}",
+  "model": "opencode-go/gpt-6-luna",
+  "task": "T1",
+  "condition": "oracle",
+  "trial": 1,
+  "response": {
+    "content": "{\"items\":[{\"item_id\":\"P1\",\"answer\":\"18 months\",\"evidence_ids\":[\"D3\"],\"qualifier\":\"For accounts opened on or after 1 January 2026; effective 1 March 2026.\"},{\"item_id\":\"P2\",\"answer\":\"12 months\",\"evidence_ids\":[\"D3\"],\"qualifier\":\"Accounts opened before 1 January 2026 remain subject to the 12-month period.\"},{\"item_id\":\"P3\",\"answer\":\"12 months\",\"evidence_ids\":[\"D2\",\"D3\"],\"qualifier\":\"As of 15 February 2026, before the amendment\u2019s 1 March 2026 effective date.\"},{\"item_id\":\"P4\",\"answer\":\"24 months\",\"evidence_ids\":[\"D1\"],\"qualifier\":\"Standard, non-EU customer data.\"},{\"item_id\":\"P5\",\"answer\":\"no\",\"evidence_ids\":[\"D4\",\"D11\"],\"qualifier\":\"\"},{\"item_id\":\"P6\",\"answer\":\"35 days\",\"evidence_ids\":[\"D8\"],\"qualifier\":\"For backups of enterprise customer data.\"},{\"item_id\":\"P7\",\"answer\":\"no\",\"evidence_ids\":[\"D8\"],\"qualifier\":\"\"},{\"item_id\":\"P8\",\"answer\":\"no\",\"evidence_ids\":[\"D6\"],\"qualifier\":\"The public trust page has not been updated to reflect Amendment A.\"},{\"item_id\":\"P9\",\"answer\":\"Amendment A\",\"evidence_ids\":[\"D3\",\"D9\",\"D10\"],\"qualifier\":\"For accounts opened on or after 1 January 2026.\"},{\"item_id\":\"P10\",\"answer\":\"yes\",\"evidence_ids\":[\"D3\"],\"qualifier\":\"Effective 1 March 2026; signed 5 May 2026.\"},{\"item_id\":\"P11\",\"answer\":\"12 months\",\"evidence_ids\":[\"D10\"],\"qualifier\":\"\"},{\"item_id\":\"P12\",\"answer\":\"no\",\"evidence_ids\":[\"D10\"],\"qualifier\":\"The export is stale for accounts opened on or after 1 January 2026.\"}],\"summary\":\"As of 15 June 2026, Amendment A sets EU retention at 18 months for accounts opened on or after 1 January 2026, effective 1 March; accounts opened before that date remain at 12 months. Standard non-EU retention is 24 months, and enterprise backups are retained for 35 days outside the Enterprise Data Retention Policy. The system export and public trust page are stale for the amended EU period, and Draft Amendment B is not in effect.\"}",
+    "model": "opencode-go/gpt-6-luna",
+    "usage": {
+      "prompt_tokens": 1077,
+      "completion_tokens": 1045,
+      "total_tokens": 2122,
+      "prompt_tokens_details": {
+        "cached_tokens": 1074
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 510
+      },
+      "cost": 0,
+      "opencode": {
+        "billing_source": "go",
+        "list_cost": 0.00053354,
+        "allowance": 0.00213416,
+        "tokens": {
+          "input": 3,
+          "output": 1045,
+          "reasoning": 510,
+          "cache_read": 1074,
+          "cache_write_5m": 0,
+          "cache_write_1h": 0
+        }
+      }
+    },
+    "cost": 0,
+    "latency_s": 10.926,
+    "attempts": [
+      {
+        "attempt": 1,
+        "latency_s": 10.926,
+        "error": null
+      }
+    ],
+    "error": null,
+    "provider_response_id": "chatcmpl-91b1e7a34a0d4de7b53fbf1516b50bd8"
+  },
+  "grade": {
+    "n": 12,
+    "mean_score": 0.9625,
+    "accuracy": 1.0,
+    "strict": 0.8333,
+    "extra_penalty": 0.0,
+    "duplicates": [],
+    "extras": [],
+    "missing": [],
+    "rows": [
+      {
+        "id": "P1",
+        "gold": "18 months",
+        "model": "18 months",
+        "answer_ok": true,
+        "evidence_kind": "exact",
+        "evidence_ids": [
+          "D3"
+        ],
+        "gold_evidence_sets": [
+          [
+            "D3"
+          ]
+        ],
+        "qualifier_ok": true,
+        "qualifier": "For accounts opened on or after 1 January 2026; effective 1 March 2026.",
+        "score": 1.0,
+        "strict": true,
+        "tags": [],
+        "overreach": false
+      },
+      {
+        "id": "P2",
+        "gold": "12 months",
+        "model": "12 months",
+        "answer_ok": true,
+        "evidence_kind": "exact",
+        "evidence_ids": [
+          "D3"
+        ],
+        "gold_evidence_sets": [
+          [
+            "D2"
+          ],
+          [
+            "D3"
+          ]
+        ],
+        "qualifier_ok": true,
+        "qualifier": "Accounts opened before 1 January 2026 remain subject to the 12-month period.",
+        "score": 1.0,
+        "strict": true,
+        "tags": [],
+        "overreach": false
+      },
+      {
+        "id": "P3",
+        "gold": "12 months",
+        "model": "12 months",
+        "answer_ok": true,
+        "evidence_kind": "exact",
+        "evidence_ids": [
+          "D2",
+          "D3"
+        ],
+        "gold_evidence_sets": [
+          [
+            "D2",
+            "D3"
+          ],
+          [
+            "D2"
+          ]
+        ],
+        "qualifier_ok": true,
+        "qualifier": "As of 15 February 2026, before the amendment\u2019s 1 March 2026 effective date.",
+        "score": 1.0,
+        "strict": true,
+        "tags": [],
+        "overreach": false
+      },
+      {
+        "id": "P4",
+        "gold": "24 months",
+        "model": "24 months",
+        "answer_ok": true,
+        "evidence_kind": "exact",
+        "evidence_ids": [
+          "D1"
+        ],
+        "gold_evidence_sets": [
+          [
+            "D1"
+          ]
+        ],
+        "qualifier_ok": true,
+        "qualifier": "Standard, non-EU customer data.",
+        "score": 1.0,
+        "strict": true,
+        "tags": [],
+        "overreach": false
+      },
+      {
+        "id": "P5",
+        "gold": "no",
+        "model": "no",
+        "answer_ok": true,
+        "evidence_kind": "exact",
+        "evidence_ids": [
+          "D11",
+          "D4"
+        ],
+        "gold_evidence_sets": [
+          [
+            "D4",
+            "D11"
+          ],
+          [
+            "D4"
+          ],
+          [
+            "D11"
+          ]
+        ],
+        "qualifier_ok": true,
+        "qualifier": "",
+        "score": 1.0,
+        "strict": true,
+        "tags": [],
+        "overreach": false
+      },
+      {
+        "id": "P6",
+        "gold": "35 days",
+        "model": "35 days",
+        "answer_ok": true,
+        "evidence_kind": "exact",
+        "evidence_ids": [
+          "D8"
+        ],
+        "gold_evidence_sets": [
+          [
+            "D8"
+          ]
+        ],
+        "qualifier_ok": true,
+        "qualifier": "For backups of enterprise customer data.",
+        "score": 1.0,
+        "strict": true,
+        "tags": [],
+        "overreach": false
+      },
+      {
+        "id": "P7",
+        "gold": "no",
+        "model": "no",
+        "answer_ok": true,
+        "evidence_kind": "exact",
+        "evidence_ids": [
+          "D8"
+        ],
+        "gold_evidence_sets": [
+          [
+            "D1",
+            "D8"
+          ],
+          [
+            "D1"
+          ],
+          [
+            "D8"
+          ]
+        ],
+        "qualifier_ok": true,
+        "qualifier": "",
+        "score": 1.0,
+        "strict": true,
+        "tags": [],
+        "overreach": false
+      },
+      {
+        "id": "P8",
+        "gold": "no",
+        "model": "no",
+        "answer_ok": true,
+        "evidence_kind": "exact",
+        "evidence_ids": [
+          "D6"
+        ],
+        "gold_evidence_sets": [
+          [
+            "D6",
+            "D7"
+          ],
+          [
+            "D6"
+          ],
+          [
+            "D7"
+          ]
+        ],
+        "qualifier_ok": true,
+        "qualifier": "The public trust page has not been updated to reflect Amendment A.",
+        "score": 1.0,
+        "strict": true,
+        "tags": [],
+        "overreach": false
+      },
+      {
+        "id": "P9",
+        "gold": "Amendment A",
+        "model": "Amendment A",
+        "answer_ok": true,
+        "evidence_kind": "superset",
+        "evidence_ids": [
+          "D10",
+          "D3",
+          "D9"
+        ],
+        "gold_evidence_sets": [
+          [
+            "D3",
+            "D6",
+            "D9"
+          ],
+          [
+            "D3"
+          ],
+          [
+            "D6"
+          ],
+          [
+            "D9"
+          ]
+        ],
+        "qualifier_ok": true,
+        "qualifier": "For accounts opened on or after 1 January 2026.",
+        "score": 0.85,
+        "strict": false,
+        "tags": [],
+        "overreach": false
+      },
+      {
+        "id": "P10",
+        "gold": "yes",
+        "model": "yes",
+        "answer_ok": true,
+        "evidence_kind": "exact",
+        "evidence_ids": [
+          "D3"
+        ],
+        "gold_evidence_sets": [
+          [
+            "D3"
+          ]
+        ],
+        "qualifier_ok": true,
+        "qualifier": "Effective 1 March 2026; signed 5 May 2026.",
+        "score": 1.0,
+        "strict": true,
+        "tags": [],
+        "overreach": false
+      },
+      {
+        "id": "P11",
+        "gold": "12 months",
+        "model": "12 months",
+        "answer_ok": true,
+        "evidence_kind": "wrong",
+        "evidence_ids": [
+          "D10"
+        ],
+        "gold_evidence_sets": [
+          [
+            "D5"
+          ]
+        ],
+        "qualifier_ok": true,
+        "qualifier": "",
+        "score": 0.7,
+        "strict": false,
+        "tags": [
+          "evidence_identification"
+        ],
+        "overreach": false
+      },
+      {
+        "id": "P12",
+        "gold": "no",
+        "model": "no",
+        "answer_ok": true,
+        "evidence_kind": "exact",
+        "evidence_ids": [
+          "D10"
+        ],
+        "gold_evidence_sets": [
+          [
+            "D5",
+            "D6",
+            "D10"
+          ],
+          [
+            "D5"
+          ],
+          [
+            "D6"
+          ],
+          [
+            "D10"
+          ]
+        ],
+        "qualifier_ok": true,
+        "qualifier": "The export is stale for accounts opened on or after 1 January 2026.",
+        "score": 1.0,
+        "strict": true,
+        "tags": [],
+        "overreach": false
+      }
+    ],
+    "summary": {
+      "text": "As of 15 June 2026, Amendment A sets EU retention at 18 months for accounts opened on or after 1 January 2026, effective 1 March; accounts opened before that date remain at 12 months. Standard non-EU retention is 24 months, and enterprise backups are retained for 35 days outside the Enterprise Data Retention Policy. The system export and public trust page are stale for the amended EU period, and Draft Amendment B is not in effect.",
+      "required_ok": true,
+      "forbidden_hits": [
+        "EU retention is 24 months"
+      ],
+      "score": 0.5
+    },
+    "inconsistencies": [],
+    "inconsistency_count": 0,
+    "condition": "production"
+  }
+}

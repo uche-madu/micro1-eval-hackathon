@@ -1,0 +1,782 @@
+{
+  "task_id": "T2",
+  "slug": "incident",
+  "title": "Meridian Payments - March incident brief",
+  "as_of": "2026-06-15",
+  "context": "You are preparing an incident summary for the Chief Operating Officer of Meridian Payments. The source pack is the only permitted evidence. There are approved incident records, a draft postmortem, an executive email, and operational notes of differing authority.",
+  "authority_note": "Approved incident timelines, the change log, the customer impact report and the audit note are authoritative. A draft postmortem is not approved. An executive email is a request, not evidence. A status-page export auto-fills its cause field and is not authoritative for root cause.",
+  "sources": [
+    {
+      "id": "I1",
+      "type": "incident_timeline",
+      "title": "Incident INC-031 timeline",
+      "date": "2026-03-02",
+      "authority": 90,
+      "text": "Incident INC-031: 2 March 2026. Service degradation began 14:05 UTC and ended 15:20 UTC (75 minutes). Root cause: expired TLS certificate on the edge gateway. 12,400 customer transactions failed. The certificate expiry alert had been disabled on 1 March 2026 during maintenance."
+    },
+    {
+      "id": "I2",
+      "type": "incident_timeline",
+      "title": "Incident INC-032 timeline",
+      "date": "2026-03-04",
+      "authority": 90,
+      "text": "Incident INC-032: 4 March 2026. Service degradation began 09:10 UTC and ended 09:55 UTC (45 minutes). Root cause: a failed rollback of configuration change CHG-441. 3,100 customer transactions failed. The rollback failure was unrelated to the certificate incident."
+    },
+    {
+      "id": "I3",
+      "type": "root_cause_note",
+      "title": "Root-cause note for INC-031",
+      "date": "2026-03-03",
+      "authority": 85,
+      "text": "INC-031 root cause: the edge gateway certificate expired because the renewal job was not running and the expiry alert was disabled. Recommended remediation: rotate certificates automatically, re-enable expiry alerts, and add a weekly certificate inventory check."
+    },
+    {
+      "id": "I4",
+      "type": "draft_postmortem",
+      "title": "Draft postmortem (not approved)",
+      "date": "2026-03-05",
+      "authority": 40,
+      "text": "DRAFT - NOT APPROVED. March 2026 incident: one outage on 2 March caused by an expired certificate. Approximately 15,500 transactions failed. Remediation: move certificate management to the platform team."
+    },
+    {
+      "id": "I5",
+      "type": "email",
+      "title": "Executive email",
+      "date": "2026-03-06",
+      "authority": 30,
+      "text": "Please describe the March incident as a single certificate event. The board wants a simple story. We can mention the second event separately if legal insists."
+    },
+    {
+      "id": "I6",
+      "type": "change_log",
+      "title": "Change log CHG-441",
+      "date": "2026-03-04",
+      "authority": 90,
+      "text": "CHG-441: configuration change to the routing layer, deployed 4 March 2026 08:40 UTC. Rollback initiated 09:05 UTC; rollback failed at 09:12 UTC. The failure was caused by an incompatible schema change in the rollback script, not by the certificate expiry."
+    },
+    {
+      "id": "I7",
+      "type": "monitoring_note",
+      "title": "Monitoring note",
+      "date": "2026-03-01",
+      "authority": 80,
+      "text": "The certificate expiry alert for the edge gateway was disabled during maintenance on 1 March 2026. The renewal job was last successful on 2025-12-15. No alert fired before the 2 March incident."
+    },
+    {
+      "id": "I8",
+      "type": "impact_report",
+      "title": "Customer impact report",
+      "date": "2026-03-07",
+      "authority": 90,
+      "text": "INC-031: 12,400 failed transactions. INC-032: 3,100 failed transactions. Total: 15,500 failed transactions across two distinct incidents. The incidents had different root causes."
+    },
+    {
+      "id": "I9",
+      "type": "draft_plan",
+      "title": "Draft remediation plan (not approved)",
+      "date": "2026-03-08",
+      "authority": 30,
+      "text": "DRAFT - NOT APPROVED. Proposal: move all certificate management to the platform team, retire the current renewal job, and add a quarterly audit. Owner: Platform. Approval pending."
+    },
+    {
+      "id": "I10",
+      "type": "audit_note",
+      "title": "Audit note on the March incidents",
+      "date": "2026-03-10",
+      "authority": 85,
+      "text": "Review of the March incidents: INC-031 and INC-032 are separate events with different causes. The draft postmortem's single-event framing is not supported. The draft remediation plan has not been approved. The executive email's request to simplify the narrative is not evidence."
+    },
+    {
+      "id": "I11",
+      "type": "status_export",
+      "title": "Status page export",
+      "date": "2026-03-04",
+      "authority": 60,
+      "text": "Status history: 2 March 14:05-15:20 degraded; 4 March 09:10-09:55 degraded. Cause field: 'certificate' for both entries (auto-filled from the incident template)."
+    },
+    {
+      "id": "I12",
+      "type": "chat",
+      "title": "On-call chat excerpt",
+      "date": "2026-03-04",
+      "authority": 35,
+      "text": "On-call: certificate issue again? The alert was disabled, so probably. Let's just call it the cert incident for the board."
+    }
+  ],
+  "recognition_claims": [
+    {
+      "id": "C1",
+      "text": "There was one outage in March 2026.",
+      "gold": {
+        "verdict": "CONTRADICTED",
+        "evidence_sets": [
+          [
+            "I1",
+            "I2",
+            "I8"
+          ],
+          [
+            "I1",
+            "I2"
+          ],
+          [
+            "I8"
+          ]
+        ],
+        "qualifier_terms": [],
+        "failure_tags": [
+          "unsupported_synthesis"
+        ]
+      }
+    },
+    {
+      "id": "C2",
+      "text": "The 2 March outage lasted 75 minutes.",
+      "gold": {
+        "verdict": "SUPPORTED",
+        "evidence_sets": [
+          [
+            "I1"
+          ]
+        ],
+        "qualifier_terms": [],
+        "failure_tags": []
+      }
+    },
+    {
+      "id": "C3",
+      "text": "The 4 March outage was caused by the expired certificate.",
+      "gold": {
+        "verdict": "CONTRADICTED",
+        "evidence_sets": [
+          [
+            "I2",
+            "I6"
+          ],
+          [
+            "I2"
+          ],
+          [
+            "I6"
+          ]
+        ],
+        "qualifier_terms": [],
+        "failure_tags": [
+          "unsupported_synthesis"
+        ]
+      }
+    },
+    {
+      "id": "C4",
+      "text": "Both outages were caused by certificate expiry.",
+      "gold": {
+        "verdict": "CONTRADICTED",
+        "evidence_sets": [
+          [
+            "I2",
+            "I6",
+            "I10"
+          ],
+          [
+            "I2",
+            "I6"
+          ],
+          [
+            "I8"
+          ],
+          [
+            "I10"
+          ],
+          [
+            "I2"
+          ],
+          [
+            "I6"
+          ]
+        ],
+        "qualifier_terms": [],
+        "failure_tags": [
+          "unsupported_synthesis"
+        ]
+      }
+    },
+    {
+      "id": "C5",
+      "text": "The rollback failure caused database corruption.",
+      "gold": {
+        "verdict": "INSUFFICIENT",
+        "evidence_sets": [
+          [
+            "I6"
+          ]
+        ],
+        "qualifier_terms": [],
+        "failure_tags": [
+          "unsupported_assertion"
+        ]
+      }
+    },
+    {
+      "id": "C6",
+      "text": "15,500 transactions failed across the two incidents.",
+      "gold": {
+        "verdict": "SUPPORTED",
+        "evidence_sets": [
+          [
+            "I8"
+          ]
+        ],
+        "qualifier_terms": [],
+        "failure_tags": []
+      }
+    },
+    {
+      "id": "C7",
+      "text": "The 4 March outage affected 3,100 transactions.",
+      "gold": {
+        "verdict": "SUPPORTED",
+        "evidence_sets": [
+          [
+            "I2",
+            "I8"
+          ],
+          [
+            "I2"
+          ],
+          [
+            "I8"
+          ]
+        ],
+        "qualifier_terms": [],
+        "failure_tags": []
+      }
+    },
+    {
+      "id": "C8",
+      "text": "The certificate expiry alert was disabled before the 2 March outage.",
+      "gold": {
+        "verdict": "SUPPORTED",
+        "evidence_sets": [
+          [
+            "I1",
+            "I7"
+          ],
+          [
+            "I1"
+          ],
+          [
+            "I7"
+          ]
+        ],
+        "qualifier_terms": [],
+        "failure_tags": []
+      }
+    },
+    {
+      "id": "C9",
+      "text": "The executive email's single-event description is supported by the incident records.",
+      "gold": {
+        "verdict": "CONTRADICTED",
+        "evidence_sets": [
+          [
+            "I8",
+            "I10"
+          ],
+          [
+            "I8"
+          ],
+          [
+            "I10"
+          ]
+        ],
+        "qualifier_terms": [],
+        "failure_tags": [
+          "unsupported_synthesis"
+        ]
+      }
+    },
+    {
+      "id": "C10",
+      "text": "The remediation plan is approved.",
+      "gold": {
+        "verdict": "CONTRADICTED",
+        "evidence_sets": [
+          [
+            "I9",
+            "I10"
+          ],
+          [
+            "I9"
+          ],
+          [
+            "I10"
+          ]
+        ],
+        "qualifier_terms": [],
+        "failure_tags": [
+          "draft_as_fact"
+        ]
+      }
+    },
+    {
+      "id": "C11",
+      "text": "Moving certificate management to the platform team is the approved remediation.",
+      "gold": {
+        "verdict": "CONTRADICTED",
+        "evidence_sets": [
+          [
+            "I9",
+            "I10"
+          ],
+          [
+            "I9"
+          ],
+          [
+            "I10"
+          ]
+        ],
+        "qualifier_terms": [],
+        "failure_tags": [
+          "draft_as_fact"
+        ]
+      }
+    },
+    {
+      "id": "C12",
+      "text": "The two incidents had different root causes.",
+      "gold": {
+        "verdict": "SUPPORTED",
+        "evidence_sets": [
+          [
+            "I1",
+            "I2",
+            "I8",
+            "I10"
+          ],
+          [
+            "I1",
+            "I2"
+          ],
+          [
+            "I8"
+          ],
+          [
+            "I10"
+          ]
+        ],
+        "qualifier_terms": [],
+        "failure_tags": []
+      }
+    }
+  ],
+  "production_items": [
+    {
+      "id": "P1",
+      "question": "How many distinct outages occurred in March 2026?",
+      "answer_type": "enum",
+      "options": [
+        "1",
+        "2",
+        "3",
+        "insufficient"
+      ],
+      "gold": {
+        "answer": "2",
+        "evidence_sets": [
+          [
+            "I1",
+            "I2",
+            "I8"
+          ],
+          [
+            "I8"
+          ],
+          [
+            "I1",
+            "I2"
+          ]
+        ],
+        "qualifier_terms": [],
+        "failure_tags": [
+          "unsupported_synthesis"
+        ],
+        "accepted_answers": [
+          "2",
+          "two"
+        ]
+      }
+    },
+    {
+      "id": "P2",
+      "question": "What was the duration of the 2 March outage in minutes?",
+      "answer_type": "enum",
+      "options": [
+        "45",
+        "75",
+        "90",
+        "insufficient"
+      ],
+      "gold": {
+        "answer": "75",
+        "evidence_sets": [
+          [
+            "I1"
+          ]
+        ],
+        "qualifier_terms": [],
+        "failure_tags": [],
+        "accepted_answers": [
+          "75",
+          "75 minutes"
+        ]
+      }
+    },
+    {
+      "id": "P3",
+      "question": "What caused the 2 March outage?",
+      "answer_type": "enum",
+      "options": [
+        "expired TLS certificate",
+        "failed rollback",
+        "database corruption",
+        "insufficient"
+      ],
+      "gold": {
+        "answer": "expired TLS certificate",
+        "evidence_sets": [
+          [
+            "I1",
+            "I3"
+          ],
+          [
+            "I1"
+          ],
+          [
+            "I3"
+          ]
+        ],
+        "qualifier_terms": [],
+        "failure_tags": [],
+        "accepted_answers": [
+          "expired TLS certificate",
+          "expired certificate",
+          "certificate expiry"
+        ]
+      }
+    },
+    {
+      "id": "P4",
+      "question": "What caused the 4 March outage?",
+      "answer_type": "enum",
+      "options": [
+        "expired TLS certificate",
+        "failed rollback",
+        "database corruption",
+        "insufficient"
+      ],
+      "gold": {
+        "answer": "failed rollback",
+        "evidence_sets": [
+          [
+            "I2",
+            "I6"
+          ],
+          [
+            "I2"
+          ],
+          [
+            "I6"
+          ]
+        ],
+        "qualifier_terms": [],
+        "failure_tags": [
+          "unsupported_synthesis"
+        ],
+        "accepted_answers": [
+          "failed rollback",
+          "rollback failure"
+        ]
+      }
+    },
+    {
+      "id": "P5",
+      "question": "How many transactions failed in total across both outages?",
+      "answer_type": "enum",
+      "options": [
+        "12400",
+        "15500",
+        "3100",
+        "insufficient"
+      ],
+      "gold": {
+        "answer": "15500",
+        "evidence_sets": [
+          [
+            "I8"
+          ]
+        ],
+        "qualifier_terms": [],
+        "failure_tags": [
+          "unsupported_synthesis"
+        ],
+        "accepted_answers": [
+          "15500",
+          "15,500"
+        ]
+      }
+    },
+    {
+      "id": "P6",
+      "question": "Was the 4 March outage caused by the certificate expiry?",
+      "answer_type": "enum",
+      "options": [
+        "yes",
+        "no",
+        "insufficient"
+      ],
+      "gold": {
+        "answer": "no",
+        "evidence_sets": [
+          [
+            "I2",
+            "I6"
+          ],
+          [
+            "I2"
+          ],
+          [
+            "I6"
+          ]
+        ],
+        "qualifier_terms": [],
+        "failure_tags": [
+          "unsupported_synthesis"
+        ],
+        "accepted_answers": [
+          "no"
+        ]
+      }
+    },
+    {
+      "id": "P7",
+      "question": "Is the executive email's single-event description supported by the incident records?",
+      "answer_type": "enum",
+      "options": [
+        "yes",
+        "no",
+        "insufficient"
+      ],
+      "gold": {
+        "answer": "no",
+        "evidence_sets": [
+          [
+            "I8",
+            "I10"
+          ],
+          [
+            "I8"
+          ],
+          [
+            "I10"
+          ]
+        ],
+        "qualifier_terms": [],
+        "failure_tags": [
+          "unsupported_synthesis"
+        ],
+        "accepted_answers": [
+          "no"
+        ]
+      }
+    },
+    {
+      "id": "P8",
+      "question": "Is the remediation plan approved?",
+      "answer_type": "enum",
+      "options": [
+        "yes",
+        "no",
+        "insufficient"
+      ],
+      "gold": {
+        "answer": "no",
+        "evidence_sets": [
+          [
+            "I9",
+            "I10"
+          ],
+          [
+            "I9"
+          ],
+          [
+            "I10"
+          ]
+        ],
+        "qualifier_terms": [],
+        "failure_tags": [
+          "draft_as_fact"
+        ],
+        "accepted_answers": [
+          "no"
+        ]
+      }
+    },
+    {
+      "id": "P9",
+      "question": "What remediation does the root-cause note recommend?",
+      "answer_type": "enum",
+      "options": [
+        "rotate certificates and re-enable expiry alerts",
+        "move certificate management to the platform team",
+        "database rollback",
+        "insufficient"
+      ],
+      "gold": {
+        "answer": "rotate certificates and re-enable expiry alerts",
+        "evidence_sets": [
+          [
+            "I3"
+          ]
+        ],
+        "qualifier_terms": [],
+        "failure_tags": [
+          "draft_as_fact"
+        ],
+        "accepted_answers": [
+          "rotate certificates and re-enable expiry alerts",
+          "rotate certificates, re-enable expiry alerts",
+          "rotate certificates automatically and re-enable expiry alerts",
+          "rotate certificates",
+          "re-enable expiry alerts",
+          "rotate certificates automatically",
+          "add a weekly certificate inventory check",
+          "automatic certificate rotation"
+        ]
+      }
+    },
+    {
+      "id": "P10",
+      "question": "Did the two outages have the same root cause?",
+      "answer_type": "enum",
+      "options": [
+        "yes",
+        "no",
+        "insufficient"
+      ],
+      "gold": {
+        "answer": "no",
+        "evidence_sets": [
+          [
+            "I2",
+            "I8",
+            "I10"
+          ],
+          [
+            "I2"
+          ],
+          [
+            "I8"
+          ],
+          [
+            "I10"
+          ]
+        ],
+        "qualifier_terms": [],
+        "failure_tags": [
+          "unsupported_synthesis"
+        ],
+        "accepted_answers": [
+          "no"
+        ]
+      }
+    },
+    {
+      "id": "P11",
+      "question": "What was the duration of the 4 March outage in minutes?",
+      "answer_type": "enum",
+      "options": [
+        "45",
+        "75",
+        "90",
+        "insufficient"
+      ],
+      "gold": {
+        "answer": "45",
+        "evidence_sets": [
+          [
+            "I2"
+          ]
+        ],
+        "qualifier_terms": [],
+        "failure_tags": [],
+        "accepted_answers": [
+          "45",
+          "45 minutes"
+        ]
+      }
+    },
+    {
+      "id": "P12",
+      "question": "What caused the failed rollback?",
+      "answer_type": "enum",
+      "options": [
+        "expired TLS certificate",
+        "incompatible schema change in the rollback script",
+        "database corruption",
+        "insufficient"
+      ],
+      "gold": {
+        "answer": "incompatible schema change in the rollback script",
+        "evidence_sets": [
+          [
+            "I6"
+          ]
+        ],
+        "qualifier_terms": [],
+        "failure_tags": [
+          "unsupported_synthesis"
+        ],
+        "accepted_answers": [
+          "incompatible schema change in the rollback script",
+          "schema change in the rollback script",
+          "incompatible schema change"
+        ]
+      }
+    }
+  ],
+  "consistency_rules": [
+    {
+      "id": "Y1",
+      "when": {
+        "P4": "expired TLS certificate"
+      },
+      "forbid": {
+        "P6": "no"
+      },
+      "tag": "internal_inconsistency"
+    },
+    {
+      "id": "Y2",
+      "when": {
+        "P1": "1"
+      },
+      "forbid": {
+        "P10": "no"
+      },
+      "tag": "internal_inconsistency"
+    }
+  ],
+  "summary": {
+    "instructions": "Write a 2-4 sentence executive summary of the March incidents.",
+    "required_terms": [
+      "two"
+    ],
+    "forbidden_phrases": [
+      "one outage",
+      "single outage",
+      "both outages were caused by the certificate",
+      "both incidents were caused by the certificate",
+      "the remediation plan is approved"
+    ]
+  }
+}

@@ -1,0 +1,771 @@
+{
+  "task_id": "T1",
+  "slug": "retention",
+  "title": "Northwind Cloud Services - EU retention brief",
+  "as_of": "2026-06-15",
+  "context": "You are preparing a retention brief for the Chief Operating Officer of Northwind Cloud Services. The source pack is the only permitted evidence. Some documents are approved, some are operational exports, one is an unsigned draft, and one is an informal email. Dates matter.",
+  "authority_note": "Approved policies, addenda, signed amendments and approved schedules are authoritative. A signed amendment controls over an operational export. An unsigned draft has no effect. An informal email cannot change authority.",
+  "sources": [
+    {
+      "id": "D1",
+      "type": "policy",
+      "title": "Enterprise Data Retention Policy (v3)",
+      "date": "2025-01-10",
+      "authority": 90,
+      "text": "This policy applies to all enterprise customer data processed by Northwind Cloud Services. Standard customer data is retained for 24 months after contract termination. For customers in the European Union, the retention period is 12 months after contract termination. Backups are governed separately by the Backup Retention Schedule and are out of scope of this policy. The policy is reviewed annually by the Data Protection Officer."
+    },
+    {
+      "id": "D2",
+      "type": "addendum",
+      "title": "EU Retention Addendum",
+      "date": "2025-06-01",
+      "authority": 90,
+      "text": "This addendum supplements the Enterprise Data Retention Policy for customers in the European Union. Effective 1 July 2025, EU customer data is retained for 12 months after contract termination. This addendum does not change the standard retention period or the backup schedule."
+    },
+    {
+      "id": "D3",
+      "type": "contract_amendment",
+      "title": "Amendment A to the EU Retention Addendum",
+      "date": "2026-05-05",
+      "authority": 95,
+      "text": "Northwind Cloud Services and the EU customer representative agree to amend the EU Retention Addendum. The EU retention period is amended from 12 months to 18 months, effective 1 March 2026. This change applies only to accounts opened on or after 1 January 2026. Accounts opened before 1 January 2026 remain subject to the 12-month period in the Addendum. Signed 5 May 2026."
+    },
+    {
+      "id": "D4",
+      "type": "draft",
+      "title": "Draft Amendment B (unsigned)",
+      "date": "2026-06-01",
+      "authority": 20,
+      "text": "DRAFT - NOT APPROVED. This draft proposes to amend the EU retention period to 24 months for all EU accounts, effective 1 September 2026. It has not been signed or approved by either party."
+    },
+    {
+      "id": "D5",
+      "type": "system_export",
+      "title": "System-of-record export - Retention",
+      "date": "2026-04-15",
+      "authority": 60,
+      "text": "EU retention: 12 months. Standard retention: 24 months. Source: configuration table last updated 2025-11-30. The export is generated nightly; configuration changes are applied by the platform team after approval."
+    },
+    {
+      "id": "D6",
+      "type": "email",
+      "title": "Email from Data Protection Officer",
+      "date": "2026-04-20",
+      "authority": 50,
+      "text": "The public trust page has not yet been updated to reflect Amendment A. The signed Amendment A is the controlling document for EU retention. Please do not rely on the system export for the new EU period until the configuration is updated."
+    },
+    {
+      "id": "D7",
+      "type": "web_snapshot",
+      "title": "Public trust page snapshot",
+      "date": "2026-04-18",
+      "authority": 40,
+      "text": "Data retention: Standard accounts 24 months. EU accounts 12 months. Backups 35 days."
+    },
+    {
+      "id": "D8",
+      "type": "schedule",
+      "title": "Backup Retention Schedule",
+      "date": "2025-11-01",
+      "authority": 85,
+      "text": "Backups of enterprise customer data are retained for 35 days. Backups are not part of the Enterprise Data Retention Policy. The schedule is reviewed annually by the Security team."
+    },
+    {
+      "id": "D9",
+      "type": "contract",
+      "title": "Vendor contract excerpt - Data processing",
+      "date": "2026-01-15",
+      "authority": 80,
+      "text": "For EU accounts, the parties agree to the retention schedule set out in the Enterprise Data Retention Policy and its EU addenda, as amended from time to time. In the event of a conflict, a signed amendment controls over an operational export."
+    },
+    {
+      "id": "D10",
+      "type": "audit_note",
+      "title": "Internal audit note",
+      "date": "2026-05-20",
+      "authority": 70,
+      "text": "Observation: the system-of-record export still shows 12 months for EU retention. Amendment A was signed on 5 May 2026 and is effective from 1 March 2026. The export is stale for accounts opened on or after 1 January 2026. No action has been taken to update the configuration."
+    },
+    {
+      "id": "D11",
+      "type": "minutes",
+      "title": "Board minutes excerpt",
+      "date": "2026-01-15",
+      "authority": 85,
+      "text": "The Board noted the proposed EU retention amendment and delegated signature to the Chief Legal Officer. The Board did not approve Draft Amendment B, which had not been circulated."
+    },
+    {
+      "id": "D12",
+      "type": "email",
+      "title": "Sales operations email",
+      "date": "2026-02-10",
+      "authority": 30,
+      "text": "Please use the system export for EU retention. The amendment is not in the system yet, so 12 months is the number to quote."
+    }
+  ],
+  "recognition_claims": [
+    {
+      "id": "C1",
+      "text": "For EU accounts opened in 2024, the retention period is 12 months.",
+      "gold": {
+        "verdict": "SUPPORTED",
+        "evidence_sets": [
+          [
+            "D2"
+          ],
+          [
+            "D3"
+          ]
+        ],
+        "qualifier_terms": [],
+        "failure_tags": [
+          "scope_generalization"
+        ]
+      }
+    },
+    {
+      "id": "C2",
+      "text": "For EU accounts opened in 2026, the retention period is 18 months.",
+      "gold": {
+        "verdict": "SUPPORTED",
+        "evidence_sets": [
+          [
+            "D3"
+          ]
+        ],
+        "qualifier_terms": [],
+        "failure_tags": [
+          "temporal_overreach"
+        ]
+      }
+    },
+    {
+      "id": "C3",
+      "text": "For EU accounts opened in 2026, the retention period was 18 months in February 2026.",
+      "gold": {
+        "verdict": "CONTRADICTED",
+        "evidence_sets": [
+          [
+            "D2",
+            "D3"
+          ],
+          [
+            "D2"
+          ],
+          [
+            "D3"
+          ]
+        ],
+        "qualifier_terms": [],
+        "failure_tags": [
+          "temporal_overreach"
+        ]
+      }
+    },
+    {
+      "id": "C4",
+      "text": "For EU accounts opened in 2026, the retention period is 24 months.",
+      "gold": {
+        "verdict": "CONTRADICTED",
+        "evidence_sets": [
+          [
+            "D3",
+            "D4"
+          ],
+          [
+            "D3"
+          ],
+          [
+            "D4"
+          ]
+        ],
+        "qualifier_terms": [],
+        "failure_tags": [
+          "draft_as_fact",
+          "temporal_overreach"
+        ]
+      }
+    },
+    {
+      "id": "C5",
+      "text": "The standard (non-EU) retention period is 24 months.",
+      "gold": {
+        "verdict": "SUPPORTED",
+        "evidence_sets": [
+          [
+            "D1"
+          ]
+        ],
+        "qualifier_terms": [],
+        "failure_tags": []
+      }
+    },
+    {
+      "id": "C6",
+      "text": "Customer data is retained for 24 months.",
+      "gold": {
+        "verdict": "SUPPORTED_WITH_QUALIFIER",
+        "evidence_sets": [
+          [
+            "D1",
+            "D2",
+            "D3"
+          ],
+          [
+            "D1",
+            "D3"
+          ]
+        ],
+        "qualifier_terms": [
+          "EU"
+        ],
+        "failure_tags": [
+          "qualifier_dropped",
+          "scope_generalization"
+        ]
+      }
+    },
+    {
+      "id": "C7",
+      "text": "Backups are retained for 35 days.",
+      "gold": {
+        "verdict": "SUPPORTED",
+        "evidence_sets": [
+          [
+            "D8"
+          ]
+        ],
+        "qualifier_terms": [],
+        "failure_tags": []
+      }
+    },
+    {
+      "id": "C8",
+      "text": "Backups are covered by the Enterprise Data Retention Policy.",
+      "gold": {
+        "verdict": "CONTRADICTED",
+        "evidence_sets": [
+          [
+            "D1",
+            "D8"
+          ],
+          [
+            "D1"
+          ],
+          [
+            "D8"
+          ]
+        ],
+        "qualifier_terms": [],
+        "failure_tags": [
+          "scope_generalization"
+        ]
+      }
+    },
+    {
+      "id": "C9",
+      "text": "The public trust page shows the current EU retention period.",
+      "gold": {
+        "verdict": "CONTRADICTED",
+        "evidence_sets": [
+          [
+            "D6",
+            "D7"
+          ],
+          [
+            "D6"
+          ],
+          [
+            "D7"
+          ]
+        ],
+        "qualifier_terms": [],
+        "failure_tags": [
+          "temporal_overreach"
+        ]
+      }
+    },
+    {
+      "id": "C10",
+      "text": "The system-of-record export is the controlling record for EU retention.",
+      "gold": {
+        "verdict": "CONTRADICTED",
+        "evidence_sets": [
+          [
+            "D3",
+            "D6",
+            "D9",
+            "D10"
+          ],
+          [
+            "D3"
+          ],
+          [
+            "D6"
+          ],
+          [
+            "D9"
+          ],
+          [
+            "D10"
+          ]
+        ],
+        "qualifier_terms": [],
+        "failure_tags": [
+          "authority_inversion"
+        ]
+      }
+    },
+    {
+      "id": "C11",
+      "text": "The EU retention change took effect before Amendment A was signed.",
+      "gold": {
+        "verdict": "SUPPORTED",
+        "evidence_sets": [
+          [
+            "D3"
+          ]
+        ],
+        "qualifier_terms": [],
+        "failure_tags": [
+          "temporal_overreach"
+        ]
+      }
+    },
+    {
+      "id": "C12",
+      "text": "Draft Amendment B is in effect.",
+      "gold": {
+        "verdict": "CONTRADICTED",
+        "evidence_sets": [
+          [
+            "D4",
+            "D11"
+          ],
+          [
+            "D4"
+          ],
+          [
+            "D11"
+          ]
+        ],
+        "qualifier_terms": [],
+        "failure_tags": [
+          "draft_as_fact"
+        ]
+      }
+    }
+  ],
+  "production_items": [
+    {
+      "id": "P1",
+      "question": "What is the EU retention period for accounts opened in 2026, as of 2026-06-15?",
+      "answer_type": "enum",
+      "options": [
+        "12 months",
+        "18 months",
+        "24 months",
+        "insufficient"
+      ],
+      "gold": {
+        "answer": "18 months",
+        "evidence_sets": [
+          [
+            "D3"
+          ]
+        ],
+        "qualifier_terms": [],
+        "failure_tags": [
+          "temporal_overreach"
+        ],
+        "accepted_answers": [
+          "18 months",
+          "18"
+        ]
+      }
+    },
+    {
+      "id": "P2",
+      "question": "What is the EU retention period for accounts opened in 2024, as of 2026-06-15?",
+      "answer_type": "enum",
+      "options": [
+        "12 months",
+        "18 months",
+        "24 months",
+        "insufficient"
+      ],
+      "gold": {
+        "answer": "12 months",
+        "evidence_sets": [
+          [
+            "D2"
+          ],
+          [
+            "D3"
+          ]
+        ],
+        "qualifier_terms": [],
+        "failure_tags": [
+          "scope_generalization"
+        ],
+        "accepted_answers": [
+          "12 months",
+          "12"
+        ]
+      }
+    },
+    {
+      "id": "P3",
+      "question": "What was the EU retention period for accounts opened in 2026 on 2026-02-15?",
+      "answer_type": "enum",
+      "options": [
+        "12 months",
+        "18 months",
+        "24 months",
+        "insufficient"
+      ],
+      "gold": {
+        "answer": "12 months",
+        "evidence_sets": [
+          [
+            "D2",
+            "D3"
+          ],
+          [
+            "D2"
+          ]
+        ],
+        "qualifier_terms": [],
+        "failure_tags": [
+          "temporal_overreach"
+        ],
+        "accepted_answers": [
+          "12 months",
+          "12"
+        ]
+      }
+    },
+    {
+      "id": "P4",
+      "question": "What is the standard (non-EU) retention period?",
+      "answer_type": "enum",
+      "options": [
+        "12 months",
+        "18 months",
+        "24 months",
+        "35 days",
+        "insufficient"
+      ],
+      "gold": {
+        "answer": "24 months",
+        "evidence_sets": [
+          [
+            "D1"
+          ]
+        ],
+        "qualifier_terms": [],
+        "failure_tags": [],
+        "accepted_answers": [
+          "24 months",
+          "24"
+        ]
+      }
+    },
+    {
+      "id": "P5",
+      "question": "Is Draft Amendment B in effect?",
+      "answer_type": "enum",
+      "options": [
+        "yes",
+        "no",
+        "insufficient"
+      ],
+      "gold": {
+        "answer": "no",
+        "evidence_sets": [
+          [
+            "D4",
+            "D11"
+          ],
+          [
+            "D4"
+          ],
+          [
+            "D11"
+          ]
+        ],
+        "qualifier_terms": [],
+        "failure_tags": [
+          "draft_as_fact"
+        ],
+        "accepted_answers": [
+          "no"
+        ]
+      }
+    },
+    {
+      "id": "P6",
+      "question": "What is the backup retention period?",
+      "answer_type": "enum",
+      "options": [
+        "18 months",
+        "24 months",
+        "35 days",
+        "insufficient"
+      ],
+      "gold": {
+        "answer": "35 days",
+        "evidence_sets": [
+          [
+            "D8"
+          ]
+        ],
+        "qualifier_terms": [],
+        "failure_tags": [
+          "scope_generalization"
+        ],
+        "accepted_answers": [
+          "35 days",
+          "35"
+        ]
+      }
+    },
+    {
+      "id": "P7",
+      "question": "Are backups covered by the Enterprise Data Retention Policy?",
+      "answer_type": "enum",
+      "options": [
+        "yes",
+        "no",
+        "insufficient"
+      ],
+      "gold": {
+        "answer": "no",
+        "evidence_sets": [
+          [
+            "D1",
+            "D8"
+          ],
+          [
+            "D1"
+          ],
+          [
+            "D8"
+          ]
+        ],
+        "qualifier_terms": [],
+        "failure_tags": [
+          "scope_generalization"
+        ],
+        "accepted_answers": [
+          "no"
+        ]
+      }
+    },
+    {
+      "id": "P8",
+      "question": "Does the public trust page show the current EU retention period?",
+      "answer_type": "enum",
+      "options": [
+        "yes",
+        "no",
+        "insufficient"
+      ],
+      "gold": {
+        "answer": "no",
+        "evidence_sets": [
+          [
+            "D6",
+            "D7"
+          ],
+          [
+            "D6"
+          ],
+          [
+            "D7"
+          ]
+        ],
+        "qualifier_terms": [],
+        "failure_tags": [
+          "temporal_overreach"
+        ],
+        "accepted_answers": [
+          "no"
+        ]
+      }
+    },
+    {
+      "id": "P9",
+      "question": "Which record controls the EU retention period for accounts opened in 2026?",
+      "answer_type": "enum",
+      "options": [
+        "Amendment A",
+        "system-of-record export",
+        "Draft Amendment B",
+        "public trust page",
+        "insufficient"
+      ],
+      "gold": {
+        "answer": "Amendment A",
+        "evidence_sets": [
+          [
+            "D3",
+            "D6",
+            "D9"
+          ],
+          [
+            "D3"
+          ],
+          [
+            "D6"
+          ],
+          [
+            "D9"
+          ]
+        ],
+        "qualifier_terms": [],
+        "failure_tags": [
+          "authority_inversion"
+        ],
+        "accepted_answers": [
+          "Amendment A",
+          "signed Amendment A"
+        ]
+      }
+    },
+    {
+      "id": "P10",
+      "question": "Did the EU retention change take effect before Amendment A was signed?",
+      "answer_type": "enum",
+      "options": [
+        "yes",
+        "no",
+        "insufficient"
+      ],
+      "gold": {
+        "answer": "yes",
+        "evidence_sets": [
+          [
+            "D3"
+          ]
+        ],
+        "qualifier_terms": [],
+        "failure_tags": [
+          "temporal_overreach"
+        ],
+        "accepted_answers": [
+          "yes"
+        ]
+      }
+    },
+    {
+      "id": "P11",
+      "question": "What EU retention value does the system-of-record export show?",
+      "answer_type": "enum",
+      "options": [
+        "12 months",
+        "18 months",
+        "24 months",
+        "insufficient"
+      ],
+      "gold": {
+        "answer": "12 months",
+        "evidence_sets": [
+          [
+            "D5"
+          ]
+        ],
+        "qualifier_terms": [],
+        "failure_tags": [
+          "authority_inversion"
+        ],
+        "accepted_answers": [
+          "12 months",
+          "12"
+        ]
+      }
+    },
+    {
+      "id": "P12",
+      "question": "Is the system-of-record export current for accounts opened in 2026?",
+      "answer_type": "enum",
+      "options": [
+        "yes",
+        "no",
+        "insufficient"
+      ],
+      "gold": {
+        "answer": "no",
+        "evidence_sets": [
+          [
+            "D5",
+            "D6",
+            "D10"
+          ],
+          [
+            "D5"
+          ],
+          [
+            "D6"
+          ],
+          [
+            "D10"
+          ]
+        ],
+        "qualifier_terms": [],
+        "failure_tags": [
+          "temporal_overreach"
+        ],
+        "accepted_answers": [
+          "no"
+        ]
+      }
+    }
+  ],
+  "consistency_rules": [
+    {
+      "id": "X1",
+      "when": {
+        "P9": "Amendment A"
+      },
+      "forbid": {
+        "P1": "24 months"
+      },
+      "tag": "internal_inconsistency"
+    },
+    {
+      "id": "X2",
+      "when": {
+        "P5": "yes"
+      },
+      "forbid": {
+        "P9": "Amendment A"
+      },
+      "tag": "internal_inconsistency"
+    },
+    {
+      "id": "X3",
+      "when": {
+        "P10": "no"
+      },
+      "forbid": {
+        "P1": "18 months"
+      },
+      "tag": "internal_inconsistency"
+    }
+  ],
+  "summary": {
+    "instructions": "Write a 2-4 sentence executive summary of the retention position.",
+    "required_terms": [
+      "EU",
+      "18 months",
+      "12 months"
+    ],
+    "forbidden_phrases": [
+      "all EU data is retained for 24 months",
+      "EU retention is 24 months",
+      "the draft amendment is in effect",
+      "backups are covered by the retention policy"
+    ]
+  }
+}

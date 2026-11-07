@@ -1,0 +1,1463 @@
+{
+  "run_id": "dryrun2",
+  "summary": {
+    "test/model": {
+      "production": {
+        "calls": 2,
+        "items": 24,
+        "accuracy": 1.0,
+        "strict": 1.0,
+        "overreach": 0,
+        "signature": 0,
+        "inconsistencies": 0,
+        "tags": {},
+        "summary_mean": 1.0,
+        "parse_errors": 0
+      },
+      "recognition": {
+        "calls": 2,
+        "items": 24,
+        "accuracy": 1.0,
+        "strict": 1.0,
+        "overreach": 0,
+        "signature": 0,
+        "inconsistencies": 0,
+        "tags": {},
+        "summary_mean": null,
+        "parse_errors": 0
+      }
+    }
+  },
+  "records": [
+    {
+      "run_id": "dryrun2",
+      "timestamp": "2026-11-07T12:15:41+00:00",
+      "model": "test/model",
+      "task": "T2",
+      "condition": "production",
+      "trial": 1,
+      "prompt_sha256": "98133a3d50d08757c596462f1d9c1693c30232795358a191df295370698d31f6",
+      "prompt_chars": 5972,
+      "raw_chars": 2207,
+      "raw": "{\n  \"items\": [\n    {\n      \"item_id\": \"P1\",\n      \"answer\": \"2\",\n      \"evidence_ids\": [\n        \"I1\",\n        \"I2\",\n        \"I8\"\n      ],\n      \"qualifier\": \"\"\n    },\n    {\n      \"item_id\": \"P2\",\n      \"answer\": \"75\",\n      \"evidence_ids\": [\n        \"I1\"\n      ],\n      \"qualifier\": \"\"\n    },\n    {\n      \"item_id\": \"P3\",\n      \"answer\": \"expired TLS certificate\",\n      \"evidence_ids\": [\n        \"I1\",\n        \"I3\"\n      ],\n      \"qualifier\": \"\"\n    },\n    {\n      \"item_id\": \"P4\",\n      \"answer\": \"failed rollback\",\n      \"evidence_ids\": [\n        \"I2\",\n        \"I6\"\n      ],\n      \"qualifier\": \"\"\n    },\n    {\n      \"item_id\": \"P5\",\n      \"answer\": \"15500\",\n      \"evidence_ids\": [\n        \"I8\"\n      ],\n      \"qualifier\": \"\"\n    },\n    {\n      \"item_id\": \"P6\",\n      \"answer\": \"no\",\n      \"evidence_ids\": [\n        \"I2\",\n        \"I6\"\n      ],\n      \"qualifier\": \"\"\n    },\n    {\n      \"item_id\": \"P7\",\n      \"answer\": \"no\",\n      \"evidence_ids\": [\n        \"I8\",\n        \"I10\"\n      ],\n      \"qualifier\": \"\"\n    },\n    {\n      \"item_id\": \"P8\",\n      \"answer\": \"no\",\n      \"evidence_ids\": [\n        \"I9\",\n        \"I10\"\n      ],\n      \"qualifier\": \"\"\n    },\n    {\n      \"item_id\": \"P9\",\n      \"answer\": \"rotate certificates and re-enable expiry alerts\",\n      \"evidence_ids\": [\n        \"I3\"\n      ],\n      \"qualifier\": \"\"\n    },\n    {\n      \"item_id\": \"P10\",\n      \"answer\": \"no\",\n      \"evidence_ids\": [\n        \"I2\",\n        \"I8\",\n        \"I10\"\n      ],\n      \"qualifier\": \"\"\n    },\n    {\n      \"item_id\": \"P11\",\n      \"answer\": \"45\",\n      \"evidence_ids\": [\n        \"I2\"\n      ],\n      \"qualifier\": \"\"\n    },\n    {\n      \"item_id\": \"P12\",\n      \"answer\": \"incompatible schema change in the rollback script\",\n      \"evidence_ids\": [\n        \"I6\"\n      ],\n      \"qualifier\": \"\"\n    }\n  ],\n  \"summary\": \"Two distinct outages occurred in March: INC-031 on 2 March (75 minutes, expired TLS certificate, 12,400 failed transactions) and INC-032 on 4 March (45 minutes, failed rollback, 3,100 failed transactions). The causes were different, and the total impact was 15,500 failed transactions. The single-event framing in the executive email is not supported, and the draft remediation plan is not approved.\"\n}",
+      "usage": {},
+      "cost": null,
+      "latency_s": 0.0,
+      "attempts": [],
+      "provider_error": null,
+      "grade": {
+        "n": 12,
+        "mean_score": 1.0,
+        "accuracy": 1.0,
+        "strict": 1.0,
+        "extra_penalty": 0.0,
+        "duplicates": [],
+        "extras": [],
+        "missing": [],
+        "rows": [
+          {
+            "id": "P1",
+            "gold": "2",
+            "model": "2",
+            "answer_ok": true,
+            "evidence_kind": "exact",
+            "evidence_ids": [
+              "I1",
+              "I2",
+              "I8"
+            ],
+            "gold_evidence_sets": [
+              [
+                "I1",
+                "I2",
+                "I8"
+              ],
+              [
+                "I8"
+              ],
+              [
+                "I1",
+                "I2"
+              ]
+            ],
+            "qualifier_ok": true,
+            "qualifier": "",
+            "score": 1.0,
+            "strict": true,
+            "tags": [],
+            "overreach": false
+          },
+          {
+            "id": "P2",
+            "gold": "75",
+            "model": "75",
+            "answer_ok": true,
+            "evidence_kind": "exact",
+            "evidence_ids": [
+              "I1"
+            ],
+            "gold_evidence_sets": [
+              [
+                "I1"
+              ]
+            ],
+            "qualifier_ok": true,
+            "qualifier": "",
+            "score": 1.0,
+            "strict": true,
+            "tags": [],
+            "overreach": false
+          },
+          {
+            "id": "P3",
+            "gold": "expired TLS certificate",
+            "model": "expired TLS certificate",
+            "answer_ok": true,
+            "evidence_kind": "exact",
+            "evidence_ids": [
+              "I1",
+              "I3"
+            ],
+            "gold_evidence_sets": [
+              [
+                "I1",
+                "I3"
+              ],
+              [
+                "I1"
+              ],
+              [
+                "I3"
+              ]
+            ],
+            "qualifier_ok": true,
+            "qualifier": "",
+            "score": 1.0,
+            "strict": true,
+            "tags": [],
+            "overreach": false
+          },
+          {
+            "id": "P4",
+            "gold": "failed rollback",
+            "model": "failed rollback",
+            "answer_ok": true,
+            "evidence_kind": "exact",
+            "evidence_ids": [
+              "I2",
+              "I6"
+            ],
+            "gold_evidence_sets": [
+              [
+                "I2",
+                "I6"
+              ],
+              [
+                "I2"
+              ],
+              [
+                "I6"
+              ]
+            ],
+            "qualifier_ok": true,
+            "qualifier": "",
+            "score": 1.0,
+            "strict": true,
+            "tags": [],
+            "overreach": false
+          },
+          {
+            "id": "P5",
+            "gold": "15500",
+            "model": "15500",
+            "answer_ok": true,
+            "evidence_kind": "exact",
+            "evidence_ids": [
+              "I8"
+            ],
+            "gold_evidence_sets": [
+              [
+                "I8"
+              ]
+            ],
+            "qualifier_ok": true,
+            "qualifier": "",
+            "score": 1.0,
+            "strict": true,
+            "tags": [],
+            "overreach": false
+          },
+          {
+            "id": "P6",
+            "gold": "no",
+            "model": "no",
+            "answer_ok": true,
+            "evidence_kind": "exact",
+            "evidence_ids": [
+              "I2",
+              "I6"
+            ],
+            "gold_evidence_sets": [
+              [
+                "I2",
+                "I6"
+              ],
+              [
+                "I2"
+              ],
+              [
+                "I6"
+              ]
+            ],
+            "qualifier_ok": true,
+            "qualifier": "",
+            "score": 1.0,
+            "strict": true,
+            "tags": [],
+            "overreach": false
+          },
+          {
+            "id": "P7",
+            "gold": "no",
+            "model": "no",
+            "answer_ok": true,
+            "evidence_kind": "exact",
+            "evidence_ids": [
+              "I10",
+              "I8"
+            ],
+            "gold_evidence_sets": [
+              [
+                "I8",
+                "I10"
+              ],
+              [
+                "I8"
+              ],
+              [
+                "I10"
+              ]
+            ],
+            "qualifier_ok": true,
+            "qualifier": "",
+            "score": 1.0,
+            "strict": true,
+            "tags": [],
+            "overreach": false
+          },
+          {
+            "id": "P8",
+            "gold": "no",
+            "model": "no",
+            "answer_ok": true,
+            "evidence_kind": "exact",
+            "evidence_ids": [
+              "I10",
+              "I9"
+            ],
+            "gold_evidence_sets": [
+              [
+                "I9",
+                "I10"
+              ],
+              [
+                "I9"
+              ],
+              [
+                "I10"
+              ]
+            ],
+            "qualifier_ok": true,
+            "qualifier": "",
+            "score": 1.0,
+            "strict": true,
+            "tags": [],
+            "overreach": false
+          },
+          {
+            "id": "P9",
+            "gold": "rotate certificates and re-enable expiry alerts",
+            "model": "rotate certificates and re-enable expiry alerts",
+            "answer_ok": true,
+            "evidence_kind": "exact",
+            "evidence_ids": [
+              "I3"
+            ],
+            "gold_evidence_sets": [
+              [
+                "I3"
+              ]
+            ],
+            "qualifier_ok": true,
+            "qualifier": "",
+            "score": 1.0,
+            "strict": true,
+            "tags": [],
+            "overreach": false
+          },
+          {
+            "id": "P10",
+            "gold": "no",
+            "model": "no",
+            "answer_ok": true,
+            "evidence_kind": "exact",
+            "evidence_ids": [
+              "I10",
+              "I2",
+              "I8"
+            ],
+            "gold_evidence_sets": [
+              [
+                "I2",
+                "I8",
+                "I10"
+              ],
+              [
+                "I2"
+              ],
+              [
+                "I8"
+              ],
+              [
+                "I10"
+              ]
+            ],
+            "qualifier_ok": true,
+            "qualifier": "",
+            "score": 1.0,
+            "strict": true,
+            "tags": [],
+            "overreach": false
+          },
+          {
+            "id": "P11",
+            "gold": "45",
+            "model": "45",
+            "answer_ok": true,
+            "evidence_kind": "exact",
+            "evidence_ids": [
+              "I2"
+            ],
+            "gold_evidence_sets": [
+              [
+                "I2"
+              ]
+            ],
+            "qualifier_ok": true,
+            "qualifier": "",
+            "score": 1.0,
+            "strict": true,
+            "tags": [],
+            "overreach": false
+          },
+          {
+            "id": "P12",
+            "gold": "incompatible schema change in the rollback script",
+            "model": "incompatible schema change in the rollback script",
+            "answer_ok": true,
+            "evidence_kind": "exact",
+            "evidence_ids": [
+              "I6"
+            ],
+            "gold_evidence_sets": [
+              [
+                "I6"
+              ]
+            ],
+            "qualifier_ok": true,
+            "qualifier": "",
+            "score": 1.0,
+            "strict": true,
+            "tags": [],
+            "overreach": false
+          }
+        ],
+        "summary": {
+          "text": "Two distinct outages occurred in March: INC-031 on 2 March (75 minutes, expired TLS certificate, 12,400 failed transactions) and INC-032 on 4 March (45 minutes, failed rollback, 3,100 failed transactions). The causes were different, and the total impact was 15,500 failed transactions. The single-event framing in the executive email is not supported, and the draft remediation plan is not approved.",
+          "required_ok": true,
+          "forbidden_hits": [],
+          "score": 1.0
+        },
+        "inconsistencies": [],
+        "inconsistency_count": 0,
+        "condition": "production"
+      }
+    },
+    {
+      "run_id": "dryrun2",
+      "timestamp": "2026-11-07T12:15:41+00:00",
+      "model": "test/model",
+      "task": "T1",
+      "condition": "recognition",
+      "trial": 1,
+      "prompt_sha256": "466e2feb14a246b56b52b975c2d77ec18973ce779fb59975faa6ebd7d2e69f3a",
+      "prompt_chars": 5684,
+      "raw_chars": 1820,
+      "raw": "{\n  \"claims\": [\n    {\n      \"claim_id\": \"C1\",\n      \"verdict\": \"SUPPORTED\",\n      \"evidence_ids\": [\n        \"D2\"\n      ],\n      \"qualifier\": \"\"\n    },\n    {\n      \"claim_id\": \"C2\",\n      \"verdict\": \"SUPPORTED\",\n      \"evidence_ids\": [\n        \"D3\"\n      ],\n      \"qualifier\": \"\"\n    },\n    {\n      \"claim_id\": \"C3\",\n      \"verdict\": \"CONTRADICTED\",\n      \"evidence_ids\": [\n        \"D2\",\n        \"D3\"\n      ],\n      \"qualifier\": \"\"\n    },\n    {\n      \"claim_id\": \"C4\",\n      \"verdict\": \"CONTRADICTED\",\n      \"evidence_ids\": [\n        \"D3\",\n        \"D4\"\n      ],\n      \"qualifier\": \"\"\n    },\n    {\n      \"claim_id\": \"C5\",\n      \"verdict\": \"SUPPORTED\",\n      \"evidence_ids\": [\n        \"D1\"\n      ],\n      \"qualifier\": \"\"\n    },\n    {\n      \"claim_id\": \"C6\",\n      \"verdict\": \"SUPPORTED_WITH_QUALIFIER\",\n      \"evidence_ids\": [\n        \"D1\",\n        \"D2\",\n        \"D3\"\n      ],\n      \"qualifier\": \"EU\"\n    },\n    {\n      \"claim_id\": \"C7\",\n      \"verdict\": \"SUPPORTED\",\n      \"evidence_ids\": [\n        \"D8\"\n      ],\n      \"qualifier\": \"\"\n    },\n    {\n      \"claim_id\": \"C8\",\n      \"verdict\": \"CONTRADICTED\",\n      \"evidence_ids\": [\n        \"D1\",\n        \"D8\"\n      ],\n      \"qualifier\": \"\"\n    },\n    {\n      \"claim_id\": \"C9\",\n      \"verdict\": \"CONTRADICTED\",\n      \"evidence_ids\": [\n        \"D6\",\n        \"D7\"\n      ],\n      \"qualifier\": \"\"\n    },\n    {\n      \"claim_id\": \"C10\",\n      \"verdict\": \"CONTRADICTED\",\n      \"evidence_ids\": [\n        \"D3\",\n        \"D6\",\n        \"D9\",\n        \"D10\"\n      ],\n      \"qualifier\": \"\"\n    },\n    {\n      \"claim_id\": \"C11\",\n      \"verdict\": \"SUPPORTED\",\n      \"evidence_ids\": [\n        \"D3\"\n      ],\n      \"qualifier\": \"\"\n    },\n    {\n      \"claim_id\": \"C12\",\n      \"verdict\": \"CONTRADICTED\",\n      \"evidence_ids\": [\n        \"D4\",\n        \"D11\"\n      ],\n      \"qualifier\": \"\"\n    }\n  ]\n}",
+      "usage": {},
+      "cost": null,
+      "latency_s": 0.0,
+      "attempts": [],
+      "provider_error": null,
+      "grade": {
+        "n": 12,
+        "mean_score": 1.0,
+        "accuracy": 1.0,
+        "strict": 1.0,
+        "extra_penalty": 0.0,
+        "duplicates": [],
+        "extras": [],
+        "missing": [],
+        "rows": [
+          {
+            "id": "C1",
+            "gold": "SUPPORTED",
+            "model": "SUPPORTED",
+            "answer_ok": true,
+            "evidence_kind": "exact",
+            "evidence_ids": [
+              "D2"
+            ],
+            "gold_evidence_sets": [
+              [
+                "D2"
+              ],
+              [
+                "D3"
+              ]
+            ],
+            "qualifier_ok": true,
+            "qualifier": "",
+            "score": 1.0,
+            "strict": true,
+            "tags": [],
+            "overreach": false
+          },
+          {
+            "id": "C2",
+            "gold": "SUPPORTED",
+            "model": "SUPPORTED",
+            "answer_ok": true,
+            "evidence_kind": "exact",
+            "evidence_ids": [
+              "D3"
+            ],
+            "gold_evidence_sets": [
+              [
+                "D3"
+              ]
+            ],
+            "qualifier_ok": true,
+            "qualifier": "",
+            "score": 1.0,
+            "strict": true,
+            "tags": [],
+            "overreach": false
+          },
+          {
+            "id": "C3",
+            "gold": "CONTRADICTED",
+            "model": "CONTRADICTED",
+            "answer_ok": true,
+            "evidence_kind": "exact",
+            "evidence_ids": [
+              "D2",
+              "D3"
+            ],
+            "gold_evidence_sets": [
+              [
+                "D2",
+                "D3"
+              ],
+              [
+                "D2"
+              ],
+              [
+                "D3"
+              ]
+            ],
+            "qualifier_ok": true,
+            "qualifier": "",
+            "score": 1.0,
+            "strict": true,
+            "tags": [],
+            "overreach": false
+          },
+          {
+            "id": "C4",
+            "gold": "CONTRADICTED",
+            "model": "CONTRADICTED",
+            "answer_ok": true,
+            "evidence_kind": "exact",
+            "evidence_ids": [
+              "D3",
+              "D4"
+            ],
+            "gold_evidence_sets": [
+              [
+                "D3",
+                "D4"
+              ],
+              [
+                "D3"
+              ],
+              [
+                "D4"
+              ]
+            ],
+            "qualifier_ok": true,
+            "qualifier": "",
+            "score": 1.0,
+            "strict": true,
+            "tags": [],
+            "overreach": false
+          },
+          {
+            "id": "C5",
+            "gold": "SUPPORTED",
+            "model": "SUPPORTED",
+            "answer_ok": true,
+            "evidence_kind": "exact",
+            "evidence_ids": [
+              "D1"
+            ],
+            "gold_evidence_sets": [
+              [
+                "D1"
+              ]
+            ],
+            "qualifier_ok": true,
+            "qualifier": "",
+            "score": 1.0,
+            "strict": true,
+            "tags": [],
+            "overreach": false
+          },
+          {
+            "id": "C6",
+            "gold": "SUPPORTED_WITH_QUALIFIER",
+            "model": "SUPPORTED_WITH_QUALIFIER",
+            "answer_ok": true,
+            "evidence_kind": "exact",
+            "evidence_ids": [
+              "D1",
+              "D2",
+              "D3"
+            ],
+            "gold_evidence_sets": [
+              [
+                "D1",
+                "D2",
+                "D3"
+              ],
+              [
+                "D1",
+                "D3"
+              ]
+            ],
+            "qualifier_ok": true,
+            "qualifier": "EU",
+            "score": 1.0,
+            "strict": true,
+            "tags": [],
+            "overreach": false
+          },
+          {
+            "id": "C7",
+            "gold": "SUPPORTED",
+            "model": "SUPPORTED",
+            "answer_ok": true,
+            "evidence_kind": "exact",
+            "evidence_ids": [
+              "D8"
+            ],
+            "gold_evidence_sets": [
+              [
+                "D8"
+              ]
+            ],
+            "qualifier_ok": true,
+            "qualifier": "",
+            "score": 1.0,
+            "strict": true,
+            "tags": [],
+            "overreach": false
+          },
+          {
+            "id": "C8",
+            "gold": "CONTRADICTED",
+            "model": "CONTRADICTED",
+            "answer_ok": true,
+            "evidence_kind": "exact",
+            "evidence_ids": [
+              "D1",
+              "D8"
+            ],
+            "gold_evidence_sets": [
+              [
+                "D1",
+                "D8"
+              ],
+              [
+                "D1"
+              ],
+              [
+                "D8"
+              ]
+            ],
+            "qualifier_ok": true,
+            "qualifier": "",
+            "score": 1.0,
+            "strict": true,
+            "tags": [],
+            "overreach": false
+          },
+          {
+            "id": "C9",
+            "gold": "CONTRADICTED",
+            "model": "CONTRADICTED",
+            "answer_ok": true,
+            "evidence_kind": "exact",
+            "evidence_ids": [
+              "D6",
+              "D7"
+            ],
+            "gold_evidence_sets": [
+              [
+                "D6",
+                "D7"
+              ],
+              [
+                "D6"
+              ],
+              [
+                "D7"
+              ]
+            ],
+            "qualifier_ok": true,
+            "qualifier": "",
+            "score": 1.0,
+            "strict": true,
+            "tags": [],
+            "overreach": false
+          },
+          {
+            "id": "C10",
+            "gold": "CONTRADICTED",
+            "model": "CONTRADICTED",
+            "answer_ok": true,
+            "evidence_kind": "exact",
+            "evidence_ids": [
+              "D10",
+              "D3",
+              "D6",
+              "D9"
+            ],
+            "gold_evidence_sets": [
+              [
+                "D3",
+                "D6",
+                "D9",
+                "D10"
+              ],
+              [
+                "D3"
+              ],
+              [
+                "D6"
+              ],
+              [
+                "D9"
+              ],
+              [
+                "D10"
+              ]
+            ],
+            "qualifier_ok": true,
+            "qualifier": "",
+            "score": 1.0,
+            "strict": true,
+            "tags": [],
+            "overreach": false
+          },
+          {
+            "id": "C11",
+            "gold": "SUPPORTED",
+            "model": "SUPPORTED",
+            "answer_ok": true,
+            "evidence_kind": "exact",
+            "evidence_ids": [
+              "D3"
+            ],
+            "gold_evidence_sets": [
+              [
+                "D3"
+              ]
+            ],
+            "qualifier_ok": true,
+            "qualifier": "",
+            "score": 1.0,
+            "strict": true,
+            "tags": [],
+            "overreach": false
+          },
+          {
+            "id": "C12",
+            "gold": "CONTRADICTED",
+            "model": "CONTRADICTED",
+            "answer_ok": true,
+            "evidence_kind": "exact",
+            "evidence_ids": [
+              "D11",
+              "D4"
+            ],
+            "gold_evidence_sets": [
+              [
+                "D4",
+                "D11"
+              ],
+              [
+                "D4"
+              ],
+              [
+                "D11"
+              ]
+            ],
+            "qualifier_ok": true,
+            "qualifier": "",
+            "score": 1.0,
+            "strict": true,
+            "tags": [],
+            "overreach": false
+          }
+        ],
+        "condition": "recognition"
+      }
+    },
+    {
+      "run_id": "dryrun2",
+      "timestamp": "2026-11-07T12:15:41+00:00",
+      "model": "test/model",
+      "task": "T2",
+      "condition": "recognition",
+      "trial": 1,
+      "prompt_sha256": "4ec89fb573b6d36574e307a4d7916585d1ecde15eb990ff8a8a489a0118778f3",
+      "prompt_chars": 5378,
+      "raw_chars": 1851,
+      "raw": "{\n  \"claims\": [\n    {\n      \"claim_id\": \"C1\",\n      \"verdict\": \"CONTRADICTED\",\n      \"evidence_ids\": [\n        \"I1\",\n        \"I2\",\n        \"I8\"\n      ],\n      \"qualifier\": \"\"\n    },\n    {\n      \"claim_id\": \"C2\",\n      \"verdict\": \"SUPPORTED\",\n      \"evidence_ids\": [\n        \"I1\"\n      ],\n      \"qualifier\": \"\"\n    },\n    {\n      \"claim_id\": \"C3\",\n      \"verdict\": \"CONTRADICTED\",\n      \"evidence_ids\": [\n        \"I2\",\n        \"I6\"\n      ],\n      \"qualifier\": \"\"\n    },\n    {\n      \"claim_id\": \"C4\",\n      \"verdict\": \"CONTRADICTED\",\n      \"evidence_ids\": [\n        \"I2\",\n        \"I6\",\n        \"I10\"\n      ],\n      \"qualifier\": \"\"\n    },\n    {\n      \"claim_id\": \"C5\",\n      \"verdict\": \"INSUFFICIENT\",\n      \"evidence_ids\": [\n        \"I6\"\n      ],\n      \"qualifier\": \"\"\n    },\n    {\n      \"claim_id\": \"C6\",\n      \"verdict\": \"SUPPORTED\",\n      \"evidence_ids\": [\n        \"I8\"\n      ],\n      \"qualifier\": \"\"\n    },\n    {\n      \"claim_id\": \"C7\",\n      \"verdict\": \"SUPPORTED\",\n      \"evidence_ids\": [\n        \"I2\",\n        \"I8\"\n      ],\n      \"qualifier\": \"\"\n    },\n    {\n      \"claim_id\": \"C8\",\n      \"verdict\": \"SUPPORTED\",\n      \"evidence_ids\": [\n        \"I1\",\n        \"I7\"\n      ],\n      \"qualifier\": \"\"\n    },\n    {\n      \"claim_id\": \"C9\",\n      \"verdict\": \"CONTRADICTED\",\n      \"evidence_ids\": [\n        \"I8\",\n        \"I10\"\n      ],\n      \"qualifier\": \"\"\n    },\n    {\n      \"claim_id\": \"C10\",\n      \"verdict\": \"CONTRADICTED\",\n      \"evidence_ids\": [\n        \"I9\",\n        \"I10\"\n      ],\n      \"qualifier\": \"\"\n    },\n    {\n      \"claim_id\": \"C11\",\n      \"verdict\": \"CONTRADICTED\",\n      \"evidence_ids\": [\n        \"I9\",\n        \"I10\"\n      ],\n      \"qualifier\": \"\"\n    },\n    {\n      \"claim_id\": \"C12\",\n      \"verdict\": \"SUPPORTED\",\n      \"evidence_ids\": [\n        \"I1\",\n        \"I2\",\n        \"I8\",\n        \"I10\"\n      ],\n      \"qualifier\": \"\"\n    }\n  ]\n}",
+      "usage": {},
+      "cost": null,
+      "latency_s": 0.0,
+      "attempts": [],
+      "provider_error": null,
+      "grade": {
+        "n": 12,
+        "mean_score": 1.0,
+        "accuracy": 1.0,
+        "strict": 1.0,
+        "extra_penalty": 0.0,
+        "duplicates": [],
+        "extras": [],
+        "missing": [],
+        "rows": [
+          {
+            "id": "C1",
+            "gold": "CONTRADICTED",
+            "model": "CONTRADICTED",
+            "answer_ok": true,
+            "evidence_kind": "exact",
+            "evidence_ids": [
+              "I1",
+              "I2",
+              "I8"
+            ],
+            "gold_evidence_sets": [
+              [
+                "I1",
+                "I2",
+                "I8"
+              ],
+              [
+                "I1",
+                "I2"
+              ],
+              [
+                "I8"
+              ]
+            ],
+            "qualifier_ok": true,
+            "qualifier": "",
+            "score": 1.0,
+            "strict": true,
+            "tags": [],
+            "overreach": false
+          },
+          {
+            "id": "C2",
+            "gold": "SUPPORTED",
+            "model": "SUPPORTED",
+            "answer_ok": true,
+            "evidence_kind": "exact",
+            "evidence_ids": [
+              "I1"
+            ],
+            "gold_evidence_sets": [
+              [
+                "I1"
+              ]
+            ],
+            "qualifier_ok": true,
+            "qualifier": "",
+            "score": 1.0,
+            "strict": true,
+            "tags": [],
+            "overreach": false
+          },
+          {
+            "id": "C3",
+            "gold": "CONTRADICTED",
+            "model": "CONTRADICTED",
+            "answer_ok": true,
+            "evidence_kind": "exact",
+            "evidence_ids": [
+              "I2",
+              "I6"
+            ],
+            "gold_evidence_sets": [
+              [
+                "I2",
+                "I6"
+              ],
+              [
+                "I2"
+              ],
+              [
+                "I6"
+              ]
+            ],
+            "qualifier_ok": true,
+            "qualifier": "",
+            "score": 1.0,
+            "strict": true,
+            "tags": [],
+            "overreach": false
+          },
+          {
+            "id": "C4",
+            "gold": "CONTRADICTED",
+            "model": "CONTRADICTED",
+            "answer_ok": true,
+            "evidence_kind": "exact",
+            "evidence_ids": [
+              "I10",
+              "I2",
+              "I6"
+            ],
+            "gold_evidence_sets": [
+              [
+                "I2",
+                "I6",
+                "I10"
+              ],
+              [
+                "I2",
+                "I6"
+              ],
+              [
+                "I8"
+              ],
+              [
+                "I10"
+              ],
+              [
+                "I2"
+              ],
+              [
+                "I6"
+              ]
+            ],
+            "qualifier_ok": true,
+            "qualifier": "",
+            "score": 1.0,
+            "strict": true,
+            "tags": [],
+            "overreach": false
+          },
+          {
+            "id": "C5",
+            "gold": "INSUFFICIENT",
+            "model": "INSUFFICIENT",
+            "answer_ok": true,
+            "evidence_kind": "exact",
+            "evidence_ids": [
+              "I6"
+            ],
+            "gold_evidence_sets": [
+              [
+                "I6"
+              ]
+            ],
+            "qualifier_ok": true,
+            "qualifier": "",
+            "score": 1.0,
+            "strict": true,
+            "tags": [],
+            "overreach": false
+          },
+          {
+            "id": "C6",
+            "gold": "SUPPORTED",
+            "model": "SUPPORTED",
+            "answer_ok": true,
+            "evidence_kind": "exact",
+            "evidence_ids": [
+              "I8"
+            ],
+            "gold_evidence_sets": [
+              [
+                "I8"
+              ]
+            ],
+            "qualifier_ok": true,
+            "qualifier": "",
+            "score": 1.0,
+            "strict": true,
+            "tags": [],
+            "overreach": false
+          },
+          {
+            "id": "C7",
+            "gold": "SUPPORTED",
+            "model": "SUPPORTED",
+            "answer_ok": true,
+            "evidence_kind": "exact",
+            "evidence_ids": [
+              "I2",
+              "I8"
+            ],
+            "gold_evidence_sets": [
+              [
+                "I2",
+                "I8"
+              ],
+              [
+                "I2"
+              ],
+              [
+                "I8"
+              ]
+            ],
+            "qualifier_ok": true,
+            "qualifier": "",
+            "score": 1.0,
+            "strict": true,
+            "tags": [],
+            "overreach": false
+          },
+          {
+            "id": "C8",
+            "gold": "SUPPORTED",
+            "model": "SUPPORTED",
+            "answer_ok": true,
+            "evidence_kind": "exact",
+            "evidence_ids": [
+              "I1",
+              "I7"
+            ],
+            "gold_evidence_sets": [
+              [
+                "I1",
+                "I7"
+              ],
+              [
+                "I1"
+              ],
+              [
+                "I7"
+              ]
+            ],
+            "qualifier_ok": true,
+            "qualifier": "",
+            "score": 1.0,
+            "strict": true,
+            "tags": [],
+            "overreach": false
+          },
+          {
+            "id": "C9",
+            "gold": "CONTRADICTED",
+            "model": "CONTRADICTED",
+            "answer_ok": true,
+            "evidence_kind": "exact",
+            "evidence_ids": [
+              "I10",
+              "I8"
+            ],
+            "gold_evidence_sets": [
+              [
+                "I8",
+                "I10"
+              ],
+              [
+                "I8"
+              ],
+              [
+                "I10"
+              ]
+            ],
+            "qualifier_ok": true,
+            "qualifier": "",
+            "score": 1.0,
+            "strict": true,
+            "tags": [],
+            "overreach": false
+          },
+          {
+            "id": "C10",
+            "gold": "CONTRADICTED",
+            "model": "CONTRADICTED",
+            "answer_ok": true,
+            "evidence_kind": "exact",
+            "evidence_ids": [
+              "I10",
+              "I9"
+            ],
+            "gold_evidence_sets": [
+              [
+                "I9",
+                "I10"
+              ],
+              [
+                "I9"
+              ],
+              [
+                "I10"
+              ]
+            ],
+            "qualifier_ok": true,
+            "qualifier": "",
+            "score": 1.0,
+            "strict": true,
+            "tags": [],
+            "overreach": false
+          },
+          {
+            "id": "C11",
+            "gold": "CONTRADICTED",
+            "model": "CONTRADICTED",
+            "answer_ok": true,
+            "evidence_kind": "exact",
+            "evidence_ids": [
+              "I10",
+              "I9"
+            ],
+            "gold_evidence_sets": [
+              [
+                "I9",
+                "I10"
+              ],
+              [
+                "I9"
+              ],
+              [
+                "I10"
+              ]
+            ],
+            "qualifier_ok": true,
+            "qualifier": "",
+            "score": 1.0,
+            "strict": true,
+            "tags": [],
+            "overreach": false
+          },
+          {
+            "id": "C12",
+            "gold": "SUPPORTED",
+            "model": "SUPPORTED",
+            "answer_ok": true,
+            "evidence_kind": "exact",
+            "evidence_ids": [
+              "I1",
+              "I10",
+              "I2",
+              "I8"
+            ],
+            "gold_evidence_sets": [
+              [
+                "I1",
+                "I2",
+                "I8",
+                "I10"
+              ],
+              [
+                "I1",
+                "I2"
+              ],
+              [
+                "I8"
+              ],
+              [
+                "I10"
+              ]
+            ],
+            "qualifier_ok": true,
+            "qualifier": "",
+            "score": 1.0,
+            "strict": true,
+            "tags": [],
+            "overreach": false
+          }
+        ],
+        "condition": "recognition"
+      }
+    },
+    {
+      "run_id": "dryrun2",
+      "timestamp": "2026-11-07T12:15:41+00:00",
+      "model": "test/model",
+      "task": "T1",
+      "condition": "production",
+      "trial": 1,
+      "prompt_sha256": "66b1fe83175fff99abbc656597c29badde34c443d5311940ac4c01264560d50b",
+      "prompt_chars": 6272,
+      "raw_chars": 2095,
+      "raw": "{\n  \"items\": [\n    {\n      \"item_id\": \"P1\",\n      \"answer\": \"18 months\",\n      \"evidence_ids\": [\n        \"D3\"\n      ],\n      \"qualifier\": \"\"\n    },\n    {\n      \"item_id\": \"P2\",\n      \"answer\": \"12 months\",\n      \"evidence_ids\": [\n        \"D2\"\n      ],\n      \"qualifier\": \"\"\n    },\n    {\n      \"item_id\": \"P3\",\n      \"answer\": \"12 months\",\n      \"evidence_ids\": [\n        \"D2\",\n        \"D3\"\n      ],\n      \"qualifier\": \"\"\n    },\n    {\n      \"item_id\": \"P4\",\n      \"answer\": \"24 months\",\n      \"evidence_ids\": [\n        \"D1\"\n      ],\n      \"qualifier\": \"\"\n    },\n    {\n      \"item_id\": \"P5\",\n      \"answer\": \"no\",\n      \"evidence_ids\": [\n        \"D4\",\n        \"D11\"\n      ],\n      \"qualifier\": \"\"\n    },\n    {\n      \"item_id\": \"P6\",\n      \"answer\": \"35 days\",\n      \"evidence_ids\": [\n        \"D8\"\n      ],\n      \"qualifier\": \"\"\n    },\n    {\n      \"item_id\": \"P7\",\n      \"answer\": \"no\",\n      \"evidence_ids\": [\n        \"D1\",\n        \"D8\"\n      ],\n      \"qualifier\": \"\"\n    },\n    {\n      \"item_id\": \"P8\",\n      \"answer\": \"no\",\n      \"evidence_ids\": [\n        \"D6\",\n        \"D7\"\n      ],\n      \"qualifier\": \"\"\n    },\n    {\n      \"item_id\": \"P9\",\n      \"answer\": \"Amendment A\",\n      \"evidence_ids\": [\n        \"D3\",\n        \"D6\",\n        \"D9\"\n      ],\n      \"qualifier\": \"\"\n    },\n    {\n      \"item_id\": \"P10\",\n      \"answer\": \"yes\",\n      \"evidence_ids\": [\n        \"D3\"\n      ],\n      \"qualifier\": \"\"\n    },\n    {\n      \"item_id\": \"P11\",\n      \"answer\": \"12 months\",\n      \"evidence_ids\": [\n        \"D5\"\n      ],\n      \"qualifier\": \"\"\n    },\n    {\n      \"item_id\": \"P12\",\n      \"answer\": \"no\",\n      \"evidence_ids\": [\n        \"D5\",\n        \"D6\",\n        \"D10\"\n      ],\n      \"qualifier\": \"\"\n    }\n  ],\n  \"summary\": \"EU retention is 18 months for accounts opened on or after 1 January 2026, effective 1 March 2026, and 12 months for accounts opened before that date. The standard non-EU period is 24 months. Backups are retained for 35 days under a separate schedule and are not covered by the retention policy. The public trust page and the system export still show 12 months and are not current.\"\n}",
+      "usage": {},
+      "cost": null,
+      "latency_s": 0.0,
+      "attempts": [],
+      "provider_error": null,
+      "grade": {
+        "n": 12,
+        "mean_score": 1.0,
+        "accuracy": 1.0,
+        "strict": 1.0,
+        "extra_penalty": 0.0,
+        "duplicates": [],
+        "extras": [],
+        "missing": [],
+        "rows": [
+          {
+            "id": "P1",
+            "gold": "18 months",
+            "model": "18 months",
+            "answer_ok": true,
+            "evidence_kind": "exact",
+            "evidence_ids": [
+              "D3"
+            ],
+            "gold_evidence_sets": [
+              [
+                "D3"
+              ]
+            ],
+            "qualifier_ok": true,
+            "qualifier": "",
+            "score": 1.0,
+            "strict": true,
+            "tags": [],
+            "overreach": false
+          },
+          {
+            "id": "P2",
+            "gold": "12 months",
+            "model": "12 months",
+            "answer_ok": true,
+            "evidence_kind": "exact",
+            "evidence_ids": [
+              "D2"
+            ],
+            "gold_evidence_sets": [
+              [
+                "D2"
+              ],
+              [
+                "D3"
+              ]
+            ],
+            "qualifier_ok": true,
+            "qualifier": "",
+            "score": 1.0,
+            "strict": true,
+            "tags": [],
+            "overreach": false
+          },
+          {
+            "id": "P3",
+            "gold": "12 months",
+            "model": "12 months",
+            "answer_ok": true,
+            "evidence_kind": "exact",
+            "evidence_ids": [
+              "D2",
+              "D3"
+            ],
+            "gold_evidence_sets": [
+              [
+                "D2",
+                "D3"
+              ],
+              [
+                "D2"
+              ]
+            ],
+            "qualifier_ok": true,
+            "qualifier": "",
+            "score": 1.0,
+            "strict": true,
+            "tags": [],
+            "overreach": false
+          },
+          {
+            "id": "P4",
+            "gold": "24 months",
+            "model": "24 months",
+            "answer_ok": true,
+            "evidence_kind": "exact",
+            "evidence_ids": [
+              "D1"
+            ],
+            "gold_evidence_sets": [
+              [
+                "D1"
+              ]
+            ],
+            "qualifier_ok": true,
+            "qualifier": "",
+            "score": 1.0,
+            "strict": true,
+            "tags": [],
+            "overreach": false
+          },
+          {
+            "id": "P5",
+            "gold": "no",
+            "model": "no",
+            "answer_ok": true,
+            "evidence_kind": "exact",
+            "evidence_ids": [
+              "D11",
+              "D4"
+            ],
+            "gold_evidence_sets": [
+              [
+                "D4",
+                "D11"
+              ],
+              [
+                "D4"
+              ],
+              [
+                "D11"
+              ]
+            ],
+            "qualifier_ok": true,
+            "qualifier": "",
+            "score": 1.0,
+            "strict": true,
+            "tags": [],
+            "overreach": false
+          },
+          {
+            "id": "P6",
+            "gold": "35 days",
+            "model": "35 days",
+            "answer_ok": true,
+            "evidence_kind": "exact",
+            "evidence_ids": [
+              "D8"
+            ],
+            "gold_evidence_sets": [
+              [
+                "D8"
+              ]
+            ],
+            "qualifier_ok": true,
+            "qualifier": "",
+            "score": 1.0,
+            "strict": true,
+            "tags": [],
+            "overreach": false
+          },
+          {
+            "id": "P7",
+            "gold": "no",
+            "model": "no",
+            "answer_ok": true,
+            "evidence_kind": "exact",
+            "evidence_ids": [
+              "D1",
+              "D8"
+            ],
+            "gold_evidence_sets": [
+              [
+                "D1",
+                "D8"
+              ],
+              [
+                "D1"
+              ],
+              [
+                "D8"
+              ]
+            ],
+            "qualifier_ok": true,
+            "qualifier": "",
+            "score": 1.0,
+            "strict": true,
+            "tags": [],
+            "overreach": false
+          },
+          {
+            "id": "P8",
+            "gold": "no",
+            "model": "no",
+            "answer_ok": true,
+            "evidence_kind": "exact",
+            "evidence_ids": [
+              "D6",
+              "D7"
+            ],
+            "gold_evidence_sets": [
+              [
+                "D6",
+                "D7"
+              ],
+              [
+                "D6"
+              ],
+              [
+                "D7"
+              ]
+            ],
+            "qualifier_ok": true,
+            "qualifier": "",
+            "score": 1.0,
+            "strict": true,
+            "tags": [],
+            "overreach": false
+          },
+          {
+            "id": "P9",
+            "gold": "Amendment A",
+            "model": "Amendment A",
+            "answer_ok": true,
+            "evidence_kind": "exact",
+            "evidence_ids": [
+              "D3",
+              "D6",
+              "D9"
+            ],
+            "gold_evidence_sets": [
+              [
+                "D3",
+                "D6",
+                "D9"
+              ],
+              [
+                "D3"
+              ],
+              [
+                "D6"
+              ],
+              [
+                "D9"
+              ]
+            ],
+            "qualifier_ok": true,
+            "qualifier": "",
+            "score": 1.0,
+            "strict": true,
+            "tags": [],
+            "overreach": false
+          },
+          {
+            "id": "P10",
+            "gold": "yes",
+            "model": "yes",
+            "answer_ok": true,
+            "evidence_kind": "exact",
+            "evidence_ids": [
+              "D3"
+            ],
+            "gold_evidence_sets": [
+              [
+                "D3"
+              ]
+            ],
+            "qualifier_ok": true,
+            "qualifier": "",
+            "score": 1.0,
+            "strict": true,
+            "tags": [],
+            "overreach": false
+          },
+          {
+            "id": "P11",
+            "gold": "12 months",
+            "model": "12 months",
+            "answer_ok": true,
+            "evidence_kind": "exact",
+            "evidence_ids": [
+              "D5"
+            ],
+            "gold_evidence_sets": [
+              [
+                "D5"
+              ]
+            ],
+            "qualifier_ok": true,
+            "qualifier": "",
+            "score": 1.0,
+            "strict": true,
+            "tags": [],
+            "overreach": false
+          },
+          {
+            "id": "P12",
+            "gold": "no",
+            "model": "no",
+            "answer_ok": true,
+            "evidence_kind": "exact",
+            "evidence_ids": [
+              "D10",
+              "D5",
+              "D6"
+            ],
+            "gold_evidence_sets": [
+              [
+                "D5",
+                "D6",
+                "D10"
+              ],
+              [
+                "D5"
+              ],
+              [
+                "D6"
+              ],
+              [
+                "D10"
+              ]
+            ],
+            "qualifier_ok": true,
+            "qualifier": "",
+            "score": 1.0,
+            "strict": true,
+            "tags": [],
+            "overreach": false
+          }
+        ],
+        "summary": {
+          "text": "EU retention is 18 months for accounts opened on or after 1 January 2026, effective 1 March 2026, and 12 months for accounts opened before that date. The standard non-EU period is 24 months. Backups are retained for 35 days under a separate schedule and are not covered by the retention policy. The public trust page and the system export still show 12 months and are not current.",
+          "required_ok": true,
+          "forbidden_hits": [],
+          "score": 1.0
+        },
+        "inconsistencies": [],
+        "inconsistency_count": 0,
+        "condition": "production"
+      }
+    }
+  ]
+}

@@ -1,0 +1,204 @@
+{
+  "score": 100.0,
+  "reward": 1.0,
+  "points": 110.0,
+  "possible": 110,
+  "checks": [
+    {
+      "name": "outputs_exist",
+      "points": 3,
+      "possible": 3,
+      "note": "both output files exist and are non-empty"
+    },
+    {
+      "name": "json_schema",
+      "points": 3,
+      "possible": 3,
+      "note": "findings object with the required fields",
+      "error": null
+    },
+    {
+      "name": "finding_count",
+      "points": 3,
+      "possible": 3,
+      "note": "exactly 13 findings"
+    },
+    {
+      "name": "finding_ids",
+      "points": 3,
+      "possible": 3,
+      "note": "F1 through F13 exactly once"
+    },
+    {
+      "name": "word_count",
+      "points": 5,
+      "possible": 5,
+      "note": "1924 words; required 1500-2000"
+    },
+    {
+      "name": "sections",
+      "points": 10.0,
+      "possible": 10,
+      "note": "10/10 required headings; 10 level-2 headings"
+    },
+    {
+      "name": "prose_finding_ids",
+      "points": 5.0,
+      "possible": 5,
+      "note": "every finding ID appears in the prose",
+      "missing": []
+    },
+    {
+      "name": "citations",
+      "points": 5.0,
+      "possible": 5,
+      "note": "each finding's evidence appears in the prose",
+      "missing": []
+    },
+    {
+      "name": "findings",
+      "points": 52.0,
+      "possible": 52,
+      "note": "13 findings x (facts 2, evidence 1, qualifier 1)"
+    },
+    {
+      "name": "no_forbidden_overclaims",
+      "points": 8.0,
+      "possible": 8,
+      "note": "no prohibited overclaim",
+      "hits": []
+    },
+    {
+      "name": "no_invented_numbers",
+      "points": 5,
+      "possible": 5,
+      "note": "every number in the brief appears in the source pack",
+      "unknown": []
+    },
+    {
+      "name": "no_eval_leakage",
+      "points": 3,
+      "possible": 3,
+      "note": "no evaluation/grader language",
+      "hits": []
+    },
+    {
+      "name": "consistency",
+      "points": 5,
+      "possible": 5,
+      "note": "no duplicate finding IDs and no contradictory overclaim"
+    }
+  ],
+  "details": {
+    "findings": {
+      "F1": {
+        "points": 4,
+        "facts_ok": true,
+        "evidence_ok": true,
+        "qualifier_ok": true,
+        "statement": "For EU accounts opened on or after 1 January 2026, Amendment A changes the EU retention period from the Addendum's 12 months after contract termination to 18 months, effective 1 March 2026.",
+        "qualifier": "Applies only to EU accounts opened on or after 1 January 2026; accounts opened before that date remain subject to the 12-month Addendum period."
+      },
+      "F2": {
+        "points": 4,
+        "facts_ok": true,
+        "evidence_ok": true,
+        "qualifier_ok": true,
+        "statement": "For EU accounts opened before 1 January 2026, the EU retention period remains 12 months after contract termination under the Addendum.",
+        "qualifier": "Applies only to EU accounts opened before 1 January 2026."
+      },
+      "F3": {
+        "points": 4,
+        "facts_ok": true,
+        "evidence_ok": true,
+        "qualifier_ok": true,
+        "statement": "Standard customer data is retained for 24 months after contract termination.",
+        "qualifier": "Applies to standard customer data under the Enterprise Data Retention Policy, not to EU accounts governed by the EU addendum and Amendment A."
+      },
+      "F4": {
+        "points": 4,
+        "facts_ok": true,
+        "evidence_ok": true,
+        "qualifier_ok": true,
+        "statement": "Draft Amendment B is unsigned and not approved and has no effect.",
+        "qualifier": "The proposed 24-month EU retention period remains a draft proposal only."
+      },
+      "F5": {
+        "points": 4,
+        "facts_ok": true,
+        "evidence_ok": true,
+        "qualifier_ok": true,
+        "statement": "The public trust page snapshot does not reflect the current EU position because it still shows EU accounts at 12 months while signed Amendment A controls.",
+        "qualifier": "The snapshot is dated 18 April 2026 and the statement addresses whether it reflects Amendment A."
+      },
+      "F6": {
+        "points": 4,
+        "facts_ok": true,
+        "evidence_ok": true,
+        "qualifier_ok": true,
+        "statement": "The system-of-record export is not current or controlling for EU retention; it shows 12 months, while signed Amendment A controls and the export is stale for accounts opened on or after 1 January 2026.",
+        "qualifier": "For EU retention, particularly accounts opened on or after 1 January 2026; the export is dated 15 April 2026."
+      },
+      "F7": {
+        "points": 4,
+        "facts_ok": true,
+        "evidence_ok": true,
+        "qualifier_ok": true,
+        "statement": "Backups of enterprise customer data are retained for 35 days and are not covered by the Enterprise Data Retention Policy.",
+        "qualifier": "Applies to backups governed by the Backup Retention Schedule, not to customer data retention under the policy."
+      },
+      "F8": {
+        "points": 4,
+        "facts_ok": true,
+        "evidence_ok": true,
+        "qualifier_ok": true,
+        "statement": "Amendment A's effective date of 1 March 2026 precedes its signature date of 5 May 2026.",
+        "qualifier": "For Amendment A to the EU Retention Addendum."
+      },
+      "F9": {
+        "points": 4,
+        "facts_ok": true,
+        "evidence_ok": true,
+        "qualifier_ok": true,
+        "statement": "Two distinct incidents occurred in March 2026.",
+        "qualifier": "The incidents are INC-031 and INC-032; the record identifies separate events with different causes."
+      },
+      "F10": {
+        "points": 4,
+        "facts_ok": true,
+        "evidence_ok": true,
+        "qualifier_ok": true,
+        "statement": "INC-031 occurred on 2 March 2026, lasted 75 minutes from 14:05 UTC to 15:20 UTC, had an expired TLS certificate as root cause, and involved 12,400 failed transactions.",
+        "qualifier": "The certificate expired because the renewal job was not running and the expiry alert was disabled on 1 March 2026."
+      },
+      "F11": {
+        "points": 4,
+        "facts_ok": true,
+        "evidence_ok": true,
+        "qualifier_ok": true,
+        "statement": "INC-032 occurred on 4 March 2026, lasted 45 minutes from 09:10 UTC to 09:55 UTC, had a failed rollback of CHG-441 as root cause, and involved 3,100 failed transactions.",
+        "qualifier": "The rollback failure was caused by an incompatible schema change in the rollback script and was unrelated to the certificate incident."
+      },
+      "F12": {
+        "points": 4,
+        "facts_ok": true,
+        "evidence_ok": true,
+        "qualifier_ok": true,
+        "statement": "Total failed transactions were 15,500 across two distinct incidents, and the incidents had different root causes.",
+        "qualifier": "The total covers INC-031 and INC-032 in March 2026."
+      },
+      "F13": {
+        "points": 4,
+        "facts_ok": true,
+        "evidence_ok": true,
+        "qualifier_ok": true,
+        "statement": "The remediation plan is a draft and not approved; the INC-031 root-cause note recommends automatic certificate rotation, re-enabled expiry alerts, and a weekly certificate inventory check.",
+        "qualifier": "The draft plan proposes moving certificate management to Platform, retiring the renewal job, and adding a quarterly audit, but approval is pending."
+      }
+    },
+    "forbidden_hits": [],
+    "unknown_numbers": []
+  },
+  "words": 1924,
+  "headings": 10
+}

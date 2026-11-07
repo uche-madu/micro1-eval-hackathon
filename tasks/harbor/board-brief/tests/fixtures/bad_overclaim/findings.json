@@ -1,0 +1,121 @@
+{
+  "findings": [
+    {
+      "finding_id": "F1",
+      "statement": "EU retention for accounts opened on or after 1 January 2026 is 18 months, effective 1 March 2026.",
+      "evidence_ids": [
+        "D3"
+      ],
+      "qualifier": "Applies only to EU accounts opened on or after 1 January 2026."
+    },
+    {
+      "finding_id": "F2",
+      "statement": "EU retention for accounts opened before 1 January 2026 remains 12 months.",
+      "evidence_ids": [
+        "D2",
+        "D3"
+      ],
+      "qualifier": "Applies to EU accounts opened before 1 January 2026."
+    },
+    {
+      "finding_id": "F3",
+      "statement": "Standard non-EU retention is 24 months after contract termination.",
+      "evidence_ids": [
+        "D1"
+      ],
+      "qualifier": "Applies to non-EU customer data."
+    },
+    {
+      "finding_id": "F4",
+      "statement": "Draft Amendment B is in effect and sets a 24-month EU period.",
+      "evidence_ids": [
+        "D4",
+        "D11"
+      ],
+      "qualifier": ""
+    },
+    {
+      "finding_id": "F5",
+      "statement": "The public trust page shows 12 months for EU accounts and is not current.",
+      "evidence_ids": [
+        "D6",
+        "D7"
+      ],
+      "qualifier": "Snapshot dated 18 April 2026; not updated after Amendment A."
+    },
+    {
+      "finding_id": "F6",
+      "statement": "The system-of-record export shows 12 months for EU accounts and is stale, not controlling.",
+      "evidence_ids": [
+        "D5",
+        "D6",
+        "D10"
+      ],
+      "qualifier": "Export dated 15 April 2026; stale for accounts opened on or after 1 January 2026."
+    },
+    {
+      "finding_id": "F7",
+      "statement": "Backups are retained for 35 days under a separate schedule and are out of scope of the retention policy.",
+      "evidence_ids": [
+        "D1",
+        "D8"
+      ],
+      "qualifier": "Separate Backup Retention Schedule; not covered by the Enterprise Data Retention Policy."
+    },
+    {
+      "finding_id": "F8",
+      "statement": "Amendment A took effect on 1 March 2026, before it was signed on 5 May 2026.",
+      "evidence_ids": [
+        "D3"
+      ],
+      "qualifier": "Effective 1 March 2026, before the 5 May 2026 signature."
+    },
+    {
+      "finding_id": "F9",
+      "statement": "One outage occurred in March 2026.",
+      "evidence_ids": [
+        "I1",
+        "I2",
+        "I8"
+      ],
+      "qualifier": ""
+    },
+    {
+      "finding_id": "F10",
+      "statement": "INC-031 on 2 March lasted 75 minutes, was caused by an expired TLS certificate, and caused 12,400 failed transactions.",
+      "evidence_ids": [
+        "I1",
+        "I3"
+      ],
+      "qualifier": "INC-031."
+    },
+    {
+      "finding_id": "F11",
+      "statement": "INC-032 on 4 March lasted 45 minutes, was caused by a failed rollback, and caused 3,100 failed transactions.",
+      "evidence_ids": [
+        "I2",
+        "I6"
+      ],
+      "qualifier": "INC-032."
+    },
+    {
+      "finding_id": "F12",
+      "statement": "The total impact was 15,500 failed transactions, and the two incidents had different causes.",
+      "evidence_ids": [
+        "I8",
+        "I10"
+      ],
+      "qualifier": "Across both incidents."
+    },
+    {
+      "finding_id": "F13",
+      "statement": "The draft remediation plan is not approved; the root-cause note recommends rotating certificates, re-enabling expiry alerts, and adding a weekly inventory check.",
+      "evidence_ids": [
+        "I3",
+        "I9",
+        "I10"
+      ],
+      "qualifier": "Draft plan; approval pending."
+    }
+  ]
+}

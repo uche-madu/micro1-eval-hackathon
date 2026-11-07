@@ -1,0 +1,31 @@
+{
+  "model": "opencode-go/qwen3.8-flash",
+  "usage": {
+    "prompt_tokens": 3870,
+    "completion_tokens": 47656,
+    "total_tokens": 51526,
+    "prompt_tokens_details": {
+      "cached_tokens": 3584
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 43250
+    },
+    "cost": 0,
+    "opencode": {
+      "billing_source": "go",
+      "list_cost": 0.02249856,
+      "allowance": 0.04499713,
+      "tokens": {
+        "input": 286,
+        "output": 47656,
+        "reasoning": 43250,
+        "cache_read": 3584,
+        "cache_write_5m": 0,
+        "cache_write_1h": 0
+      }
+    }
+  },
+  "error": null,
+  "brief_chars": 11519,
+  "findings": 13
+}
