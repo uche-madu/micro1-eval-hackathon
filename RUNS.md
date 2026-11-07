@@ -118,3 +118,28 @@ harbor run -p tasks/harbor -a oracle --yes
 - Compact pilot: 152 OpenCode calls, reported `list_cost` **$0.545**, Go `allowance` **$1.169**, actual charge **$0**.
 - Harbor long-horizon run 2: 3,870 prompt tokens, 47,656 output tokens (43,250 reasoning), list cost **$0.0225**, actual charge **$0**; runtime **25m48s**.
 - No Opus/Sonnet calls were made. Frontier credits were not spent because the cheap-model gate saturated.
+
+## Pilot 3 — surface-compliance audit (new pivot)
+
+**Question:** can models tell whether a completed deliverable is fit for purpose, or do they mistake surface compliance for substance?
+
+**Design:** four Harbor tasks under `tasks/harbor/audit/` — two scenarios (EU retention, March incidents) × clean/defective. Each model sees one deliverable, the assignment, and the source pack. It returns `FIT`/`NOT_FIT` plus findings against a general defect taxonomy. No seeded defect list is shown.
+
+**Oracle:** 4/4 tasks at **1.000**.
+
+**Model results** (deterministic scorer; extra findings are recorded but not penalized):
+
+| Model | Clean | Defective | False pass | False fail | Defects matched |
+|---|---:|---:|---:|---:|---:|
+| Qwen 3.8 Flash | 6/6, 100.00 | 0/6 pass, 68.57 | **0.000** | 0.000 | 2.83/5 |
+| Gemini 4 Argon | 6/6, 100.00 | 0/6 pass, 75.24 | **0.000** | 0.000 | 3.33/5 |
+| GPT-6 Luna | 3/6, 52.38 | 0/6 pass, 80.32 | **0.000** | 0.500 | 3.67/5 |
+| DeepSeek V4.1 Flash | — | — | — | — | excluded: empty content (reasoning budget) |
+
+**Finding:** the hypothesis was not supported at this defect difficulty. No model approved a defective deliverable. The clean controls mostly passed; GPT’s three `incident-clean` false fails exposed a legitimate ambiguity in that clean memo (it says “not ready to close” rather than “not closed,” and does not explicitly answer whether to approve the draft plan). The defective memos contain direct contradictions, so the pilot is a floor test, not a surface-compliance test.
+
+**Decision:** do not expand this version. If the direction continues, start from the clean memo and introduce **one subtle decision-critical defect** — a missing cohort split, an omitted effective-before-signature fact, or a plausible recommendation that ignores one precondition — and add a clean control that answers every assignment question explicitly.
+
+**Artifacts:** `tasks/harbor/audit/PILOT_REPORT.md`, `tasks/harbor/audit/results/audit_*.json`, and representative transcripts under `tasks/harbor/audit/results/transcripts/`.
+
+The two earlier pilots remain frozen; see `FREEZE.md`.

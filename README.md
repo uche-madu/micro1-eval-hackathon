@@ -106,3 +106,7 @@ The clean transcript is in `tasks/harbor/board-brief/results/run2_qwen/`, and th
 ## Run history
 
 `RUNS.md` records every pilot run, the models used, the scores, the failures, the cost/runtime, and the decision for each pilot. Review it before the individual reports.
+
+## Surface-compliance audit pilot
+
+`tasks/harbor/audit/` is the new pivot: four Harbor tasks (two scenarios × clean/defective) that ask whether a completed memo is fit for purpose, not whether facts can be retrieved. Oracle 4/4 at 1.000; Qwen, Gemini, and GPT-6 Luna all showed **zero false passes** on the obviously defective memos, so the pilot is a negative result at this defect difficulty. See `tasks/harbor/audit/PILOT_REPORT.md`.

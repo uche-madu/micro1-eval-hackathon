@@ -1,0 +1,61 @@
+{
+  "score": 4.762,
+  "reward": 0.047619,
+  "points": 5,
+  "possible": 105,
+  "checks": [
+    {
+      "name": "schema",
+      "points": 5,
+      "possible": 5,
+      "note": "valid audit JSON",
+      "error": null
+    },
+    {
+      "name": "verdict",
+      "points": 0,
+      "possible": 30,
+      "note": "expected FIT, got NOT_FIT"
+    },
+    {
+      "name": "no_material_defects",
+      "points": 0,
+      "possible": 60,
+      "note": "a clean deliverable has no material defects"
+    },
+    {
+      "name": "no_invented_defects",
+      "points": 0,
+      "possible": 10,
+      "note": "no invented material defects"
+    }
+  ],
+  "details": {
+    "matched": [],
+    "false_defects": [],
+    "false_pass": false,
+    "false_fail": true,
+    "material_findings": [
+      {
+        "section": "Bottom Line",
+        "problem_type": "missing_decision_info",
+        "severity": "material",
+        "evidence": "\u201cThe two March incidents are not ready to close.\u201d",
+        "why_it_matters": "The source pack does not establish whether the incidents have been formally closed or define a closure criterion. The memo substitutes a readiness judgment for the requested status, so the Board cannot tell whether it is deciding incident closure or remediation follow-up."
+      },
+      {
+        "section": "Recommendation",
+        "problem_type": "missing_decision_info",
+        "severity": "material",
+        "evidence": "\u201cThe Board should approve a specific remediation plan\u201d",
+        "why_it_matters": "The memo does not say whether the Board should approve, reject, or amend the proposed plan in I9, nor does it set out the plan it wants approved. The Board therefore lacks the requested decision on the proposal."
+      }
+    ]
+  },
+  "caps": [
+    {
+      "cap": 0.5,
+      "reason": "false_fail_on_clean"
+    }
+  ]
+}

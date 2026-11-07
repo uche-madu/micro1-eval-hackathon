@@ -1,0 +1,950 @@
+{
+  "model": "qwen3.8-flash",
+  "summary": {
+    "qwen3.8-flash": {
+      "clean": {
+        "n": 6,
+        "mean_score": 100.0,
+        "pass_rate": 1.0,
+        "false_pass_rate": 0.0,
+        "false_fail_rate": 0.0,
+        "mean_defects_matched": 0.0,
+        "mean_false_defects": 0.0,
+        "schema_failures": 0
+      },
+      "defective": {
+        "n": 6,
+        "mean_score": 68.57,
+        "pass_rate": 0.0,
+        "false_pass_rate": 0.0,
+        "false_fail_rate": 0.0,
+        "mean_defects_matched": 2.83,
+        "mean_false_defects": 5.33,
+        "schema_failures": 0
+      }
+    }
+  },
+  "records": [
+    {
+      "score": 100.0,
+      "reward": 1.0,
+      "points": 105,
+      "possible": 105,
+      "checks": [
+        {
+          "name": "schema",
+          "points": 5,
+          "possible": 5,
+          "note": "valid audit JSON",
+          "error": null
+        },
+        {
+          "name": "verdict",
+          "points": 30,
+          "possible": 30,
+          "note": "expected FIT, got FIT"
+        },
+        {
+          "name": "no_material_defects",
+          "points": 60,
+          "possible": 60,
+          "note": "a clean deliverable has no material defects"
+        },
+        {
+          "name": "no_invented_defects",
+          "points": 10,
+          "possible": 10,
+          "note": "no invented material defects"
+        }
+      ],
+      "details": {
+        "matched": [],
+        "false_defects": [],
+        "false_pass": false,
+        "false_fail": false,
+        "material_findings": []
+      },
+      "task": "incident-clean",
+      "trial": "incident-clean__2kDoSum"
+    },
+    {
+      "score": 100.0,
+      "reward": 1.0,
+      "points": 105,
+      "possible": 105,
+      "checks": [
+        {
+          "name": "schema",
+          "points": 5,
+          "possible": 5,
+          "note": "valid audit JSON",
+          "error": null
+        },
+        {
+          "name": "verdict",
+          "points": 30,
+          "possible": 30,
+          "note": "expected FIT, got FIT"
+        },
+        {
+          "name": "no_material_defects",
+          "points": 60,
+          "possible": 60,
+          "note": "a clean deliverable has no material defects"
+        },
+        {
+          "name": "no_invented_defects",
+          "points": 10,
+          "possible": 10,
+          "note": "no invented material defects"
+        }
+      ],
+      "details": {
+        "matched": [],
+        "false_defects": [],
+        "false_pass": false,
+        "false_fail": false,
+        "material_findings": []
+      },
+      "task": "incident-clean",
+      "trial": "incident-clean__TQEwFH3"
+    },
+    {
+      "score": 100.0,
+      "reward": 1.0,
+      "points": 105,
+      "possible": 105,
+      "checks": [
+        {
+          "name": "schema",
+          "points": 5,
+          "possible": 5,
+          "note": "valid audit JSON",
+          "error": null
+        },
+        {
+          "name": "verdict",
+          "points": 30,
+          "possible": 30,
+          "note": "expected FIT, got FIT"
+        },
+        {
+          "name": "no_material_defects",
+          "points": 60,
+          "possible": 60,
+          "note": "a clean deliverable has no material defects"
+        },
+        {
+          "name": "no_invented_defects",
+          "points": 10,
+          "possible": 10,
+          "note": "no invented material defects"
+        }
+      ],
+      "details": {
+        "matched": [],
+        "false_defects": [],
+        "false_pass": false,
+        "false_fail": false,
+        "material_findings": []
+      },
+      "task": "incident-clean",
+      "trial": "incident-clean__WWj4jn8"
+    },
+    {
+      "score": 82.857,
+      "reward": 0.828571,
+      "points": 87.0,
+      "possible": 105,
+      "checks": [
+        {
+          "name": "schema",
+          "points": 5,
+          "possible": 5,
+          "note": "valid audit JSON",
+          "error": null
+        },
+        {
+          "name": "verdict",
+          "points": 30,
+          "possible": 30,
+          "note": "expected NOT_FIT, got NOT_FIT"
+        },
+        {
+          "name": "defect_detection",
+          "points": 40.0,
+          "possible": 50,
+          "note": "5 seeded defects x 10"
+        },
+        {
+          "name": "why_it_matters",
+          "points": 12.0,
+          "possible": 20,
+          "note": "4 per matched defect with a correct consequence"
+        }
+      ],
+      "details": {
+        "matched": [
+          {
+            "defect": "B1",
+            "finding": {
+              "section": "Bottom Line",
+              "problem_type": "misleading_summary",
+              "severity": "material",
+              "evidence": "The March incident was a single certificate event; all 15,500 failed transactions are attributed to the certificate",
+              "why_it_matters": "It collapses two separate incidents and misattributes all failed transactions to the certificate, so the Board would close the wrong factual record."
+            },
+            "why_ok": true
+          },
+          {
+            "defect": "B2",
+            "finding": {
+              "section": "Remediation Status",
+              "problem_type": "proposed_as_approved",
+              "severity": "material",
+              "evidence": "The remediation plan was approved by the Board on 8 March",
+              "why_it_matters": "The plan is expressly a draft with approval pending, so the Board would be told to rely on a remediation that has not been decided."
+            },
+            "why_ok": true
+          },
+          {
+            "defect": "B4",
+            "finding": {
+              "section": "What Happened",
+              "problem_type": "unsupported_assertion",
+              "severity": "material",
+              "evidence": "The certificate alert was re-enabled on 2 March, so the control is restored",
+              "why_it_matters": "No source shows the alert was re-enabled; the source pack says it was disabled, so control restoration is unverified."
+            },
+            "why_ok": true
+          },
+          {
+            "defect": "B5",
+            "finding": {
+              "section": "Recommendation",
+              "problem_type": "unsupported_recommendation",
+              "severity": "material",
+              "evidence": "Close both incidents and proceed with the platform team takeover",
+              "why_it_matters": "The recommendation depends on false incident closure, false approval, and unverified control restoration, so it cannot safely guide the Board decision."
+            },
+            "why_ok": false
+          }
+        ],
+        "false_defects": [
+          {
+            "section": "Bottom Line",
+            "problem_type": "proposed_as_approved",
+            "severity": "material",
+            "evidence": "the remediation plan is approved",
+            "why_it_matters": "The remediation plan is a draft with approval pending; presenting it as approved could cause the Board to rely on an unapproved decision."
+          },
+          {
+            "section": "What Happened",
+            "problem_type": "unsupported_assertion",
+            "severity": "material",
+            "evidence": "Both incidents had the same root cause: the expired certificate",
+            "why_it_matters": "The 4 March incident was caused by a failed configuration rollback unrelated to the certificate, so the closure rationale is false."
+          },
+          {
+            "section": "Evidence Quality",
+            "problem_type": "misleading_summary",
+            "severity": "material",
+            "evidence": "The audit note confirms the single-event framing ... The status page shows the certificate cause for both entries, which confirms the shared root cause",
+            "why_it_matters": "The audit note says the single-event framing is not supported, and the status page cause field was auto-filled, so the memo reverses or overstates the evidence."
+          }
+        ],
+        "false_pass": false,
+        "false_fail": false
+      },
+      "task": "incident-defective",
+      "trial": "incident-defective__WpQM58R"
+    },
+    {
+      "score": 82.857,
+      "reward": 0.828571,
+      "points": 87.0,
+      "possible": 105,
+      "checks": [
+        {
+          "name": "schema",
+          "points": 5,
+          "possible": 5,
+          "note": "valid audit JSON",
+          "error": null
+        },
+        {
+          "name": "verdict",
+          "points": 30,
+          "possible": 30,
+          "note": "expected NOT_FIT, got NOT_FIT"
+        },
+        {
+          "name": "defect_detection",
+          "points": 40.0,
+          "possible": 50,
+          "note": "5 seeded defects x 10"
+        },
+        {
+          "name": "why_it_matters",
+          "points": 12.0,
+          "possible": 20,
+          "note": "4 per matched defect with a correct consequence"
+        }
+      ],
+      "details": {
+        "matched": [
+          {
+            "defect": "B1",
+            "finding": {
+              "section": "Bottom Line",
+              "problem_type": "misleading_summary",
+              "severity": "material",
+              "evidence": "The March incident was a single certificate event; all 15,500 failed transactions are attributed to the certificate",
+              "why_it_matters": "The source pack states there were two distinct incidents with different root causes, so the memo misstates the incident record and decision basis."
+            },
+            "why_ok": true
+          },
+          {
+            "defect": "B2",
+            "finding": {
+              "section": "Remediation Status",
+              "problem_type": "proposed_as_approved",
+              "severity": "material",
+              "evidence": "The remediation plan was approved by the Board on 8 March [I9]. The platform team has taken over certificate management, and the quarterly audit is in place [I9].",
+              "why_it_matters": "I9 is a draft plan with approval pending, so the memo presents proposed actions as approved and implemented facts."
+            },
+            "why_ok": true
+          },
+          {
+            "defect": "B4",
+            "finding": {
+              "section": "What Happened",
+              "problem_type": "unsupported_assertion",
+              "severity": "material",
+              "evidence": "The certificate alert was re-enabled on 2 March, so the control is restored [I1].",
+              "why_it_matters": "No source says the alert was re-enabled; I1 and I7 only say it was disabled, so the control status is not established."
+            },
+            "why_ok": true
+          },
+          {
+            "defect": "B5",
+            "finding": {
+              "section": "Recommendation",
+              "problem_type": "unsupported_recommendation",
+              "severity": "material",
+              "evidence": "Close both incidents and proceed with the platform team takeover [I9]. No further verification is needed because the plan is approved and the control is restored [I9][I10].",
+              "why_it_matters": "The recommendation relies on unapproved remediation, an unsupported control restoration, and a framing contradicted by the audit note."
+            },
+            "why_ok": false
+          }
+        ],
+        "false_defects": [
+          {
+            "section": "Bottom Line",
+            "problem_type": "proposed_as_approved",
+            "severity": "material",
+            "evidence": "the remediation plan is approved, so both incidents can be closed",
+            "why_it_matters": "The remediation plan is explicitly a draft with approval pending, so the Board is told to rely on an approval that has not occurred."
+          },
+          {
+            "section": "What Happened",
+            "problem_type": "unsupported_assertion",
+            "severity": "material",
+            "evidence": "Both incidents had the same root cause: the expired certificate [I1][I2].",
+            "why_it_matters": "I2 and I6 identify INC-032 as a failed rollback unrelated to the certificate, so the memo asserts a fact contradicted by the source pack."
+          },
+          {
+            "section": "Evidence Quality",
+            "problem_type": "misleading_summary",
+            "severity": "material",
+            "evidence": "The audit note confirms the single-event framing [I10].",
+            "why_it_matters": "I10 states the single-event framing is not supported; this reverses the audit note and undermines reliance on evidence."
+          },
+          {
+            "section": "Evidence Quality",
+            "problem_type": "unsupported_assertion",
+            "severity": "material",
+            "evidence": "The executive email supports the simplified narrative [I5].",
+            "why_it_matters": "I5 is a request to simplify the narrative, not evidence, and I10 says that request is not evidence."
+          },
+          {
+            "section": "Evidence Quality",
+            "problem_type": "invalid_synthesis",
+            "severity": "material",
+            "evidence": "The status page shows the certificate cause for both entries, which confirms the shared root cause [I11].",
+            "why_it_matters": "I11 says the cause field was auto-filled from an incident template, so the status page does not confirm a shared root cause."
+          },
+          {
+            "section": "Open Questions",
+            "problem_type": "missing_decision_info",
+            "severity": "material",
+            "evidence": "None material.",
+            "why_it_matters": "The Board decision depends on unresolved facts, including separate incident causes, remediation approval status, and whether controls were restored, which the memo omits or misstates."
+          }
+        ],
+        "false_pass": false,
+        "false_fail": false
+      },
+      "task": "incident-defective",
+      "trial": "incident-defective__b8iYC4q"
+    },
+    {
+      "score": 82.857,
+      "reward": 0.828571,
+      "points": 87.0,
+      "possible": 105,
+      "checks": [
+        {
+          "name": "schema",
+          "points": 5,
+          "possible": 5,
+          "note": "valid audit JSON",
+          "error": null
+        },
+        {
+          "name": "verdict",
+          "points": 30,
+          "possible": 30,
+          "note": "expected NOT_FIT, got NOT_FIT"
+        },
+        {
+          "name": "defect_detection",
+          "points": 40.0,
+          "possible": 50,
+          "note": "5 seeded defects x 10"
+        },
+        {
+          "name": "why_it_matters",
+          "points": 12.0,
+          "possible": 20,
+          "note": "4 per matched defect with a correct consequence"
+        }
+      ],
+      "details": {
+        "matched": [
+          {
+            "defect": "B1",
+            "finding": {
+              "section": "Bottom Line",
+              "problem_type": "misleading_summary",
+              "severity": "material",
+              "evidence": "The March incident was a single certificate event; all 15,500 failed transactions are attributed to the certificate",
+              "why_it_matters": "I1, I2, I6, I8, and I10 show two distinct incidents with different root causes, so the memo misstates the event and impact attribution."
+            },
+            "why_ok": true
+          },
+          {
+            "defect": "B2",
+            "finding": {
+              "section": "Remediation Status",
+              "problem_type": "proposed_as_approved",
+              "severity": "material",
+              "evidence": "The remediation plan was approved by the Board on 8 March [I9]. The platform team has taken over certificate management, and the quarterly audit is in place [I9].",
+              "why_it_matters": "I9 is a draft plan marked not approved, with proposals rather than completed actions; the Board cannot rely on it as an approved or implemented remediation."
+            },
+            "why_ok": true
+          },
+          {
+            "defect": "B4",
+            "finding": {
+              "section": "What Happened",
+              "problem_type": "unsupported_assertion",
+              "severity": "material",
+              "evidence": "The certificate alert was re-enabled on 2 March, so the control is restored [I1]",
+              "why_it_matters": "No source says the alert was re-enabled or the control was restored; I7 and I1 only show it was disabled, and I3 recommends re-enabling it."
+            },
+            "why_ok": true
+          },
+          {
+            "defect": "B5",
+            "finding": {
+              "section": "Recommendation",
+              "problem_type": "unsupported_recommendation",
+              "severity": "material",
+              "evidence": "Close both incidents and proceed with the platform team takeover [I9]. No further verification is needed because the plan is approved and the control is restored [I9][I10]",
+              "why_it_matters": "The recommendation depends on false premises about approval, closure, and restored controls, and ignores I10's audit note."
+            },
+            "why_ok": false
+          }
+        ],
+        "false_defects": [
+          {
+            "section": "Bottom Line",
+            "problem_type": "proposed_as_approved",
+            "severity": "material",
+            "evidence": "the remediation plan is approved, so both incidents can be closed [I4][I8][I9]",
+            "why_it_matters": "I9 and I10 state the remediation plan is a draft and not approved; treating it as approved makes the closure recommendation unsafe."
+          },
+          {
+            "section": "What Happened",
+            "problem_type": "unsupported_assertion",
+            "severity": "material",
+            "evidence": "Both incidents had the same root cause: the expired certificate [I1][I2]",
+            "why_it_matters": "I2 and I6 identify INC-032 as a failed rollback unrelated to the certificate, and I10 confirms separate causes."
+          },
+          {
+            "section": "Evidence Quality",
+            "problem_type": "misleading_summary",
+            "severity": "material",
+            "evidence": "The audit note confirms the single-event framing [I10]. The executive email supports the simplified narrative [I5].",
+            "why_it_matters": "I10 explicitly says the single-event framing is not supported and that the executive email is not evidence; the memo reverses those qualifications."
+          },
+          {
+            "section": "Evidence Quality",
+            "problem_type": "invalid_synthesis",
+            "severity": "material",
+            "evidence": "The status page shows the certificate cause for both entries, which confirms the shared root cause [I11]",
+            "why_it_matters": "I11 says the cause field was auto-filled from the incident template, so it does not confirm root cause."
+          },
+          {
+            "section": "Open Questions",
+            "problem_type": "missing_decision_info",
+            "severity": "material",
+            "evidence": "None material.",
+            "why_it_matters": "The sources do not establish incident closure or approved remediation; omitting these unresolved facts prevents the Board from making the asked decision."
+          }
+        ],
+        "false_pass": false,
+        "false_fail": false
+      },
+      "task": "incident-defective",
+      "trial": "incident-defective__vs2qrM5"
+    },
+    {
+      "score": 100.0,
+      "reward": 1.0,
+      "points": 105,
+      "possible": 105,
+      "checks": [
+        {
+          "name": "schema",
+          "points": 5,
+          "possible": 5,
+          "note": "valid audit JSON",
+          "error": null
+        },
+        {
+          "name": "verdict",
+          "points": 30,
+          "possible": 30,
+          "note": "expected FIT, got FIT"
+        },
+        {
+          "name": "no_material_defects",
+          "points": 60,
+          "possible": 60,
+          "note": "a clean deliverable has no material defects"
+        },
+        {
+          "name": "no_invented_defects",
+          "points": 10,
+          "possible": 10,
+          "note": "no invented material defects"
+        }
+      ],
+      "details": {
+        "matched": [],
+        "false_defects": [],
+        "false_pass": false,
+        "false_fail": false,
+        "material_findings": []
+      },
+      "task": "retention-clean",
+      "trial": "retention-clean__Gs9EgWa"
+    },
+    {
+      "score": 100.0,
+      "reward": 1.0,
+      "points": 105,
+      "possible": 105,
+      "checks": [
+        {
+          "name": "schema",
+          "points": 5,
+          "possible": 5,
+          "note": "valid audit JSON",
+          "error": null
+        },
+        {
+          "name": "verdict",
+          "points": 30,
+          "possible": 30,
+          "note": "expected FIT, got FIT"
+        },
+        {
+          "name": "no_material_defects",
+          "points": 60,
+          "possible": 60,
+          "note": "a clean deliverable has no material defects"
+        },
+        {
+          "name": "no_invented_defects",
+          "points": 10,
+          "possible": 10,
+          "note": "no invented material defects"
+        }
+      ],
+      "details": {
+        "matched": [],
+        "false_defects": [],
+        "false_pass": false,
+        "false_fail": false,
+        "material_findings": []
+      },
+      "task": "retention-clean",
+      "trial": "retention-clean__e5a8oh6"
+    },
+    {
+      "score": 100.0,
+      "reward": 1.0,
+      "points": 105,
+      "possible": 105,
+      "checks": [
+        {
+          "name": "schema",
+          "points": 5,
+          "possible": 5,
+          "note": "valid audit JSON",
+          "error": null
+        },
+        {
+          "name": "verdict",
+          "points": 30,
+          "possible": 30,
+          "note": "expected FIT, got FIT"
+        },
+        {
+          "name": "no_material_defects",
+          "points": 60,
+          "possible": 60,
+          "note": "a clean deliverable has no material defects"
+        },
+        {
+          "name": "no_invented_defects",
+          "points": 10,
+          "possible": 10,
+          "note": "no invented material defects"
+        }
+      ],
+      "details": {
+        "matched": [],
+        "false_defects": [],
+        "false_pass": false,
+        "false_fail": false,
+        "material_findings": []
+      },
+      "task": "retention-clean",
+      "trial": "retention-clean__fTVUi3W"
+    },
+    {
+      "score": 56.19,
+      "reward": 0.561905,
+      "points": 59.0,
+      "possible": 105,
+      "checks": [
+        {
+          "name": "schema",
+          "points": 5,
+          "possible": 5,
+          "note": "valid audit JSON",
+          "error": null
+        },
+        {
+          "name": "verdict",
+          "points": 30,
+          "possible": 30,
+          "note": "expected NOT_FIT, got NOT_FIT"
+        },
+        {
+          "name": "defect_detection",
+          "points": 20.0,
+          "possible": 50,
+          "note": "5 seeded defects x 10"
+        },
+        {
+          "name": "why_it_matters",
+          "points": 4.0,
+          "possible": 20,
+          "note": "4 per matched defect with a correct consequence"
+        }
+      ],
+      "details": {
+        "matched": [
+          {
+            "defect": "A3",
+            "finding": {
+              "section": "Current Position",
+              "problem_type": "scope_generalization",
+              "severity": "material",
+              "evidence": "All EU accounts, including those opened before 2026, move to 18 months [D3].",
+              "why_it_matters": "D3 limits the 18-month amendment to accounts opened on or after 1 January 2026; pre-2026 accounts remain at 12 months, so the launch eligibility position is wrong."
+            },
+            "why_ok": false
+          },
+          {
+            "defect": "A5",
+            "finding": {
+              "section": "Recommendation",
+              "problem_type": "unsupported_recommendation",
+              "severity": "material",
+              "evidence": "Proceed with the Q3 launch without updating the system export; the signed amendment controls, so operations can rely on this memo [D3][D9].",
+              "why_it_matters": "D5, D6, and D10 require the system configuration/export to be updated before operations can rely on it; a controlling signed amendment does not make stale operational records correct."
+            },
+            "why_ok": true
+          }
+        ],
+        "false_defects": [
+          {
+            "section": "Bottom Line",
+            "problem_type": "proposed_as_approved",
+            "severity": "material",
+            "evidence": "EU retention is now 24 months for all EU accounts, effective 1 September 2026, so the Q3 launch can proceed [D4]. The Board approved the change in January",
+            "why_it_matters": "D4 is an unsigned draft and D11 says the Board did not approve Draft Amendment B, so the memo presents a proposal as an approved, effective retention position."
+          },
+          {
+            "section": "Bottom Line",
+            "problem_type": "unsupported_assertion",
+            "severity": "material",
+            "evidence": "operational records are aligned [D11]",
+            "why_it_matters": "D5 and D10 show the system export is still 12 months and stale, and D6 says the trust page has not been updated, so the records are not aligned."
+          },
+          {
+            "section": "Authority and Stale Records",
+            "problem_type": "misleading_summary",
+            "severity": "material",
+            "evidence": "The public trust page shows 12 months, which is consistent with the current position for existing accounts [D7]. The sales operations email confirms that 12 months is the number to quote [D12].",
+            "why_it_matters": "D6 says the trust page has not been updated for Amendment A and not to rely on the export; D10 says the export is stale for new accounts. The memo drops that qualification and could cause the wrong customer-facing retention number."
+          },
+          {
+            "section": "Backups",
+            "problem_type": "unsupported_assertion",
+            "severity": "material",
+            "evidence": "Backups are covered by the 18-month retention period [D8].",
+            "why_it_matters": "D8 says backups are retained for 35 days and are not part of the retention policy, so the memo misstates the backup position and scope."
+          },
+          {
+            "section": "Open Questions",
+            "problem_type": "missing_decision_info",
+            "severity": "material",
+            "evidence": "None material. The trust page can be updated after launch.",
+            "why_it_matters": "The decision depends on knowing that the system export and public trust page must be corrected before launch; the memo omits those pre-launch conditions and treats a material open item as immaterial."
+          }
+        ],
+        "false_pass": false,
+        "false_fail": false
+      },
+      "task": "retention-defective",
+      "trial": "retention-defective__Mf5gSJq"
+    },
+    {
+      "score": 60.0,
+      "reward": 0.6,
+      "points": 63.0,
+      "possible": 105,
+      "checks": [
+        {
+          "name": "schema",
+          "points": 5,
+          "possible": 5,
+          "note": "valid audit JSON",
+          "error": null
+        },
+        {
+          "name": "verdict",
+          "points": 30,
+          "possible": 30,
+          "note": "expected NOT_FIT, got NOT_FIT"
+        },
+        {
+          "name": "defect_detection",
+          "points": 20.0,
+          "possible": 50,
+          "note": "5 seeded defects x 10"
+        },
+        {
+          "name": "why_it_matters",
+          "points": 8.0,
+          "possible": 20,
+          "note": "4 per matched defect with a correct consequence"
+        }
+      ],
+      "details": {
+        "matched": [
+          {
+            "defect": "A3",
+            "finding": {
+              "section": "Current Position",
+              "problem_type": "scope_generalization",
+              "severity": "material",
+              "evidence": "All EU accounts, including those opened before 2026, move to 18 months [D3].",
+              "why_it_matters": "Amendment A applies only to accounts opened on or after 1 January 2026; older accounts remain 12 months, so the memo misstates the retention position for a material cohort."
+            },
+            "why_ok": true
+          },
+          {
+            "defect": "A5",
+            "finding": {
+              "section": "Recommendation",
+              "problem_type": "unsupported_recommendation",
+              "severity": "material",
+              "evidence": "Proceed with the Q3 launch without updating the system export; the signed amendment controls, so operations can rely on this memo [D3][D9].",
+              "why_it_matters": "D6 and D10 require configuration/export updates and warn against relying on the stale export; proceeding without them ignores a required pre-launch correction."
+            },
+            "why_ok": true
+          }
+        ],
+        "false_defects": [
+          {
+            "section": "Bottom Line",
+            "problem_type": "proposed_as_approved",
+            "severity": "material",
+            "evidence": "EU retention is now 24 months for all EU accounts, effective 1 September 2026, so the Q3 launch can proceed [D4].",
+            "why_it_matters": "D4 is an unsigned draft and D11 says the Board did not approve it; treating it as the effective retention position makes the launch approval basis false."
+          },
+          {
+            "section": "Bottom Line",
+            "problem_type": "unsupported_assertion",
+            "severity": "material",
+            "evidence": "The Board approved the change in January and the operational records are aligned [D11].",
+            "why_it_matters": "D11 says the Board did not approve Draft Amendment B, and D5/D6/D10 show the export and trust page are stale, so the memo asserts a false approval and false operational readiness."
+          },
+          {
+            "section": "Authority and Stale Records",
+            "problem_type": "misleading_summary",
+            "severity": "material",
+            "evidence": "The sales operations email confirms that 12 months is the number to quote [D12].",
+            "why_it_matters": "D12 only reflects the stale system export before the amendment was configured; D6/D9 show the signed amendment controls for new EU accounts, so this drops the decision-critical qualification."
+          },
+          {
+            "section": "Backups",
+            "problem_type": "unsupported_assertion",
+            "severity": "material",
+            "evidence": "Backups are covered by the 18-month retention period [D8]. The backup schedule and the retention policy therefore align.",
+            "why_it_matters": "D1, D2, and D8 state backups are out of scope and retained for 35 days, so the memo misstates the backup retention rule."
+          },
+          {
+            "section": "Recommendation",
+            "problem_type": "proposed_as_approved",
+            "severity": "material",
+            "evidence": "No further approval is required because the Board has already approved the change [D11].",
+            "why_it_matters": "D11 says the Board did not approve Draft Amendment B, so the memo removes an approval precondition that has not been satisfied."
+          },
+          {
+            "section": "Open Questions",
+            "problem_type": "missing_decision_info",
+            "severity": "material",
+            "evidence": "None material. The trust page can be updated after launch.",
+            "why_it_matters": "The COO needs what must be true before approval, and the source pack identifies stale system export/configuration and public trust page updates as material pre-launch items."
+          }
+        ],
+        "false_pass": false,
+        "false_fail": false
+      },
+      "task": "retention-defective",
+      "trial": "retention-defective__RaK2ZXv"
+    },
+    {
+      "score": 46.667,
+      "reward": 0.466667,
+      "points": 49.0,
+      "possible": 105,
+      "checks": [
+        {
+          "name": "schema",
+          "points": 5,
+          "possible": 5,
+          "note": "valid audit JSON",
+          "error": null
+        },
+        {
+          "name": "verdict",
+          "points": 30,
+          "possible": 30,
+          "note": "expected NOT_FIT, got NOT_FIT"
+        },
+        {
+          "name": "defect_detection",
+          "points": 10.0,
+          "possible": 50,
+          "note": "5 seeded defects x 10"
+        },
+        {
+          "name": "why_it_matters",
+          "points": 4.0,
+          "possible": 20,
+          "note": "4 per matched defect with a correct consequence"
+        }
+      ],
+      "details": {
+        "matched": [
+          {
+            "defect": "A3",
+            "finding": {
+              "section": "Current Position",
+              "problem_type": "scope_generalization",
+              "severity": "material",
+              "evidence": "All EU accounts, including those opened before 2026, move to 18 months",
+              "why_it_matters": "Amendment A applies only to accounts opened on or after 1 January 2026; earlier accounts remain at 12 months. The memo gives the wrong retention period for a defined cohort."
+            },
+            "why_ok": true
+          }
+        ],
+        "false_defects": [
+          {
+            "section": "Bottom Line",
+            "problem_type": "proposed_as_approved",
+            "severity": "material",
+            "evidence": "EU retention is now 24 months for all EU accounts, effective 1 September 2026",
+            "why_it_matters": "This presents Draft Amendment B, which is explicitly marked not approved, as the controlling retention position. The launch decision would rest on a rule that has not been agreed or made effective."
+          },
+          {
+            "section": "Bottom Line",
+            "problem_type": "unsupported_assertion",
+            "severity": "material",
+            "evidence": "Board approved the change in January and the operational records are aligned",
+            "why_it_matters": "The Board minutes say Draft Amendment B was not approved, and the audit note and system export show stale operational records. This misstates both approval status and operational readiness."
+          },
+          {
+            "section": "Current Position",
+            "problem_type": "unsupported_recommendation",
+            "severity": "material",
+            "evidence": "the signed amendment controls, so no further action is needed",
+            "why_it_matters": "The DPO email and audit note require the system-of-record configuration/export to be corrected before reliance on the new EU period. Saying no further action is needed ignores a required precondition."
+          },
+          {
+            "section": "Authority and Stale Records",
+            "problem_type": "date_or_authority_error",
+            "severity": "material",
+            "evidence": "sales operations email confirms that 12 months is the number to quote",
+            "why_it_matters": "The sales operations email predates signed Amendment A and is superseded by the controlling signed amendment. Treating it as confirmation of the current number could cause the wrong EU retention to be quoted."
+          },
+          {
+            "section": "Backups",
+            "problem_type": "unsupported_assertion",
+            "severity": "material",
+            "evidence": "Backups are covered by the 18-month retention period",
+            "why_it_matters": "The backup schedule says backups are retained for 35 days and are not part of the retention policy. This misstates a separate operational control and could lead to incorrect backup handling."
+          },
+          {
+            "section": "Recommendation",
+            "problem_type": "proposed_as_approved",
+            "severity": "material",
+            "evidence": "No further approval is required because the Board has already approved the change",
+            "why_it_matters": "The Board minutes do not show approval of the change being relied on; they expressly say Draft Amendment B was not approved. The launch cannot be approved on the basis of a decided Board approval."
+          },
+          {
+            "section": "Open Questions",
+            "problem_type": "missing_decision_info",
+            "severity": "material",
+            "evidence": "None material. The trust page can be updated after launch.",
+            "why_it_matters": "The memo omits decision-critical preconditions, including correcting the stale system export/configuration, confirming the controlling signed amendment and its cohort scope, and resolving public-record staleness. These omissions make the memo unsafe for a launch approval decision."
+          }
+        ],
+        "false_pass": false,
+        "false_fail": false
+      },
+      "task": "retention-defective",
+      "trial": "retention-defective__fSoeNCL"
+    }
+  ]
+}

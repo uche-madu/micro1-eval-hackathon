@@ -1,0 +1,140 @@
+{
+  "condition": "defective",
+  "verdict": "NOT_FIT",
+  "defects": [
+    {
+      "id": "A1",
+      "problem_type": "misleading_summary",
+      "section": [
+        "bottom line",
+        "executive summary"
+      ],
+      "required_terms": [
+        [
+          "24 months",
+          "twenty four months"
+        ],
+        [
+          "all eu",
+          "every eu"
+        ]
+      ],
+      "why_terms": [
+        [
+          "draft",
+          "not approved",
+          "overstates",
+          "unsupported"
+        ]
+      ]
+    },
+    {
+      "id": "A2",
+      "problem_type": "proposed_as_approved",
+      "section": [
+        "current position",
+        "approvals",
+        "board"
+      ],
+      "required_terms": [
+        [
+          "draft amendment b",
+          "draft b"
+        ],
+        [
+          "approved",
+          "approval"
+        ]
+      ],
+      "why_terms": [
+        [
+          "not approved",
+          "did not approve",
+          "board did not"
+        ]
+      ]
+    },
+    {
+      "id": "A3",
+      "problem_type": "scope_generalization",
+      "section": [
+        "current position",
+        "eu retention",
+        "retention"
+      ],
+      "required_terms": [
+        [
+          "all eu",
+          "every eu"
+        ],
+        [
+          "before 2026",
+          "before 1 january",
+          "existing accounts"
+        ]
+      ],
+      "why_terms": [
+        [
+          "cohort",
+          "only",
+          "before 1 january",
+          "opened before"
+        ]
+      ]
+    },
+    {
+      "id": "A4",
+      "problem_type": "invalid_synthesis",
+      "section": [
+        "backups",
+        "backup"
+      ],
+      "required_terms": [
+        [
+          "backups",
+          "backup"
+        ],
+        [
+          "18 month",
+          "18-month"
+        ]
+      ],
+      "why_terms": [
+        [
+          "35 days",
+          "out of scope",
+          "separate",
+          "not part"
+        ]
+      ]
+    },
+    {
+      "id": "A5",
+      "problem_type": "unsupported_recommendation",
+      "section": [
+        "recommendation",
+        "bottom line"
+      ],
+      "required_terms": [
+        [
+          "without updating",
+          "no further action",
+          "no update"
+        ],
+        [
+          "system export",
+          "export",
+          "configuration"
+        ]
+      ],
+      "why_terms": [
+        [
+          "stale",
+          "update",
+          "configuration",
+          "operational"
+        ]
+      ]
+    }
+  ]
+}

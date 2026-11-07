@@ -1,0 +1,140 @@
+{
+  "condition": "defective",
+  "verdict": "NOT_FIT",
+  "defects": [
+    {
+      "id": "B1",
+      "problem_type": "misleading_summary",
+      "section": [
+        "bottom line",
+        "executive summary"
+      ],
+      "required_terms": [
+        [
+          "single",
+          "one event"
+        ],
+        [
+          "certificate",
+          "cert"
+        ]
+      ],
+      "why_terms": [
+        [
+          "two",
+          "different",
+          "rollback",
+          "separate"
+        ]
+      ]
+    },
+    {
+      "id": "B2",
+      "problem_type": "proposed_as_approved",
+      "section": [
+        "remediation",
+        "approvals",
+        "board"
+      ],
+      "required_terms": [
+        [
+          "remediation plan",
+          "plan"
+        ],
+        [
+          "approved",
+          "approval"
+        ]
+      ],
+      "why_terms": [
+        [
+          "draft",
+          "not approved",
+          "audit note"
+        ]
+      ]
+    },
+    {
+      "id": "B3",
+      "problem_type": "invalid_synthesis",
+      "section": [
+        "what happened",
+        "overview",
+        "incidents"
+      ],
+      "required_terms": [
+        [
+          "same root cause",
+          "same cause",
+          "both"
+        ],
+        [
+          "certificate",
+          "cert"
+        ]
+      ],
+      "why_terms": [
+        [
+          "different",
+          "rollback",
+          "change log"
+        ]
+      ]
+    },
+    {
+      "id": "B4",
+      "problem_type": "unsupported_assertion",
+      "section": [
+        "what happened",
+        "inc-031",
+        "incident"
+      ],
+      "required_terms": [
+        [
+          "alert",
+          "certificate alert"
+        ],
+        [
+          "re-enabled",
+          "reenabled",
+          "restored"
+        ]
+      ],
+      "why_terms": [
+        [
+          "no source",
+          "not supported",
+          "disabled",
+          "no evidence"
+        ]
+      ]
+    },
+    {
+      "id": "B5",
+      "problem_type": "unsupported_recommendation",
+      "section": [
+        "recommendation",
+        "bottom line"
+      ],
+      "required_terms": [
+        [
+          "close both",
+          "close the incidents",
+          "closure"
+        ],
+        [
+          "platform team",
+          "takeover"
+        ]
+      ],
+      "why_terms": [
+        [
+          "not approved",
+          "verify",
+          "draft",
+          "not closed"
+        ]
+      ]
+    }
+  ]
+}

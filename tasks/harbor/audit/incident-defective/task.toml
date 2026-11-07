@@ -1,0 +1,20 @@
+schema_version = "1.4"
+artifacts = []
+
+[task]
+name = "micro1/incident-defective"
+version = "1.0.0"
+description = "Audit a superficially compliant March incident memo"
+authors = [{ name = "micro1-eval-hackathon" }]
+keywords = ["audit", "surface-compliance", "warrant"]
+
+[verifier]
+timeout_sec = 600.0
+
+[agent]
+timeout_sec = 1200.0
+
+[environment]
+network_mode = "public"
+build_timeout_sec = 600.0
+os = "linux"

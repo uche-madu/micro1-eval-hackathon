@@ -1,0 +1,61 @@
+{
+  "verdict": "NOT_FIT",
+  "findings": [
+    {
+      "section": "Bottom Line",
+      "problem_type": "proposed_as_approved",
+      "severity": "material",
+      "evidence": "EU retention is now 24 months for all EU accounts, effective 1 September 2026",
+      "why_it_matters": "This presents Draft Amendment B, which is explicitly marked not approved, as the controlling retention position. The launch decision would rest on a rule that has not been agreed or made effective."
+    },
+    {
+      "section": "Bottom Line",
+      "problem_type": "unsupported_assertion",
+      "severity": "material",
+      "evidence": "Board approved the change in January and the operational records are aligned",
+      "why_it_matters": "The Board minutes say Draft Amendment B was not approved, and the audit note and system export show stale operational records. This misstates both approval status and operational readiness."
+    },
+    {
+      "section": "Current Position",
+      "problem_type": "scope_generalization",
+      "severity": "material",
+      "evidence": "All EU accounts, including those opened before 2026, move to 18 months",
+      "why_it_matters": "Amendment A applies only to accounts opened on or after 1 January 2026; earlier accounts remain at 12 months. The memo gives the wrong retention period for a defined cohort."
+    },
+    {
+      "section": "Current Position",
+      "problem_type": "unsupported_recommendation",
+      "severity": "material",
+      "evidence": "the signed amendment controls, so no further action is needed",
+      "why_it_matters": "The DPO email and audit note require the system-of-record configuration/export to be corrected before reliance on the new EU period. Saying no further action is needed ignores a required precondition."
+    },
+    {
+      "section": "Authority and Stale Records",
+      "problem_type": "date_or_authority_error",
+      "severity": "material",
+      "evidence": "sales operations email confirms that 12 months is the number to quote",
+      "why_it_matters": "The sales operations email predates signed Amendment A and is superseded by the controlling signed amendment. Treating it as confirmation of the current number could cause the wrong EU retention to be quoted."
+    },
+    {
+      "section": "Backups",
+      "problem_type": "unsupported_assertion",
+      "severity": "material",
+      "evidence": "Backups are covered by the 18-month retention period",
+      "why_it_matters": "The backup schedule says backups are retained for 35 days and are not part of the retention policy. This misstates a separate operational control and could lead to incorrect backup handling."
+    },
+    {
+      "section": "Recommendation",
+      "problem_type": "proposed_as_approved",
+      "severity": "material",
+      "evidence": "No further approval is required because the Board has already approved the change",
+      "why_it_matters": "The Board minutes do not show approval of the change being relied on; they expressly say Draft Amendment B was not approved. The launch cannot be approved on the basis of a decided Board approval."
+    },
+    {
+      "section": "Open Questions",
+      "problem_type": "missing_decision_info",
+      "severity": "material",
+      "evidence": "None material. The trust page can be updated after launch.",
+      "why_it_matters": "The memo omits decision-critical preconditions, including correcting the stale system export/configuration, confirming the controlling signed amendment and its cohort scope, and resolving public-record staleness. These omissions make the memo unsafe for a launch approval decision."
+    }
+  ]
+}

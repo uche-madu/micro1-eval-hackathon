@@ -1,0 +1,40 @@
+{
+  "verdict": "NOT_FIT",
+  "findings": [
+    {
+      "section": "Bottom Line",
+      "problem_type": "misleading_summary",
+      "severity": "material",
+      "evidence": "EU retention is now 24 months for all EU accounts, effective 1 September 2026",
+      "why_it_matters": "This uses the unsigned draft as current and overstates the position; Draft Amendment B is not approved."
+    },
+    {
+      "section": "Current Position",
+      "problem_type": "proposed_as_approved",
+      "severity": "material",
+      "evidence": "The Board approved Draft Amendment B in January 2026",
+      "why_it_matters": "The Board did not approve Draft Amendment B; it delegated signature of Amendment A."
+    },
+    {
+      "section": "Current Position",
+      "problem_type": "scope_generalization",
+      "severity": "material",
+      "evidence": "All EU accounts, including those opened before 2026, move to 18 months",
+      "why_it_matters": "Amendment A applies only to accounts opened on or after 1 January 2026; older accounts remain at 12 months."
+    },
+    {
+      "section": "Backups",
+      "problem_type": "invalid_synthesis",
+      "severity": "material",
+      "evidence": "Backups are covered by the 18-month retention period",
+      "why_it_matters": "Backups are retained for 35 days under a separate schedule and are out of scope of the retention policy."
+    },
+    {
+      "section": "Recommendation",
+      "problem_type": "unsupported_recommendation",
+      "severity": "material",
+      "evidence": "Proceed with the Q3 launch without updating the system export",
+      "why_it_matters": "The export is stale for accounts opened on or after 1 January 2026; operations must update the configuration before launch."
+    }
+  ]
+}

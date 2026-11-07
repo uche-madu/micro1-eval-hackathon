@@ -1,0 +1,40 @@
+{
+  "verdict": "NOT_FIT",
+  "findings": [
+    {
+      "section": "Bottom Line",
+      "problem_type": "misleading_summary",
+      "severity": "material",
+      "evidence": "The March incident was a single certificate event",
+      "why_it_matters": "There were two distinct incidents with different causes, including a failed rollback."
+    },
+    {
+      "section": "Remediation Status",
+      "problem_type": "proposed_as_approved",
+      "severity": "material",
+      "evidence": "The remediation plan was approved by the Board on 8 March",
+      "why_it_matters": "The remediation plan is a draft and is not approved."
+    },
+    {
+      "section": "What Happened",
+      "problem_type": "invalid_synthesis",
+      "severity": "material",
+      "evidence": "Both incidents had the same root cause",
+      "why_it_matters": "The change log shows INC-032 was caused by a failed rollback, not the certificate."
+    },
+    {
+      "section": "What Happened",
+      "problem_type": "unsupported_assertion",
+      "severity": "material",
+      "evidence": "The certificate alert was re-enabled on 2 March",
+      "why_it_matters": "No source says the alert was re-enabled; the monitoring note says it was disabled."
+    },
+    {
+      "section": "Recommendation",
+      "problem_type": "unsupported_recommendation",
+      "severity": "material",
+      "evidence": "Close both incidents and proceed with the platform team takeover",
+      "why_it_matters": "The remediation plan is not approved, and the controls are not verified."
+    }
+  ]
+}

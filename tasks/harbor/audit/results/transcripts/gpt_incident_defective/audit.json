@@ -1,0 +1,54 @@
+{
+  "verdict": "NOT_FIT",
+  "findings": [
+    {
+      "section": "Bottom Line",
+      "problem_type": "misleading_summary",
+      "severity": "material",
+      "evidence": "\u201cThe March incident was a single certificate event; all 15,500 failed transactions are attributed to the certificate\u201d",
+      "why_it_matters": "The source pack establishes two distinct incidents with different causes: the 2 March certificate failure and the 4 March failed rollback. This summary misstates the events and attributes the second incident\u2019s impact to the wrong cause."
+    },
+    {
+      "section": "What Happened",
+      "problem_type": "invalid_synthesis",
+      "severity": "material",
+      "evidence": "\u201cBoth incidents had the same root cause\u201d and \u201cThe 4 March event was a follow-on certificate failure\u201d",
+      "why_it_matters": "INC-032 was caused by a failed rollback of CHG-441, unrelated to the certificate incident. Treating it as a follow-on certificate failure gives the Board a false account of the incident and its causes."
+    },
+    {
+      "section": "What Happened",
+      "problem_type": "unsupported_assertion",
+      "severity": "material",
+      "evidence": "\u201cThe certificate alert was re-enabled on 2 March, so the control is restored\u201d",
+      "why_it_matters": "The source pack says the alert was disabled and does not establish that it was re-enabled. The Board therefore cannot rely on this memo to conclude the control has been restored."
+    },
+    {
+      "section": "Evidence Quality",
+      "problem_type": "misleading_summary",
+      "severity": "material",
+      "evidence": "\u201cThe audit note confirms the single-event framing\u201d; \u201cThe status page shows the certificate cause for both entries, which confirms the shared root cause\u201d",
+      "why_it_matters": "The audit note rejects the single-event framing, and the status page says its cause field was auto-filled from a template. Presenting these as confirmation obscures the evidence that the incidents were separate and had different causes."
+    },
+    {
+      "section": "Remediation Status",
+      "problem_type": "proposed_as_approved",
+      "severity": "material",
+      "evidence": "\u201cThe remediation plan was approved by the Board on 8 March\u201d and \u201cThe platform team has taken over certificate management, and the quarterly audit is in place\u201d",
+      "why_it_matters": "The plan is explicitly marked draft, not approved, with approval pending; the source pack does not establish that its actions have been implemented. The memo falsely presents a proposal and unverified actions as decided and completed."
+    },
+    {
+      "section": "Recommendation",
+      "problem_type": "missing_decision_info",
+      "severity": "material",
+      "evidence": "\u201cClose both incidents\u201d and \u201cThe Board can note the closure at its next meeting\u201d",
+      "why_it_matters": "The memo never establishes whether either incident is already closed, and the source pack provides no closure status. It therefore does not answer the COO\u2019s central question."
+    },
+    {
+      "section": "Recommendation",
+      "problem_type": "unsupported_recommendation",
+      "severity": "material",
+      "evidence": "\u201cNo further verification is needed because the plan is approved and the control is restored\u201d",
+      "why_it_matters": "Neither premise is supported: the plan remains unapproved and restoration of the alert is unverified. Recommending closure without checking these matters could leave unresolved incident actions and controls."
+    }
+  ]
+}

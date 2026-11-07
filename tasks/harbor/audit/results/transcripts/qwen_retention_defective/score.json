@@ -1,0 +1,25 @@
+{
+  "score": 0.0,
+  "reward": 0.0,
+  "points": 0,
+  "possible": 5,
+  "checks": [
+    {
+      "name": "schema",
+      "points": 0,
+      "possible": 5,
+      "note": "valid audit JSON",
+      "error": null
+    }
+  ],
+  "details": {
+    "matched": [],
+    "false_defects": []
+  },
+  "caps": [
+    {
+      "cap": 0.4,
+      "reason": "invalid_audit_json"
+    }
+  ]
+}

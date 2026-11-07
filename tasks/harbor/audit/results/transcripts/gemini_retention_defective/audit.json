@@ -1,0 +1,54 @@
+{
+  "verdict": "NOT_FIT",
+  "findings": [
+    {
+      "section": "Bottom Line",
+      "problem_type": "proposed_as_approved",
+      "severity": "material",
+      "evidence": "EU retention is now 24 months for all EU accounts, effective 1 September 2026, so the Q3 launch can proceed [D4].",
+      "why_it_matters": "Draft Amendment B (24 months) is explicitly unsigned and unapproved; relying on it gives the COO the wrong legal retention period for the launch."
+    },
+    {
+      "section": "Bottom Line",
+      "problem_type": "misleading_summary",
+      "severity": "material",
+      "evidence": "The Board approved the change in January and the operational records are aligned [D11].",
+      "why_it_matters": "The Board explicitly did not approve Draft Amendment B, and operational records (both the system export and the public trust page) are stale and misaligned with signed Amendment A."
+    },
+    {
+      "section": "Current Position",
+      "problem_type": "date_or_authority_error",
+      "severity": "material",
+      "evidence": "The Board approved Draft Amendment B in January 2026 [D11].",
+      "why_it_matters": "D11 explicitly states that the Board did not approve Draft Amendment B and instead delegated signature of the earlier proposed amendment to the Chief Legal Officer."
+    },
+    {
+      "section": "Current Position",
+      "problem_type": "scope_generalization",
+      "severity": "material",
+      "evidence": "All EU accounts, including those opened before 2026, move to 18 months [D3].",
+      "why_it_matters": "Amendment A applies the 18-month retention period only to accounts opened on or after 1 January 2026; accounts opened before that date remain at 12 months."
+    },
+    {
+      "section": "Authority and Stale Records",
+      "problem_type": "misleading_summary",
+      "severity": "material",
+      "evidence": "The public trust page shows 12 months, which is consistent with the current position for existing accounts [D7]. The sales operations email confirms that 12 months is the number to quote [D12].",
+      "why_it_matters": "Both the public trust page and the February sales operations email are outdated for post-1 January 2026 accounts and the new Q3 tier; the DPO and internal audit identify the trust page and system export as stale records that should not be relied upon."
+    },
+    {
+      "section": "Backups",
+      "problem_type": "misleading_summary",
+      "severity": "material",
+      "evidence": "Backups are covered by the 18-month retention period [D8].",
+      "why_it_matters": "Backups are explicitly out of scope of the Enterprise Data Retention Policy and its EU addenda, and are governed separately by a 35-day retention schedule."
+    },
+    {
+      "section": "Recommendation",
+      "problem_type": "unsupported_recommendation",
+      "severity": "material",
+      "evidence": "Proceed with the Q3 launch without updating the system export; the signed amendment controls, so operations can rely on this memo [D3][D9].",
+      "why_it_matters": "Approving the launch without updating the stale system-of-record configuration and public trust page leaves automated systems and customer-facing guidance enforcing the wrong 12-month retention period."
+    }
+  ]
+}
