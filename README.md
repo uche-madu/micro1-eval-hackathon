@@ -102,3 +102,7 @@ The Harbor task at `tasks/harbor/board-brief/` is built and verified:
 The clean transcript is in `tasks/harbor/board-brief/results/run2_qwen/`, and the full report is `tasks/harbor/board-brief/PILOT_REPORT.md`.
 
 **Recommendation: NO-GO on expanding this task as written.** The instruction enumerates the 13 findings, which turns the task into a checklist and lets a cheap model score 1.0. If the direction continues, remove the enumerated findings and require the model to select the material facts itself.
+
+## Run history
+
+`RUNS.md` records every pilot run, the models used, the scores, the failures, the cost/runtime, and the decision for each pilot. Review it before the individual reports.
