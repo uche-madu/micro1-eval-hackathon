@@ -1,0 +1,333 @@
+{
+  "initial": {},
+  "ops": [
+    {
+      "op_id": "OP01",
+      "tool": "create_account",
+      "record_id": "R01",
+      "fields": {
+        "name": "Alpha-Account-1",
+        "segment": "Enterprise",
+        "region": "SE"
+      }
+    },
+    {
+      "op_id": "OP02",
+      "tool": "create_account",
+      "record_id": "R02",
+      "fields": {
+        "name": "Alpha-Account-2",
+        "segment": "Public",
+        "region": "MW"
+      }
+    },
+    {
+      "op_id": "OP03",
+      "tool": "create_account",
+      "record_id": "R03",
+      "fields": {
+        "name": "Alpha-Account-3",
+        "segment": "SMB",
+        "region": "W"
+      }
+    },
+    {
+      "op_id": "OP04",
+      "tool": "create_account",
+      "record_id": "R04",
+      "fields": {
+        "name": "Alpha-Account-4",
+        "segment": "Enterprise",
+        "region": "NE"
+      }
+    },
+    {
+      "op_id": "OP05",
+      "tool": "create_account",
+      "record_id": "R05",
+      "fields": {
+        "name": "Alpha-Account-5",
+        "segment": "Public",
+        "region": "SE"
+      }
+    },
+    {
+      "op_id": "OP06",
+      "tool": "create_account",
+      "record_id": "R06",
+      "fields": {
+        "name": "Alpha-Account-6",
+        "segment": "SMB",
+        "region": "MW"
+      }
+    },
+    {
+      "op_id": "OP07",
+      "tool": "create_account",
+      "record_id": "R07",
+      "fields": {
+        "name": "Alpha-Account-7",
+        "segment": "Enterprise",
+        "region": "W"
+      }
+    },
+    {
+      "op_id": "OP08",
+      "tool": "create_account",
+      "record_id": "R08",
+      "fields": {
+        "name": "Alpha-Account-8",
+        "segment": "Public",
+        "region": "NE"
+      }
+    },
+    {
+      "op_id": "OP09",
+      "tool": "create_account",
+      "record_id": "R09",
+      "fields": {
+        "name": "Alpha-Account-9",
+        "segment": "SMB",
+        "region": "SE"
+      }
+    },
+    {
+      "op_id": "OP10",
+      "tool": "create_account",
+      "record_id": "R10",
+      "fields": {
+        "name": "Alpha-Account-10",
+        "segment": "Enterprise",
+        "region": "MW"
+      }
+    },
+    {
+      "op_id": "OP11",
+      "tool": "update_account",
+      "record_id": "R01",
+      "fields": {
+        "status": "active",
+        "region": "SE"
+      }
+    },
+    {
+      "op_id": "OP12",
+      "tool": "update_account",
+      "record_id": "R02",
+      "fields": {
+        "status": "active",
+        "region": "MW"
+      }
+    },
+    {
+      "op_id": "OP13",
+      "tool": "update_account",
+      "record_id": "R03",
+      "fields": {
+        "status": "active",
+        "region": "W"
+      }
+    },
+    {
+      "op_id": "OP14",
+      "tool": "update_account",
+      "record_id": "R04",
+      "fields": {
+        "status": "active",
+        "region": "NE"
+      }
+    },
+    {
+      "op_id": "OP15",
+      "tool": "update_account",
+      "record_id": "R05",
+      "fields": {
+        "status": "active",
+        "region": "SE"
+      }
+    },
+    {
+      "op_id": "OP16",
+      "tool": "update_account",
+      "record_id": "R06",
+      "fields": {
+        "status": "active",
+        "region": "MW"
+      }
+    },
+    {
+      "op_id": "OP17",
+      "tool": "update_account",
+      "record_id": "R07",
+      "fields": {
+        "status": "active",
+        "region": "W"
+      }
+    },
+    {
+      "op_id": "OP18",
+      "tool": "update_account",
+      "record_id": "R08",
+      "fields": {
+        "status": "active",
+        "region": "NE"
+      }
+    },
+    {
+      "op_id": "OP19",
+      "tool": "update_account",
+      "record_id": "R09",
+      "fields": {
+        "status": "active",
+        "region": "SE"
+      }
+    },
+    {
+      "op_id": "OP20",
+      "tool": "update_account",
+      "record_id": "R10",
+      "fields": {
+        "status": "active",
+        "region": "MW"
+      }
+    },
+    {
+      "op_id": "OP21",
+      "tool": "approve_account",
+      "record_id": "R01"
+    },
+    {
+      "op_id": "OP22",
+      "tool": "approve_account",
+      "record_id": "R02"
+    },
+    {
+      "op_id": "OP23",
+      "tool": "approve_account",
+      "record_id": "R03"
+    },
+    {
+      "op_id": "OP24",
+      "tool": "approve_account",
+      "record_id": "R04"
+    },
+    {
+      "op_id": "OP25",
+      "tool": "approve_account",
+      "record_id": "R05"
+    },
+    {
+      "op_id": "OP26",
+      "tool": "approve_account",
+      "record_id": "R06"
+    },
+    {
+      "op_id": "OP27",
+      "tool": "assign_owner",
+      "record_id": "R01",
+      "owner": "Owner-2"
+    },
+    {
+      "op_id": "OP28",
+      "tool": "assign_owner",
+      "record_id": "R02",
+      "owner": "Owner-2"
+    },
+    {
+      "op_id": "OP29",
+      "tool": "assign_owner",
+      "record_id": "R03",
+      "owner": "Owner-2"
+    },
+    {
+      "op_id": "OP30",
+      "tool": "assign_owner",
+      "record_id": "R04",
+      "owner": "Owner-2"
+    },
+    {
+      "op_id": "OP31",
+      "tool": "assign_owner",
+      "record_id": "R05",
+      "owner": "Owner-2"
+    },
+    {
+      "op_id": "OP32",
+      "tool": "transfer_owner",
+      "record_id": "R01",
+      "owner": "Owner-3",
+      "depends_on": "OP27"
+    },
+    {
+      "op_id": "OP33",
+      "tool": "transfer_owner",
+      "record_id": "R02",
+      "owner": "Owner-3",
+      "depends_on": "OP28"
+    },
+    {
+      "op_id": "OP34",
+      "tool": "transfer_owner",
+      "record_id": "R03",
+      "owner": "Owner-3",
+      "depends_on": "OP29"
+    },
+    {
+      "op_id": "OP35",
+      "tool": "transfer_owner",
+      "record_id": "R04",
+      "owner": "Owner-3",
+      "depends_on": "OP30"
+    },
+    {
+      "op_id": "OP36",
+      "tool": "add_note",
+      "record_id": "R01",
+      "note": "Q3 review complete"
+    },
+    {
+      "op_id": "OP37",
+      "tool": "add_note",
+      "record_id": "R02",
+      "note": "Q3 review complete"
+    },
+    {
+      "op_id": "OP38",
+      "tool": "add_note",
+      "record_id": "R03",
+      "note": "Q3 review complete"
+    },
+    {
+      "op_id": "OP39",
+      "tool": "delete_account",
+      "record_id": "R09"
+    },
+    {
+      "op_id": "OP40",
+      "tool": "delete_account",
+      "record_id": "R10"
+    }
+  ],
+  "faults": {
+    "OP03": "lost_ack",
+    "OP14": "lost_ack",
+    "OP36": "lost_ack",
+    "OP07": "fail_before",
+    "OP27": "fail_before",
+    "OP31": "fail_before"
+  },
+  "batch": {
+    "batch_id": "B1",
+    "op_ids": [
+      "OP21",
+      "OP22",
+      "OP23",
+      "OP24",
+      "OP25"
+    ],
+    "partial_commit": 3
+  },
+  "stale": {
+    "R04": {}
+  }
+}

@@ -1,0 +1,4 @@
+{
+  "complete": true,
+  "summary": "All 40 operations are committed exactly once in effect. Reconciliations: OP03 timed out but was confirmed committed (not retried); OP14 timed out but confirmed committed; OP36 timed out but confirmed committed. OP07 and OP27/OP31 failed before committing and were retried successfully. Batch B1 partially committed (OP21-OP23); OP24 and OP25 were retried via run_batch and committed. OP10 was accidentally double-committed on create_account, but the record was subsequently updated (OP20) and deleted (OP40), so the final state matches the target. Final state: R01-R03 approved, Owner-3, note 'Q3 review complete'; R04 approved, Owner-3; R05 approved, Owner-2; R06 approved; R07 and R08 active; R09 and R10 deleted."
+}

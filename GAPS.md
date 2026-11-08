@@ -45,3 +45,17 @@ The 10-turn chat is a ceiling for Qwen. G1–G4 were not reproduced at that dept
 | G17 tool-use pipeline | Qwen 1/1 on held-out CSV | **No limitation** |
 
 **Conclusion:** the feasible single-context axes are exhausted. The only unexhausted, evidence-backed frontier weakness is long-horizon agentic execution (G10), which needs 50–100+ tool steps, injected failures, and recovery — beyond a one-day build. See `FINDINGS.md`.
+
+## Execution-state divergence (new experiment)
+
+| Gap | Result | Status |
+|---|---|---|
+| G18 execution-state divergence | Qwen 2/10 duplicate `create_account` after clean `ok`; GPT 1/10 omitted `OP26` and falsely reported complete; 0/20 retried a confirmed timeout | **Qwen signature reproduced; GPT candidate** |
+
+The earlier conclusion that the feasible axes are exhausted is superseded for this
+axis. Against a persistent account store with 40 operations and a hidden fault
+schedule (lost ack, fail-before, partial batch, stale read, dependency), both
+models reconciled ambiguous outcomes correctly but failed on clean-operation
+tracking. Qwen's duplicate-create failure occurred twice with the same signature;
+GPT's single omission needs replication before it can be called a frontier
+limitation. See `tasks/harbor/exec-state/RESULTS.md`.

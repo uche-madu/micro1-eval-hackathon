@@ -125,4 +125,4 @@ The clean transcript is in `tasks/harbor/board-brief/results/run2_qwen/`, and th
 
 ## Findings
 
-`FINDINGS.md` records all 15 tested axes and the honest result: no frontier-model weakness was found at the feasible scale. The only real state failure was a Qwen 30-turn slip (1/5), not reproduced at 50 turns; GPT-6 Luna passed every check. `GAPS.md` tracks the remaining long-horizon agentic gap.
+`FINDINGS.md` records the tested axes. The earlier single-context axes were robust; the new execution-state experiment found low-rate failures in both models. Qwen 3.8 Flash failed 2/10 trials with a duplicate `create_account` after a clean `ok`; GPT-6 Luna failed 1/10 by omitting `OP26` and falsely claiming completion. No trial retried a confirmed timeout. Qwen's signature reproduced; GPT's single failure is a candidate that needs replication. See `tasks/harbor/exec-state/RESULTS.md`.

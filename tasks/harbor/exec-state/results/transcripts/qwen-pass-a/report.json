@@ -1,0 +1,4 @@
+{
+  "complete": true,
+  "summary": "All operations OP01-OP40 executed exactly once. Reconciled ambiguous timeouts via get_operation (OP03, OP14, OP36 committed; not retried). Retried only pre-commit failures (OP07, OP24, OP25, OP27, OP31). Batch B1 completed after partial failure by retrying only OP24/OP25. R09 and R10 deleted."
+}

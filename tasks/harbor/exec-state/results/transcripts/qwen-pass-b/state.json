@@ -1,0 +1,72 @@
+{
+  "R01": {
+    "name": "Beta-Account-1",
+    "segment": "Enterprise",
+    "region": "SE",
+    "owner": "Owner-3",
+    "status": "approved",
+    "notes": [
+      "Q3 review complete"
+    ]
+  },
+  "R02": {
+    "name": "Beta-Account-2",
+    "segment": "Public",
+    "region": "MW",
+    "owner": "Owner-3",
+    "status": "approved",
+    "notes": [
+      "Q3 review complete"
+    ]
+  },
+  "R03": {
+    "name": "Beta-Account-3",
+    "segment": "SMB",
+    "region": "W",
+    "owner": "Owner-3",
+    "status": "approved",
+    "notes": [
+      "Q3 review complete"
+    ]
+  },
+  "R04": {
+    "name": "Beta-Account-4",
+    "segment": "Enterprise",
+    "region": "NE",
+    "owner": "Owner-3",
+    "status": "approved",
+    "notes": []
+  },
+  "R05": {
+    "name": "Beta-Account-5",
+    "segment": "Public",
+    "region": "SE",
+    "owner": "Owner-2",
+    "status": "approved",
+    "notes": []
+  },
+  "R06": {
+    "name": "Beta-Account-6",
+    "segment": "SMB",
+    "region": "MW",
+    "owner": "unassigned",
+    "status": "approved",
+    "notes": []
+  },
+  "R07": {
+    "name": "Beta-Account-7",
+    "segment": "Enterprise",
+    "region": "W",
+    "owner": "unassigned",
+    "status": "active",
+    "notes": []
+  },
+  "R08": {
+    "name": "Beta-Account-8",
+    "segment": "Public",
+    "region": "NE",
+    "owner": "unassigned",
+    "status": "active",
+    "notes": []
+  }
+}

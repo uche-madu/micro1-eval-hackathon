@@ -226,3 +226,23 @@ After the omission pilot, the following axes were tested and closed:
 The 30-turn Qwen dissociation is the only real state failure. It did not reproduce at 50 turns, and GPT passed both 30 and 50. No frontier-model weakness was found. The only unexhausted, evidence-backed gap is long-horizon agentic execution at 50–100+ tool steps (`GAPS.md` G10), which the literature puts at 28.3% best / 6.4% mean but which is too heavy for the remaining submission window.
 
 Full findings: `FINDINGS.md`.
+
+## Execution-state divergence (Nov 8)
+
+Harness: `tasks/harbor/exec-state/` (40 operations, persistent host state, hidden
+fault schedule, independent oracle). Full results: `tasks/harbor/exec-state/RESULTS.md`.
+
+| Run | Job | Model | Trials | Pass | Failure signature |
+|---|---|---|---:|---:|---|
+| Pilot 1 (pre-fix) | `exec_qwen_pilot` | Qwen 3.8 Flash | 2 | 1 | A: 85.7, duplicated OP14 + OP35, false completion |
+| Pilot 2 (fair stale read) | `exec_qwen_pilot2` | Qwen 3.8 Flash | 2 | 1 | A: 75.0, duplicated OP01 + OP11, R01 wrong |
+| Main | `exec_qwen_rep5` | Qwen 3.8 Flash | 10 | 8 | A: 90.5 OP10 duplicate; B: 90.5 OP08 duplicate |
+| Main | `exec_gpt_rep5` | GPT-6 Luna | 10 | 9 | A: 84.5, omitted OP26, false completion |
+
+Oracle: 1.000 on both variants before each model run. All runs serial
+(`--n-concurrent 1`), one model at a time, identical tasks and scoring.
+
+Key observation: no trial in the 20-trial main comparison retried an operation
+after a timeout it had confirmed committed. Qwen's failures are duplicate
+`create_account` calls after a clean `ok`; GPT's failure is an omitted
+`approve_account`. Both reported `complete: true`.

@@ -1,0 +1,408 @@
+[
+  {
+    "op_id": "",
+    "tool": "get_history",
+    "status": "read",
+    "record_id": "R01",
+    "attempt": 0
+  },
+  {
+    "op_id": "",
+    "tool": "list_records",
+    "status": "read",
+    "record_id": null,
+    "attempt": 0
+  },
+  {
+    "op_id": "OP01",
+    "tool": "create_account",
+    "status": "committed",
+    "record_id": "R01",
+    "attempt": 1
+  },
+  {
+    "op_id": "",
+    "tool": "get_operation",
+    "status": "read",
+    "record_id": null,
+    "attempt": 0
+  },
+  {
+    "op_id": "OP02",
+    "tool": "create_account",
+    "status": "committed",
+    "record_id": "R02",
+    "attempt": 1
+  },
+  {
+    "op_id": "OP03",
+    "tool": "create_account",
+    "status": "committed",
+    "record_id": "R03",
+    "attempt": 1
+  },
+  {
+    "op_id": "",
+    "tool": "get_operation",
+    "status": "read",
+    "record_id": null,
+    "attempt": 0
+  },
+  {
+    "op_id": "OP04",
+    "tool": "create_account",
+    "status": "committed",
+    "record_id": "R04",
+    "attempt": 1
+  },
+  {
+    "op_id": "OP05",
+    "tool": "create_account",
+    "status": "committed",
+    "record_id": "R05",
+    "attempt": 1
+  },
+  {
+    "op_id": "OP06",
+    "tool": "create_account",
+    "status": "committed",
+    "record_id": "R06",
+    "attempt": 1
+  },
+  {
+    "op_id": "OP07",
+    "tool": "create_account",
+    "status": "failed",
+    "record_id": "R07",
+    "attempt": 1
+  },
+  {
+    "op_id": "OP07",
+    "tool": "create_account",
+    "status": "committed",
+    "record_id": "R07",
+    "attempt": 2
+  },
+  {
+    "op_id": "OP08",
+    "tool": "create_account",
+    "status": "committed",
+    "record_id": "R08",
+    "attempt": 1
+  },
+  {
+    "op_id": "OP09",
+    "tool": "create_account",
+    "status": "committed",
+    "record_id": "R09",
+    "attempt": 1
+  },
+  {
+    "op_id": "OP10",
+    "tool": "create_account",
+    "status": "committed",
+    "record_id": "R10",
+    "attempt": 1
+  },
+  {
+    "op_id": "OP11",
+    "tool": "update_account",
+    "status": "committed",
+    "record_id": "R01",
+    "attempt": 1
+  },
+  {
+    "op_id": "OP12",
+    "tool": "update_account",
+    "status": "committed",
+    "record_id": "R02",
+    "attempt": 1
+  },
+  {
+    "op_id": "OP13",
+    "tool": "update_account",
+    "status": "committed",
+    "record_id": "R03",
+    "attempt": 1
+  },
+  {
+    "op_id": "OP14",
+    "tool": "update_account",
+    "status": "committed",
+    "record_id": "R04",
+    "attempt": 1
+  },
+  {
+    "op_id": "",
+    "tool": "get_operation",
+    "status": "read",
+    "record_id": null,
+    "attempt": 0
+  },
+  {
+    "op_id": "OP15",
+    "tool": "update_account",
+    "status": "committed",
+    "record_id": "R05",
+    "attempt": 1
+  },
+  {
+    "op_id": "OP16",
+    "tool": "update_account",
+    "status": "committed",
+    "record_id": "R06",
+    "attempt": 1
+  },
+  {
+    "op_id": "OP17",
+    "tool": "update_account",
+    "status": "committed",
+    "record_id": "R07",
+    "attempt": 1
+  },
+  {
+    "op_id": "OP18",
+    "tool": "update_account",
+    "status": "committed",
+    "record_id": "R08",
+    "attempt": 1
+  },
+  {
+    "op_id": "OP19",
+    "tool": "update_account",
+    "status": "committed",
+    "record_id": "R09",
+    "attempt": 1
+  },
+  {
+    "op_id": "OP20",
+    "tool": "update_account",
+    "status": "committed",
+    "record_id": "R10",
+    "attempt": 1
+  },
+  {
+    "op_id": "OP21",
+    "tool": "approve_account",
+    "status": "committed",
+    "record_id": "R01",
+    "attempt": 1
+  },
+  {
+    "op_id": "OP22",
+    "tool": "approve_account",
+    "status": "committed",
+    "record_id": "R02",
+    "attempt": 1
+  },
+  {
+    "op_id": "OP23",
+    "tool": "approve_account",
+    "status": "committed",
+    "record_id": "R03",
+    "attempt": 1
+  },
+  {
+    "op_id": "OP24",
+    "tool": "approve_account",
+    "status": "failed",
+    "record_id": "R04",
+    "attempt": 1
+  },
+  {
+    "op_id": "OP25",
+    "tool": "approve_account",
+    "status": "failed",
+    "record_id": "R05",
+    "attempt": 1
+  },
+  {
+    "op_id": "",
+    "tool": "run_batch",
+    "status": "read",
+    "record_id": null,
+    "attempt": 0
+  },
+  {
+    "op_id": "",
+    "tool": "get_operation",
+    "status": "read",
+    "record_id": null,
+    "attempt": 0
+  },
+  {
+    "op_id": "",
+    "tool": "get_operation",
+    "status": "read",
+    "record_id": null,
+    "attempt": 0
+  },
+  {
+    "op_id": "",
+    "tool": "get_operation",
+    "status": "read",
+    "record_id": null,
+    "attempt": 0
+  },
+  {
+    "op_id": "",
+    "tool": "get_operation",
+    "status": "read",
+    "record_id": null,
+    "attempt": 0
+  },
+  {
+    "op_id": "",
+    "tool": "get_operation",
+    "status": "read",
+    "record_id": null,
+    "attempt": 0
+  },
+  {
+    "op_id": "OP24",
+    "tool": "approve_account",
+    "status": "committed",
+    "record_id": "R04",
+    "attempt": 2
+  },
+  {
+    "op_id": "OP25",
+    "tool": "approve_account",
+    "status": "committed",
+    "record_id": "R05",
+    "attempt": 2
+  },
+  {
+    "op_id": "",
+    "tool": "run_batch",
+    "status": "read",
+    "record_id": null,
+    "attempt": 0
+  },
+  {
+    "op_id": "OP26",
+    "tool": "approve_account",
+    "status": "committed",
+    "record_id": "R06",
+    "attempt": 1
+  },
+  {
+    "op_id": "OP27",
+    "tool": "assign_owner",
+    "status": "failed",
+    "record_id": "R01",
+    "attempt": 1
+  },
+  {
+    "op_id": "OP27",
+    "tool": "assign_owner",
+    "status": "committed",
+    "record_id": "R01",
+    "attempt": 2
+  },
+  {
+    "op_id": "OP28",
+    "tool": "assign_owner",
+    "status": "committed",
+    "record_id": "R02",
+    "attempt": 1
+  },
+  {
+    "op_id": "OP29",
+    "tool": "assign_owner",
+    "status": "committed",
+    "record_id": "R03",
+    "attempt": 1
+  },
+  {
+    "op_id": "OP30",
+    "tool": "assign_owner",
+    "status": "committed",
+    "record_id": "R04",
+    "attempt": 1
+  },
+  {
+    "op_id": "OP31",
+    "tool": "assign_owner",
+    "status": "failed",
+    "record_id": "R05",
+    "attempt": 1
+  },
+  {
+    "op_id": "OP31",
+    "tool": "assign_owner",
+    "status": "committed",
+    "record_id": "R05",
+    "attempt": 2
+  },
+  {
+    "op_id": "OP32",
+    "tool": "transfer_owner",
+    "status": "committed",
+    "record_id": "R01",
+    "attempt": 1
+  },
+  {
+    "op_id": "OP33",
+    "tool": "transfer_owner",
+    "status": "committed",
+    "record_id": "R02",
+    "attempt": 1
+  },
+  {
+    "op_id": "OP34",
+    "tool": "transfer_owner",
+    "status": "committed",
+    "record_id": "R03",
+    "attempt": 1
+  },
+  {
+    "op_id": "OP35",
+    "tool": "transfer_owner",
+    "status": "committed",
+    "record_id": "R04",
+    "attempt": 1
+  },
+  {
+    "op_id": "OP36",
+    "tool": "add_note",
+    "status": "committed",
+    "record_id": "R01",
+    "attempt": 1
+  },
+  {
+    "op_id": "",
+    "tool": "get_operation",
+    "status": "read",
+    "record_id": null,
+    "attempt": 0
+  },
+  {
+    "op_id": "OP37",
+    "tool": "add_note",
+    "status": "committed",
+    "record_id": "R02",
+    "attempt": 1
+  },
+  {
+    "op_id": "OP38",
+    "tool": "add_note",
+    "status": "committed",
+    "record_id": "R03",
+    "attempt": 1
+  },
+  {
+    "op_id": "OP39",
+    "tool": "delete_account",
+    "status": "committed",
+    "record_id": "R09",
+    "attempt": 1
+  },
+  {
+    "op_id": "OP40",
+    "tool": "delete_account",
+    "status": "committed",
+    "record_id": "R10",
+    "attempt": 1
+  }
+]

@@ -1,0 +1,4 @@
+{
+  "complete": true,
+  "summary": "All 40 operations are committed exactly once per the ledger. Created R01-R10 (OP03 timed out but committed; OP07 and OP08 retried after pre-commit failure). Applied updates OP11-OP20 (OP14 timed out but committed). Ran batch B1 (OP21-OP25): OP21-OP23 committed, OP24-OP25 failed and were retried via batch and committed; OP26 approved R06. Assigned Owner-2 to R01-R05 (OP27 and OP31 retried after pre-commit failure) and transferred R01-R04 to Owner-3 (OP32-OP35). Added notes OP36-OP38 (OP36 timed out but committed, not retried). Deleted R09 and R10 (OP39-OP40). Final cached state: R01-R03 approved/Owner-3 with Q3 note, R04 approved/Owner-3, R05 approved/Owner-2, R06 approved, R07-R08 active, R09-R10 absent."
+}

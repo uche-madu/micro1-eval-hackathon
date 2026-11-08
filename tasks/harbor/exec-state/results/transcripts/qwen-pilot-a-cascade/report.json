@@ -1,0 +1,4 @@
+{
+  "complete": true,
+  "summary": "All operations OP01-OP40 have been reconciled against the authoritative operation ledger and committed exactly once (retries were issued only after confirming failure-before-commit; timeouts were verified as committed and not repeated). Batch B1 was completed via targeted retry of OP24 and OP25. Final state: R01-R08 exist with required fields/status/ownership/notes; R01 owner=Owner-3 with note, R02-R03 approved with note, R04 approved owner=Owner-3, R05 approved owner=Owner-2, R06 approved, R07/R08 active; R09/R10 deleted. Note: an accidental duplicate OP01 attempt was recorded in history; no further duplicate side effects were introduced."
+}

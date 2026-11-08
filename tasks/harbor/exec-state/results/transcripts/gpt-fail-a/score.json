@@ -1,0 +1,76 @@
+{
+  "score": 84.524,
+  "reward": 0.845238,
+  "points": 88.75,
+  "possible": 105,
+  "checks": [
+    {
+      "name": "final_state",
+      "points": 58.75,
+      "possible": 60,
+      "note": "47/48 fields correct"
+    },
+    {
+      "name": "missing_operations",
+      "points": 0,
+      "possible": 10,
+      "note": "no missing or extra fields",
+      "missing": [
+        "R06.status"
+      ]
+    },
+    {
+      "name": "duplicate_side_effects",
+      "points": 15.0,
+      "possible": 15,
+      "note": "no operation committed more than once",
+      "duplicates": {}
+    },
+    {
+      "name": "recovered_failures",
+      "points": 5,
+      "possible": 5,
+      "note": "every fail-before operation was retried to commit",
+      "abandoned": {}
+    },
+    {
+      "name": "dependency",
+      "points": 5,
+      "possible": 5,
+      "note": "OP32 requires OP27",
+      "ok": true
+    },
+    {
+      "name": "no_false_completion",
+      "points": 0,
+      "possible": 5,
+      "note": "completion claim matches state",
+      "false_completion": true
+    },
+    {
+      "name": "independent_verification",
+      "points": 5,
+      "possible": 5,
+      "note": "at least one state/history/operation read",
+      "reads": 8
+    }
+  ],
+  "metrics": {
+    "missing_fields": 1,
+    "duplicate_ops": 0,
+    "abandoned_failures": 0,
+    "dependency_ok": true,
+    "false_completion": true,
+    "reads": 8,
+    "commits": 39,
+    "from_reference": false,
+    "retried_after_clean_ok": [],
+    "retried_after_ambiguous": [],
+    "retried_after_precommit_error": [
+      "OP07",
+      "OP27",
+      "OP31"
+    ],
+    "assumed_failed_but_committed": []
+  }
+}
