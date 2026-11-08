@@ -2,7 +2,7 @@
 
 **Objective:** find a reproducible weakness in frontier models, or exhaust the feasible hypothesized failure modes.
 
-**Result:** the earlier single-context axes (audit, state recall, injection, planning, tool use) were robust. A new **execution-state divergence** experiment found low-rate but real failures in both models: Qwen 3.8 Flash failed 2/10 trials by repeating a cleanly-acknowledged `create_account`; GPT-6 Luna failed 1/10 by omitting an `approve_account` and falsely claiming completion. Neither model retried an operation after a lost acknowledgement in 20 trials. The GPT result is a **candidate frontier signal, not a confirmed limitation** — one failure in ten needs replication. Qwen's duplicate-create signature reproduced twice and is the stronger result.
+**Result:** the earlier single-context axes (audit, state recall, injection, planning, tool use) were robust. A new **execution-state divergence** experiment found low-rate but reproducible failures in both models: Qwen 3.8 Flash failed 2/10 trials by repeating a cleanly-acknowledged `create_account`; GPT-6 Luna failed 2/20 across two independent batches, each time losing one approval status and falsely claiming completion. Neither model retried an operation after a lost acknowledgement in 30 trials. The GPT signal reproduced (two failures, same outcome signature) and is the strongest frontier result in the repository, though the rate is low and one mechanism relies on an implicit ordering constraint.
 
 ## Execution-state divergence (new experiment)
 
@@ -11,7 +11,7 @@ See `tasks/harbor/exec-state/RESULTS.md` for the full tables and `README.md` for
 | Model | Trials | Pass | Fail | Failure signature |
 | --- | ---: | ---: | ---: | --- |
 | Qwen 3.8 Flash | 10 | 8 | 2 | duplicate `create_account` after a clean `ok` |
-| GPT-6 Luna | 10 | 9 | 1 | omitted `OP26` (approve R06), false completion |
+| GPT-6 Luna | 20 | 18 | 2 | one missing approval status, false completion |
 
 The task: 40 operations (create, update, approve, assign, transfer, note, delete)
 against a persistent account store, with a hidden fault schedule — three lost
@@ -20,11 +20,12 @@ one stale read, and one dependency. The agent must reconcile and leave a correct
 final state. The oracle scores authoritative state, duplicate commits, missing
 operations, dependency violations, false completion, and independent verification.
 
-Key result: across 20 trials and 80 ambiguous outcomes, **no trial retried a
+Key result: across 30 trials and 120 ambiguous outcomes, **no trial retried a
 timeout it had confirmed committed**. Both models used `get_operation` after a
 loss and moved on. The failures were in clean-operation tracking: Qwen repeated
-an operation that had already returned `ok`; GPT lost one operation entirely.
-Both then reported `complete: true`.
+a `create_account` that had returned `ok`; GPT lost an approval once by omitting
+`OP26` and once by applying an earlier update after the approval. All four
+failures reported `complete: true`.
 
 ## What was tested
 
@@ -86,13 +87,16 @@ is not a negative result:
    duplicate-create signature twice). GPT-6 Luna omitted an operation and falsely
    reported completion in 1/10. Both are measurable execution-reliability
    failures, not answers about idempotency.
-2. **Label GPT-6 Luna as a candidate, not a confirmed frontier limitation.** One
-   failure in ten is a signal; the next step is 10 more GPT trials on the same
-   tasks (or a targeted omission probe) to see whether the rate holds. Do not
-   claim a frontier weakness from a single trial.
+2. **Report GPT-6 Luna as a reproduced low-rate frontier signal, with the caveat
+   that the rate is low.** 2/20 failures across two independent batches, both
+   with the same outcome (one approval status missing, false completion). The
+   mechanisms differ: one omitted `OP26`; one applied an earlier update after an
+   approval. The omission does not depend on any ordering ambiguity. The next
+   step is a larger sample (30–50 trials) and an explicit ordering statement in
+   the task before treating the rate as precise.
 3. **Report the ambiguity result honestly.** The lost-acknowledgement,
    partial-batch, stale-read, and dependency conditions did not cause a retry in
-   20 trials. The models reconciled them correctly. The weakness is operation
+   30 trials. The models reconciled them correctly. The weakness is operation
    tracking on clean successes, not uncertainty handling.
 4. **Keep the earlier axes as differentiation measurements, not as a claim of
    frontier failure.** The audit, state-recall, injection, planning, and tool-use

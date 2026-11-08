@@ -238,11 +238,13 @@ fault schedule, independent oracle). Full results: `tasks/harbor/exec-state/RESU
 | Pilot 2 (fair stale read) | `exec_qwen_pilot2` | Qwen 3.8 Flash | 2 | 1 | A: 75.0, duplicated OP01 + OP11, R01 wrong |
 | Main | `exec_qwen_rep5` | Qwen 3.8 Flash | 10 | 8 | A: 90.5 OP10 duplicate; B: 90.5 OP08 duplicate |
 | Main | `exec_gpt_rep5` | GPT-6 Luna | 10 | 9 | A: 84.5, omitted OP26, false completion |
+| Replication | `exec_gpt_rep5b` | GPT-6 Luna | 10 | 9 | A: 84.5, OP15 applied after OP25, reverted R05 |
 
 Oracle: 1.000 on both variants before each model run. All runs serial
 (`--n-concurrent 1`), one model at a time, identical tasks and scoring.
 
-Key observation: no trial in the 20-trial main comparison retried an operation
-after a timeout it had confirmed committed. Qwen's failures are duplicate
-`create_account` calls after a clean `ok`; GPT's failure is an omitted
-`approve_account`. Both reported `complete: true`.
+Key observation: no trial in the 30-trial comparison retried an operation after
+a timeout it had confirmed committed. Qwen's failures are duplicate
+`create_account` calls after a clean `ok` (2/10); GPT's two failures each lose one
+approval status (2/20), once by omission and once by applying an earlier update
+after the approval. All four reported `complete: true`.

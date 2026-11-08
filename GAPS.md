@@ -50,12 +50,14 @@ The 10-turn chat is a ceiling for Qwen. G1–G4 were not reproduced at that dept
 
 | Gap | Result | Status |
 |---|---|---|
-| G18 execution-state divergence | Qwen 2/10 duplicate `create_account` after clean `ok`; GPT 1/10 omitted `OP26` and falsely reported complete; 0/20 retried a confirmed timeout | **Qwen signature reproduced; GPT candidate** |
+| G18 execution-state divergence | Qwen 2/10 duplicate `create_account` after clean `ok`; GPT 2/20 (two batches) each with one missing approval status and false completion; 0/30 retried a confirmed timeout | **Reproduced in both models; low rate** |
 
 The earlier conclusion that the feasible axes are exhausted is superseded for this
 axis. Against a persistent account store with 40 operations and a hidden fault
 schedule (lost ack, fail-before, partial batch, stale read, dependency), both
 models reconciled ambiguous outcomes correctly but failed on clean-operation
-tracking. Qwen's duplicate-create failure occurred twice with the same signature;
-GPT's single omission needs replication before it can be called a frontier
-limitation. See `tasks/harbor/exec-state/RESULTS.md`.
+tracking. Qwen's duplicate-create failure occurred twice with the same signature.
+GPT's two failures have the same outcome (one missing approval status) but
+different mechanisms: one omitted `OP26`, one applied an earlier update after the
+approval. The omission is the cleaner frontier case. See
+`tasks/harbor/exec-state/RESULTS.md`.

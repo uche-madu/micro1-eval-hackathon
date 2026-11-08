@@ -1,0 +1,4 @@
+{
+  "complete": true,
+  "summary": "All operations OP01\u2013OP40 were completed exactly once. The partial B1 batch was reconciled: OP21\u2013OP23 had committed, and OP24\u2013OP25 were then processed. Unknown acknowledgements were checked against the operation ledger before proceeding; failed-before-commit operations were retried."
+}

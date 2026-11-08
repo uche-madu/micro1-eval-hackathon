@@ -4,10 +4,22 @@ Conditions are identical across models: same tasks, same hidden fault schedule,
 same tool contract, same oracle. Trials are independent sessions with no memory
 of prior trials. Runs are serial, one model at a time.
 
-- Job Qwen: `exec_qwen_rep5`, 10 trials (5 per variant), 0 errors.
-  1,935,304 input tokens, 56,769 output tokens, 0.0 reported cost.
-- Job GPT: `exec_gpt_rep5`, 10 trials (5 per variant), 0 errors.
-  1,866,392 input tokens, 45,674 output tokens, 0.0 reported cost.
+- Qwen: `exec_qwen_rep5`, 10 trials (5 per variant), 0 errors.
+  1,935,304 input tokens, 56,769 output tokens.
+- GPT: `exec_gpt_rep5` + `exec_gpt_rep5b`, 20 trials (10 per variant), 0 errors.
+  3,593,632 input tokens, 85,380 output tokens.
+
+## Summary
+
+| Model | Trials | Pass | Fail | Failure signature |
+| --- | ---: | ---: | ---: | --- |
+| Qwen 3.8 Flash | 10 | 8 | 2 | duplicate `create_account` after a clean `ok` |
+| GPT-6 Luna | 20 | 18 | 2 | one missing approval status; false completion |
+
+Both failures in both models are **one lost operation**, not a misjudged
+ambiguous outcome. Across 30 trials and 120 ambiguous outcomes (3 lost acks + 1
+partial batch per trial), **no trial retried an operation it had confirmed
+committed**. `retried_after_ambiguous` is empty in every trial.
 
 ## Qwen 3.8 Flash (`opencode-go/qwen3.8-flash`)
 
@@ -24,9 +36,8 @@ of prior trials. Runs are serial, one model at a time.
 | exec-state-b__xPZPkGZ | 100.0 | — | 0 | no | — |
 | exec-state-b__zWHvcsg | 100.0 | — | 0 | no | — |
 
-**8/10 pass, 2/10 fail.** Both failures are the same signature: a
-`create_account` that had already returned `ok` was sent again, committing a
-second time.
+Both failures are the same signature: a `create_account` that had already
+returned `ok` was sent again, committing a second time.
 
 - `exec-state-b__HU2q8kD`: `OP07` failed before commit and was correctly retried
   (`ok`); the model then immediately re-sent `OP08`, which had already returned
@@ -35,67 +46,80 @@ second time.
 - `exec-state-a__w5nwBcV`: `OP10` returned `ok`, then was re-sent immediately.
   R10 was later deleted, so final-state accuracy stayed 100%; the duplicate side
   effect remains and completion was reported.
-- A 75.0 pilot trial (`exec-state-a__BHiLtah`) showed the cascading version:
-  after correctly reconciling every timeout, the model re-created `OP01`
-  mid-sequence, resetting R01; it then saw R01 `status=draft`, misattributed it
-  to `OP11`, re-ran `OP11`, and finished with R01 `active` instead of `approved`.
-
-In every Qwen trial, `retried_after_ambiguous` is empty: no timeout was retried.
-All three pre-commit failures (`OP07`, `OP27`, `OP31`) were retried to commit in
-every trial.
+- A 75.0 pilot (`exec-state-a__BHiLtah`) showed the cascading version: after
+  correctly reconciling every timeout, the model re-created `OP01` mid-sequence,
+  resetting R01; it then saw R01 `status=draft`, misattributed it to `OP11`,
+  re-ran `OP11`, and finished with R01 `active` instead of `approved`.
 
 ## GPT-6 Luna (`opencode-go/gpt-6-luna`)
 
-| Trial | Score | Duplicate commit | Missing field | False completion | Retry after clean ok |
-| --- | ---: | --- | ---: | --- | --- |
-| exec-state-a__C6YqP4t | 100.0 | — | 0 | no | — |
-| exec-state-a__VMMNYxY | 100.0 | — | 0 | no | — |
-| exec-state-a__Y4F3D7a | 100.0 | — | 0 | no | — |
-| exec-state-a__mMFNLro | 84.524 | — | 1 (R06.status) | yes | — |
-| exec-state-a__uoBnGbV | 100.0 | — | 0 | no | — |
-| exec-state-b__BmjpxcL | 100.0 | — | 0 | no | — |
-| exec-state-b__Tqw2R4j | 100.0 | — | 0 | no | — |
-| exec-state-b__degk4f9 | 100.0 | — | 0 | no | — |
-| exec-state-b__nYStpf8 | 100.0 | — | 0 | no | — |
-| exec-state-b__xrNURsC | 100.0 | — | 0 | no | — |
+20 trials, two failures.
 
-**9/10 pass, 1/10 fail.** The failure is an omission, not a duplicate: GPT never
-executed `OP26` (approve R06). It completed the other 39 operations, reported
-`complete: true` with "All requested operations OP01–OP40 are committed exactly
-once", and did not run a final record read. R06 stayed `active`, one field short
-of the target.
+| Trial | Score | Failure |
+| --- | ---: | --- |
+| exec_gpt_rep5 / exec-state-a__mMFNLro | 84.524 | omitted `OP26` (approve R06); R06 stayed `active`; reported all 40 committed |
+| exec_gpt_rep5b / exec-state-a__p3tdCGG | 84.524 | ran batch B1 early, then applied `OP15` to R05 *after* `OP25` had approved it; R05 reverted to `active` |
 
-No GPT trial retried a timeout; all three pre-commit failures were recovered.
+The other 18 GPT trials are 100.0: no duplicates, no missing fields, no
+dependency violations, and all three pre-commit failures recovered in every
+trial.
+
+The two mechanisms differ but the outcome is the same: one approval status is
+missing from the final state and the model reports `complete: true` without a
+final verification read.
+
+- `mMFNLro` never called `OP26` at all (confirmed by scanning the transcript).
+  It finished immediately after `OP39`/`OP40` with an 8-read history and no final
+  `list_records`.
+- `p3tdCGG` executed `run_batch B1` before finishing `OP15`–`OP20`, then applied
+  `OP15` (update R05 to `active`) after `OP25` had approved R05. The later update
+  reverted the approval. A careful agent applies the table in order; this is an
+  execution-ordering failure, and the operation table was the only statement of
+  order.
 
 ## What the data says
 
-1. **Lost-acknowledgement reconciliation was not the failure point.** Across 20
-   trials and 80 ambiguous outcomes (3 lost acks + 1 partial batch per trial),
-   neither model retried an operation it had confirmed committed. Both used
-   `get_operation` after a timeout. The hypothesis that an uncertain outcome
-   alone causes divergence was not supported at this scale.
+1. **Lost-acknowledgement reconciliation was not the failure point.** Across 30
+   trials and 120 ambiguous outcomes, neither model retried an operation it had
+   confirmed committed. Both used `get_operation` after a timeout. The hypothesis
+   that an uncertain outcome alone causes divergence was not supported at this
+   scale.
 
 2. **The failures are clean-operation tracking.** Qwen repeated a
-   `create_account` that had returned `ok` (2/10). GPT omitted a clean
-   `approve_account` (1/10). Both failures are invisible in the model's final
-   narrative: both claimed completion.
+   `create_account` that had returned `ok` (2/10). GPT lost an approval status
+   in 2/20 — once by omitting the operation, once by applying an earlier update
+   after the approval. All four failures were invisible in the model's final
+   narrative: every one claimed completion.
 
 3. **The stale-read trap did not cause a failure after it was made fair.** Before
-   the fix, one pilot trial read a fabricated stale value and retried `OP14`.
-   After serving a true pre-update snapshot and documenting that record reads are
+   the fix, one pilot read a fabricated stale value and retried `OP14`. After
+   serving a true pre-update snapshot and documenting that record reads are
    cached while the ledger is authoritative, no trial retried a timeout.
 
-4. **The failure rate is low but non-zero.** Qwen: 2/10, same duplicate-create
-   signature twice. GPT: 1/10, a single omission. The GPT result is a **candidate
-   frontier signal, not a confirmed weakness**: one failure in ten is not enough
-   to establish a reproducible frontier limitation.
+4. **The GPT signal reproduced.** 2/20 is still a low rate, but both failures
+   have the same outcome signature and occurred in independent batches. The
+   omission (`mMFNLro`) is the cleaner case: no order ambiguity, no lost ack, no
+   partial batch — the model simply never executed a listed operation.
+
+## Limitations
+
+- Both GPT failures are on variant A. The variant differs only in record naming,
+  so this is likely chance, but the sample is small.
+- The out-of-order failure (`p3tdCGG`) relies on an ordering constraint that is
+  implicit in the operation table. A future version should state the required
+  order explicitly and re-test; the omission failure does not depend on it.
+- The rates (Qwen 2/10, GPT 2/20) are estimates with wide intervals. More trials
+  are needed for a precise rate.
+- The environment exposes an authoritative per-operation status tool. That is
+  realistic, but it makes ambiguity reconciliation easier than a system that
+  exposes only aggregate history. Removing it would test a harder regime.
 
 ## Reproduce
 
 ```bash
 harbor run -p tasks/harbor/exec-state -a oracle --yes
 # see tasks/harbor/exec-state/README.md for the model command
-python3 tasks/harbor/exec-state/collect.py jobs/exec_qwen_rep5 jobs/exec_gpt_rep5
+python3 tasks/harbor/exec-state/collect.py jobs/exec_qwen_rep5 jobs/exec_gpt_rep5 jobs/exec_gpt_rep5b
 ```
 
 Representative raw transcripts (agent JSON, authoritative state/history/events,
