@@ -160,3 +160,24 @@ The two earlier pilots remain frozen; see `FREEZE.md`.
 **Decision:** stop. One model passing is enough to establish the difficulty; no higher model was run. If the direction continues, the next test must be **pure omission** or a plausible recommendation with an unstated assumption, not another wording change that contradicts the body.
 
 **Artifacts:** `tasks/harbor/audit-subtle/PILOT_REPORT.md`, `tasks/harbor/audit-subtle/results/transcripts/`.
+
+## Pilot 5 — pure-omission audit
+
+**Question:** can a model notice a decision-critical fact that is absent from an otherwise correct deliverable?
+
+**Design:** four Harbor tasks under `tasks/harbor/audit-omission/` — retention/incident × clean/omission. The omission deliverable is internally consistent; the defect is what it fails to say.
+
+**Oracle:** 4/4 at **1.000**.
+
+**Final results:**
+
+| Model | Clean | Omission | False pass | False fail |
+|---|---:|---:|---:|---:|
+| Qwen 3.8 Flash | 5/5 | 5/5 | **0** | 0 |
+| GPT-6 Luna | 5/5 | 5/5 | **0** | 0 |
+
+**Correction that mattered:** the first clean incident memo said “the audit note treats the incidents as open,” which the audit note does not say. GPT false-failed that memo 5/5, and Qwen’s earlier 1/3 and 1/5 omission false passes were tied to the same flawed text. After correcting it to “closure is not established; the audit note does not record a closure decision,” both models passed every clean and omission trial. The early transcripts are preserved under `results/transcripts/early_qwen_false_pass/`; they are not hidden.
+
+**Decision:** stop. Pure omission in this scenario is not a frontier limitation. The next credible axis is multi-turn state integrity, not another one-shot audit.
+
+**Artifacts:** `tasks/harbor/audit-omission/PILOT_REPORT.md`, `results/transcripts/`.

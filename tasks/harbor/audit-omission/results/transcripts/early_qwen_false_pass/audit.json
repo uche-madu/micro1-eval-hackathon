@@ -1,0 +1,12 @@
+{
+  "verdict": "FIT",
+  "findings": [
+    {
+      "section": "Are the Incidents Closed?",
+      "problem_type": "unsupported_assertion",
+      "severity": "minor",
+      "evidence": "the audit note treats the incidents as open",
+      "why_it_matters": "The audit note does not explicitly state that the incidents are open; it says the draft postmortem and remediation plan are not approved. The conclusion that closure is not established still rests on the absence of a closure or verification record."
+    }
+  ]
+}

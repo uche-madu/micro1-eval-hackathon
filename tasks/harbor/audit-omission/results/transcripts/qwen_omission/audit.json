@@ -1,0 +1,12 @@
+{
+  "verdict": "NOT_FIT",
+  "findings": [
+    {
+      "section": "Recommendation",
+      "problem_type": "unsupported_recommendation",
+      "severity": "material",
+      "evidence": "it should direct a specific plan based on the root-cause note, approve that plan, and require verification before closure",
+      "why_it_matters": "The root-cause note addresses only INC-031's certificate failure, while INC-032 was caused by an unrelated failed rollback. Approving a plan based solely on that note would leave the second incident unremediated and closure unsupported."
+    }
+  ]
+}

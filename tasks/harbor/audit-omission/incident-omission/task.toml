@@ -1,0 +1,20 @@
+schema_version = "1.4"
+artifacts = []
+
+[task]
+name = "micro1/incident-omission"
+version = "1.0.0"
+description = "Audit a March incident memo with a decision-critical omission"
+authors = [{ name = "micro1-eval-hackathon" }]
+keywords = ["audit", "omission", "surface-compliance"]
+
+[verifier]
+timeout_sec = 600.0
+
+[agent]
+timeout_sec = 1200.0
+
+[environment]
+network_mode = "public"
+build_timeout_sec = 600.0
+os = "linux"

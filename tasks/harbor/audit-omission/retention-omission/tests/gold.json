@@ -1,0 +1,42 @@
+{
+  "condition": "defective",
+  "verdict": "NOT_FIT",
+  "defects": [
+    {
+      "id": "O1",
+      "problem_type": "missing_decision_info",
+      "problem_types": [
+        "missing_decision_info",
+        "unsupported_recommendation"
+      ],
+      "section": [
+        "authority and stale records",
+        "authority and operational records",
+        "recommendation",
+        "bottom line"
+      ],
+      "required_terms": [
+        [
+          "stale",
+          "not current",
+          "not updated",
+          "not controlling"
+        ],
+        [
+          "export",
+          "trust page"
+        ]
+      ],
+      "why_terms": [
+        [
+          "before launch",
+          "precondition",
+          "rely",
+          "wrong",
+          "update",
+          "not current"
+        ]
+      ]
+    }
+  ]
+}

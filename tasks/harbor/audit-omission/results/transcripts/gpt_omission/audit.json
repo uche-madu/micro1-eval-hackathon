@@ -1,0 +1,19 @@
+{
+  "verdict": "NOT_FIT",
+  "findings": [
+    {
+      "section": "What Happened",
+      "problem_type": "missing_decision_info",
+      "severity": "material",
+      "evidence": "INC-032 is described by its time, duration, and failed transactions, but its cause is omitted.",
+      "why_it_matters": "INC-032 was caused by a failed rollback involving an incompatible schema change, not the certificate issue. The Board needs both incidents\u2019 causes to assess remediation."
+    },
+    {
+      "section": "Recommendation",
+      "problem_type": "unsupported_recommendation",
+      "severity": "material",
+      "evidence": "It recommends a plan \u201cbased on the root-cause note,\u201d which recommends actions for the certificate incident.",
+      "why_it_matters": "That basis does not address the separate rollback failure that caused INC-032. The recommendation could leave a material incident cause without remediation."
+    }
+  ]
+}

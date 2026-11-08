@@ -114,3 +114,7 @@ The clean transcript is in `tasks/harbor/board-brief/results/run2_qwen/`, and th
 ## Subtle-defect audit pilot
 
 `tasks/harbor/audit-subtle/` is the next step: the clean memo with one changed decision-critical sentence. Oracle 4/4 at 1.000. Qwen 3.8 Flash scored **12/12 at 1.000**, so the subtle version is also saturated; no higher model was run. See `tasks/harbor/audit-subtle/PILOT_REPORT.md`.
+
+## Pure-omission audit pilot
+
+`tasks/harbor/audit-omission/` tests whether a model notices a decision-critical fact that is absent from an otherwise correct memo. Oracle 4/4 at 1.000. Final Qwen and GPT-6 Luna runs: **10/10 each**, false-pass **0**; an earlier Qwen false pass disappeared after the clean-control memo was corrected. See `tasks/harbor/audit-omission/PILOT_REPORT.md`.

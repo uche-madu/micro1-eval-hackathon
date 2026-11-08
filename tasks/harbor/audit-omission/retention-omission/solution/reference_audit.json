@@ -1,0 +1,12 @@
+{
+  "verdict": "NOT_FIT",
+  "findings": [
+    {
+      "section": "Authority and Operational Records",
+      "problem_type": "missing_decision_info",
+      "severity": "material",
+      "evidence": "The system-of-record export shows EU retention at 12 months; the memo never says it is stale or that the trust page is not current.",
+      "why_it_matters": "The export and trust page still show the old 12-month value. Without stating that they are stale, the recommendation to proceed without updates relies on records that are not current."
+    }
+  ]
+}
