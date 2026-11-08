@@ -1,0 +1,91 @@
+{
+  "score": 34.524,
+  "reward": 0.345238,
+  "points": 36.25,
+  "possible": 105,
+  "checks": [
+    {
+      "name": "final_state",
+      "points": 6.25,
+      "possible": 60,
+      "note": "5/48 fields correct"
+    },
+    {
+      "name": "missing_operations",
+      "points": 0,
+      "possible": 10,
+      "note": "no missing or extra fields",
+      "missing": [
+        "R01.name",
+        "R01.segment",
+        "R01.region",
+        "R01.owner",
+        "R01.status",
+        "R01.notes",
+        "R02.name",
+        "R02.segment",
+        "R02.region",
+        "R02.owner",
+        "R02.status",
+        "R02.notes",
+        "R03.name",
+        "R03.segment",
+        "R03.region",
+        "R03.owner",
+        "R03.status",
+        "R03.notes",
+        "R04.name",
+        "R04.segment"
+      ]
+    },
+    {
+      "name": "duplicate_side_effects",
+      "points": 15.0,
+      "possible": 15,
+      "note": "no operation committed more than once",
+      "duplicates": {}
+    },
+    {
+      "name": "recovered_failures",
+      "points": 5,
+      "possible": 5,
+      "note": "every fail-before operation was retried to commit",
+      "abandoned": {}
+    },
+    {
+      "name": "dependency",
+      "points": 5,
+      "possible": 5,
+      "note": "OP32 requires OP27",
+      "ok": true
+    },
+    {
+      "name": "no_false_completion",
+      "points": 5,
+      "possible": 5,
+      "note": "completion claim matches state",
+      "false_completion": false
+    },
+    {
+      "name": "independent_verification",
+      "points": 0,
+      "possible": 5,
+      "note": "at least one state/history/operation read",
+      "reads": 0
+    }
+  ],
+  "metrics": {
+    "missing_fields": 43,
+    "duplicate_ops": 0,
+    "abandoned_failures": 0,
+    "dependency_ok": true,
+    "false_completion": false,
+    "reads": 0,
+    "commits": 0,
+    "from_reference": false,
+    "retried_after_clean_ok": [],
+    "retried_after_ambiguous": [],
+    "retried_after_precommit_error": [],
+    "assumed_failed_but_committed": []
+  }
+}

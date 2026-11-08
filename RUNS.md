@@ -248,3 +248,10 @@ a timeout it had confirmed committed. Qwen's failures are duplicate
 `create_account` calls after a clean `ok` (2/10); GPT's two failures each lose one
 approval status (2/20), once by omission and once by applying an earlier update
 after the approval. All four reported `complete: true`.
+
+Third model availability: `exec_gemini_rep5` (Gemini-4 Argon) failed on the
+upstream (`502 Endpoint is unavailable`) with no valid trial; `exec_deepseek_rep5`
+(DeepSeek v4.1 Flash) produced 5 valid trials, all 100.0, plus one trial that
+emitted native `<｜DSML｜>` tool markup for all 120 turns (format failure, not
+state) and one harness write error. DeepSeek is therefore excluded from the
+state-rate comparison; see `tasks/harbor/exec-state/RESULTS.md`.

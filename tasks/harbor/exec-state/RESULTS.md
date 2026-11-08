@@ -15,11 +15,30 @@ of prior trials. Runs are serial, one model at a time.
 | --- | ---: | ---: | ---: | --- |
 | Qwen 3.8 Flash | 10 | 8 | 2 | duplicate `create_account` after a clean `ok` |
 | GPT-6 Luna | 20 | 18 | 2 | one missing approval status; false completion |
+| DeepSeek v4.1 Flash | 5 valid | 5 | 0 | no state failure; one format-failure trial excluded |
+| Gemini-4 Argon | 0 | — | — | endpoint unavailable (`502`) |
 
-Both failures in both models are **one lost operation**, not a misjudged
-ambiguous outcome. Across 30 trials and 120 ambiguous outcomes (3 lost acks + 1
-partial batch per trial), **no trial retried an operation it had confirmed
-committed**. `retried_after_ambiguous` is empty in every trial.
+Both Qwen and GPT failures are **one lost operation**, not a misjudged
+ambiguous outcome. Across 30 scored trials and 120 ambiguous outcomes (3 lost
+acks + 1 partial batch per trial), **no trial retried an operation it had
+confirmed committed**. `retried_after_ambiguous` is empty in every trial.
+
+### Third model availability
+
+- **Gemini-4 Argon** (`opencode-go/gemini-4-argon`): the upstream returned
+  `502 Upstream request failed: Endpoint is unavailable` on both attempted
+  trials. The run was stopped; no valid trial completed. This is a connectivity
+  failure, not a model result.
+- **DeepSeek v4.1 Flash** (`opencode-go/deepseek-v4.1-flash`): reachable. Five
+  valid trials scored 100.0 (4 in `exec_deepseek_rep5`, 1 in the probe). One
+  additional trial (`exec-state-b__QKdHtyG`) emitted native `<｜DSML｜>` tool-call
+  markup for all 120 turns, never the contract JSON; it scored 34.5 with 0 valid
+  tool calls and is excluded from the state comparison as a format-compliance
+  failure. One trial failed with a harness write error
+  (`could not write /output/state.json`), also excluded.
+- The third-model evidence therefore says: among valid trials, DeepSeek did not
+  show execution-state divergence; the model with a reproduced state failure is
+  Qwen, and GPT reproduced the missing-approval outcome across two batches.
 
 ## Qwen 3.8 Flash (`opencode-go/qwen3.8-flash`)
 
@@ -80,10 +99,10 @@ final verification read.
 ## What the data says
 
 1. **Lost-acknowledgement reconciliation was not the failure point.** Across 30
-   trials and 120 ambiguous outcomes, neither model retried an operation it had
-   confirmed committed. Both used `get_operation` after a timeout. The hypothesis
-   that an uncertain outcome alone causes divergence was not supported at this
-   scale.
+   scored trials and 120 ambiguous outcomes, no model retried an operation it had
+   confirmed committed. Every model used `get_operation` after a timeout. The
+   hypothesis that an uncertain outcome alone causes divergence was not
+   supported at this scale.
 
 2. **The failures are clean-operation tracking.** Qwen repeated a
    `create_account` that had returned `ok` (2/10). GPT lost an approval status
@@ -100,6 +119,12 @@ final verification read.
    have the same outcome signature and occurred in independent batches. The
    omission (`mMFNLro`) is the cleaner case: no order ambiguity, no lost ack, no
    partial batch — the model simply never executed a listed operation.
+
+5. **The third model does not show the same state failure, but is not a clean
+   comparison.** DeepSeek v4.1 Flash passed all five valid trials; its one low
+   score is a format-compliance failure, not state divergence. Gemini-4 Argon
+   was unavailable. The frontier signal therefore rests on GPT-6 Luna, with
+   Qwen as the cheaper model that fails more often.
 
 ## Limitations
 

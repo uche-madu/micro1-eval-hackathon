@@ -125,4 +125,4 @@ The clean transcript is in `tasks/harbor/board-brief/results/run2_qwen/`, and th
 
 ## Findings
 
-`FINDINGS.md` records the tested axes. The earlier single-context axes were robust; the new execution-state experiment found low-rate but reproducible failures in both models. Qwen 3.8 Flash failed 2/10 trials with a duplicate `create_account` after a clean `ok`; GPT-6 Luna failed 2/20 across two independent batches, each time losing one approval status and falsely claiming completion. No trial retried a confirmed timeout. See `tasks/harbor/exec-state/RESULTS.md`.
+`FINDINGS.md` records the tested axes. The earlier single-context axes were robust; the new execution-state experiment found low-rate but reproducible failures in both models. Qwen 3.8 Flash failed 2/10 trials with a duplicate `create_account` after a clean `ok`; GPT-6 Luna failed 2/20 across two independent batches, each time losing one approval status and falsely claiming completion. No trial retried a confirmed timeout. DeepSeek v4.1 Flash passed all five valid third-model trials; Gemini-4 Argon was unavailable. See `tasks/harbor/exec-state/RESULTS.md`.

@@ -50,7 +50,7 @@ The 10-turn chat is a ceiling for Qwen. G1–G4 were not reproduced at that dept
 
 | Gap | Result | Status |
 |---|---|---|
-| G18 execution-state divergence | Qwen 2/10 duplicate `create_account` after clean `ok`; GPT 2/20 (two batches) each with one missing approval status and false completion; 0/30 retried a confirmed timeout | **Reproduced in both models; low rate** |
+| G18 execution-state divergence | Qwen 2/10 duplicate `create_account` after clean `ok`; GPT 2/20 (two batches) each with one missing approval status and false completion; 0/30 scored trials retried a confirmed timeout; DeepSeek 5/5 valid trials, Gemini unavailable | **Reproduced in Qwen and GPT; low rate** |
 
 The earlier conclusion that the feasible axes are exhausted is superseded for this
 axis. Against a persistent account store with 40 operations and a hidden fault
