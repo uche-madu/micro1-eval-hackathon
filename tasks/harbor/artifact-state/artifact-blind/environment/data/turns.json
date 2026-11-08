@@ -1,0 +1,82 @@
+[
+  {
+    "turn": 1,
+    "text": "Set eu_new_retention_months to 24."
+  },
+  {
+    "turn": 2,
+    "text": "Set eu_old_retention_months to 15."
+  },
+  {
+    "turn": 3,
+    "text": "Set incident_2_march_minutes to 80."
+  },
+  {
+    "turn": 4,
+    "text": "Set total_transactions to 15600."
+  },
+  {
+    "turn": 5,
+    "text": "Set remediation_approved to true."
+  },
+  {
+    "turn": 6,
+    "text": "Set launch_approved to true."
+  },
+  {
+    "turn": 7,
+    "text": "Set trust_page_current to true."
+  },
+  {
+    "turn": 8,
+    "text": "Set export_current to true."
+  },
+  {
+    "turn": 9,
+    "text": "Set eu_old_retention_months to 12."
+  },
+  {
+    "turn": 10,
+    "text": "Return the current config as JSON, and no other text."
+  },
+  {
+    "turn": 11,
+    "text": "Set incident_2_march_minutes to 75."
+  },
+  {
+    "turn": 12,
+    "text": "Set total_transactions to 15500."
+  },
+  {
+    "turn": 13,
+    "text": "Set remediation_approved to false."
+  },
+  {
+    "turn": 14,
+    "text": "Set launch_approved to false."
+  },
+  {
+    "turn": 15,
+    "text": "Set trust_page_current to false."
+  },
+  {
+    "turn": 16,
+    "text": "Set export_current to false."
+  },
+  {
+    "turn": 17,
+    "text": "Set eu_new_retention_months to 26."
+  },
+  {
+    "turn": 18,
+    "text": "Set incident_4_march_cause to \"failed rollback\"."
+  },
+  {
+    "turn": 19,
+    "text": "Set eu_new_retention_months to 27."
+  },
+  {
+    "turn": 20,
+    "text": "Return the final config as JSON, and no other text."
+  }
+]

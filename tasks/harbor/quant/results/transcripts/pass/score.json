@@ -1,0 +1,53 @@
+{
+  "score": 100.0,
+  "reward": 1.0,
+  "points": 101,
+  "possible": 101,
+  "checks": [
+    {
+      "name": "schema",
+      "points": 1,
+      "possible": 1,
+      "note": "answer JSON"
+    },
+    {
+      "name": "total_rebate",
+      "points": 50,
+      "possible": 50,
+      "note": "expected 69850"
+    },
+    {
+      "name": "total_net_units",
+      "points": 30,
+      "possible": 30,
+      "note": "expected 8730"
+    },
+    {
+      "name": "excluded_accounts",
+      "points": 20,
+      "possible": 20,
+      "note": "expected ['ACC-12']"
+    }
+  ],
+  "details": {
+    "total_rebate": {
+      "model": 69850,
+      "answer": 69850,
+      "ok": true
+    },
+    "total_net_units": {
+      "model": 8730,
+      "answer": 8730,
+      "ok": true
+    },
+    "excluded_accounts": {
+      "model": [
+        "ACC-12"
+      ],
+      "answer": [
+        "ACC-12"
+      ],
+      "ok": true
+    }
+  }
+}

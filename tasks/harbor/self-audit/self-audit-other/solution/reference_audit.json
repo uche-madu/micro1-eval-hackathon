@@ -1,0 +1,12 @@
+{
+  "verdict": "NOT_FIT",
+  "findings": [
+    {
+      "section": "What Happened",
+      "problem_type": "missing_decision_info",
+      "severity": "material",
+      "evidence": "INC-032 began on 4 March ... and caused 3,100 failed transactions; the memo omits the failed rollback cause.",
+      "why_it_matters": "Without the rollback cause, the certificate-only remediation and closure decision are incomplete."
+    }
+  ]
+}

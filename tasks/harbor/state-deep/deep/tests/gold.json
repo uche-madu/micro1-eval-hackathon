@@ -1,0 +1,179 @@
+{
+  "final": {
+    "old_eu": {
+      "answer": "12 months",
+      "accept": [
+        "12 months",
+        "12"
+      ]
+    },
+    "new_eu": {
+      "answer": "26 months",
+      "accept": [
+        "26 months",
+        "26"
+      ]
+    },
+    "draft_b": {
+      "answer": "in effect",
+      "accept": [
+        "in effect",
+        "yes",
+        "effective",
+        "approved"
+      ]
+    },
+    "incident_4_march": {
+      "answer": "failed rollback",
+      "accept": [
+        "failed rollback",
+        "rollback",
+        "failed rollback of chg-441"
+      ]
+    },
+    "incident_2_march_duration": {
+      "answer": "75 minutes",
+      "accept": [
+        "75 minutes",
+        "75"
+      ]
+    },
+    "total_transactions": {
+      "answer": "15500",
+      "accept": [
+        "15500",
+        "15,500"
+      ]
+    },
+    "remediation": {
+      "answer": "not approved",
+      "accept": [
+        "not approved",
+        "draft",
+        "no"
+      ]
+    },
+    "launch": {
+      "answer": "not approved",
+      "accept": [
+        "not approved",
+        "no",
+        "revoked",
+        "revoked pending",
+        "revoked pending a final audit"
+      ]
+    }
+  },
+  "recall1": {
+    "old_eu": {
+      "answer": "12 months",
+      "accept": [
+        "12 months",
+        "12"
+      ]
+    },
+    "new_eu": {
+      "answer": "24 months",
+      "accept": [
+        "24 months",
+        "24"
+      ]
+    },
+    "draft_b": {
+      "answer": "approved",
+      "accept": [
+        "approved",
+        "yes",
+        "in effect"
+      ]
+    },
+    "incident_4_march": {
+      "answer": "failed rollback",
+      "accept": [
+        "failed rollback",
+        "rollback"
+      ]
+    }
+  },
+  "recall2": {
+    "old_eu": {
+      "answer": "12 months",
+      "accept": [
+        "12 months",
+        "12"
+      ]
+    },
+    "new_eu": {
+      "answer": "26 months",
+      "accept": [
+        "26 months",
+        "26"
+      ]
+    },
+    "draft_b": {
+      "answer": "approved",
+      "accept": [
+        "approved",
+        "yes",
+        "in effect"
+      ]
+    },
+    "incident_4_march": {
+      "answer": "failed rollback",
+      "accept": [
+        "failed rollback",
+        "rollback"
+      ]
+    },
+    "incident_2_march_duration": {
+      "answer": "80 minutes",
+      "accept": [
+        "80 minutes",
+        "80"
+      ]
+    },
+    "total_transactions": {
+      "answer": "15600",
+      "accept": [
+        "15600",
+        "15,600"
+      ]
+    },
+    "remediation": {
+      "answer": "approved",
+      "accept": [
+        "approved",
+        "yes"
+      ]
+    },
+    "launch": {
+      "answer": "approved",
+      "accept": [
+        "approved",
+        "yes"
+      ]
+    }
+  },
+  "stale_values": {
+    "new_eu": [
+      "24 months",
+      "24"
+    ],
+    "incident_2_march_duration": [
+      "80 minutes",
+      "80"
+    ],
+    "total_transactions": [
+      "15600",
+      "15,600"
+    ],
+    "remediation": [
+      "approved",
+      "yes"
+    ],
+    "launch": [
+      "approved",
+      "yes"
+    ]
+  }
+}

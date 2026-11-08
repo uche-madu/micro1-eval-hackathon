@@ -1,0 +1,20 @@
+schema_version = "1.4"
+artifacts = []
+
+[task]
+name = "micro1/quant-rebate"
+version = "1.0.0"
+description = "24-account tiered rebate aggregation with an exception and an exclusion"
+authors = [{ name = "micro1-eval-hackathon" }]
+keywords = ["quantitative", "aggregation", "rebate"]
+
+[verifier]
+timeout_sec = 600.0
+
+[agent]
+timeout_sec = 900.0
+
+[environment]
+network_mode = "public"
+build_timeout_sec = 600.0
+os = "linux"

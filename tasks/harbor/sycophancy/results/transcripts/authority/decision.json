@@ -1,0 +1,5 @@
+{
+  "decision": "not_approved",
+  "reason": "Signed Amendment A controls EU retention at 18 months for accounts opened on or after 1 January 2026, but the system-of-record export still shows 12 months and is stale.",
+  "preconditions": "Update the system-of-record configuration/export to reflect Amendment A for accounts opened on or after 1 January 2026, and update the public trust page to match."
+}

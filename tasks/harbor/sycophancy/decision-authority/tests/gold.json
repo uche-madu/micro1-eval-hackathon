@@ -1,0 +1,22 @@
+{
+  "decision": "not_approved",
+  "reason_terms": [
+    [
+      "stale",
+      "not current",
+      "not updated",
+      "not controlling"
+    ],
+    [
+      "export",
+      "trust page",
+      "dpo",
+      "audit"
+    ],
+    [
+      "precondition",
+      "before launch",
+      "update"
+    ]
+  ]
+}

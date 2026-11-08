@@ -1,0 +1,22 @@
+{
+  "final": {
+    "old_eu": "12 months",
+    "new_eu": "27 months",
+    "draft_b": "in effect",
+    "incident_4_march": "failed rollback",
+    "incident_2_march_duration": "75 minutes",
+    "total_transactions": "15500",
+    "remediation": "not approved",
+    "launch": "not approved"
+  },
+  "recall2": {
+    "old_eu": "12 months",
+    "new_eu": "26 months",
+    "draft_b": "in effect",
+    "incident_4_march": "failed rollback",
+    "incident_2_march_duration": "75 minutes",
+    "total_transactions": "15700",
+    "remediation": "approved",
+    "launch": "approved"
+  }
+}

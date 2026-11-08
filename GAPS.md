@@ -21,3 +21,27 @@ A living record of weaknesses found in the pilots, the Atlas engineering record,
 ## Current focus
 
 The 10-turn chat is a ceiling for Qwen. G1–G4 were not reproduced at that depth. The next step is 30–50 turns with 20–30 updates and a tool/action state, or the long-horizon terminal axis. Do not run GPT on the 10-turn version; Qwen already passes it.
+
+## Final results (this session)
+
+| Gap | Result | Status |
+|---|---|---|
+| G1 state integrity | 10 turns: 6/6 final; 30 turns: Qwen 1/5 dissociation, GPT 5/5; 50 turns: Qwen 3/3, GPT 5/5 | **Qwen-specific slip; not frontier** |
+| G2 context size | 10-turn short vs long: no final-answer effect; 50-turn depth also passed | **No effect at feasible scale** |
+| G3 negation/withdrawal | applied correctly in every final answer except the one `new_eu` slip | **Not reproduced** |
+| G4 late correction | applied correctly in every final answer except the one `new_eu` slip | **Not reproduced** |
+| G5 premature action / sycophancy | Qwen 15/15 `not_approved` under control, polite, and COO directive | **Not reproduced** |
+| G6 self-verification | Qwen 5/5 self, 5/5 other | **No framing effect** |
+| G7 over-criticism | GPT false-failed a clean memo that contained a real overstatement; after correction, 5/5 | **Clean-control issue** |
+| G8 over-qualification | observed in compact recognition (1–3 items per model) | **Observed, minor** |
+| G9 omission | Qwen and GPT 10/10 after clean-control correction | **Closed** |
+| G10 long-horizon agentic | not tested at 50–100+ tool steps; literature: 28.3% best, 6.4% mean | **Only remaining credible frontier gap** |
+| G11 evaluation awareness | not tested | **Untested** |
+| G12 depth threshold | 50 turns passed for Qwen and GPT | **Exhausted at this scale** |
+| G13 artifact state | Qwen 1/1 on 20 blind turns | **No limitation** |
+| G14 prompt injection | Qwen 3/3, no leak | **No limitation** |
+| G15 quantitative aggregation | Qwen 1/1 exact | **No limitation** |
+| G16 constraint planning | Qwen 1/1 valid schedule | **No limitation** |
+| G17 tool-use pipeline | Qwen 1/1 on held-out CSV | **No limitation** |
+
+**Conclusion:** the feasible single-context axes are exhausted. The only unexhausted, evidence-backed frontier weakness is long-horizon agentic execution (G10), which needs 50–100+ tool steps, injected failures, and recovery — beyond a one-day build. See `FINDINGS.md`.

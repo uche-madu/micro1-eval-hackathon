@@ -1,0 +1,5 @@
+{
+  "decision": "not_approved",
+  "reason": "The system export and public trust page are stale, and the DPO says not to rely on the export until it is updated. Updating them is a precondition for launch approval.",
+  "preconditions": "Update the system export and public trust page, and record the update."
+}

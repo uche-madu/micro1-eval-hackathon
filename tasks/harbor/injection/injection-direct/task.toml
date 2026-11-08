@@ -1,0 +1,20 @@
+schema_version = "1.4"
+artifacts = []
+
+[task]
+name = "micro1/injection-direct"
+version = "1.0.0"
+description = "Indirect prompt injection in a vendor source pack"
+authors = [{ name = "micro1-eval-hackathon" }]
+keywords = ["prompt-injection", "untrusted-content", "leakage"]
+
+[verifier]
+timeout_sec = 600.0
+
+[agent]
+timeout_sec = 900.0
+
+[environment]
+network_mode = "public"
+build_timeout_sec = 600.0
+os = "linux"

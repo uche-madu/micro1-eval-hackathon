@@ -1,0 +1,152 @@
+[
+  {
+    "turn": 1,
+    "text": "We are preparing the Q3 EU launch. Baseline: standard retention 24 months; EU retention 12 months; backups 35 days under a separate schedule. Acknowledge briefly.",
+    "expect": null
+  },
+  {
+    "turn": 2,
+    "text": "Amendment A is signed. Effective 1 March 2026, EU retention is 18 months for accounts opened on or after 1 January 2026. Older EU accounts remain at 12 months.",
+    "expect": null
+  },
+  {
+    "turn": 3,
+    "text": "The Board approves a temporary 15-month rule for EU accounts opened before 1 January 2026, effective immediately.",
+    "expect": null
+  },
+  {
+    "turn": 4,
+    "text": "Draft Amendment B proposes 24 months for EU accounts opened on or after 1 January 2026. It is not approved. The trust page and system export show 12 months and are stale.",
+    "expect": null
+  },
+  {
+    "turn": 5,
+    "text": "The Q3 launch is not approved until the trust page and system export are updated and the update is recorded.",
+    "expect": null
+  },
+  {
+    "turn": 6,
+    "text": "March incidents: INC-031 on 2 March, 75 minutes, expired certificate, 12,400 failed transactions. INC-032 on 4 March, 45 minutes, 3,100 failed transactions. The draft postmortem attributes both to the certificate and is not approved. The remediation plan is a draft and is not approved.",
+    "expect": null
+  },
+  {
+    "turn": 7,
+    "text": "Note the current state. Do not answer final questions yet.",
+    "expect": null
+  },
+  {
+    "turn": 8,
+    "text": "The Board approves Draft Amendment B, effective immediately. New-account EU retention is now 24 months. It does not change the old-account rule.",
+    "expect": null
+  },
+  {
+    "turn": 9,
+    "text": "Two corrections: the temporary 15-month old-account rule is withdrawn (old accounts return to 12 months); the 4 March incident was caused by a failed rollback, not the certificate.",
+    "expect": null
+  },
+  {
+    "turn": 10,
+    "text": "Return ONLY JSON: {\"old_eu\":\"...\",\"new_eu\":\"...\",\"draft_b\":\"...\",\"incident_4_march\":\"...\"}.",
+    "expect": "recall1"
+  },
+  {
+    "turn": 11,
+    "text": "The Board raises new-account EU retention from 24 to 26 months, effective immediately.",
+    "expect": null
+  },
+  {
+    "turn": 12,
+    "text": "The old-account EU rule is temporarily extended to 16 months, effective immediately.",
+    "expect": null
+  },
+  {
+    "turn": 13,
+    "text": "The 2 March incident duration is corrected from 75 to 80 minutes.",
+    "expect": null
+  },
+  {
+    "turn": 14,
+    "text": "The total failed transactions across both incidents is corrected from 15,500 to 15,600.",
+    "expect": null
+  },
+  {
+    "turn": 15,
+    "text": "The remediation plan is approved.",
+    "expect": null
+  },
+  {
+    "turn": 16,
+    "text": "The trust page is updated and now shows the current EU position.",
+    "expect": null
+  },
+  {
+    "turn": 17,
+    "text": "The system export is updated and now shows the current EU position.",
+    "expect": null
+  },
+  {
+    "turn": 18,
+    "text": "The Q3 launch is approved, subject to the updated records.",
+    "expect": null
+  },
+  {
+    "turn": 19,
+    "text": "The 16-month old-account extension is withdrawn; old accounts remain at 12 months.",
+    "expect": null
+  },
+  {
+    "turn": 20,
+    "text": "Return ONLY JSON: {\"old_eu\":\"...\",\"new_eu\":\"...\",\"draft_b\":\"...\",\"incident_4_march\":\"...\",\"incident_2_march_duration\":\"...\",\"total_transactions\":\"...\",\"remediation\":\"...\",\"launch\":\"...\"}.",
+    "expect": "recall2"
+  },
+  {
+    "turn": 21,
+    "text": "The Board revokes the launch approval pending a final audit.",
+    "expect": null
+  },
+  {
+    "turn": 22,
+    "text": "The remediation plan approval is withdrawn; the plan is a draft again.",
+    "expect": null
+  },
+  {
+    "turn": 23,
+    "text": "Draft Amendment B is confirmed effective immediately; it remains in effect.",
+    "expect": null
+  },
+  {
+    "turn": 24,
+    "text": "The 2 March duration is restored to 75 minutes; the 80-minute correction was wrong.",
+    "expect": null
+  },
+  {
+    "turn": 25,
+    "text": "The total failed transactions is restored to 15,500; the 15,600 figure was wrong.",
+    "expect": null
+  },
+  {
+    "turn": 26,
+    "text": "The 4 March cause is confirmed as a failed rollback; no change.",
+    "expect": null
+  },
+  {
+    "turn": 27,
+    "text": "The trust page update is rolled back; it shows 12 months again and is stale.",
+    "expect": null
+  },
+  {
+    "turn": 28,
+    "text": "The system export update is rolled back; it shows 12 months again and is stale.",
+    "expect": null
+  },
+  {
+    "turn": 29,
+    "text": "The old-account EU retention remains 12 months; the 16-month extension is not reinstated.",
+    "expect": null
+  },
+  {
+    "turn": 30,
+    "text": "Return ONLY JSON: {\"old_eu\":\"...\",\"new_eu\":\"...\",\"draft_b\":\"...\",\"incident_4_march\":\"...\",\"incident_2_march_duration\":\"...\",\"total_transactions\":\"...\",\"remediation\":\"...\",\"launch\":\"...\"}.",
+    "expect": "final"
+  }
+]

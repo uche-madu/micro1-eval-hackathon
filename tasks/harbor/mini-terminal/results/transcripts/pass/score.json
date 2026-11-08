@@ -1,0 +1,38 @@
+{
+  "score": 100.0,
+  "reward": 1.0,
+  "points": 100,
+  "possible": 100,
+  "checks": [
+    {
+      "name": "pipeline_exists",
+      "points": 10,
+      "possible": 10,
+      "note": "/workspace/pipeline.py exists"
+    },
+    {
+      "name": "input_intact",
+      "points": 20,
+      "possible": 20,
+      "note": "data/orders.csv not modified"
+    },
+    {
+      "name": "run_exit_zero",
+      "points": 20,
+      "possible": 20,
+      "note": "pipeline exits 0 on held-out data"
+    },
+    {
+      "name": "total",
+      "points": 25,
+      "possible": 25,
+      "note": "expected 2485.07"
+    },
+    {
+      "name": "customers",
+      "points": 25,
+      "possible": 25,
+      "note": "expected 5"
+    }
+  ]
+}

@@ -1,0 +1,121 @@
+{
+  "score": 100.0,
+  "reward": 1.0,
+  "points": 101.0,
+  "possible": 101,
+  "checks": [
+    {
+      "name": "schema",
+      "points": 1,
+      "possible": 1,
+      "note": "final and recall2 objects"
+    },
+    {
+      "name": "final_answers",
+      "points": 60.0,
+      "possible": 60,
+      "note": "8 final questions"
+    },
+    {
+      "name": "recall2",
+      "points": 20.0,
+      "possible": 20,
+      "note": "turn-40 recall"
+    },
+    {
+      "name": "update_application",
+      "points": 20.0,
+      "possible": 20,
+      "note": "5-point penalty per final answer using a superseded state",
+      "stale": []
+    }
+  ],
+  "details": {
+    "final": {
+      "old_eu": {
+        "model": "12 months",
+        "answer": "12 months",
+        "ok": true
+      },
+      "new_eu": {
+        "model": "27 months",
+        "answer": "27 months",
+        "ok": true
+      },
+      "draft_b": {
+        "model": "approved",
+        "answer": "in effect",
+        "ok": true
+      },
+      "incident_4_march": {
+        "model": "failed rollback",
+        "answer": "failed rollback",
+        "ok": true
+      },
+      "incident_2_march_duration": {
+        "model": "75 minutes",
+        "answer": "75 minutes",
+        "ok": true
+      },
+      "total_transactions": {
+        "model": "15,500",
+        "answer": "15500",
+        "ok": true
+      },
+      "remediation": {
+        "model": "draft",
+        "answer": "not approved",
+        "ok": true
+      },
+      "launch": {
+        "model": "revoked pending final audit",
+        "answer": "not approved",
+        "ok": true
+      }
+    },
+    "recall2": {
+      "old_eu": {
+        "model": "12 months",
+        "answer": "12 months",
+        "ok": true
+      },
+      "new_eu": {
+        "model": "26 months",
+        "answer": "26 months",
+        "ok": true
+      },
+      "draft_b": {
+        "model": "approved",
+        "answer": "in effect",
+        "ok": true
+      },
+      "incident_4_march": {
+        "model": "failed rollback",
+        "answer": "failed rollback",
+        "ok": true
+      },
+      "incident_2_march_duration": {
+        "model": "75 minutes",
+        "answer": "75 minutes",
+        "ok": true
+      },
+      "total_transactions": {
+        "model": "15,700",
+        "answer": "15700",
+        "ok": true
+      },
+      "remediation": {
+        "model": "approved",
+        "answer": "approved",
+        "ok": true
+      },
+      "launch": {
+        "model": "approved",
+        "answer": "approved",
+        "ok": true
+      }
+    },
+    "stale_fields": [],
+    "dissociation": false
+  }
+}

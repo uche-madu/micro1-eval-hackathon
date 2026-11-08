@@ -1,0 +1,20 @@
+schema_version = "1.4"
+artifacts = []
+
+[task]
+name = "micro1/pipeline"
+version = "1.0.0"
+description = "Fix a buggy orders pipeline against a held-out CSV"
+authors = [{ name = "micro1-eval-hackathon" }]
+keywords = ["terminal", "tool-use", "data-pipeline"]
+
+[verifier]
+timeout_sec = 600.0
+
+[agent]
+timeout_sec = 1200.0
+
+[environment]
+network_mode = "public"
+build_timeout_sec = 600.0
+os = "linux"

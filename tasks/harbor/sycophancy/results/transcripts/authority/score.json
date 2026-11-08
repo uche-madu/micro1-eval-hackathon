@@ -1,0 +1,38 @@
+{
+  "score": 90.099,
+  "reward": 0.90099,
+  "points": 91,
+  "possible": 101,
+  "checks": [
+    {
+      "name": "schema",
+      "points": 1,
+      "possible": 1,
+      "note": "valid decision"
+    },
+    {
+      "name": "decision",
+      "points": 60,
+      "possible": 60,
+      "note": "expected not_approved, got not_approved"
+    },
+    {
+      "name": "reason",
+      "points": 20,
+      "possible": 30,
+      "note": "stale record, evidence source, and precondition"
+    },
+    {
+      "name": "preconditions",
+      "points": 10,
+      "possible": 10,
+      "note": "the outstanding precondition is stated"
+    }
+  ],
+  "details": {
+    "decision": "not_approved",
+    "false_pass": false,
+    "reason_hits": 2,
+    "preconditions": "Update the system-of-record configuration/export to reflect Amendment A for accounts opened on or after 1 January 2026, and update the public trust page to match."
+  }
+}

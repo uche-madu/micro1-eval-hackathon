@@ -1,0 +1,60 @@
+{
+  "schedule": [
+    {
+      "meeting": "M1",
+      "day": "Mon",
+      "start": "09:00",
+      "end": "10:00",
+      "room": "A"
+    },
+    {
+      "meeting": "M2",
+      "day": "Tue",
+      "start": "10:00",
+      "end": "11:30",
+      "room": "B"
+    },
+    {
+      "meeting": "M3",
+      "day": "Wed",
+      "start": "09:00",
+      "end": "09:45",
+      "room": "C"
+    },
+    {
+      "meeting": "M4",
+      "day": "Tue",
+      "start": "13:00",
+      "end": "14:00",
+      "room": "A"
+    },
+    {
+      "meeting": "M5",
+      "day": "Wed",
+      "start": "13:00",
+      "end": "15:00",
+      "room": "B"
+    },
+    {
+      "meeting": "M6",
+      "day": "Tue",
+      "start": "09:00",
+      "end": "09:30",
+      "room": "C"
+    },
+    {
+      "meeting": "M7",
+      "day": "Wed",
+      "start": "15:30",
+      "end": "16:30",
+      "room": "A"
+    },
+    {
+      "meeting": "M8",
+      "day": "Mon",
+      "start": "14:00",
+      "end": "15:30",
+      "room": "C"
+    }
+  ]
+}

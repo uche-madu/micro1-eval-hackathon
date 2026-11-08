@@ -122,3 +122,7 @@ The clean transcript is in `tasks/harbor/board-brief/results/run2_qwen/`, and th
 ## 10-turn state-integrity pilot
 
 `tasks/harbor/state-integrity/` tests whether the model applies late updates after a recall probe, with short vs long context. Oracle 2/2 at 1.000. Qwen answered all six final questions correctly in **6/6** trials; the two 0.952s were an ambiguous recall field, not state failure. 10 turns is below the failure regime. See `tasks/harbor/state-integrity/PILOT_REPORT.md` and `GAPS.md`.
+
+## Findings
+
+`FINDINGS.md` records all 15 tested axes and the honest result: no frontier-model weakness was found at the feasible scale. The only real state failure was a Qwen 30-turn slip (1/5), not reproduced at 50 turns; GPT-6 Luna passed every check. `GAPS.md` tracks the remaining long-horizon agentic gap.

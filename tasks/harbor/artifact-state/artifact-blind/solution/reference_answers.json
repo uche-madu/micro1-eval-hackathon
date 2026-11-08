@@ -1,0 +1,28 @@
+{
+  "final": {
+    "standard_retention_months": 24,
+    "eu_old_retention_months": 12,
+    "eu_new_retention_months": 27,
+    "backups_days": 35,
+    "launch_approved": false,
+    "remediation_approved": false,
+    "incident_2_march_minutes": 75,
+    "incident_4_march_cause": "failed rollback",
+    "total_transactions": 15500,
+    "trust_page_current": false,
+    "export_current": false
+  },
+  "probe": {
+    "standard_retention_months": 24,
+    "eu_old_retention_months": 12,
+    "eu_new_retention_months": 24,
+    "backups_days": 35,
+    "launch_approved": true,
+    "remediation_approved": true,
+    "incident_2_march_minutes": 80,
+    "incident_4_march_cause": "certificate",
+    "total_transactions": 15600,
+    "trust_page_current": true,
+    "export_current": true
+  }
+}

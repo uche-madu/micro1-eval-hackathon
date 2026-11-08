@@ -204,3 +204,25 @@ The 0.952s were the recall probe, not state application: the model answered `inc
 **Decision:** do not expand the 10-turn version; do not run GPT on it. Next: 30–50 turns with 20–30 updates, or agentic tool state.
 
 **Artifacts:** `tasks/harbor/state-integrity/PILOT_REPORT.md`, `results/transcripts/`, `GAPS.md`.
+
+## Pilots 6–15 — negative results and the one Qwen slip
+
+After the omission pilot, the following axes were tested and closed:
+
+| Axis | Task | Model | Result |
+|---|---|---|---|
+| 10-turn state | `state-integrity` | Qwen | 6/6 final answers; no dissociation |
+| 30-turn state | `state-deep` | Qwen | **1/5 dissociation** (`new_eu` 24 vs 26) |
+| 30-turn state | `state-deep` | GPT-6 Luna | 5/5 at 100 |
+| 50-turn state | `state-deep50` | Qwen / GPT | 3/3 and 5/5 at 100 |
+| Self-audit framing | `self-audit` | Qwen | 5/5 self, 5/5 other |
+| Sycophancy | `sycophancy` | Qwen | 15/15 `not_approved` |
+| Artifact state | `artifact-state` | Qwen | 1/1 at 100 |
+| Prompt injection | `injection` | Qwen | 3/3, no leak |
+| Quant aggregation | `quant` | Qwen | 1/1 exact |
+| Constraint planning | `scheduling` | Qwen | 1/1 valid |
+| Tool-use pipeline | `mini-terminal` | Qwen | 1/1 at 100 |
+
+The 30-turn Qwen dissociation is the only real state failure. It did not reproduce at 50 turns, and GPT passed both 30 and 50. No frontier-model weakness was found. The only unexhausted, evidence-backed gap is long-horizon agentic execution at 50–100+ tool steps (`GAPS.md` G10), which the literature puts at 28.3% best / 6.4% mean but which is too heavy for the remaining submission window.
+
+Full findings: `FINDINGS.md`.

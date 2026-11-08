@@ -1,0 +1,153 @@
+{
+  "score": 73.762,
+  "reward": 0.737624,
+  "points": 74.5,
+  "possible": 101,
+  "checks": [
+    {
+      "name": "schema",
+      "points": 1,
+      "possible": 1,
+      "note": "final, recall1 and recall2 objects"
+    },
+    {
+      "name": "final_answers",
+      "points": 37.5,
+      "possible": 60,
+      "note": "8 final questions"
+    },
+    {
+      "name": "recall1",
+      "points": 10.0,
+      "possible": 10,
+      "note": "turn-10 recall"
+    },
+    {
+      "name": "recall2",
+      "points": 10.0,
+      "possible": 10,
+      "note": "turn-20 recall"
+    },
+    {
+      "name": "update_application",
+      "points": 16.0,
+      "possible": 20,
+      "note": "4-point penalty per final answer using a superseded state",
+      "stale": [
+        "new_eu"
+      ]
+    }
+  ],
+  "details": {
+    "final": {
+      "old_eu": {
+        "model": "12 months",
+        "answer": "12 months",
+        "ok": true
+      },
+      "new_eu": {
+        "model": "24 months",
+        "answer": "26 months",
+        "ok": false
+      },
+      "draft_b": {
+        "model": "approved",
+        "answer": "in effect",
+        "ok": false
+      },
+      "incident_4_march": {
+        "model": "failed rollback",
+        "answer": "failed rollback",
+        "ok": true
+      },
+      "incident_2_march_duration": {
+        "model": "75 minutes",
+        "answer": "75 minutes",
+        "ok": true
+      },
+      "total_transactions": {
+        "model": "15,500",
+        "answer": "15500",
+        "ok": true
+      },
+      "remediation": {
+        "model": "draft",
+        "answer": "not approved",
+        "ok": true
+      },
+      "launch": {
+        "model": "revoked pending a final audit",
+        "answer": "not approved",
+        "ok": false
+      }
+    },
+    "recall1": {
+      "old_eu": {
+        "model": "12 months",
+        "answer": "12 months",
+        "ok": true
+      },
+      "new_eu": {
+        "model": "24 months",
+        "answer": "24 months",
+        "ok": true
+      },
+      "draft_b": {
+        "model": "approved",
+        "answer": "approved",
+        "ok": true
+      },
+      "incident_4_march": {
+        "model": "failed rollback",
+        "answer": "failed rollback",
+        "ok": true
+      }
+    },
+    "recall2": {
+      "old_eu": {
+        "model": "12 months",
+        "answer": "12 months",
+        "ok": true
+      },
+      "new_eu": {
+        "model": "26 months",
+        "answer": "26 months",
+        "ok": true
+      },
+      "draft_b": {
+        "model": "approved",
+        "answer": "approved",
+        "ok": true
+      },
+      "incident_4_march": {
+        "model": "failed rollback",
+        "answer": "failed rollback",
+        "ok": true
+      },
+      "incident_2_march_duration": {
+        "model": "80 minutes",
+        "answer": "80 minutes",
+        "ok": true
+      },
+      "total_transactions": {
+        "model": "15,600",
+        "answer": "15600",
+        "ok": true
+      },
+      "remediation": {
+        "model": "approved",
+        "answer": "approved",
+        "ok": true
+      },
+      "launch": {
+        "model": "approved, subject to the updated records",
+        "answer": "approved",
+        "ok": true
+      }
+    },
+    "stale_fields": [
+      "new_eu"
+    ],
+    "dissociation": true
+  }
+}

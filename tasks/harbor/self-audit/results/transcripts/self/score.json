@@ -1,0 +1,59 @@
+{
+  "score": 100.0,
+  "reward": 1.0,
+  "points": 105,
+  "possible": 105,
+  "checks": [
+    {
+      "name": "schema",
+      "points": 5,
+      "possible": 5,
+      "note": "valid audit JSON",
+      "error": null
+    },
+    {
+      "name": "verdict",
+      "points": 40,
+      "possible": 40,
+      "note": "expected NOT_FIT, got NOT_FIT"
+    },
+    {
+      "name": "defect_detection",
+      "points": 40,
+      "possible": 40,
+      "note": "the seeded subtle defect is identified"
+    },
+    {
+      "name": "why_it_matters",
+      "points": 20,
+      "possible": 20,
+      "note": "the decision consequence is explained"
+    }
+  ],
+  "details": {
+    "matched": [
+      {
+        "defect": "S1",
+        "finding": {
+          "section": "What Happened",
+          "problem_type": "missing_decision_info",
+          "severity": "material",
+          "evidence": "INC-032 began on 4 March at 09:10 UTC, lasted 45 minutes, and caused 3,100 failed transactions [I2].",
+          "why_it_matters": "The memo omits INC-032's root cause, a failed rollback of CHG-441, which is decision-critical because certificate-focused remediation would not address the second incident."
+        },
+        "why_ok": true
+      }
+    ],
+    "false_defects": [
+      {
+        "section": "Recommendation",
+        "problem_type": "unsupported_recommendation",
+        "severity": "material",
+        "evidence": "It should direct a specific plan based on the root-cause note, approve that plan, and require verification before closure.",
+        "why_it_matters": "The root-cause note addresses only INC-031's certificate issue; the source pack does not support approving a single plan as sufficient for both incidents or for closure."
+      }
+    ],
+    "false_pass": false,
+    "false_fail": false
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "condition": "defective",
+  "verdict": "NOT_FIT",
+  "defects": [
+    {
+      "id": "S1",
+      "problem_type": "missing_decision_info",
+      "problem_types": [
+        "missing_decision_info",
+        "invalid_synthesis",
+        "unsupported_recommendation"
+      ],
+      "section": [
+        "what happened",
+        "incident inc-032",
+        "incidents",
+        "recommendation",
+        "bottom line"
+      ],
+      "required_terms": [
+        [
+          "inc-032",
+          "4 march"
+        ],
+        [
+          "rollback",
+          "failed rollback",
+          "different cause"
+        ]
+      ],
+      "why_terms": [
+        [
+          "remediation",
+          "certificate",
+          "incomplete",
+          "not cover",
+          "second cause",
+          "rollback",
+          "verify"
+        ]
+      ]
+    }
+  ]
+}

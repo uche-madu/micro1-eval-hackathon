@@ -1,0 +1,20 @@
+schema_version = "1.4"
+artifacts = []
+
+[task]
+name = "micro1/self-audit-self"
+version = "1.0.0"
+description = "Audit a defective memo under a self/other framing"
+authors = [{ name = "micro1-eval-hackathon" }]
+keywords = ["self-audit", "self-verification", "framing"]
+
+[verifier]
+timeout_sec = 600.0
+
+[agent]
+timeout_sec = 900.0
+
+[environment]
+network_mode = "public"
+build_timeout_sec = 600.0
+os = "linux"

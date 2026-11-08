@@ -1,0 +1,136 @@
+{
+  "score": 100.0,
+  "reward": 1.0,
+  "points": 100,
+  "possible": 100,
+  "checks": [
+    {
+      "name": "schema",
+      "points": 5,
+      "possible": 5,
+      "note": "schedule list"
+    },
+    {
+      "name": "all_meetings_once",
+      "points": 15,
+      "possible": 15,
+      "note": "M1-M8 exactly once",
+      "got": [
+        "M1",
+        "M2",
+        "M3",
+        "M4",
+        "M5",
+        "M6",
+        "M7",
+        "M8"
+      ]
+    },
+    {
+      "name": "meeting_windows",
+      "points": 40,
+      "possible": 40,
+      "note": "duration, day, room, and allowed window"
+    },
+    {
+      "name": "no_double_booking",
+      "points": 20,
+      "possible": 20,
+      "note": "no attendee or room overlap"
+    },
+    {
+      "name": "lunch_blackout",
+      "points": 10,
+      "possible": 10,
+      "note": "12:00-13:00 clear"
+    },
+    {
+      "name": "dependencies",
+      "points": 10,
+      "possible": 10,
+      "note": "M2>M6, M8>M1, M5>M4, M7>M5"
+    }
+  ],
+  "details": {
+    "M1": {
+      "row": {
+        "meeting": "M1",
+        "day": "Mon",
+        "start": "09:00",
+        "end": "10:00",
+        "room": "A"
+      },
+      "valid": true
+    },
+    "M2": {
+      "row": {
+        "meeting": "M2",
+        "day": "Tue",
+        "start": "10:00",
+        "end": "11:30",
+        "room": "B"
+      },
+      "valid": true
+    },
+    "M3": {
+      "row": {
+        "meeting": "M3",
+        "day": "Wed",
+        "start": "09:00",
+        "end": "09:45",
+        "room": "C"
+      },
+      "valid": true
+    },
+    "M4": {
+      "row": {
+        "meeting": "M4",
+        "day": "Tue",
+        "start": "13:00",
+        "end": "14:00",
+        "room": "A"
+      },
+      "valid": true
+    },
+    "M5": {
+      "row": {
+        "meeting": "M5",
+        "day": "Wed",
+        "start": "13:00",
+        "end": "15:00",
+        "room": "B"
+      },
+      "valid": true
+    },
+    "M6": {
+      "row": {
+        "meeting": "M6",
+        "day": "Tue",
+        "start": "09:00",
+        "end": "09:30",
+        "room": "C"
+      },
+      "valid": true
+    },
+    "M7": {
+      "row": {
+        "meeting": "M7",
+        "day": "Wed",
+        "start": "15:30",
+        "end": "16:30",
+        "room": "A"
+      },
+      "valid": true
+    },
+    "M8": {
+      "row": {
+        "meeting": "M8",
+        "day": "Mon",
+        "start": "14:00",
+        "end": "15:30",
+        "room": "C"
+      },
+      "valid": true
+    }
+  }
+}

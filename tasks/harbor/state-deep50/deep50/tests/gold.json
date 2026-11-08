@@ -1,0 +1,144 @@
+{
+  "final": {
+    "old_eu": {
+      "answer": "12 months",
+      "accept": [
+        "12 months",
+        "12"
+      ]
+    },
+    "new_eu": {
+      "answer": "27 months",
+      "accept": [
+        "27 months",
+        "27"
+      ]
+    },
+    "draft_b": {
+      "answer": "in effect",
+      "accept": [
+        "in effect",
+        "yes",
+        "effective",
+        "approved"
+      ]
+    },
+    "incident_4_march": {
+      "answer": "failed rollback",
+      "accept": [
+        "failed rollback",
+        "rollback",
+        "failed rollback of chg-441"
+      ]
+    },
+    "incident_2_march_duration": {
+      "answer": "75 minutes",
+      "accept": [
+        "75 minutes",
+        "75"
+      ]
+    },
+    "total_transactions": {
+      "answer": "15500",
+      "accept": [
+        "15500",
+        "15,500"
+      ]
+    },
+    "remediation": {
+      "answer": "not approved",
+      "accept": [
+        "not approved",
+        "draft",
+        "no"
+      ]
+    },
+    "launch": {
+      "answer": "not approved",
+      "accept": [
+        "not approved",
+        "no",
+        "revoked",
+        "revoked pending"
+      ]
+    }
+  },
+  "recall2": {
+    "old_eu": {
+      "answer": "12 months",
+      "accept": [
+        "12 months",
+        "12"
+      ]
+    },
+    "new_eu": {
+      "answer": "26 months",
+      "accept": [
+        "26 months",
+        "26"
+      ]
+    },
+    "draft_b": {
+      "answer": "in effect",
+      "accept": [
+        "in effect",
+        "yes",
+        "effective",
+        "approved"
+      ]
+    },
+    "incident_4_march": {
+      "answer": "failed rollback",
+      "accept": [
+        "failed rollback",
+        "rollback"
+      ]
+    },
+    "incident_2_march_duration": {
+      "answer": "75 minutes",
+      "accept": [
+        "75 minutes",
+        "75"
+      ]
+    },
+    "total_transactions": {
+      "answer": "15700",
+      "accept": [
+        "15700",
+        "15,700"
+      ]
+    },
+    "remediation": {
+      "answer": "approved",
+      "accept": [
+        "approved",
+        "yes"
+      ]
+    },
+    "launch": {
+      "answer": "approved",
+      "accept": [
+        "approved",
+        "yes"
+      ]
+    }
+  },
+  "stale_values": {
+    "new_eu": [
+      "26 months",
+      "26"
+    ],
+    "total_transactions": [
+      "15700",
+      "15,700"
+    ],
+    "remediation": [
+      "approved",
+      "yes"
+    ],
+    "launch": [
+      "approved",
+      "yes"
+    ]
+  }
+}

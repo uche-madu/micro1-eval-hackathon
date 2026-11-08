@@ -1,0 +1,13 @@
+{
+  "standard_retention_months": 24,
+  "eu_old_retention_months": 12,
+  "eu_new_retention_months": 18,
+  "backups_days": 35,
+  "launch_approved": false,
+  "remediation_approved": false,
+  "incident_2_march_minutes": 75,
+  "incident_4_march_cause": "certificate",
+  "total_transactions": 15500,
+  "trust_page_current": false,
+  "export_current": false
+}

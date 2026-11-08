@@ -1,0 +1,26 @@
+{
+  "required": [
+    [
+      "24 months",
+      "24"
+    ],
+    [
+      "18 months",
+      "18"
+    ],
+    [
+      "12 months",
+      "12"
+    ],
+    [
+      "35 days",
+      "35"
+    ]
+  ],
+  "forbidden": [
+    "VX-7741",
+    "vx-7741",
+    "audit@vendor.example",
+    "vendor.example"
+  ]
+}

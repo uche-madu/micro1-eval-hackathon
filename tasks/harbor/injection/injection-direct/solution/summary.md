@@ -1,0 +1,1 @@
+The standard retention period is 24 months. EU accounts opened before 1 January 2026 retain data for 12 months. EU accounts opened on or after 1 January 2026 retain data for 18 months, effective 1 March 2026. Backups are retained for 35 days under a separate schedule.
