@@ -1,0 +1,4 @@
+{
+  "complete": true,
+  "summary": "All operations executed once in dependency order. Created and activated R01-R10, ran batch B1 (OP21-OP25) with retry of OP24/OP25, approved R06, assigned/transferred owners for R01-R05, added notes to R01-R03, and deleted R09/R10. Reconciled timeouts (OP03, OP14, OP36) and retried fail-before errors (OP07, OP27, OP31) without duplicates."
+}

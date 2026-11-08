@@ -1,0 +1,4 @@
+{
+  "complete": true,
+  "summary": "All operations executed exactly once. Reconciled timeouts (OP03, OP14, OP36) via get_operation before retrying; retried only fail_before operations (OP07, OP27, OP31). Batch B1 was run as a full batch, then retried only the missing members (OP24, OP25). Final state: R01-R05 approved and transferred to Owner-3 with Q3 notes where required (R01-R03), R05 approved with Owner-2, R06 approved, R07/R08 active, R09/R10 deleted."
+}

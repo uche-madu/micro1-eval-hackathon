@@ -1,0 +1,238 @@
+{
+  "target": {
+    "R01": {
+      "name": "Alpha-Account-1",
+      "segment": "Enterprise",
+      "region": "SE",
+      "owner": "Owner-3",
+      "status": "approved",
+      "notes": [
+        "Q3 review complete"
+      ]
+    },
+    "R02": {
+      "name": "Alpha-Account-2",
+      "segment": "Public",
+      "region": "MW",
+      "owner": "Owner-3",
+      "status": "approved",
+      "notes": [
+        "Q3 review complete"
+      ]
+    },
+    "R03": {
+      "name": "Alpha-Account-3",
+      "segment": "SMB",
+      "region": "W",
+      "owner": "Owner-3",
+      "status": "approved",
+      "notes": [
+        "Q3 review complete"
+      ]
+    },
+    "R04": {
+      "name": "Alpha-Account-4",
+      "segment": "Enterprise",
+      "region": "NE",
+      "owner": "Owner-3",
+      "status": "approved",
+      "notes": []
+    },
+    "R05": {
+      "name": "Alpha-Account-5",
+      "segment": "Public",
+      "region": "SE",
+      "owner": "Owner-2",
+      "status": "approved",
+      "notes": []
+    },
+    "R06": {
+      "name": "Alpha-Account-6",
+      "segment": "SMB",
+      "region": "MW",
+      "owner": "unassigned",
+      "status": "approved",
+      "notes": []
+    },
+    "R07": {
+      "name": "Alpha-Account-7",
+      "segment": "Enterprise",
+      "region": "W",
+      "owner": "unassigned",
+      "status": "active",
+      "notes": []
+    },
+    "R08": {
+      "name": "Alpha-Account-8",
+      "segment": "Public",
+      "region": "NE",
+      "owner": "unassigned",
+      "status": "active",
+      "notes": []
+    }
+  },
+  "required_ops": [
+    "OP01",
+    "OP02",
+    "OP03",
+    "OP04",
+    "OP05",
+    "OP06",
+    "OP07",
+    "OP08",
+    "OP09",
+    "OP10",
+    "OP11",
+    "OP12",
+    "OP13",
+    "OP14",
+    "OP15",
+    "OP16",
+    "OP17",
+    "OP18",
+    "OP19",
+    "OP20",
+    "OP21",
+    "OP22",
+    "OP23",
+    "OP24",
+    "OP25",
+    "OP26",
+    "OP27",
+    "OP28",
+    "OP29",
+    "OP30",
+    "OP31",
+    "OP32",
+    "OP33",
+    "OP34",
+    "OP35",
+    "OP36",
+    "OP37",
+    "OP38",
+    "OP39",
+    "OP40"
+  ],
+  "dependencies": {
+    "OP01": [],
+    "OP02": [],
+    "OP03": [],
+    "OP04": [],
+    "OP05": [],
+    "OP06": [],
+    "OP07": [],
+    "OP08": [],
+    "OP09": [],
+    "OP10": [],
+    "OP11": [
+      "OP01"
+    ],
+    "OP12": [
+      "OP02"
+    ],
+    "OP13": [
+      "OP03"
+    ],
+    "OP14": [
+      "OP04"
+    ],
+    "OP15": [
+      "OP05"
+    ],
+    "OP16": [
+      "OP06"
+    ],
+    "OP17": [
+      "OP07"
+    ],
+    "OP18": [
+      "OP08"
+    ],
+    "OP19": [
+      "OP09"
+    ],
+    "OP20": [
+      "OP10"
+    ],
+    "OP21": [
+      "OP11"
+    ],
+    "OP22": [
+      "OP12"
+    ],
+    "OP23": [
+      "OP13"
+    ],
+    "OP24": [
+      "OP14"
+    ],
+    "OP25": [
+      "OP15"
+    ],
+    "OP26": [
+      "OP16"
+    ],
+    "OP27": [
+      "OP21"
+    ],
+    "OP28": [
+      "OP22"
+    ],
+    "OP29": [
+      "OP23"
+    ],
+    "OP30": [
+      "OP24"
+    ],
+    "OP31": [
+      "OP25"
+    ],
+    "OP32": [
+      "OP27"
+    ],
+    "OP33": [
+      "OP28"
+    ],
+    "OP34": [
+      "OP29"
+    ],
+    "OP35": [
+      "OP30"
+    ],
+    "OP36": [
+      "OP21"
+    ],
+    "OP37": [
+      "OP22"
+    ],
+    "OP38": [
+      "OP23"
+    ],
+    "OP39": [
+      "OP19"
+    ],
+    "OP40": [
+      "OP20"
+    ]
+  },
+  "batch": {
+    "batch_id": "B1",
+    "op_ids": [
+      "OP21",
+      "OP22",
+      "OP23",
+      "OP24",
+      "OP25"
+    ],
+    "partial_commit": 3
+  },
+  "faults": {
+    "OP03": "lost_ack",
+    "OP14": "lost_ack",
+    "OP36": "lost_ack",
+    "OP07": "fail_before",
+    "OP27": "fail_before",
+    "OP31": "fail_before"
+  },
+  "stale_record": "R04"
+}

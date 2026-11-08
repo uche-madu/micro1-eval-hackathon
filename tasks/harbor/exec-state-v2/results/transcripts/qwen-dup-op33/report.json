@@ -1,0 +1,4 @@
+{
+  "complete": true,
+  "summary": "All 40 operations executed once. OP01-OP10 created R01-R10 (OP03 timed out but was confirmed committed; OP07 failed before commit and was retried). OP11-OP20 set accounts active (OP14 timed out but confirmed committed). Batch B1 first attempt committed OP21-OP23 with OP24-OP25 failing; retried only the missing members successfully. OP26 approved R06. OP27-OP31 assigned Owner-2 (OP27 and OP31 failed before commit and were retried). OP32-OP35 transferred to Owner-3 (OP33 was accidentally re-issued but the ledger shows a single committed effect; owner is Owner-3). OP36-OP38 added notes (OP36 timed out but was confirmed committed, so not repeated). OP39/OP40 deleted R09 and R10. Final list_records confirms the target state."
+}

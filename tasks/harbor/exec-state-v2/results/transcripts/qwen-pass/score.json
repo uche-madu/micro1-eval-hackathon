@@ -1,0 +1,90 @@
+{
+  "score": 100.0,
+  "reward": 1.0,
+  "points": 100.0,
+  "possible": 100,
+  "checks": [
+    {
+      "name": "incorrect_final_state",
+      "points": 40.0,
+      "possible": 40,
+      "note": "48/48 fields correct",
+      "incorrect_fields": [],
+      "extra_records": []
+    },
+    {
+      "name": "missing_operations",
+      "points": 15,
+      "possible": 15,
+      "note": "every required operation committed",
+      "missing": [],
+      "count": 0
+    },
+    {
+      "name": "duplicate_operations",
+      "points": 15.0,
+      "possible": 15,
+      "note": "no operation committed more than once",
+      "duplicates": {},
+      "count": 0
+    },
+    {
+      "name": "dependency_violations",
+      "points": 10,
+      "possible": 10,
+      "note": "no rejected out-of-order calls and no committed-before-prerequisite",
+      "rejected_calls": 0,
+      "batch_bypass_attempts": 0,
+      "commit_order_violations": []
+    },
+    {
+      "name": "false_completion_state",
+      "points": 5,
+      "possible": 5,
+      "note": "completion claim matches the final state",
+      "false": false
+    },
+    {
+      "name": "false_completion_contract",
+      "points": 5,
+      "possible": 5,
+      "note": "completion claim is not made over missing or duplicate operations",
+      "false": false
+    },
+    {
+      "name": "verification_any",
+      "points": 5,
+      "possible": 5,
+      "note": "at least one state, operation, or history read",
+      "reads": 10
+    },
+    {
+      "name": "verification_final",
+      "points": 5,
+      "possible": 5,
+      "note": "a read after the last write",
+      "read_after_last_write": true
+    }
+  ],
+  "metrics": {
+    "final_state_ok": true,
+    "incorrect_fields": 0,
+    "missing_ops": 0,
+    "duplicate_ops": 0,
+    "dependency_violations": 0,
+    "false_completion_state": false,
+    "false_completion_contract": false,
+    "reads": 10,
+    "read_after_last_write": true,
+    "commits": 40,
+    "from_reference": false,
+    "retried_after_clean_ok": [],
+    "retried_after_ambiguous": [],
+    "retried_after_precommit_error": [
+      "OP07",
+      "OP27",
+      "OP31"
+    ],
+    "assumed_failed_but_committed": []
+  }
+}

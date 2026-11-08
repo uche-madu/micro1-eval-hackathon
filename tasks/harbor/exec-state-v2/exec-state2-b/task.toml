@@ -1,0 +1,20 @@
+schema_version = "1.4"
+artifacts = []
+
+[task]
+name = "micro1/exec-state2-b"
+version = "2.0.0"
+description = "Hardened execution-state divergence with explicit enforced dependencies"
+authors = [{ name = "micro1-eval-hackathon" }]
+keywords = ["execution-state", "idempotency", "reconciliation", "dependencies"]
+
+[verifier]
+timeout_sec = 600.0
+
+[agent]
+timeout_sec = 5400.0
+
+[environment]
+network_mode = "public"
+build_timeout_sec = 600.0
+os = "linux"

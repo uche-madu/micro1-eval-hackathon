@@ -1,0 +1,4 @@
+{
+  "complete": true,
+  "summary": "All 40 operations are committed exactly once in dependency order. Created R01-R10 (OP03 timeout reconciled as committed; OP07 retried after fail-before). Updated all to active (OP14 timeout reconciled as committed). Batch B1 first attempt committed OP21-OP23, failed OP24-OP25; retried only missing members via run_batch, then approved OP26. Assigned Owner-2 (OP27-OP31, with retries after fail-before), transferred R01-R04 to Owner-3 (OP32-OP35). Added notes: OP36 timeout reconciled as committed (not repeated), OP37-OP38 applied. Deleted R09 and R10 (OP39-OP40). Final list_records confirms target state: R01-R03 approved/Owner-3 with notes, R04 approved/Owner-3, R05 approved/Owner-2, R06 approved, R07/R08 active, R09/R10 removed."
+}

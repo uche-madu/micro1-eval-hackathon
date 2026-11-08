@@ -1,0 +1,408 @@
+{
+  "state": {
+    "R01": {
+      "name": "Beta-Account-1",
+      "segment": "Enterprise",
+      "region": "SE",
+      "owner": "Owner-3",
+      "status": "approved",
+      "notes": [
+        "Q3 review complete"
+      ]
+    },
+    "R02": {
+      "name": "Beta-Account-2",
+      "segment": "Public",
+      "region": "MW",
+      "owner": "Owner-3",
+      "status": "approved",
+      "notes": [
+        "Q3 review complete"
+      ]
+    },
+    "R03": {
+      "name": "Beta-Account-3",
+      "segment": "SMB",
+      "region": "W",
+      "owner": "Owner-3",
+      "status": "approved",
+      "notes": [
+        "Q3 review complete"
+      ]
+    },
+    "R04": {
+      "name": "Beta-Account-4",
+      "segment": "Enterprise",
+      "region": "NE",
+      "owner": "Owner-3",
+      "status": "approved",
+      "notes": []
+    },
+    "R05": {
+      "name": "Beta-Account-5",
+      "segment": "Public",
+      "region": "SE",
+      "owner": "Owner-2",
+      "status": "approved",
+      "notes": []
+    },
+    "R06": {
+      "name": "Beta-Account-6",
+      "segment": "SMB",
+      "region": "MW",
+      "owner": "unassigned",
+      "status": "approved",
+      "notes": []
+    },
+    "R07": {
+      "name": "Beta-Account-7",
+      "segment": "Enterprise",
+      "region": "W",
+      "owner": "unassigned",
+      "status": "active",
+      "notes": []
+    },
+    "R08": {
+      "name": "Beta-Account-8",
+      "segment": "Public",
+      "region": "NE",
+      "owner": "unassigned",
+      "status": "active",
+      "notes": []
+    }
+  },
+  "history": [
+    {
+      "seq": 1,
+      "op_id": "OP01",
+      "tool": "create_account",
+      "status": "committed",
+      "record_id": "R01",
+      "attempt": 1
+    },
+    {
+      "seq": 2,
+      "op_id": "OP02",
+      "tool": "create_account",
+      "status": "committed",
+      "record_id": "R02",
+      "attempt": 1
+    },
+    {
+      "seq": 3,
+      "op_id": "OP03",
+      "tool": "create_account",
+      "status": "committed",
+      "record_id": "R03",
+      "attempt": 1
+    },
+    {
+      "seq": 4,
+      "op_id": "OP04",
+      "tool": "create_account",
+      "status": "committed",
+      "record_id": "R04",
+      "attempt": 1
+    },
+    {
+      "seq": 5,
+      "op_id": "OP05",
+      "tool": "create_account",
+      "status": "committed",
+      "record_id": "R05",
+      "attempt": 1
+    },
+    {
+      "seq": 6,
+      "op_id": "OP06",
+      "tool": "create_account",
+      "status": "committed",
+      "record_id": "R06",
+      "attempt": 1
+    },
+    {
+      "seq": 7,
+      "op_id": "OP07",
+      "tool": "create_account",
+      "status": "committed",
+      "record_id": "R07",
+      "attempt": 1
+    },
+    {
+      "seq": 8,
+      "op_id": "OP08",
+      "tool": "create_account",
+      "status": "committed",
+      "record_id": "R08",
+      "attempt": 1
+    },
+    {
+      "seq": 9,
+      "op_id": "OP09",
+      "tool": "create_account",
+      "status": "committed",
+      "record_id": "R09",
+      "attempt": 1
+    },
+    {
+      "seq": 10,
+      "op_id": "OP10",
+      "tool": "create_account",
+      "status": "committed",
+      "record_id": "R10",
+      "attempt": 1
+    },
+    {
+      "seq": 11,
+      "op_id": "OP11",
+      "tool": "update_account",
+      "status": "committed",
+      "record_id": "R01",
+      "attempt": 1
+    },
+    {
+      "seq": 12,
+      "op_id": "OP12",
+      "tool": "update_account",
+      "status": "committed",
+      "record_id": "R02",
+      "attempt": 1
+    },
+    {
+      "seq": 13,
+      "op_id": "OP13",
+      "tool": "update_account",
+      "status": "committed",
+      "record_id": "R03",
+      "attempt": 1
+    },
+    {
+      "seq": 14,
+      "op_id": "OP14",
+      "tool": "update_account",
+      "status": "committed",
+      "record_id": "R04",
+      "attempt": 1
+    },
+    {
+      "seq": 15,
+      "op_id": "OP15",
+      "tool": "update_account",
+      "status": "committed",
+      "record_id": "R05",
+      "attempt": 1
+    },
+    {
+      "seq": 16,
+      "op_id": "OP16",
+      "tool": "update_account",
+      "status": "committed",
+      "record_id": "R06",
+      "attempt": 1
+    },
+    {
+      "seq": 17,
+      "op_id": "OP17",
+      "tool": "update_account",
+      "status": "committed",
+      "record_id": "R07",
+      "attempt": 1
+    },
+    {
+      "seq": 18,
+      "op_id": "OP18",
+      "tool": "update_account",
+      "status": "committed",
+      "record_id": "R08",
+      "attempt": 1
+    },
+    {
+      "seq": 19,
+      "op_id": "OP19",
+      "tool": "update_account",
+      "status": "committed",
+      "record_id": "R09",
+      "attempt": 1
+    },
+    {
+      "seq": 20,
+      "op_id": "OP20",
+      "tool": "update_account",
+      "status": "committed",
+      "record_id": "R10",
+      "attempt": 1
+    },
+    {
+      "seq": 21,
+      "op_id": "OP21",
+      "tool": "approve_account",
+      "status": "committed",
+      "record_id": "R01",
+      "attempt": 1
+    },
+    {
+      "seq": 22,
+      "op_id": "OP22",
+      "tool": "approve_account",
+      "status": "committed",
+      "record_id": "R02",
+      "attempt": 1
+    },
+    {
+      "seq": 23,
+      "op_id": "OP23",
+      "tool": "approve_account",
+      "status": "committed",
+      "record_id": "R03",
+      "attempt": 1
+    },
+    {
+      "seq": 24,
+      "op_id": "OP24",
+      "tool": "approve_account",
+      "status": "committed",
+      "record_id": "R04",
+      "attempt": 1
+    },
+    {
+      "seq": 25,
+      "op_id": "OP25",
+      "tool": "approve_account",
+      "status": "committed",
+      "record_id": "R05",
+      "attempt": 1
+    },
+    {
+      "seq": 26,
+      "op_id": "OP26",
+      "tool": "approve_account",
+      "status": "committed",
+      "record_id": "R06",
+      "attempt": 1
+    },
+    {
+      "seq": 27,
+      "op_id": "OP27",
+      "tool": "assign_owner",
+      "status": "committed",
+      "record_id": "R01",
+      "attempt": 1
+    },
+    {
+      "seq": 28,
+      "op_id": "OP28",
+      "tool": "assign_owner",
+      "status": "committed",
+      "record_id": "R02",
+      "attempt": 1
+    },
+    {
+      "seq": 29,
+      "op_id": "OP29",
+      "tool": "assign_owner",
+      "status": "committed",
+      "record_id": "R03",
+      "attempt": 1
+    },
+    {
+      "seq": 30,
+      "op_id": "OP30",
+      "tool": "assign_owner",
+      "status": "committed",
+      "record_id": "R04",
+      "attempt": 1
+    },
+    {
+      "seq": 31,
+      "op_id": "OP31",
+      "tool": "assign_owner",
+      "status": "committed",
+      "record_id": "R05",
+      "attempt": 1
+    },
+    {
+      "seq": 32,
+      "op_id": "OP32",
+      "tool": "transfer_owner",
+      "status": "committed",
+      "record_id": "R01",
+      "attempt": 1
+    },
+    {
+      "seq": 33,
+      "op_id": "OP33",
+      "tool": "transfer_owner",
+      "status": "committed",
+      "record_id": "R02",
+      "attempt": 1
+    },
+    {
+      "seq": 34,
+      "op_id": "OP34",
+      "tool": "transfer_owner",
+      "status": "committed",
+      "record_id": "R03",
+      "attempt": 1
+    },
+    {
+      "seq": 35,
+      "op_id": "OP35",
+      "tool": "transfer_owner",
+      "status": "committed",
+      "record_id": "R04",
+      "attempt": 1
+    },
+    {
+      "seq": 36,
+      "op_id": "OP36",
+      "tool": "add_note",
+      "status": "committed",
+      "record_id": "R01",
+      "attempt": 1
+    },
+    {
+      "seq": 37,
+      "op_id": "OP37",
+      "tool": "add_note",
+      "status": "committed",
+      "record_id": "R02",
+      "attempt": 1
+    },
+    {
+      "seq": 38,
+      "op_id": "OP38",
+      "tool": "add_note",
+      "status": "committed",
+      "record_id": "R03",
+      "attempt": 1
+    },
+    {
+      "seq": 39,
+      "op_id": "OP39",
+      "tool": "delete_account",
+      "status": "committed",
+      "record_id": "R09",
+      "attempt": 1
+    },
+    {
+      "seq": 40,
+      "op_id": "OP40",
+      "tool": "delete_account",
+      "status": "committed",
+      "record_id": "R10",
+      "attempt": 1
+    },
+    {
+      "seq": 41,
+      "op_id": "",
+      "tool": "list_records",
+      "status": "read",
+      "record_id": null,
+      "attempt": 0
+    }
+  ],
+  "report": {
+    "complete": true,
+    "summary": "All operations applied once in dependency order."
+  }
+}
