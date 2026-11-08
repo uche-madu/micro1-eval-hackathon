@@ -255,3 +255,28 @@ upstream (`502 Endpoint is unavailable`) with no valid trial; `exec_deepseek_rep
 emitted native `<｜DSML｜>` tool markup for all 120 turns (format failure, not
 state) and one harness write error. DeepSeek is therefore excluded from the
 state-rate comparison; see `tasks/harbor/exec-state/RESULTS.md`.
+
+## Execution-state v2 (hardened, corrected)
+
+Harness: `tasks/harbor/exec-state-v2/` — 40 operations, explicit enforced
+dependencies, batch bypass closed, separated scorer. Full results:
+`tasks/harbor/exec-state-v2/RESULTS.md`.
+
+| Run | Job(s) | Model | Valid trials | Pass | Failure classification |
+|---|---|---|---:|---:|---|
+| Qwen | `exec2_qwen_30` | Qwen 3.8 Flash | 28 | 25 | 2 duplicate ops, 1 dependency violation; 1 DNS error, 1 hung trial |
+| GPT | `exec2_gpt_30`, `exec2_gpt_30b` | GPT-6 Luna | 18 | 5 | 0 duplicate/missing/incorrect; 7 dependency violations, 11 missing final reads; 2 format failures |
+| Opus | `exec2_opus_probe`, `exec2_opus_30b`–`30f` | Opus 5.5 (`claude-opus-5-5`) | 30 | 30 | none |
+
+Tokens: Qwen 5,060,272 in / 123,549 out; GPT 5,320,027 in / 114,018 out;
+Opus 7,315,915 in / 100,070 out.
+
+Provider note: OpenRouter Opus returned `402 Insufficient credits` on all six
+attempts; the OpenCode endpoint exposes `claude-opus-5-5` and all 30 Opus trials
+ran there. The `exec2_opus_30a` directory is the failed OpenRouter attempt.
+
+Key result: Qwen repeated operations it had already confirmed committed (OP21,
+OP33). GPT and Opus did not repeat, omit, or corrupt final state; GPT's failures
+were batch-before-prerequisites and skipped final verification. The v1 ordering
+corruption cannot occur in v2 because an earlier update after a later approval is
+rejected.

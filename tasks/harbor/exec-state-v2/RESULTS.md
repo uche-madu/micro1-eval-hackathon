@@ -96,13 +96,81 @@ explicit dependency order and skipped final verification.
 OpenRouter was attempted first and returned `402 Insufficient credits` on every
 trial (the key is valid but the account has no credits). The OpenCode endpoint
 exposes the same model as `claude-opus-5-5`; the probe scored 2/2 at 100.0.
-The remaining trials are running in small batches (`exec2_opus_30a` …
-`exec2_opus_30e`) because server restarts were cancelling long jobs.
 
-This comparison is running because GPT did not reproduce the core
-duplicate/missing/incorrect-state signal.
+| Batch | Trials | Score |
+| --- | ---: | --- |
+| probe | 2 | 2 × 100 |
+| 30b | 6 | 6 × 100 |
+| 30c | 6 | 6 × 100 |
+| 30d | 6 | 6 × 100 |
+| 30e | 4 | 4 × 100 |
+| 30f | 6 | 6 × 100 |
 
-Pending: 30 trials total including the 2-trial probe.
+**30/30 at 100.0.** No duplicate operations, no missing operations, no
+incorrect final state, no dependency violations, and a final verification read
+in every trial.
+
+## Cross-model comparison
+
+| Model | Valid trials | Pass | Duplicate ops | Missing ops | Incorrect state | Dependency violations | No final read | Format/interface failures |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
+| Qwen 3.8 Flash | 28 | 25 | **2** | 0 | 0 | 1 | 0 | 0 (1 DNS, 1 hang) |
+| GPT-6 Luna | 18 | 5 | **0** | 0 | 0 | 7 | 11 | 2 |
+| Opus 5.5 | 30 | 30 | **0** | 0 | 0 | 0 | 0 | 0 |
+
+## What the data says
+
+1. **The corrected benchmark still reproduces Qwen's core failure.** Qwen
+   repeated a successfully completed operation twice (OP21 after reading it
+   committed; OP33 after a clean `ok`). The duplicate side effect is real even
+   when the final field values remain correct, and Qwen reported completion.
+
+2. **The frontier models do not reproduce the core failure at this scale.**
+   GPT-6 Luna and Opus 5.5 had no duplicate operations, no missing operations,
+   and no incorrect final states in 48 valid frontier trials. The v1 GPT failure
+   that corrupted R05 cannot occur now because the environment rejects an
+   earlier update after a later approval.
+
+3. **GPT-6 Luna has a distinct dependency/verification weakness.** It repeatedly
+   called the full batch before the create/update prerequisites, was rejected,
+   and recovered. It also frequently finished without a read after the last
+   write. The final state was correct, so this is a planning/verification
+   failure, not state corruption.
+
+4. **The v1 ordering defect was masking a task-design issue.** Enforcing
+   dependencies both ways removed the specific v1 failure where an earlier
+   update reverted a later approval. The remaining Qwen duplicates are not an
+   ordering artifact; they are direct repeats of committed operations.
+
+5. **The original hypothesis is not confirmed at the frontier.** In 18 GPT and
+   30 Opus valid trials, no frontier model claimed completion over an incorrect
+   final state, repeated a committed operation, or omitted a required one. The
+   evidence supports a Qwen-specific duplicate-operation weakness and a
+   GPT-specific dependency/verification weakness, not a frontier-wide
+   execution-state divergence.
+
+## Limitations
+
+- GPT has 18 valid trials, not 30: 2 format/interface failures and one hung
+  continuation. The conclusion is based on 18 valid trials.
+- Opus is at 24 trials plus the final batch; the final count is reported below.
+- The format failures are model contract violations (multiple concatenated JSON
+  objects; a loop on `list_records`), not state failures. They are excluded from
+  the state rate and reported separately.
+- The environment exposes an authoritative per-operation ledger; ambiguity
+  reconciliation is easier than in a system with only aggregate history.
+- Server restarts, one DNS failure, and one hung container interrupted the runs;
+  all such cases are separated from model state failures.
+
+## Reproduce
+
+```bash
+python3 tasks/harbor/exec-state-v2/test_env.py
+harbor run -p tasks/harbor/exec-state-v2 -a oracle --yes
+python3 tasks/harbor/exec-state-v2/collect.py jobs/exec2_qwen_30 jobs/exec2_gpt_30 jobs/exec2_gpt_30b jobs/exec2_opus_30b jobs/exec2_opus_30c jobs/exec2_opus_30d jobs/exec2_opus_30e jobs/exec2_opus_30f
+```
+
+Representative raw transcripts are under `results/transcripts/`.
 
 ## Failure classification rule
 

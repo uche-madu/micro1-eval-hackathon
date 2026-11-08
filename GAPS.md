@@ -61,3 +61,17 @@ GPT's two failures have the same outcome (one missing approval status) but
 different mechanisms: one omitted `OP26`, one applied an earlier update after the
 approval. The omission is the cleaner frontier case. See
 `tasks/harbor/exec-state/RESULTS.md`.
+
+## v2 corrected execution-state benchmark (supersedes the G18 rate)
+
+| Gap | Result | Status |
+|---|---|---|
+| G19 corrected execution-state | Qwen 2/28 duplicate operations; GPT 0/18 duplicate/missing/incorrect, 7 dependency violations, 11 missing final reads, 2 format failures; Opus 0/30 duplicate/missing/incorrect, 0 dependency, 0 missing final reads | **Qwen-specific duplicate weakness; frontier core failure not reproduced** |
+
+The v2 benchmark fixes the batch bypass, enforces dependencies in both directions,
+aligns `list_records` with its documentation, and separates the scoring
+dimensions. The v1 result remains historical: its GPT ordering corruption cannot
+occur in v2 because an earlier update after a later approval is rejected. The
+remaining Qwen duplicates are direct repeats of committed operations. GPT's
+failures are dependency-order attempts and skipped final verification, with the
+final state correct. See `tasks/harbor/exec-state-v2/RESULTS.md`.

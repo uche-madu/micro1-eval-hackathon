@@ -2,11 +2,38 @@
 
 **Objective:** find a reproducible weakness in frontier models, or exhaust the feasible hypothesized failure modes.
 
-**Result:** the earlier single-context axes (audit, state recall, injection, planning, tool use) were robust. A new **execution-state divergence** experiment found low-rate but reproducible failures in both models: Qwen 3.8 Flash failed 2/10 trials by repeating a cleanly-acknowledged `create_account`; GPT-6 Luna failed 2/20 across two independent batches, each time losing one approval status and falsely claiming completion. Neither model retried an operation after a lost acknowledgement in 30 scored trials. The GPT signal reproduced (two failures, same outcome signature) and is the strongest frontier result in the repository, though the rate is low and one mechanism relies on an implicit ordering constraint. A third model, DeepSeek v4.1 Flash, passed all five valid trials; Gemini-4 Argon was unavailable (upstream 502).
+**Result:** the earlier single-context axes (audit, state recall, injection, planning, tool use) were robust. In the **corrected execution-state benchmark (v2)**, Qwen 3.8 Flash reproduced a core duplicate-operation failure in **2/28** valid trials. GPT-6 Luna (**18** valid trials) and Opus 5.5 (**30/30**) had **no duplicate operations, no missing operations, and no incorrect final states**. GPT showed a distinct dependency/verification weakness: **7/18** valid trials called the batch before its prerequisites, and **11/18** finished without a final verification read. The original frontier execution-state divergence hypothesis is **not confirmed at this scale**: the corrected benchmark isolates a Qwen-specific repeat failure and a GPT-specific order/verification weakness. The v1 results are preserved as historical evidence.
 
-## Execution-state divergence (new experiment)
+## Execution-state divergence — corrected v2
 
-See `tasks/harbor/exec-state/RESULTS.md` for the full tables and `README.md` for the environment.
+See `tasks/harbor/exec-state-v2/RESULTS.md` for the full tables and `README.md`
+for the environment. The v1 benchmark and its results remain at
+`tasks/harbor/exec-state/` untouched.
+
+The v2 task: 40 operations (create, update, approve, assign, transfer, note,
+delete) against a persistent account store, with **explicit, enforced
+dependencies**, the same hidden fault distribution as v1 (3 lost acknowledgements,
+3 fail-before, 1 partial batch, 1 stale read, 1 dependency), and a first batch
+attempt that cannot be bypassed with `op_ids`.
+
+| Model | Valid trials | Pass | Duplicate ops | Missing ops | Incorrect state | Dependency violations | No final read | Format/interface failures |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
+| Qwen 3.8 Flash | 28 | 25 | **2** | 0 | 0 | 1 | 0 | 0 (1 DNS, 1 hang) |
+| GPT-6 Luna | 18 | 5 | **0** | 0 | 0 | 7 | 11 | 2 |
+| Opus 5.5 | 30 | 30 | **0** | 0 | 0 | 0 | 0 | 0 |
+
+Key result: Qwen repeated an operation it had already confirmed committed
+(OP21 after `get_operation → committed`; OP33 after a clean `ok`). The duplicate
+side effect was real even when the final field values remained correct, and Qwen
+reported completion. GPT-6 Luna and Opus 5.5 did not repeat, omit, or corrupt
+state; GPT's failures were dependency-order attempts and missing final reads.
+
+## Execution-state divergence — v1 (historical)
+
+The v1 benchmark (no enforced dependencies, first-batch bypass open) found
+low-rate failures in both models. It is preserved as historical evidence;
+its ordering failure cannot occur in v2 because the environment now rejects an
+earlier update after a later approval.
 
 | Model | Trials | Pass | Fail | Failure signature |
 | --- | ---: | ---: | ---: | --- |
@@ -15,17 +42,12 @@ See `tasks/harbor/exec-state/RESULTS.md` for the full tables and `README.md` for
 | DeepSeek v4.1 Flash | 5 valid | 5 | 0 | no state failure; one format-failure trial excluded |
 | Gemini-4 Argon | 0 | — | — | upstream unavailable (502) |
 
-The task: 40 operations (create, update, approve, assign, transfer, note, delete)
-against a persistent account store, with a hidden fault schedule — three lost
-acknowledgements after commit, three failures before commit, one partial batch,
-one stale read, and one dependency. The agent must reconcile and leave a correct
-final state. The oracle scores authoritative state, duplicate commits, missing
-operations, dependency violations, false completion, and independent verification.
-
-Key result: across 30 trials and 120 ambiguous outcomes, **no trial retried a
-timeout it had confirmed committed**. Both models used `get_operation` after a
-loss and moved on. The failures were in clean-operation tracking: Qwen repeated
-a `create_account` that had returned `ok`; GPT lost an approval once by omitting
+The v1 task had 40 operations against a persistent account store, with a hidden
+fault schedule — three lost acknowledgements after commit, three failures before
+commit, one partial batch, one stale read, and one dependency. Across 30 trials
+and 120 ambiguous outcomes, **no trial retried a timeout it had confirmed
+committed**. The v1 failures were in clean-operation tracking: Qwen repeated a
+`create_account` that had returned `ok`; GPT lost an approval once by omitting
 `OP26` and once by applying an earlier update after the approval. All four
 failures reported `complete: true`.
 
@@ -81,38 +103,38 @@ Our tasks are 10–50 turns, 8–30 documents, 7 tool steps. That is below the f
 
 ## Recommendation for the submission
 
-The execution-state experiment is the strongest evidence in the repository, and it
-is not a negative result:
+The corrected v2 benchmark is the primary evidence. It is a **mixed result**, not
+a confirmed frontier weakness:
 
-1. **Submit the execution-state benchmark as the primary finding.** Qwen 3.8
-   Flash repeated a cleanly-acknowledged operation in 2/10 trials (same
-   duplicate-create signature twice). GPT-6 Luna omitted an operation and falsely
-   reported completion in 1/10. Both are measurable execution-reliability
-   failures, not answers about idempotency.
-2. **Report GPT-6 Luna as a reproduced low-rate frontier signal, with the caveat
-   that the rate is low.** 2/20 failures across two independent batches, both
-   with the same outcome (one approval status missing, false completion). The
-   mechanisms differ: one omitted `OP26`; one applied an earlier update after an
-   approval. The omission does not depend on any ordering ambiguity. The next
-   step is a larger sample (30–50 trials) and an explicit ordering statement in
-   the task before treating the rate as precise.
-3. **Report the ambiguity result honestly.** The lost-acknowledgement,
-   partial-batch, stale-read, and dependency conditions did not cause a retry in
-   30 trials. The models reconciled them correctly. The weakness is operation
-   tracking on clean successes, not uncertainty handling.
-4. **Keep the earlier axes as differentiation measurements, not as a claim of
-   frontier failure.** The audit, state-recall, injection, planning, and tool-use
-   suites mostly separated models by cost/quality, not by a hard limitation.
-
-The credible next axis remains long-horizon agentic execution at 50–100+ tool
-steps with injected failures and recovery, where the literature reports much
-lower success. This experiment is a smaller, controlled version of that axis and
-already produces failures in both models.
+1. **Submit the corrected benchmark as the primary finding.** Qwen 3.8 Flash
+   repeated an operation it had already confirmed committed in 2/28 valid trials
+   (OP21 after `get_operation → committed`; OP33 after a clean `ok`). The
+   duplicate side effect was real even though the final field values remained
+   correct.
+2. **Do not claim a frontier-wide execution-state weakness.** GPT-6 Luna (18
+   valid trials) and Opus 5.5 (30/30) had no duplicate operations, no missing
+   operations, and no incorrect final states. The v1 GPT ordering corruption
+   cannot occur in v2 because the environment rejects an earlier update after a
+   later approval.
+3. **Report GPT's dependency/verification weakness as a separate result.** 7/18
+   valid GPT trials called the batch before its prerequisites, and 11/18
+   finished without a read after the last write. The final state was correct;
+   the enforcement prevented corruption. This is a planning/verification
+   failure, not state divergence.
+4. **Keep v1 as historical evidence.** The v1 GPT 2/20 result depended partly on
+   an implicit ordering constraint and is superseded by v2. The v1 Qwen
+   duplicate finding is consistent with v2.
+5. **The next credible axis is harder observability, not more trials at the same
+   setting.** Remove the per-operation status tool (or expose only aggregate
+   history), increase to 80–100 operations, and test whether frontier models
+   still complete the final state. The current ledger makes ambiguity
+   reconciliation easy; that is why no model retried a confirmed timeout.
 
 ## Artifacts
 
-- Execution-state experiment: `tasks/harbor/exec-state/` (`README.md`, `RESULTS.md`, `build.py`, `score_template.py`, `analyze.py`, `collect.py`)
-- Raw representative transcripts: `tasks/harbor/exec-state/results/transcripts/`
+- Execution-state v2: `tasks/harbor/exec-state-v2/` (`README.md`, `RESULTS.md`, `build.py`, `score_template.py`, `test_env.py`, `analyze.py`, `collect.py`)
+- v2 raw representative transcripts: `tasks/harbor/exec-state-v2/results/transcripts/`
+- Execution-state v1 (historical): `tasks/harbor/exec-state/` (`README.md`, `RESULTS.md`, generated tasks, transcripts)
 - Gap ledger: `GAPS.md`
 - Run history: `RUNS.md`
 - Frozen pilots: `FREEZE.md`

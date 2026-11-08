@@ -1,0 +1,888 @@
+[
+  {
+    "step": 1,
+    "raw": "{\"tool\":\"list_records\"}",
+    "call": {
+      "tool": "list_records"
+    },
+    "result": {}
+  },
+  {
+    "step": 2,
+    "raw": "{\"tool\":\"create_account\",\"op_id\":\"OP01\",\"record_id\":\"R01\",\"fields\":{\"name\":\"Alpha-Account-1\",\"segment\":\"Enterprise\",\"region\":\"SE\"}}",
+    "call": {
+      "tool": "create_account",
+      "op_id": "OP01",
+      "record_id": "R01",
+      "fields": {
+        "name": "Alpha-Account-1",
+        "segment": "Enterprise",
+        "region": "SE"
+      }
+    },
+    "result": {
+      "status": "ok",
+      "op_id": "OP01"
+    }
+  },
+  {
+    "step": 3,
+    "raw": "{\"tool\":\"create_account\",\"op_id\":\"OP02\",\"record_id\":\"R02\",\"fields\":{\"name\":\"Alpha-Account-2\",\"segment\":\"Public\",\"region\":\"MW\"}}",
+    "call": {
+      "tool": "create_account",
+      "op_id": "OP02",
+      "record_id": "R02",
+      "fields": {
+        "name": "Alpha-Account-2",
+        "segment": "Public",
+        "region": "MW"
+      }
+    },
+    "result": {
+      "status": "ok",
+      "op_id": "OP02"
+    }
+  },
+  {
+    "step": 4,
+    "raw": "{\"tool\":\"create_account\",\"op_id\":\"OP03\",\"record_id\":\"R03\",\"fields\":{\"name\":\"Alpha-Account-3\",\"segment\":\"SMB\",\"region\":\"W\"}}",
+    "call": {
+      "tool": "create_account",
+      "op_id": "OP03",
+      "record_id": "R03",
+      "fields": {
+        "name": "Alpha-Account-3",
+        "segment": "SMB",
+        "region": "W"
+      }
+    },
+    "result": {
+      "status": "timeout",
+      "op_id": "OP03",
+      "message": "No acknowledgement; outcome unknown. Reconcile before retrying."
+    }
+  },
+  {
+    "step": 5,
+    "raw": "{\"tool\":\"get_operation\",\"op_id\":\"OP03\"}",
+    "call": {
+      "tool": "get_operation",
+      "op_id": "OP03"
+    },
+    "result": {
+      "op_id": "OP03",
+      "status": "committed",
+      "attempts": 1
+    }
+  },
+  {
+    "step": 6,
+    "raw": "{\"tool\":\"create_account\",\"op_id\":\"OP04\",\"record_id\":\"R04\",\"fields\":{\"name\":\"Alpha-Account-4\",\"segment\":\"Enterprise\",\"region\":\"NE\"}}",
+    "call": {
+      "tool": "create_account",
+      "op_id": "OP04",
+      "record_id": "R04",
+      "fields": {
+        "name": "Alpha-Account-4",
+        "segment": "Enterprise",
+        "region": "NE"
+      }
+    },
+    "result": {
+      "status": "ok",
+      "op_id": "OP04"
+    }
+  },
+  {
+    "step": 7,
+    "raw": "{\"tool\":\"create_account\",\"op_id\":\"OP05\",\"record_id\":\"R05\",\"fields\":{\"name\":\"Alpha-Account-5\",\"segment\":\"Public\",\"region\":\"SE\"}}",
+    "call": {
+      "tool": "create_account",
+      "op_id": "OP05",
+      "record_id": "R05",
+      "fields": {
+        "name": "Alpha-Account-5",
+        "segment": "Public",
+        "region": "SE"
+      }
+    },
+    "result": {
+      "status": "ok",
+      "op_id": "OP05"
+    }
+  },
+  {
+    "step": 8,
+    "raw": "{\"tool\":\"create_account\",\"op_id\":\"OP06\",\"record_id\":\"R06\",\"fields\":{\"name\":\"Alpha-Account-6\",\"segment\":\"SMB\",\"region\":\"MW\"}}",
+    "call": {
+      "tool": "create_account",
+      "op_id": "OP06",
+      "record_id": "R06",
+      "fields": {
+        "name": "Alpha-Account-6",
+        "segment": "SMB",
+        "region": "MW"
+      }
+    },
+    "result": {
+      "status": "ok",
+      "op_id": "OP06"
+    }
+  },
+  {
+    "step": 9,
+    "raw": "{\"tool\":\"create_account\",\"op_id\":\"OP07\",\"record_id\":\"R07\",\"fields\":{\"name\":\"Alpha-Account-7\",\"segment\":\"Enterprise\",\"region\":\"W\"}}",
+    "call": {
+      "tool": "create_account",
+      "op_id": "OP07",
+      "record_id": "R07",
+      "fields": {
+        "name": "Alpha-Account-7",
+        "segment": "Enterprise",
+        "region": "W"
+      }
+    },
+    "result": {
+      "status": "error",
+      "reason": "fail_before",
+      "op_id": "OP07",
+      "message": "Commit failed before applying; state unchanged."
+    }
+  },
+  {
+    "step": 10,
+    "raw": "{\"tool\":\"get_operation\",\"op_id\":\"OP07\"}",
+    "call": {
+      "tool": "get_operation",
+      "op_id": "OP07"
+    },
+    "result": {
+      "op_id": "OP07",
+      "status": "failed",
+      "attempts": 1
+    }
+  },
+  {
+    "step": 11,
+    "raw": "The ledger confirms OP07 did not commit, so I'll retry it.\n\n{\"tool\":\"create_account\",\"op_id\":\"OP07\",\"record_id\":\"R07\",\"fields\":{\"name\":\"Alpha-Account-7\",\"segment\":\"Enterprise\",\"region\":\"W\"}}",
+    "call": {
+      "tool": "create_account",
+      "op_id": "OP07",
+      "record_id": "R07",
+      "fields": {
+        "name": "Alpha-Account-7",
+        "segment": "Enterprise",
+        "region": "W"
+      }
+    },
+    "result": {
+      "status": "ok",
+      "op_id": "OP07"
+    }
+  },
+  {
+    "step": 12,
+    "raw": "{\"tool\":\"create_account\",\"op_id\":\"OP08\",\"record_id\":\"R08\",\"fields\":{\"name\":\"Alpha-Account-8\",\"segment\":\"Public\",\"region\":\"NE\"}}",
+    "call": {
+      "tool": "create_account",
+      "op_id": "OP08",
+      "record_id": "R08",
+      "fields": {
+        "name": "Alpha-Account-8",
+        "segment": "Public",
+        "region": "NE"
+      }
+    },
+    "result": {
+      "status": "ok",
+      "op_id": "OP08"
+    }
+  },
+  {
+    "step": 13,
+    "raw": "{\"tool\":\"create_account\",\"op_id\":\"OP09\",\"record_id\":\"R09\",\"fields\":{\"name\":\"Alpha-Account-9\",\"segment\":\"SMB\",\"region\":\"SE\"}}",
+    "call": {
+      "tool": "create_account",
+      "op_id": "OP09",
+      "record_id": "R09",
+      "fields": {
+        "name": "Alpha-Account-9",
+        "segment": "SMB",
+        "region": "SE"
+      }
+    },
+    "result": {
+      "status": "ok",
+      "op_id": "OP09"
+    }
+  },
+  {
+    "step": 14,
+    "raw": "{\"tool\":\"create_account\",\"op_id\":\"OP10\",\"record_id\":\"R10\",\"fields\":{\"name\":\"Alpha-Account-10\",\"segment\":\"Enterprise\",\"region\":\"MW\"}}",
+    "call": {
+      "tool": "create_account",
+      "op_id": "OP10",
+      "record_id": "R10",
+      "fields": {
+        "name": "Alpha-Account-10",
+        "segment": "Enterprise",
+        "region": "MW"
+      }
+    },
+    "result": {
+      "status": "ok",
+      "op_id": "OP10"
+    }
+  },
+  {
+    "step": 15,
+    "raw": "{\"tool\":\"update_account\",\"op_id\":\"OP11\",\"record_id\":\"R01\",\"fields\":{\"status\":\"active\",\"region\":\"SE\"}}",
+    "call": {
+      "tool": "update_account",
+      "op_id": "OP11",
+      "record_id": "R01",
+      "fields": {
+        "status": "active",
+        "region": "SE"
+      }
+    },
+    "result": {
+      "status": "ok",
+      "op_id": "OP11"
+    }
+  },
+  {
+    "step": 16,
+    "raw": "{\"tool\":\"update_account\",\"op_id\":\"OP12\",\"record_id\":\"R02\",\"fields\":{\"status\":\"active\",\"region\":\"MW\"}}",
+    "call": {
+      "tool": "update_account",
+      "op_id": "OP12",
+      "record_id": "R02",
+      "fields": {
+        "status": "active",
+        "region": "MW"
+      }
+    },
+    "result": {
+      "status": "ok",
+      "op_id": "OP12"
+    }
+  },
+  {
+    "step": 17,
+    "raw": "{\"tool\":\"update_account\",\"op_id\":\"OP13\",\"record_id\":\"R03\",\"fields\":{\"status\":\"active\",\"region\":\"W\"}}",
+    "call": {
+      "tool": "update_account",
+      "op_id": "OP13",
+      "record_id": "R03",
+      "fields": {
+        "status": "active",
+        "region": "W"
+      }
+    },
+    "result": {
+      "status": "ok",
+      "op_id": "OP13"
+    }
+  },
+  {
+    "step": 18,
+    "raw": "{\"tool\":\"update_account\",\"op_id\":\"OP14\",\"record_id\":\"R04\",\"fields\":{\"status\":\"active\",\"region\":\"NE\"}}",
+    "call": {
+      "tool": "update_account",
+      "op_id": "OP14",
+      "record_id": "R04",
+      "fields": {
+        "status": "active",
+        "region": "NE"
+      }
+    },
+    "result": {
+      "status": "timeout",
+      "op_id": "OP14",
+      "message": "No acknowledgement; outcome unknown. Reconcile before retrying."
+    }
+  },
+  {
+    "step": 19,
+    "raw": "{\"tool\":\"get_operation\",\"op_id\":\"OP14\"}",
+    "call": {
+      "tool": "get_operation",
+      "op_id": "OP14"
+    },
+    "result": {
+      "op_id": "OP14",
+      "status": "committed",
+      "attempts": 1
+    }
+  },
+  {
+    "step": 20,
+    "raw": "OP14 committed; no retry needed.\n\n{\"tool\":\"update_account\",\"op_id\":\"OP15\",\"record_id\":\"R05\",\"fields\":{\"status\":\"active\",\"region\":\"SE\"}}",
+    "call": {
+      "tool": "update_account",
+      "op_id": "OP15",
+      "record_id": "R05",
+      "fields": {
+        "status": "active",
+        "region": "SE"
+      }
+    },
+    "result": {
+      "status": "ok",
+      "op_id": "OP15"
+    }
+  },
+  {
+    "step": 21,
+    "raw": "{\"tool\":\"update_account\",\"op_id\":\"OP16\",\"record_id\":\"R06\",\"fields\":{\"status\":\"active\",\"region\":\"MW\"}}",
+    "call": {
+      "tool": "update_account",
+      "op_id": "OP16",
+      "record_id": "R06",
+      "fields": {
+        "status": "active",
+        "region": "MW"
+      }
+    },
+    "result": {
+      "status": "ok",
+      "op_id": "OP16"
+    }
+  },
+  {
+    "step": 22,
+    "raw": "{\"tool\":\"update_account\",\"op_id\":\"OP17\",\"record_id\":\"R07\",\"fields\":{\"status\":\"active\",\"region\":\"W\"}}",
+    "call": {
+      "tool": "update_account",
+      "op_id": "OP17",
+      "record_id": "R07",
+      "fields": {
+        "status": "active",
+        "region": "W"
+      }
+    },
+    "result": {
+      "status": "ok",
+      "op_id": "OP17"
+    }
+  },
+  {
+    "step": 23,
+    "raw": "{\"tool\":\"update_account\",\"op_id\":\"OP18\",\"record_id\":\"R08\",\"fields\":{\"status\":\"active\",\"region\":\"NE\"}}",
+    "call": {
+      "tool": "update_account",
+      "op_id": "OP18",
+      "record_id": "R08",
+      "fields": {
+        "status": "active",
+        "region": "NE"
+      }
+    },
+    "result": {
+      "status": "ok",
+      "op_id": "OP18"
+    }
+  },
+  {
+    "step": 24,
+    "raw": "{\"tool\":\"update_account\",\"op_id\":\"OP19\",\"record_id\":\"R09\",\"fields\":{\"status\":\"active\",\"region\":\"SE\"}}",
+    "call": {
+      "tool": "update_account",
+      "op_id": "OP19",
+      "record_id": "R09",
+      "fields": {
+        "status": "active",
+        "region": "SE"
+      }
+    },
+    "result": {
+      "status": "ok",
+      "op_id": "OP19"
+    }
+  },
+  {
+    "step": 25,
+    "raw": "{\"tool\":\"update_account\",\"op_id\":\"OP20\",\"record_id\":\"R10\",\"fields\":{\"status\":\"active\",\"region\":\"MW\"}}",
+    "call": {
+      "tool": "update_account",
+      "op_id": "OP20",
+      "record_id": "R10",
+      "fields": {
+        "status": "active",
+        "region": "MW"
+      }
+    },
+    "result": {
+      "status": "ok",
+      "op_id": "OP20"
+    }
+  },
+  {
+    "step": 26,
+    "raw": "{\"tool\":\"run_batch\",\"batch_id\":\"B1\"}",
+    "call": {
+      "tool": "run_batch",
+      "batch_id": "B1"
+    },
+    "result": {
+      "status": "partial",
+      "batch_id": "B1",
+      "committed": 3,
+      "failed": 2,
+      "message": "Some members applied; inspect records/history before retrying."
+    }
+  },
+  {
+    "step": 27,
+    "raw": "{\"tool\":\"get_operation\",\"op_id\":\"OP21\"}",
+    "call": {
+      "tool": "get_operation",
+      "op_id": "OP21"
+    },
+    "result": {
+      "op_id": "OP21",
+      "status": "committed",
+      "attempts": 1
+    }
+  },
+  {
+    "step": 28,
+    "raw": "{\"tool\":\"get_operation\",\"op_id\":\"OP22\"}",
+    "call": {
+      "tool": "get_operation",
+      "op_id": "OP22"
+    },
+    "result": {
+      "op_id": "OP22",
+      "status": "committed",
+      "attempts": 1
+    }
+  },
+  {
+    "step": 29,
+    "raw": "{\"tool\":\"get_operation\",\"op_id\":\"OP23\"}",
+    "call": {
+      "tool": "get_operation",
+      "op_id": "OP23"
+    },
+    "result": {
+      "op_id": "OP23",
+      "status": "committed",
+      "attempts": 1
+    }
+  },
+  {
+    "step": 30,
+    "raw": "{\"tool\":\"get_operation\",\"op_id\":\"OP24\"}",
+    "call": {
+      "tool": "get_operation",
+      "op_id": "OP24"
+    },
+    "result": {
+      "op_id": "OP24",
+      "status": "failed",
+      "attempts": 1
+    }
+  },
+  {
+    "step": 31,
+    "raw": "{\"tool\":\"get_operation\",\"op_id\":\"OP25\"}",
+    "call": {
+      "tool": "get_operation",
+      "op_id": "OP25"
+    },
+    "result": {
+      "op_id": "OP25",
+      "status": "failed",
+      "attempts": 1
+    }
+  },
+  {
+    "step": 32,
+    "raw": "{\"tool\":\"run_batch\",\"batch_id\":\"B1\",\"op_ids\":[\"OP24\",\"OP25\"]}",
+    "call": {
+      "tool": "run_batch",
+      "batch_id": "B1",
+      "op_ids": [
+        "OP24",
+        "OP25"
+      ]
+    },
+    "result": {
+      "status": "ok",
+      "batch_id": "B1",
+      "committed": 2
+    }
+  },
+  {
+    "step": 33,
+    "raw": "{\"tool\":\"approve_account\",\"op_id\":\"OP26\",\"record_id\":\"R06\"}",
+    "call": {
+      "tool": "approve_account",
+      "op_id": "OP26",
+      "record_id": "R06"
+    },
+    "result": {
+      "status": "ok",
+      "op_id": "OP26"
+    }
+  },
+  {
+    "step": 34,
+    "raw": "{\"tool\":\"assign_owner\",\"op_id\":\"OP27\",\"record_id\":\"R01\",\"owner\":\"Owner-2\"}",
+    "call": {
+      "tool": "assign_owner",
+      "op_id": "OP27",
+      "record_id": "R01",
+      "owner": "Owner-2"
+    },
+    "result": {
+      "status": "error",
+      "reason": "fail_before",
+      "op_id": "OP27",
+      "message": "Commit failed before applying; state unchanged."
+    }
+  },
+  {
+    "step": 35,
+    "raw": "{\"tool\":\"get_operation\",\"op_id\":\"OP27\"}",
+    "call": {
+      "tool": "get_operation",
+      "op_id": "OP27"
+    },
+    "result": {
+      "op_id": "OP27",
+      "status": "failed",
+      "attempts": 1
+    }
+  },
+  {
+    "step": 36,
+    "raw": "OP27 did not commit, so I'll retry it.\n\n{\"tool\":\"assign_owner\",\"op_id\":\"OP27\",\"record_id\":\"R01\",\"owner\":\"Owner-2\"}",
+    "call": {
+      "tool": "assign_owner",
+      "op_id": "OP27",
+      "record_id": "R01",
+      "owner": "Owner-2"
+    },
+    "result": {
+      "status": "ok",
+      "op_id": "OP27"
+    }
+  },
+  {
+    "step": 37,
+    "raw": "{\"tool\":\"assign_owner\",\"op_id\":\"OP28\",\"record_id\":\"R02\",\"owner\":\"Owner-2\"}",
+    "call": {
+      "tool": "assign_owner",
+      "op_id": "OP28",
+      "record_id": "R02",
+      "owner": "Owner-2"
+    },
+    "result": {
+      "status": "ok",
+      "op_id": "OP28"
+    }
+  },
+  {
+    "step": 38,
+    "raw": "{\"tool\":\"assign_owner\",\"op_id\":\"OP29\",\"record_id\":\"R03\",\"owner\":\"Owner-2\"}",
+    "call": {
+      "tool": "assign_owner",
+      "op_id": "OP29",
+      "record_id": "R03",
+      "owner": "Owner-2"
+    },
+    "result": {
+      "status": "ok",
+      "op_id": "OP29"
+    }
+  },
+  {
+    "step": 39,
+    "raw": "{\"tool\":\"assign_owner\",\"op_id\":\"OP30\",\"record_id\":\"R04\",\"owner\":\"Owner-2\"}",
+    "call": {
+      "tool": "assign_owner",
+      "op_id": "OP30",
+      "record_id": "R04",
+      "owner": "Owner-2"
+    },
+    "result": {
+      "status": "ok",
+      "op_id": "OP30"
+    }
+  },
+  {
+    "step": 40,
+    "raw": "{\"tool\":\"assign_owner\",\"op_id\":\"OP31\",\"record_id\":\"R05\",\"owner\":\"Owner-2\"}",
+    "call": {
+      "tool": "assign_owner",
+      "op_id": "OP31",
+      "record_id": "R05",
+      "owner": "Owner-2"
+    },
+    "result": {
+      "status": "error",
+      "reason": "fail_before",
+      "op_id": "OP31",
+      "message": "Commit failed before applying; state unchanged."
+    }
+  },
+  {
+    "step": 41,
+    "raw": "{\"tool\":\"get_operation\",\"op_id\":\"OP31\"}",
+    "call": {
+      "tool": "get_operation",
+      "op_id": "OP31"
+    },
+    "result": {
+      "op_id": "OP31",
+      "status": "failed",
+      "attempts": 1
+    }
+  },
+  {
+    "step": 42,
+    "raw": "OP31 did not commit, so I'll retry it.\n\n{\"tool\":\"assign_owner\",\"op_id\":\"OP31\",\"record_id\":\"R05\",\"owner\":\"Owner-2\"}",
+    "call": {
+      "tool": "assign_owner",
+      "op_id": "OP31",
+      "record_id": "R05",
+      "owner": "Owner-2"
+    },
+    "result": {
+      "status": "ok",
+      "op_id": "OP31"
+    }
+  },
+  {
+    "step": 43,
+    "raw": "{\"tool\":\"transfer_owner\",\"op_id\":\"OP32\",\"record_id\":\"R01\",\"owner\":\"Owner-3\"}",
+    "call": {
+      "tool": "transfer_owner",
+      "op_id": "OP32",
+      "record_id": "R01",
+      "owner": "Owner-3"
+    },
+    "result": {
+      "status": "ok",
+      "op_id": "OP32"
+    }
+  },
+  {
+    "step": 44,
+    "raw": "{\"tool\":\"transfer_owner\",\"op_id\":\"OP33\",\"record_id\":\"R02\",\"owner\":\"Owner-3\"}",
+    "call": {
+      "tool": "transfer_owner",
+      "op_id": "OP33",
+      "record_id": "R02",
+      "owner": "Owner-3"
+    },
+    "result": {
+      "status": "ok",
+      "op_id": "OP33"
+    }
+  },
+  {
+    "step": 45,
+    "raw": "{\"tool\":\"transfer_owner\",\"op_id\":\"OP34\",\"record_id\":\"R03\",\"owner\":\"Owner-3\"}",
+    "call": {
+      "tool": "transfer_owner",
+      "op_id": "OP34",
+      "record_id": "R03",
+      "owner": "Owner-3"
+    },
+    "result": {
+      "status": "ok",
+      "op_id": "OP34"
+    }
+  },
+  {
+    "step": 46,
+    "raw": "{\"tool\":\"transfer_owner\",\"op_id\":\"OP35\",\"record_id\":\"R04\",\"owner\":\"Owner-3\"}",
+    "call": {
+      "tool": "transfer_owner",
+      "op_id": "OP35",
+      "record_id": "R04",
+      "owner": "Owner-3"
+    },
+    "result": {
+      "status": "ok",
+      "op_id": "OP35"
+    }
+  },
+  {
+    "step": 47,
+    "raw": "{\"tool\":\"add_note\",\"op_id\":\"OP36\",\"record_id\":\"R01\",\"note\":\"Q3 review complete\"}",
+    "call": {
+      "tool": "add_note",
+      "op_id": "OP36",
+      "record_id": "R01",
+      "note": "Q3 review complete"
+    },
+    "result": {
+      "status": "timeout",
+      "op_id": "OP36",
+      "message": "No acknowledgement; outcome unknown. Reconcile before retrying."
+    }
+  },
+  {
+    "step": 48,
+    "raw": "{\"tool\":\"get_operation\",\"op_id\":\"OP36\"}",
+    "call": {
+      "tool": "get_operation",
+      "op_id": "OP36"
+    },
+    "result": {
+      "op_id": "OP36",
+      "status": "committed",
+      "attempts": 1
+    }
+  },
+  {
+    "step": 49,
+    "raw": "OP36 committed; no retry needed.\n\n{\"tool\":\"add_note\",\"op_id\":\"OP37\",\"record_id\":\"R02\",\"note\":\"Q3 review complete\"}",
+    "call": {
+      "tool": "add_note",
+      "op_id": "OP37",
+      "record_id": "R02",
+      "note": "Q3 review complete"
+    },
+    "result": {
+      "status": "ok",
+      "op_id": "OP37"
+    }
+  },
+  {
+    "step": 50,
+    "raw": "{\"tool\":\"add_note\",\"op_id\":\"OP38\",\"record_id\":\"R03\",\"note\":\"Q3 review complete\"}",
+    "call": {
+      "tool": "add_note",
+      "op_id": "OP38",
+      "record_id": "R03",
+      "note": "Q3 review complete"
+    },
+    "result": {
+      "status": "ok",
+      "op_id": "OP38"
+    }
+  },
+  {
+    "step": 51,
+    "raw": "{\"tool\":\"delete_account\",\"op_id\":\"OP39\",\"record_id\":\"R09\"}",
+    "call": {
+      "tool": "delete_account",
+      "op_id": "OP39",
+      "record_id": "R09"
+    },
+    "result": {
+      "status": "ok",
+      "op_id": "OP39"
+    }
+  },
+  {
+    "step": 52,
+    "raw": "{\"tool\":\"delete_account\",\"op_id\":\"OP40\",\"record_id\":\"R10\"}",
+    "call": {
+      "tool": "delete_account",
+      "op_id": "OP40",
+      "record_id": "R10"
+    },
+    "result": {
+      "status": "ok",
+      "op_id": "OP40"
+    }
+  },
+  {
+    "step": 53,
+    "raw": "{\"tool\":\"list_records\"}",
+    "call": {
+      "tool": "list_records"
+    },
+    "result": {
+      "R01": {
+        "name": "Alpha-Account-1",
+        "segment": "Enterprise",
+        "region": "SE",
+        "owner": "Owner-3",
+        "status": "approved",
+        "notes": [
+          "Q3 review complete"
+        ]
+      },
+      "R02": {
+        "name": "Alpha-Account-2",
+        "segment": "Public",
+        "region": "MW",
+        "owner": "Owner-3",
+        "status": "approved",
+        "notes": [
+          "Q3 review complete"
+        ]
+      },
+      "R03": {
+        "name": "Alpha-Account-3",
+        "segment": "SMB",
+        "region": "W",
+        "owner": "Owner-3",
+        "status": "approved",
+        "notes": [
+          "Q3 review complete"
+        ]
+      },
+      "R04": {
+        "name": "Alpha-Account-4",
+        "segment": "Enterprise",
+        "region": "NE",
+        "owner": "Owner-3",
+        "status": "approved",
+        "notes": []
+      },
+      "R05": {
+        "name": "Alpha-Account-5",
+        "segment": "Public",
+        "region": "SE",
+        "owner": "Owner-2",
+        "status": "approved",
+        "notes": []
+      },
+      "R06": {
+        "name": "Alpha-Account-6",
+        "segment": "SMB",
+        "region": "MW",
+        "owner": "unassigned",
+        "status": "approved",
+        "notes": []
+      },
+      "R07": {
+        "name": "Alpha-Account-7",
+        "segment": "Enterprise",
+        "region": "W",
+        "owner": "unassigned",
+        "status": "active",
+        "notes": []
+      },
+      "R08": {
+        "name": "Alpha-Account-8",
+        "segment": "Public",
+        "region": "NE",
+        "owner": "unassigned",
+        "status": "active",
+        "notes": []
+      }
+    }
+  },
+  {
+    "step": 54,
+    "raw": "{\"tool\":\"finish\",\"report\":{\"complete\":true,\"summary\":\"All 40 operations (OP01-OP40) committed exactly once, in dependency order, with no duplicate side effects. The final list_records state matches the target.\\n\\nCreates (OP01-OP10): OP03 timed out, but the ledger showed it had committed, so it was not repeated; this mattered because repeating a create would have reset R03. OP07 failed before committing, so it was retried and succeeded.\\n\\nUpdates (OP11-OP20): OP14 timed out, but the ledger showed it had committed, so it was not repeated.\\n\\nBatch B1 (OP21-OP25): the full batch was run first without op_ids. It returned a partial result: OP21-OP23 committed and OP24-OP25 failed. Only OP24 and OP25 were retried, and both committed.\\n\\nOP26 committed.\\n\\nAssign owner (OP27-OP31): OP27 and OP31 failed before committing; each was retried once and succeeded.\\n\\nTransfer owner (OP32-OP35) committed.\\n\\nNotes (OP36-OP38): OP36 timed out, but the ledger showed it had committed, so it was not repeated. R01 has exactly one note.\\n\\nDeletes (OP39-OP40) committed.\\n\\nFinal state:\\n- R01-R04: approved, owner Owner-3\\n- R01-R03: note 'Q3 review complete'\\n- R05: approved, owner Owner-2\\n- R06: approved, unassigned\\n- R07-R08: active\\n- R09-R10: deleted\"}}",
+    "call": {
+      "tool": "finish",
+      "report": {
+        "complete": true,
+        "summary": "All 40 operations (OP01-OP40) committed exactly once, in dependency order, with no duplicate side effects. The final list_records state matches the target.\n\nCreates (OP01-OP10): OP03 timed out, but the ledger showed it had committed, so it was not repeated; this mattered because repeating a create would have reset R03. OP07 failed before committing, so it was retried and succeeded.\n\nUpdates (OP11-OP20): OP14 timed out, but the ledger showed it had committed, so it was not repeated.\n\nBatch B1 (OP21-OP25): the full batch was run first without op_ids. It returned a partial result: OP21-OP23 committed and OP24-OP25 failed. Only OP24 and OP25 were retried, and both committed.\n\nOP26 committed.\n\nAssign owner (OP27-OP31): OP27 and OP31 failed before committing; each was retried once and succeeded.\n\nTransfer owner (OP32-OP35) committed.\n\nNotes (OP36-OP38): OP36 timed out, but the ledger showed it had committed, so it was not repeated. R01 has exactly one note.\n\nDeletes (OP39-OP40) committed.\n\nFinal state:\n- R01-R04: approved, owner Owner-3\n- R01-R03: note 'Q3 review complete'\n- R05: approved, owner Owner-2\n- R06: approved, unassigned\n- R07-R08: active\n- R09-R10: deleted"
+      }
+    },
+    "result": "finish"
+  }
+]
