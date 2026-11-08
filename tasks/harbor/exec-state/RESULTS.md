@@ -28,8 +28,8 @@ for all runs.
 | DeepSeek v4.1 Flash | 5 valid | 5 | 0 | no state failure; one format-failure trial excluded |
 | Gemini-4 Argon | 0 | — | — | endpoint unavailable (`502`) |
 
-Both Qwen and GPT failures are **one lost operation**, not a misjudged
-ambiguous outcome. Across 30 scored trials and 120 ambiguous outcomes (3 lost
+The Qwen and GPT failures are **clean-operation tracking errors**, not misjudged
+ambiguous outcomes. Across 30 scored trials and 120 ambiguous outcomes (3 lost
 acks + 1 partial batch per trial), **no trial retried an operation it had
 confirmed committed**. `retried_after_ambiguous` is empty in every trial.
 
