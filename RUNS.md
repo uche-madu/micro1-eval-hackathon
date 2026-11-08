@@ -181,3 +181,26 @@ The two earlier pilots remain frozen; see `FREEZE.md`.
 **Decision:** stop. Pure omission in this scenario is not a frontier limitation. The next credible axis is multi-turn state integrity, not another one-shot audit.
 
 **Artifacts:** `tasks/harbor/audit-omission/PILOT_REPORT.md`, `results/transcripts/`.
+
+## Pilot 6 — 10-turn state integrity
+
+**Question:** can the model restate a constraint, then keep applying it after late updates — and does context size change that?
+
+**Design:** two Harbor tasks under `tasks/harbor/state-integrity/` — `state-short` and `state-long`. Same 10 turns and 10 state updates; the long version pads each turn with neutral operational context.
+
+**Oracle:** 2/2 at **1.000**.
+
+**Qwen 3.8 Flash:**
+
+| Condition | Trials | 1.000 | 0.952 | Final answers | Stale fields | Dissociation |
+|---|---:|---:|---:|---:|---:|---:|
+| Short | 3 | 3 | 0 | 18/18 | 0 | 0 |
+| Long | 3 | 1 | 2 | 18/18 | 0 | 0 |
+
+The 0.952s were the recall probe, not state application: the model answered `incident_4_march` with INC-032 facts instead of the draft’s certificate attribution, while its final Q4 was correctly `failed rollback`. No recall–compliance dissociation.
+
+**Finding:** 10 turns and ~4k tokens are below the failure regime. Padding the same updates with neutral prose does not degrade final answers. The observed OpenCode/Claude Code failure likely needs 30–50 turns and/or tool/action state.
+
+**Decision:** do not expand the 10-turn version; do not run GPT on it. Next: 30–50 turns with 20–30 updates, or agentic tool state.
+
+**Artifacts:** `tasks/harbor/state-integrity/PILOT_REPORT.md`, `results/transcripts/`, `GAPS.md`.

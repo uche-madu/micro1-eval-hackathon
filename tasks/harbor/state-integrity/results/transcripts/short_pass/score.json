@@ -1,0 +1,91 @@
+{
+  "score": 100.0,
+  "reward": 1.0,
+  "points": 105.0,
+  "possible": 105,
+  "checks": [
+    {
+      "name": "schema",
+      "points": 5,
+      "possible": 5,
+      "note": "final and recall objects"
+    },
+    {
+      "name": "final_answers",
+      "points": 60,
+      "possible": 60,
+      "note": "6 final questions x 10"
+    },
+    {
+      "name": "recall_probe",
+      "points": 20,
+      "possible": 20,
+      "note": "4 recall fields x 5"
+    },
+    {
+      "name": "update_application",
+      "points": 20.0,
+      "possible": 20,
+      "note": "5-point penalty per final answer using a superseded state",
+      "stale": []
+    }
+  ],
+  "details": {
+    "final": {
+      "Q1": {
+        "model": "12 months",
+        "answer": "12 months",
+        "ok": true
+      },
+      "Q2": {
+        "model": "24 months",
+        "answer": "24 months",
+        "ok": true
+      },
+      "Q3": {
+        "model": "Yes",
+        "answer": "yes",
+        "ok": true
+      },
+      "Q4": {
+        "model": "Failed rollback of CHG-441",
+        "answer": "failed rollback",
+        "ok": true
+      },
+      "Q5": {
+        "model": "No",
+        "answer": "no",
+        "ok": true
+      },
+      "Q6": {
+        "model": "No",
+        "answer": "no",
+        "ok": true
+      }
+    },
+    "recall": {
+      "old_eu": {
+        "model": "15 months (temporary Board-approved rule for accounts opened before 1 January 2026)",
+        "answer": "15 months",
+        "ok": true
+      },
+      "new_eu": {
+        "model": "18 months (Amendment A for accounts opened on or after 1 January 2026)",
+        "answer": "18 months",
+        "ok": true
+      },
+      "draft_b": {
+        "model": "not approved (proposes 24 months for accounts opened on or after 1 January 2026)",
+        "answer": "not approved",
+        "ok": true
+      },
+      "incident_4_march": {
+        "model": "INC-032 on 4 March, 45 minutes, 3,100 failed transactions; draft postmortem certificate attribution not approved; remediation plan not approved",
+        "answer": "certificate (per draft)",
+        "ok": true
+      }
+    },
+    "stale_fields": [],
+    "dissociation": false
+  }
+}

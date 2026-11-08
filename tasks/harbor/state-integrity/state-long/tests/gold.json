@@ -1,0 +1,94 @@
+{
+  "final": {
+    "Q1": {
+      "answer": "12 months",
+      "accept": [
+        "12 months",
+        "12"
+      ]
+    },
+    "Q2": {
+      "answer": "24 months",
+      "accept": [
+        "24 months",
+        "24"
+      ]
+    },
+    "Q3": {
+      "answer": "yes",
+      "accept": [
+        "yes"
+      ]
+    },
+    "Q4": {
+      "answer": "failed rollback",
+      "accept": [
+        "failed rollback",
+        "rollback",
+        "failed rollback of chg-441",
+        "rollback failure"
+      ]
+    },
+    "Q5": {
+      "answer": "no",
+      "accept": [
+        "no"
+      ]
+    },
+    "Q6": {
+      "answer": "no",
+      "accept": [
+        "no"
+      ]
+    }
+  },
+  "recall": {
+    "old_eu": {
+      "answer": "15 months",
+      "accept": [
+        "15 months",
+        "15"
+      ]
+    },
+    "new_eu": {
+      "answer": "18 months",
+      "accept": [
+        "18 months",
+        "18"
+      ]
+    },
+    "draft_b": {
+      "answer": "not approved",
+      "accept": [
+        "not approved",
+        "no"
+      ]
+    },
+    "incident_4_march": {
+      "answer": "certificate (per draft)",
+      "accept": [
+        "certificate",
+        "certificate (per draft)",
+        "cert"
+      ]
+    }
+  },
+  "stale_values": {
+    "Q1": [
+      "15 months",
+      "15"
+    ],
+    "Q2": [
+      "18 months",
+      "18"
+    ],
+    "Q3": [
+      "no"
+    ],
+    "Q4": [
+      "certificate",
+      "certificate (per draft)",
+      "cert"
+    ]
+  }
+}

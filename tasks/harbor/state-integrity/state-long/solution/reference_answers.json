@@ -1,0 +1,16 @@
+{
+  "final": {
+    "Q1": "12 months",
+    "Q2": "24 months",
+    "Q3": "yes",
+    "Q4": "failed rollback",
+    "Q5": "no",
+    "Q6": "no"
+  },
+  "recall": {
+    "old_eu": "15 months",
+    "new_eu": "18 months",
+    "draft_b": "not approved",
+    "incident_4_march": "certificate (per draft)"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "final": {
+    "Q1": "12 months",
+    "Q2": "24 months",
+    "Q3": "yes",
+    "Q4": "failed rollback of CHG-441",
+    "Q5": "no",
+    "Q6": "no"
+  },
+  "recall": {
+    "old_eu": "temporary 15 months for accounts opened before 1 January 2026, effective immediately",
+    "new_eu": "18 months for accounts opened on or after 1 January 2026, effective 1 March 2026",
+    "draft_b": "not approved",
+    "incident_4_march": "INC-032: 45 minutes, 3,100 failed transactions; draft postmortem not approved"
+  }
+}

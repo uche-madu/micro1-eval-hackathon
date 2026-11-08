@@ -118,3 +118,7 @@ The clean transcript is in `tasks/harbor/board-brief/results/run2_qwen/`, and th
 ## Pure-omission audit pilot
 
 `tasks/harbor/audit-omission/` tests whether a model notices a decision-critical fact that is absent from an otherwise correct memo. Oracle 4/4 at 1.000. Final Qwen and GPT-6 Luna runs: **10/10 each**, false-pass **0**; an earlier Qwen false pass disappeared after the clean-control memo was corrected. See `tasks/harbor/audit-omission/PILOT_REPORT.md`.
+
+## 10-turn state-integrity pilot
+
+`tasks/harbor/state-integrity/` tests whether the model applies late updates after a recall probe, with short vs long context. Oracle 2/2 at 1.000. Qwen answered all six final questions correctly in **6/6** trials; the two 0.952s were an ambiguous recall field, not state failure. 10 turns is below the failure regime. See `tasks/harbor/state-integrity/PILOT_REPORT.md` and `GAPS.md`.

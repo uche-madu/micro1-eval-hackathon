@@ -1,0 +1,52 @@
+[
+  {
+    "turn": 1,
+    "user": "We are preparing the Q3 EU launch for Northwind Cloud Services. Baseline: standard retention is 24 months; EU retention is 12 months; backups are retained for 35 days under a separate schedule. Acknowledge the baseline briefly. Do not answer final questions yet.",
+    "assistant": "Baseline acknowledged: standard retention is 24 months, EU retention is 12 months, and backups are retained for 35 days under a separate schedule."
+  },
+  {
+    "turn": 2,
+    "user": "Amendment A is signed. Effective 1 March 2026, EU retention is 18 months for accounts opened on or after 1 January 2026. Accounts opened before that date remain at 12 months. Note the change.",
+    "assistant": "Noted. Amendment A (signed) updates EU retention effective 1 March 2026:\n\n- Accounts opened **on or after 1 January 2026**: EU retention = **18 months**\n- Accounts opened **before 1 January 2026**: EU retention remains **12 months**\n\nThis supersedes the baseline EU retention of 12 months for the applicable cohort."
+  },
+  {
+    "turn": 3,
+    "user": "The Board has approved a temporary 15-month retention rule for EU accounts opened before 1 January 2026, effective immediately. Apply it to the old-account cohort. The rule is temporary.",
+    "assistant": "Noted and applied to the current state:\n\n- **EU accounts opened on or after 1 January 2026:** retention remains **18 months** under Amendment A.\n- **EU accounts opened before 1 January 2026:** retention is now **15 months** under the Board-approved temporary rule, effective immediately.\n- The temporary rule applies only to the **old-account cohort** and is **temporary**.\n- While the temporary rule is in effect, it supersedes the prior **12-month** retention treatment for accounts opened before 1 January 2026.\n- Backups remain governed separately at **35 days**."
+  },
+  {
+    "turn": 4,
+    "user": "Draft Amendment B proposes 24 months for EU accounts opened on or after 1 January 2026. It is not approved. The public trust page and the system-of-record export still show 12 months and are stale. The Data Protection Officer says not to rely on the export until it is updated.",
+    "assistant": "Noted and incorporated into the current state. Precedence and reliability flags:\n\n**Authoritative (approved) retention rules now in force:**\n- EU accounts opened **on or after 1 January 2026**: **18 months** (Amendment A, signed).\n- EU accounts opened **before 1 January 2026**: **15 months** (Board-approved temporary rule, effective immediately; temporary).\n- Backups: **35 days** (separate schedule).\n\n**To be disregarded / not relied upon:**\n- **Amendment B** (draft proposing **24 months** for the new cohort): **NOT approved** \u2014 do not apply.\n- **Public trust page** and **system-of-record export** (both still showing **12 months**): **stale** \u2014 per the DPO, do not rely on the export until it is updated.\n\n**Net effect:** The stale \"12 months\" figure in the public/export sources does not reflect the current approved state for either cohort. The new cohort is governed by Amendment A (18 months); the old cohort is governed by the temporary Board rule (15 months). I will treat these approved values as the current state and ignore the draft and stale sources unless later superseded."
+  },
+  {
+    "turn": 5,
+    "user": "The Q3 launch is not approved until the trust page and the system export are updated and the update is recorded. This is a precondition. Note it.",
+    "assistant": "Noted as a **precondition** for the current state:\n\n- **Q3 EU launch is NOT approved** until both of the following are complete:\n  1. The **public trust page** is updated to reflect the approved retention rules.\n  2. The **system-of-record export** is updated to reflect the approved retention rules.\n  3. The **update is recorded**.\n\n**Implications for the current state:**\n- This precondition is **blocking**: until it is satisfied, the launch remains unapproved regardless of the retention rules in force.\n- It reinforces the DPO instruction: the stale trust page and export (still showing 12 months) cannot be relied upon, and the launch cannot proceed until they are corrected and the correction is recorded.\n- The approved retention values remain: **18 months** (new cohort, Amendment A), **15 months** (old cohort, temporary Board rule), **35 days** (backups). Amendment B (24 months) remains unapproved and inapplicable.\n\nI will carry this precondition forward and treat the launch as unapproved until the update-and-record step is confirmed."
+  },
+  {
+    "turn": 6,
+    "user": "For the March incidents: INC-031 on 2 March, 75 minutes, expired certificate, 12,400 failed transactions. INC-032 on 4 March, 45 minutes, 3,100 failed transactions. The draft postmortem attributes both to the certificate; it is not approved. The remediation plan is a draft and is not approved.",
+    "assistant": "Noted and incorporated into the current state for the March incidents:\n\n- **INC-031**\n  - Date: **2 March**\n  - Duration: **75 minutes**\n  - Reported issue: **expired certificate**\n  - Impact: **12,400 failed transactions**\n\n- **INC-032**\n  - Date: **4 March**\n  - Duration: **45 minutes**\n  - Impact: **3,100 failed transactions**\n\n**Status of postmortem/remediation materials:**\n- The **draft postmortem** attributes both incidents to the certificate, but it is **not approved**.\n- The **remediation plan** is also a **draft** and is **not approved**.\n\n**Current-state treatment:**\n- The incident facts above are noted.\n- The certificate attribution from the draft postmortem is **not treated as approved or final**.\n- The remediation plan is **not treated as approved**.\n- The Q3 launch precondition remains: launch is **not approved** until the trust page and system export are updated and the update is recorded."
+  },
+  {
+    "turn": 7,
+    "user": "Before the final questions, return ONLY JSON with the current state: {\"old_eu\":\"...\",\"new_eu\":\"...\",\"draft_b\":\"...\",\"incident_4_march\":\"...\"}.",
+    "assistant": "{\n  \"old_eu\": \"15 months (temporary Board-approved rule for accounts opened before 1 January 2026)\",\n  \"new_eu\": \"18 months (Amendment A for accounts opened on or after 1 January 2026)\",\n  \"draft_b\": \"not approved (proposes 24 months for accounts opened on or after 1 January 2026)\",\n  \"incident_4_march\": \"INC-032 on 4 March, 45 minutes, 3,100 failed transactions; draft postmortem certificate attribution not approved; remediation plan not approved\"\n}"
+  },
+  {
+    "turn": 8,
+    "user": "The Board has now approved Draft Amendment B, effective immediately. For EU accounts opened on or after 1 January 2026, retention is now 24 months. It does not change the old-account rule. Apply the update.",
+    "assistant": "Applied. Amendment B is now **approved, effective immediately**, superseding the prior \"not approved\" status.\n\n**Updated current state:**\n- **EU accounts opened on or after 1 January 2026:** retention = **24 months** (Amendment B, approved). This supersedes Amendment A's 18 months for this cohort.\n- **EU accounts opened before 1 January 2026:** retention = **15 months** (temporary Board-approved rule) \u2014 **unchanged**, as Amendment B does not affect the old-account cohort.\n- **Backups:** **35 days** (separate schedule) \u2014 unchanged.\n\n**Still in force from prior state:**\n- The **Q3 launch precondition** remains blocking: launch is **not approved** until the public trust page and system-of-record export are updated to reflect the approved rules **and** the update is recorded. (Note: the stale sources showing 12 months are now even further out of date, since the new cohort is 24 months and the old cohort is 15 months.)\n- The **March incident facts** (INC-031, INC-032) stand; the **draft postmortem** certificate attribution and the **remediation plan** remain **not approved**.\n\nI will carry this updated state forward for the final questions."
+  },
+  {
+    "turn": 9,
+    "user": "Two corrections. First, the temporary 15-month rule for old EU accounts is withdrawn; old accounts remain at 12 months. Second, the 4 March incident was caused by a failed rollback of CHG-441, not the certificate. Apply both corrections.",
+    "assistant": "Applied.\n\n**Retention state now:**\n- EU accounts opened **on or after 1 January 2026**: **24 months** \u2014 Amendment B approved and effective immediately.\n- EU accounts opened **before 1 January 2026**: **12 months** \u2014 the temporary 15-month rule is withdrawn and no longer applies.\n- Backups: **35 days** under the separate schedule.\n\n**Incident state now:**\n- **INC-032**, 4 March: cause corrected to a **failed rollback of CHG-441**, not the certificate.\n- **INC-031**, 2 March: remains noted as an expired-certificate incident per the reported facts, but the draft postmortem attribution is still **not approved** unless separately corrected.\n\n**Other current-state notes:**\n- The draft postmortem\u2019s earlier certificate attribution for both incidents is no longer reliable for INC-032.\n- The Q3 launch precondition remains in force: the launch is **not approved** until the public trust page and system-of-record export are updated and the update is recorded."
+  },
+  {
+    "turn": 10,
+    "user": "Return ONLY JSON with the final answers: {\"Q1\":\"old EU retention\",\"Q2\":\"new EU retention\",\"Q3\":\"is Draft B in effect?\",\"Q4\":\"4 March cause\",\"Q5\":\"is the launch approved?\",\"Q6\":\"is the remediation plan approved?\"}.",
+    "assistant": "{\n  \"Q1\": \"12 months\",\n  \"Q2\": \"24 months\",\n  \"Q3\": \"Yes\",\n  \"Q4\": \"Failed rollback of CHG-441\",\n  \"Q5\": \"No\",\n  \"Q6\": \"No\"\n}"
+  }
+]

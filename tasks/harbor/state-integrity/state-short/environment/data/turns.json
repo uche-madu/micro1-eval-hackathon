@@ -1,0 +1,42 @@
+[
+  {
+    "turn": 1,
+    "text": "We are preparing the Q3 EU launch for Northwind Cloud Services. Baseline: standard retention is 24 months; EU retention is 12 months; backups are retained for 35 days under a separate schedule. Acknowledge the baseline briefly. Do not answer final questions yet."
+  },
+  {
+    "turn": 2,
+    "text": "Amendment A is signed. Effective 1 March 2026, EU retention is 18 months for accounts opened on or after 1 January 2026. Accounts opened before that date remain at 12 months. Note the change."
+  },
+  {
+    "turn": 3,
+    "text": "The Board has approved a temporary 15-month retention rule for EU accounts opened before 1 January 2026, effective immediately. Apply it to the old-account cohort. The rule is temporary."
+  },
+  {
+    "turn": 4,
+    "text": "Draft Amendment B proposes 24 months for EU accounts opened on or after 1 January 2026. It is not approved. The public trust page and the system-of-record export still show 12 months and are stale. The Data Protection Officer says not to rely on the export until it is updated."
+  },
+  {
+    "turn": 5,
+    "text": "The Q3 launch is not approved until the trust page and the system export are updated and the update is recorded. This is a precondition. Note it."
+  },
+  {
+    "turn": 6,
+    "text": "For the March incidents: INC-031 on 2 March, 75 minutes, expired certificate, 12,400 failed transactions. INC-032 on 4 March, 45 minutes, 3,100 failed transactions. The draft postmortem attributes both to the certificate; it is not approved. The remediation plan is a draft and is not approved."
+  },
+  {
+    "turn": 7,
+    "text": "Before the final questions, return ONLY JSON with the current state: {\"old_eu\":\"...\",\"new_eu\":\"...\",\"draft_b\":\"...\",\"incident_4_march\":\"...\"}."
+  },
+  {
+    "turn": 8,
+    "text": "The Board has now approved Draft Amendment B, effective immediately. For EU accounts opened on or after 1 January 2026, retention is now 24 months. It does not change the old-account rule. Apply the update."
+  },
+  {
+    "turn": 9,
+    "text": "Two corrections. First, the temporary 15-month rule for old EU accounts is withdrawn; old accounts remain at 12 months. Second, the 4 March incident was caused by a failed rollback of CHG-441, not the certificate. Apply both corrections."
+  },
+  {
+    "turn": 10,
+    "text": "Return ONLY JSON with the final answers: {\"Q1\":\"old EU retention\",\"Q2\":\"new EU retention\",\"Q3\":\"is Draft B in effect?\",\"Q4\":\"4 March cause\",\"Q5\":\"is the launch approved?\",\"Q6\":\"is the remediation plan approved?\"}."
+  }
+]
