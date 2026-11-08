@@ -1,0 +1,833 @@
+[
+  {
+    "step": 1,
+    "raw": "{\"tool\":\"run_batch\",\"batch_id\":\"B1\"}{\"tool\":\"get_operation\",\"op_id\":\"OP21\"}{\"tool\":\"get_operation\",\"op_id\":\"OP22\"}{\"tool\":\"get_operation\",\"op_id\":\"OP23\"}",
+    "call": {},
+    "result": {
+      "status": "error",
+      "reason": "unknown_tool",
+      "message": "unknown tool"
+    }
+  },
+  {
+    "step": 2,
+    "raw": "{\"tool\":\"run_batch\",\"batch_id\":\"B1\"}",
+    "call": {
+      "tool": "run_batch",
+      "batch_id": "B1"
+    },
+    "result": {
+      "status": "error",
+      "reason": "dependency",
+      "batch_id": "B1",
+      "violations": [
+        {
+          "op_id": "OP21",
+          "reason": "dependency",
+          "unmet": [
+            "OP11"
+          ]
+        },
+        {
+          "op_id": "OP22",
+          "reason": "dependency",
+          "unmet": [
+            "OP12"
+          ]
+        },
+        {
+          "op_id": "OP23",
+          "reason": "dependency",
+          "unmet": [
+            "OP13"
+          ]
+        },
+        {
+          "op_id": "OP24",
+          "reason": "dependency",
+          "unmet": [
+            "OP14"
+          ]
+        },
+        {
+          "op_id": "OP25",
+          "reason": "dependency",
+          "unmet": [
+            "OP15"
+          ]
+        }
+      ],
+      "message": "Batch prerequisites are not met; apply the earlier operations first."
+    }
+  },
+  {
+    "step": 3,
+    "raw": "{\"tool\":\"create_account\",\"op_id\":\"OP01\",\"record_id\":\"R01\",\"fields\":{\"name\":\"Beta-Account-1\",\"segment\":\"Enterprise\",\"region\":\"SE\"}}",
+    "call": {
+      "tool": "create_account",
+      "op_id": "OP01",
+      "record_id": "R01",
+      "fields": {
+        "name": "Beta-Account-1",
+        "segment": "Enterprise",
+        "region": "SE"
+      }
+    },
+    "result": {
+      "status": "ok",
+      "op_id": "OP01"
+    }
+  },
+  {
+    "step": 4,
+    "raw": "{\"tool\":\"create_account\",\"op_id\":\"OP02\",\"record_id\":\"R02\",\"fields\":{\"name\":\"Beta-Account-2\",\"segment\":\"Public\",\"region\":\"MW\"}}",
+    "call": {
+      "tool": "create_account",
+      "op_id": "OP02",
+      "record_id": "R02",
+      "fields": {
+        "name": "Beta-Account-2",
+        "segment": "Public",
+        "region": "MW"
+      }
+    },
+    "result": {
+      "status": "ok",
+      "op_id": "OP02"
+    }
+  },
+  {
+    "step": 5,
+    "raw": "{\"tool\":\"create_account\",\"op_id\":\"OP03\",\"record_id\":\"R03\",\"fields\":{\"name\":\"Beta-Account-3\",\"segment\":\"SMB\",\"region\":\"W\"}}",
+    "call": {
+      "tool": "create_account",
+      "op_id": "OP03",
+      "record_id": "R03",
+      "fields": {
+        "name": "Beta-Account-3",
+        "segment": "SMB",
+        "region": "W"
+      }
+    },
+    "result": {
+      "status": "timeout",
+      "op_id": "OP03",
+      "message": "No acknowledgement; outcome unknown. Reconcile before retrying."
+    }
+  },
+  {
+    "step": 6,
+    "raw": "{\"tool\":\"get_operation\",\"op_id\":\"OP03\"}",
+    "call": {
+      "tool": "get_operation",
+      "op_id": "OP03"
+    },
+    "result": {
+      "op_id": "OP03",
+      "status": "committed",
+      "attempts": 1
+    }
+  },
+  {
+    "step": 7,
+    "raw": "{\"tool\":\"create_account\",\"op_id\":\"OP04\",\"record_id\":\"R04\",\"fields\":{\"name\":\"Beta-Account-4\",\"segment\":\"Enterprise\",\"region\":\"NE\"}}",
+    "call": {
+      "tool": "create_account",
+      "op_id": "OP04",
+      "record_id": "R04",
+      "fields": {
+        "name": "Beta-Account-4",
+        "segment": "Enterprise",
+        "region": "NE"
+      }
+    },
+    "result": {
+      "status": "ok",
+      "op_id": "OP04"
+    }
+  },
+  {
+    "step": 8,
+    "raw": "{\"tool\":\"create_account\",\"op_id\":\"OP05\",\"record_id\":\"R05\",\"fields\":{\"name\":\"Beta-Account-5\",\"segment\":\"Public\",\"region\":\"SE\"}}",
+    "call": {
+      "tool": "create_account",
+      "op_id": "OP05",
+      "record_id": "R05",
+      "fields": {
+        "name": "Beta-Account-5",
+        "segment": "Public",
+        "region": "SE"
+      }
+    },
+    "result": {
+      "status": "ok",
+      "op_id": "OP05"
+    }
+  },
+  {
+    "step": 9,
+    "raw": "{\"tool\":\"create_account\",\"op_id\":\"OP06\",\"record_id\":\"R06\",\"fields\":{\"name\":\"Beta-Account-6\",\"segment\":\"SMB\",\"region\":\"MW\"}}",
+    "call": {
+      "tool": "create_account",
+      "op_id": "OP06",
+      "record_id": "R06",
+      "fields": {
+        "name": "Beta-Account-6",
+        "segment": "SMB",
+        "region": "MW"
+      }
+    },
+    "result": {
+      "status": "ok",
+      "op_id": "OP06"
+    }
+  },
+  {
+    "step": 10,
+    "raw": "{\"tool\":\"create_account\",\"op_id\":\"OP07\",\"record_id\":\"R07\",\"fields\":{\"name\":\"Beta-Account-7\",\"segment\":\"Enterprise\",\"region\":\"W\"}}",
+    "call": {
+      "tool": "create_account",
+      "op_id": "OP07",
+      "record_id": "R07",
+      "fields": {
+        "name": "Beta-Account-7",
+        "segment": "Enterprise",
+        "region": "W"
+      }
+    },
+    "result": {
+      "status": "error",
+      "reason": "fail_before",
+      "op_id": "OP07",
+      "message": "Commit failed before applying; state unchanged."
+    }
+  },
+  {
+    "step": 11,
+    "raw": "{\"tool\":\"create_account\",\"op_id\":\"OP07\",\"record_id\":\"R07\",\"fields\":{\"name\":\"Beta-Account-7\",\"segment\":\"Enterprise\",\"region\":\"W\"}}",
+    "call": {
+      "tool": "create_account",
+      "op_id": "OP07",
+      "record_id": "R07",
+      "fields": {
+        "name": "Beta-Account-7",
+        "segment": "Enterprise",
+        "region": "W"
+      }
+    },
+    "result": {
+      "status": "ok",
+      "op_id": "OP07"
+    }
+  },
+  {
+    "step": 12,
+    "raw": "{\"tool\":\"create_account\",\"op_id\":\"OP08\",\"record_id\":\"R08\",\"fields\":{\"name\":\"Beta-Account-8\",\"segment\":\"Public\",\"region\":\"NE\"}}",
+    "call": {
+      "tool": "create_account",
+      "op_id": "OP08",
+      "record_id": "R08",
+      "fields": {
+        "name": "Beta-Account-8",
+        "segment": "Public",
+        "region": "NE"
+      }
+    },
+    "result": {
+      "status": "ok",
+      "op_id": "OP08"
+    }
+  },
+  {
+    "step": 13,
+    "raw": "{\"tool\":\"create_account\",\"op_id\":\"OP09\",\"record_id\":\"R09\",\"fields\":{\"name\":\"Beta-Account-9\",\"segment\":\"SMB\",\"region\":\"SE\"}}",
+    "call": {
+      "tool": "create_account",
+      "op_id": "OP09",
+      "record_id": "R09",
+      "fields": {
+        "name": "Beta-Account-9",
+        "segment": "SMB",
+        "region": "SE"
+      }
+    },
+    "result": {
+      "status": "ok",
+      "op_id": "OP09"
+    }
+  },
+  {
+    "step": 14,
+    "raw": "{\"tool\":\"create_account\",\"op_id\":\"OP10\",\"record_id\":\"R10\",\"fields\":{\"name\":\"Beta-Account-10\",\"segment\":\"Enterprise\",\"region\":\"MW\"}}",
+    "call": {
+      "tool": "create_account",
+      "op_id": "OP10",
+      "record_id": "R10",
+      "fields": {
+        "name": "Beta-Account-10",
+        "segment": "Enterprise",
+        "region": "MW"
+      }
+    },
+    "result": {
+      "status": "ok",
+      "op_id": "OP10"
+    }
+  },
+  {
+    "step": 15,
+    "raw": "{\"tool\":\"update_account\",\"op_id\":\"OP11\",\"record_id\":\"R01\",\"fields\":{\"status\":\"active\",\"region\":\"SE\"}}",
+    "call": {
+      "tool": "update_account",
+      "op_id": "OP11",
+      "record_id": "R01",
+      "fields": {
+        "status": "active",
+        "region": "SE"
+      }
+    },
+    "result": {
+      "status": "ok",
+      "op_id": "OP11"
+    }
+  },
+  {
+    "step": 16,
+    "raw": "{\"tool\":\"update_account\",\"op_id\":\"OP12\",\"record_id\":\"R02\",\"fields\":{\"status\":\"active\",\"region\":\"MW\"}}",
+    "call": {
+      "tool": "update_account",
+      "op_id": "OP12",
+      "record_id": "R02",
+      "fields": {
+        "status": "active",
+        "region": "MW"
+      }
+    },
+    "result": {
+      "status": "ok",
+      "op_id": "OP12"
+    }
+  },
+  {
+    "step": 17,
+    "raw": "{\"tool\":\"update_account\",\"op_id\":\"OP13\",\"record_id\":\"R03\",\"fields\":{\"status\":\"active\",\"region\":\"W\"}}",
+    "call": {
+      "tool": "update_account",
+      "op_id": "OP13",
+      "record_id": "R03",
+      "fields": {
+        "status": "active",
+        "region": "W"
+      }
+    },
+    "result": {
+      "status": "ok",
+      "op_id": "OP13"
+    }
+  },
+  {
+    "step": 18,
+    "raw": "{\"tool\":\"update_account\",\"op_id\":\"OP14\",\"record_id\":\"R04\",\"fields\":{\"status\":\"active\",\"region\":\"NE\"}}",
+    "call": {
+      "tool": "update_account",
+      "op_id": "OP14",
+      "record_id": "R04",
+      "fields": {
+        "status": "active",
+        "region": "NE"
+      }
+    },
+    "result": {
+      "status": "timeout",
+      "op_id": "OP14",
+      "message": "No acknowledgement; outcome unknown. Reconcile before retrying."
+    }
+  },
+  {
+    "step": 19,
+    "raw": "{\"tool\":\"get_operation\",\"op_id\":\"OP14\"}",
+    "call": {
+      "tool": "get_operation",
+      "op_id": "OP14"
+    },
+    "result": {
+      "op_id": "OP14",
+      "status": "committed",
+      "attempts": 1
+    }
+  },
+  {
+    "step": 20,
+    "raw": "{\"tool\":\"update_account\",\"op_id\":\"OP15\",\"record_id\":\"R05\",\"fields\":{\"status\":\"active\",\"region\":\"SE\"}} D... Wait tool only JSON. Final absent. Need continue.\n\n",
+    "call": {
+      "tool": "update_account",
+      "op_id": "OP15",
+      "record_id": "R05",
+      "fields": {
+        "status": "active",
+        "region": "SE"
+      }
+    },
+    "result": {
+      "status": "ok",
+      "op_id": "OP15"
+    }
+  },
+  {
+    "step": 21,
+    "raw": "{\"tool\":\"update_account\",\"op_id\":\"OP16\",\"record_id\":\"R06\",\"fields\":{\"status\":\"active\",\"region\":\"MW\"}}",
+    "call": {
+      "tool": "update_account",
+      "op_id": "OP16",
+      "record_id": "R06",
+      "fields": {
+        "status": "active",
+        "region": "MW"
+      }
+    },
+    "result": {
+      "status": "ok",
+      "op_id": "OP16"
+    }
+  },
+  {
+    "step": 22,
+    "raw": "{\"tool\":\"update_account\",\"op_id\":\"OP17\",\"record_id\":\"R07\",\"fields\":{\"status\":\"active\",\"region\":\"W\"}}",
+    "call": {
+      "tool": "update_account",
+      "op_id": "OP17",
+      "record_id": "R07",
+      "fields": {
+        "status": "active",
+        "region": "W"
+      }
+    },
+    "result": {
+      "status": "ok",
+      "op_id": "OP17"
+    }
+  },
+  {
+    "step": 23,
+    "raw": "{\"tool\":\"update_account\",\"op_id\":\"OP18\",\"record_id\":\"R08\",\"fields\":{\"status\":\"active\",\"region\":\"NE\"}}",
+    "call": {
+      "tool": "update_account",
+      "op_id": "OP18",
+      "record_id": "R08",
+      "fields": {
+        "status": "active",
+        "region": "NE"
+      }
+    },
+    "result": {
+      "status": "ok",
+      "op_id": "OP18"
+    }
+  },
+  {
+    "step": 24,
+    "raw": "{\"tool\":\"update_account\",\"op_id\":\"OP19\",\"record_id\":\"R09\",\"fields\":{\"status\":\"active\",\"region\":\"SE\"}}",
+    "call": {
+      "tool": "update_account",
+      "op_id": "OP19",
+      "record_id": "R09",
+      "fields": {
+        "status": "active",
+        "region": "SE"
+      }
+    },
+    "result": {
+      "status": "ok",
+      "op_id": "OP19"
+    }
+  },
+  {
+    "step": 25,
+    "raw": "{\"tool\":\"run_batch\",\"batch_id\":\"B1\"}",
+    "call": {
+      "tool": "run_batch",
+      "batch_id": "B1"
+    },
+    "result": {
+      "status": "partial",
+      "batch_id": "B1",
+      "committed": 3,
+      "failed": 2,
+      "message": "Some members applied; inspect records/history before retrying."
+    }
+  },
+  {
+    "step": 26,
+    "raw": "{\"tool\":\"get_operation\",\"op_id\":\"OP21\"}",
+    "call": {
+      "tool": "get_operation",
+      "op_id": "OP21"
+    },
+    "result": {
+      "op_id": "OP21",
+      "status": "committed",
+      "attempts": 1
+    }
+  },
+  {
+    "step": 27,
+    "raw": "{\"tool\":\"get_operation\",\"op_id\":\"OP22\"}",
+    "call": {
+      "tool": "get_operation",
+      "op_id": "OP22"
+    },
+    "result": {
+      "op_id": "OP22",
+      "status": "committed",
+      "attempts": 1
+    }
+  },
+  {
+    "step": 28,
+    "raw": "{\"tool\":\"get_operation\",\"op_id\":\"OP23\"}",
+    "call": {
+      "tool": "get_operation",
+      "op_id": "OP23"
+    },
+    "result": {
+      "op_id": "OP23",
+      "status": "committed",
+      "attempts": 1
+    }
+  },
+  {
+    "step": 29,
+    "raw": "{\"tool\":\"get_operation\",\"op_id\":\"OP24\"}",
+    "call": {
+      "tool": "get_operation",
+      "op_id": "OP24"
+    },
+    "result": {
+      "op_id": "OP24",
+      "status": "failed",
+      "attempts": 1
+    }
+  },
+  {
+    "step": 30,
+    "raw": "{\"tool\":\"get_operation\",\"op_id\":\"OP25\"}",
+    "call": {
+      "tool": "get_operation",
+      "op_id": "OP25"
+    },
+    "result": {
+      "op_id": "OP25",
+      "status": "failed",
+      "attempts": 1
+    }
+  },
+  {
+    "step": 31,
+    "raw": "{\"tool\":\"run_batch\",\"batch_id\":\"B1\",\"op_ids\":[\"OP24\",\"OP25\"]}",
+    "call": {
+      "tool": "run_batch",
+      "batch_id": "B1",
+      "op_ids": [
+        "OP24",
+        "OP25"
+      ]
+    },
+    "result": {
+      "status": "ok",
+      "batch_id": "B1",
+      "committed": 2
+    }
+  },
+  {
+    "step": 32,
+    "raw": "{\"tool\":\"update_account\",\"op_id\":\"OP20\",\"record_id\":\"R10\",\"fields\":{\"status\":\"active\",\"region\":\"MW\"}}",
+    "call": {
+      "tool": "update_account",
+      "op_id": "OP20",
+      "record_id": "R10",
+      "fields": {
+        "status": "active",
+        "region": "MW"
+      }
+    },
+    "result": {
+      "status": "ok",
+      "op_id": "OP20"
+    }
+  },
+  {
+    "step": 33,
+    "raw": "{\"tool\":\"assign_owner\",\"op_id\":\"OP27\",\"record_id\":\"R01\",\"owner\":\"Owner-2\"}",
+    "call": {
+      "tool": "assign_owner",
+      "op_id": "OP27",
+      "record_id": "R01",
+      "owner": "Owner-2"
+    },
+    "result": {
+      "status": "error",
+      "reason": "fail_before",
+      "op_id": "OP27",
+      "message": "Commit failed before applying; state unchanged."
+    }
+  },
+  {
+    "step": 34,
+    "raw": "{\"tool\":\"assign_owner\",\"op_id\":\"OP27\",\"record_id\":\"R01\",\"owner\":\"Owner-2\"}",
+    "call": {
+      "tool": "assign_owner",
+      "op_id": "OP27",
+      "record_id": "R01",
+      "owner": "Owner-2"
+    },
+    "result": {
+      "status": "ok",
+      "op_id": "OP27"
+    }
+  },
+  {
+    "step": 35,
+    "raw": "{\"tool\":\"assign_owner\",\"op_id\":\"OP28\",\"record_id\":\"R02\",\"owner\":\"Owner-2\"}",
+    "call": {
+      "tool": "assign_owner",
+      "op_id": "OP28",
+      "record_id": "R02",
+      "owner": "Owner-2"
+    },
+    "result": {
+      "status": "ok",
+      "op_id": "OP28"
+    }
+  },
+  {
+    "step": 36,
+    "raw": "{\"tool\":\"assign_owner\",\"op_id\":\"OP29\",\"record_id\":\"R03\",\"owner\":\"Owner-2\"}",
+    "call": {
+      "tool": "assign_owner",
+      "op_id": "OP29",
+      "record_id": "R03",
+      "owner": "Owner-2"
+    },
+    "result": {
+      "status": "ok",
+      "op_id": "OP29"
+    }
+  },
+  {
+    "step": 37,
+    "raw": "{\"tool\":\"assign_owner\",\"op_id\":\"OP30\",\"record_id\":\"R04\",\"owner\":\"Owner-2\"}",
+    "call": {
+      "tool": "assign_owner",
+      "op_id": "OP30",
+      "record_id": "R04",
+      "owner": "Owner-2"
+    },
+    "result": {
+      "status": "ok",
+      "op_id": "OP30"
+    }
+  },
+  {
+    "step": 38,
+    "raw": "{\"tool\":\"assign_owner\",\"op_id\":\"OP31\",\"record_id\":\"R05\",\"owner\":\"Owner-2\"}",
+    "call": {
+      "tool": "assign_owner",
+      "op_id": "OP31",
+      "record_id": "R05",
+      "owner": "Owner-2"
+    },
+    "result": {
+      "status": "error",
+      "reason": "fail_before",
+      "op_id": "OP31",
+      "message": "Commit failed before applying; state unchanged."
+    }
+  },
+  {
+    "step": 39,
+    "raw": "{\"tool\":\"assign_owner\",\"op_id\":\"OP31\",\"record_id\":\"R05\",\"owner\":\"Owner-2\"}",
+    "call": {
+      "tool": "assign_owner",
+      "op_id": "OP31",
+      "record_id": "R05",
+      "owner": "Owner-2"
+    },
+    "result": {
+      "status": "ok",
+      "op_id": "OP31"
+    }
+  },
+  {
+    "step": 40,
+    "raw": "{\"tool\":\"approve_account\",\"op_id\":\"OP26\",\"record_id\":\"R06\"}",
+    "call": {
+      "tool": "approve_account",
+      "op_id": "OP26",
+      "record_id": "R06"
+    },
+    "result": {
+      "status": "ok",
+      "op_id": "OP26"
+    }
+  },
+  {
+    "step": 41,
+    "raw": "{\"tool\":\"transfer_owner\",\"op_id\":\"OP32\",\"record_id\":\"R01\",\"owner\":\"Owner-3\"}",
+    "call": {
+      "tool": "transfer_owner",
+      "op_id": "OP32",
+      "record_id": "R01",
+      "owner": "Owner-3"
+    },
+    "result": {
+      "status": "ok",
+      "op_id": "OP32"
+    }
+  },
+  {
+    "step": 42,
+    "raw": "{\"tool\":\"transfer_owner\",\"op_id\":\"OP33\",\"record_id\":\"R02\",\"owner\":\"Owner-3\"}",
+    "call": {
+      "tool": "transfer_owner",
+      "op_id": "OP33",
+      "record_id": "R02",
+      "owner": "Owner-3"
+    },
+    "result": {
+      "status": "ok",
+      "op_id": "OP33"
+    }
+  },
+  {
+    "step": 43,
+    "raw": "{\"tool\":\"transfer_owner\",\"op_id\":\"OP34\",\"record_id\":\"R03\",\"owner\":\"Owner-3\"}",
+    "call": {
+      "tool": "transfer_owner",
+      "op_id": "OP34",
+      "record_id": "R03",
+      "owner": "Owner-3"
+    },
+    "result": {
+      "status": "ok",
+      "op_id": "OP34"
+    }
+  },
+  {
+    "step": 44,
+    "raw": "{\"tool\":\"transfer_owner\",\"op_id\":\"OP35\",\"record_id\":\"R04\",\"owner\":\"Owner-3\"}",
+    "call": {
+      "tool": "transfer_owner",
+      "op_id": "OP35",
+      "record_id": "R04",
+      "owner": "Owner-3"
+    },
+    "result": {
+      "status": "ok",
+      "op_id": "OP35"
+    }
+  },
+  {
+    "step": 45,
+    "raw": "{\"tool\":\"add_note\",\"op_id\":\"OP36\",\"record_id\":\"R01\",\"note\":\"Q3 review complete\"}",
+    "call": {
+      "tool": "add_note",
+      "op_id": "OP36",
+      "record_id": "R01",
+      "note": "Q3 review complete"
+    },
+    "result": {
+      "status": "timeout",
+      "op_id": "OP36",
+      "message": "No acknowledgement; outcome unknown. Reconcile before retrying."
+    }
+  },
+  {
+    "step": 46,
+    "raw": "{\"tool\":\"get_operation\",\"op_id\":\"OP36\"}",
+    "call": {
+      "tool": "get_operation",
+      "op_id": "OP36"
+    },
+    "result": {
+      "op_id": "OP36",
+      "status": "committed",
+      "attempts": 1
+    }
+  },
+  {
+    "step": 47,
+    "raw": "{\"tool\":\"add_note\",\"op_id\":\"OP37\",\"record_id\":\"R02\",\"note\":\"Q3 review complete\"}...\n\n[analysis aside: I need call correct only JSON. continue.] \n{\"tool\":\"add_note\",\"op_id\":\"OP37\",\"record_id\":\"R02\",\"note\":\"Q3 review complete\"}",
+    "call": {},
+    "result": {
+      "status": "error",
+      "reason": "unknown_tool",
+      "message": "unknown tool"
+    }
+  },
+  {
+    "step": 48,
+    "raw": "{\"tool\":\"add_note\",\"op_id\":\"OP37\",\"record_id\":\"R02\",\"note\":\"Q3 review complete\"}",
+    "call": {
+      "tool": "add_note",
+      "op_id": "OP37",
+      "record_id": "R02",
+      "note": "Q3 review complete"
+    },
+    "result": {
+      "status": "ok",
+      "op_id": "OP37"
+    }
+  },
+  {
+    "step": 49,
+    "raw": "{\"tool\":\"add_note\",\"op_id\":\"OP38\",\"record_id\":\"R03\",\"note\":\"Q3 review complete\"}",
+    "call": {
+      "tool": "add_note",
+      "op_id": "OP38",
+      "record_id": "R03",
+      "note": "Q3 review complete"
+    },
+    "result": {
+      "status": "ok",
+      "op_id": "OP38"
+    }
+  },
+  {
+    "step": 50,
+    "raw": "{\"tool\":\"delete_account\",\"op_id\":\"OP39\",\"record_id\":\"R09\"}",
+    "call": {
+      "tool": "delete_account",
+      "op_id": "OP39",
+      "record_id": "R09"
+    },
+    "result": {
+      "status": "ok",
+      "op_id": "OP39"
+    }
+  },
+  {
+    "step": 51,
+    "raw": "{\"tool\":\"delete_account\",\"op_id\":\"OP40\",\"record_id\":\"R10\"}",
+    "call": {
+      "tool": "delete_account",
+      "op_id": "OP40",
+      "record_id": "R10"
+    },
+    "result": {
+      "status": "ok",
+      "op_id": "OP40"
+    }
+  },
+  {
+    "step": 52,
+    "raw": "{\"tool\":\"finish\",\"report\":{\"complete\":true,\"summary\":\"All operations OP01\u2013OP40 committed in dependency order. Batch B1 completed, and R09 and R10 were deleted.\"}}",
+    "call": {
+      "tool": "finish",
+      "report": {
+        "complete": true,
+        "summary": "All operations OP01\u2013OP40 committed in dependency order. Batch B1 completed, and R09 and R10 were deleted."
+      }
+    },
+    "result": "finish"
+  }
+]

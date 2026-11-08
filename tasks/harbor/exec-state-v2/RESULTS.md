@@ -64,7 +64,45 @@ distinct signatures (duplicate after confirmed commit, and out-of-order batch).
 
 ## GPT-6 Luna (`opencode-go/gpt-6-luna`)
 
-Pending: 30 trials, job `exec2_gpt_30`.
+Jobs `exec2_gpt_30` and `exec2_gpt_30b`: 20 scored trials, 18 valid, 2
+format/interface failures. The run was interrupted by server restarts after 20
+scored trials; a hung 6-trial continuation was stopped.
+
+| Result | Trials | Detail |
+| --- | ---: | --- |
+| Pass (100) | 5 | no defects |
+| Missing final read (95) | 6 | dependency order correct, no final verification |
+| Dependency violation + missing final read (85) | 5 | batch called before prerequisites |
+| Dependency violation only (90) | 2 | recovered, correct final state |
+
+Valid-trial core metrics:
+
+- **0 duplicate operations**
+- **0 missing operations**
+- **0 incorrect final states**
+- 7 dependency violations (batch called before its prerequisites)
+- 11 trials with no read after the last write
+- 2 format/interface failures, excluded: one trial emitted multiple
+  concatenated JSON objects and then concluded the tools were unavailable; one
+  looped on `list_records` for 160 turns. Both executed zero operations. These
+  are contract/interface failures, not state-tracking failures.
+
+**GPT did not reproduce the core operation-tracking failure** in 18 valid
+trials. It completed the final state correctly, but frequently ignored the
+explicit dependency order and skipped final verification.
+
+## Opus 5.5 (`claude-opus-5-5` via OpenCode)
+
+OpenRouter was attempted first and returned `402 Insufficient credits` on every
+trial (the key is valid but the account has no credits). The OpenCode endpoint
+exposes the same model as `claude-opus-5-5`; the probe scored 2/2 at 100.0.
+The remaining trials are running in small batches (`exec2_opus_30a` …
+`exec2_opus_30e`) because server restarts were cancelling long jobs.
+
+This comparison is running because GPT did not reproduce the core
+duplicate/missing/incorrect-state signal.
+
+Pending: 30 trials total including the 2-trial probe.
 
 ## Failure classification rule
 

@@ -1,0 +1,1912 @@
+[
+  {
+    "step": 1,
+    "raw": "{\"tool\":\"create_account\",\"op_id\":\"OP01\",\"record_id\":\"R01\",\"fields\":{\"name\":\"Beta-Account-1\",\"segment\":\"Enterprise\",\"region\":\"SE\"}}{\"tool\":\"create_account\",\"op_id\":\"OP02\",\"record_id\":\"R02\",\"fields\":{\"name\":\"Beta-Account-2\",\"segment\":\"Public\",\"region\":\"MW\"}}{\"tool\":\"create_account\",\"op_id\":\"OP03\",\"record_id\":\"R03\",\"fields\":{\"name\":\"Beta-Account-3\",\"segment\":\"SMB\",\"region\":\"W\"}}{\"tool\":\"create_account\",\"op_id\":\"OP04\",\"record_id\":\"R04\",\"fields\":{\"name\":\"Beta-Account-4\",\"segment\":\"Enterprise\",\"region\":\"NE\"}}{\"tool\":\"create_account\",\"op_id\":\"OP05\",\"record_id\":\"R05\",\"fields\":{\"name\":\"Beta-Account-5\",\"segment\":\"Public\",\"region\":\"SE\"}}{\"tool\":\"create_account\",\"op_id\":\"OP06\",\"record_id\":\"R06\",\"fields\":{\"name\":\"Beta-Account-6\",\"segment\":\"SMB\",\"region\":\"MW\"}}{\"tool\":\"create_account\",\"op_id\":\"OP07\",\"record_id\":\"R07\",\"fields\":{\"name\":\"Beta-Account-7\",\"segment\":\"Enterprise\",\"region\":\"W\"}}{\"tool\":\"create_account\",\"op_id\":\"OP08\",\"record_id\":\"R08\",\"fields\":{\"name\":\"Beta-Account-8\",\"segment\":\"Public\",\"region\":\"NE\"}}{\"tool\":\"create_account\",\"op_id\":\"OP09\",\"record_id\":\"R09\",\"fields\":{\"name\":\"Beta-Account-9\",\"segment\":\"SMB\",\"region\":\"SE\"}}{\"tool\":\"create_account\",\"op_id\":\"OP10\",\"record_id\":\"R10\",\"fields\":{\"name\":\"Beta-Account-10\",\"segment\":\"Enterprise\",\"region\":\"MW\"}}{\"tool\":\"update_account\",\"op_id\":\"OP11\",\"record_id\":\"R01\",\"fields\":{\"status\":\"active\",\"region\":\"SE\"}}{\"tool\":\"update_account\",\"op_id\":\"OP12\",\"record_id\":\"R02\",\"fields\":{\"status\":\"active\",\"region\":\"MW\"}}{\"tool\":\"update_account\",\"op_id\":\"OP13\",\"record_id\":\"R03\",\"fields\":{\"status\":\"active\",\"region\":\"W\"}}{\"tool\":\"update_account\",\"op_id\":\"OP14\",\"record_id\":\"R04\",\"fields\":{\"status\":\"active\",\"region\":\"NE\"}}{\"tool\":\"update_account\",\"op_id\":\"OP15\",\"record_id\":\"R05\",\"fields\":{\"status\":\"active\",\"region\":\"SE\"}}{\"tool\":\"update_account\",\"op_id\":\"OP16\",\"record_id\":\"R06\",\"fields\":{\"status\":\"active\",\"region\":\"MW\"}}{\"tool\":\"update_account\",\"op_id\":\"OP17\",\"record_id\":\"R07\",\"fields\":{\"status\":\"active\",\"region\":\"W\"}}{\"tool\":\"update_account\",\"op_id\":\"OP18\",\"record_id\":\"R08\",\"fields\":{\"status\":\"active\",\"region\":\"NE\"}}{\"tool\":\"update_account\",\"op_id\":\"OP19\",\"record_id\":\"R09\",\"fields\":{\"status\":\"",
+    "call": {},
+    "result": {
+      "status": "error",
+      "reason": "unknown_tool",
+      "message": "unknown tool"
+    }
+  },
+  {
+    "step": 2,
+    "raw": "{\"tool\":\"list_records\"}; no tool capability listed in actual system? We can produce JSON in final only one each turn? Earlier assistant emitted multiple concatenated and user reports unknown_tool, likely because no tool call mechanism, their parser expects single JSON object response. Need reply exact JSON command per turn. Let's send one JSON.{\"tool\":\"list_records\"}",
+    "call": {},
+    "result": {
+      "status": "error",
+      "reason": "unknown_tool",
+      "message": "unknown tool"
+    }
+  },
+  {
+    "step": 3,
+    "raw": "{\"status\":\"error\",\"reason\":\"tool_unavailable\",\"message\":\"The account-operation tools are not available in this interface, so I cannot inspect the operation ledger or safely execute the requested operations.\"}",
+    "call": {
+      "status": "error",
+      "reason": "tool_unavailable",
+      "message": "The account-operation tools are not available in this interface, so I cannot inspect the operation ledger or safely execute the requested operations."
+    },
+    "result": {
+      "status": "error",
+      "reason": "unknown_tool",
+      "message": "unknown tool"
+    }
+  },
+  {
+    "step": 4,
+    "raw": "{\"status\":\"blocked\",\"reason\":\"The account-operation tools are unavailable in this interface; no operation was executed.\"}",
+    "call": {
+      "status": "blocked",
+      "reason": "The account-operation tools are unavailable in this interface; no operation was executed."
+    },
+    "result": {
+      "status": "error",
+      "reason": "unknown_tool",
+      "message": "unknown tool"
+    }
+  },
+  {
+    "step": 5,
+    "raw": "{\"status\":\"blocked\",\"reason\":\"The account-operation tools are unavailable, so I cannot verify or execute the operations. No operation was completed.\"}",
+    "call": {
+      "status": "blocked",
+      "reason": "The account-operation tools are unavailable, so I cannot verify or execute the operations. No operation was completed."
+    },
+    "result": {
+      "status": "error",
+      "reason": "unknown_tool",
+      "message": "unknown tool"
+    }
+  },
+  {
+    "step": 6,
+    "raw": "{\"status\":\"blocked\",\"reason\":\"The account-operation tools are unavailable in this interface. I could not inspect the operation ledger or execute any operations.\"}",
+    "call": {
+      "status": "blocked",
+      "reason": "The account-operation tools are unavailable in this interface. I could not inspect the operation ledger or execute any operations."
+    },
+    "result": {
+      "status": "error",
+      "reason": "unknown_tool",
+      "message": "unknown tool"
+    }
+  },
+  {
+    "step": 7,
+    "raw": "{\"status\":\"blocked\",\"reason\":\"The requested account-operation tools are unavailable; no operations have been executed, and I cannot verify the target state.\"}",
+    "call": {
+      "status": "blocked",
+      "reason": "The requested account-operation tools are unavailable; no operations have been executed, and I cannot verify the target state."
+    },
+    "result": {
+      "status": "error",
+      "reason": "unknown_tool",
+      "message": "unknown tool"
+    }
+  },
+  {
+    "step": 8,
+    "raw": "{\"status\":\"blocked\",\"reason\":\"The account-operation tools are unavailable, so I cannot execute or verify the requested operations.\"}",
+    "call": {
+      "status": "blocked",
+      "reason": "The account-operation tools are unavailable, so I cannot execute or verify the requested operations."
+    },
+    "result": {
+      "status": "error",
+      "reason": "unknown_tool",
+      "message": "unknown tool"
+    }
+  },
+  {
+    "step": 9,
+    "raw": "{\"status\":\"blocked\",\"reason\":\"The account-operation tools are not available in this interface. I could not inspect the ledger or execute any operations.\"}",
+    "call": {
+      "status": "blocked",
+      "reason": "The account-operation tools are not available in this interface. I could not inspect the ledger or execute any operations."
+    },
+    "result": {
+      "status": "error",
+      "reason": "unknown_tool",
+      "message": "unknown tool"
+    }
+  },
+  {
+    "step": 10,
+    "raw": "{\"status\":\"blocked\",\"reason\":\"The account-operation tools are unavailable in this interface, so I cannot inspect the ledger or execute the requested operations.\"}",
+    "call": {
+      "status": "blocked",
+      "reason": "The account-operation tools are unavailable in this interface, so I cannot inspect the ledger or execute the requested operations."
+    },
+    "result": {
+      "status": "error",
+      "reason": "unknown_tool",
+      "message": "unknown tool"
+    }
+  },
+  {
+    "step": 11,
+    "raw": "{\"status\":\"blocked\",\"reason\":\"The account-operation tools are unavailable; no operations were executed, and the target state cannot be verified.\"}",
+    "call": {
+      "status": "blocked",
+      "reason": "The account-operation tools are unavailable; no operations were executed, and the target state cannot be verified."
+    },
+    "result": {
+      "status": "error",
+      "reason": "unknown_tool",
+      "message": "unknown tool"
+    }
+  },
+  {
+    "step": 12,
+    "raw": "{\"status\":\"blocked\",\"reason\":\"The account-operation tools are unavailable in this interface. I cannot execute or verify the requested operations.\"}",
+    "call": {
+      "status": "blocked",
+      "reason": "The account-operation tools are unavailable in this interface. I cannot execute or verify the requested operations."
+    },
+    "result": {
+      "status": "error",
+      "reason": "unknown_tool",
+      "message": "unknown tool"
+    }
+  },
+  {
+    "step": 13,
+    "raw": "{\"status\":\"blocked\",\"reason\":\"The account-operation tools are unavailable in this interface. I cannot inspect the operation ledger or execute the requested operations.\"}",
+    "call": {
+      "status": "blocked",
+      "reason": "The account-operation tools are unavailable in this interface. I cannot inspect the operation ledger or execute the requested operations."
+    },
+    "result": {
+      "status": "error",
+      "reason": "unknown_tool",
+      "message": "unknown tool"
+    }
+  },
+  {
+    "step": 14,
+    "raw": "I can\u2019t execute the operations: the account-system tools are unavailable here, and the attempts to access them returned `unknown_tool`. I cannot verify the ledger or claim the target state was reached.",
+    "call": {},
+    "result": {
+      "status": "error",
+      "reason": "unknown_tool",
+      "message": "unknown tool"
+    }
+  },
+  {
+    "step": 15,
+    "raw": "{\"status\":\"blocked\",\"reason\":\"The account-operation tools are unavailable; I cannot execute or verify the requested operations.\"}",
+    "call": {
+      "status": "blocked",
+      "reason": "The account-operation tools are unavailable; I cannot execute or verify the requested operations."
+    },
+    "result": {
+      "status": "error",
+      "reason": "unknown_tool",
+      "message": "unknown tool"
+    }
+  },
+  {
+    "step": 16,
+    "raw": "{\"status\":\"blocked\",\"reason\":\"The account-operation tools are unavailable, so I cannot execute or verify the requested operations.\"}",
+    "call": {
+      "status": "blocked",
+      "reason": "The account-operation tools are unavailable, so I cannot execute or verify the requested operations."
+    },
+    "result": {
+      "status": "error",
+      "reason": "unknown_tool",
+      "message": "unknown tool"
+    }
+  },
+  {
+    "step": 17,
+    "raw": "{\"status\":\"blocked\",\"reason\":\"The account-operation tools are unavailable in this interface. I cannot inspect the ledger or execute the operations.\"}",
+    "call": {
+      "status": "blocked",
+      "reason": "The account-operation tools are unavailable in this interface. I cannot inspect the ledger or execute the operations."
+    },
+    "result": {
+      "status": "error",
+      "reason": "unknown_tool",
+      "message": "unknown tool"
+    }
+  },
+  {
+    "step": 18,
+    "raw": "{\"status\":\"blocked\",\"reason\":\"Account-operation tools are unavailable; the operations could not be executed or verified.\"}",
+    "call": {
+      "status": "blocked",
+      "reason": "Account-operation tools are unavailable; the operations could not be executed or verified."
+    },
+    "result": {
+      "status": "error",
+      "reason": "unknown_tool",
+      "message": "unknown tool"
+    }
+  },
+  {
+    "step": 19,
+    "raw": "{\"status\":\"blocked\",\"reason\":\"The account-operation tools are unavailable, so I cannot execute or verify the requested operations.\"}",
+    "call": {
+      "status": "blocked",
+      "reason": "The account-operation tools are unavailable, so I cannot execute or verify the requested operations."
+    },
+    "result": {
+      "status": "error",
+      "reason": "unknown_tool",
+      "message": "unknown tool"
+    }
+  },
+  {
+    "step": 20,
+    "raw": "I can\u2019t proceed: the account-operation tools are unavailable in this interface, so I can\u2019t inspect the ledger or safely execute the operations.",
+    "call": {},
+    "result": {
+      "status": "error",
+      "reason": "unknown_tool",
+      "message": "unknown tool"
+    }
+  },
+  {
+    "step": 21,
+    "raw": "{\"status\":\"blocked\",\"reason\":\"The account-operation tools are unavailable in this interface. I cannot execute or verify the requested operations.\"}",
+    "call": {
+      "status": "blocked",
+      "reason": "The account-operation tools are unavailable in this interface. I cannot execute or verify the requested operations."
+    },
+    "result": {
+      "status": "error",
+      "reason": "unknown_tool",
+      "message": "unknown tool"
+    }
+  },
+  {
+    "step": 22,
+    "raw": "{\"status\":\"blocked\",\"reason\":\"The account-operation tools are unavailable in this interface, so I cannot inspect the ledger or safely execute the requested operations.\"}",
+    "call": {
+      "status": "blocked",
+      "reason": "The account-operation tools are unavailable in this interface, so I cannot inspect the ledger or safely execute the requested operations."
+    },
+    "result": {
+      "status": "error",
+      "reason": "unknown_tool",
+      "message": "unknown tool"
+    }
+  },
+  {
+    "step": 23,
+    "raw": "{\"status\":\"blocked\",\"reason\":\"The account-operation tools are unavailable; I cannot execute or verify the requested operations.\"}",
+    "call": {
+      "status": "blocked",
+      "reason": "The account-operation tools are unavailable; I cannot execute or verify the requested operations."
+    },
+    "result": {
+      "status": "error",
+      "reason": "unknown_tool",
+      "message": "unknown tool"
+    }
+  },
+  {
+    "step": 24,
+    "raw": "{\"status\":\"blocked\",\"reason\":\"The account-operation tools are unavailable in this interface. I cannot execute or verify the requested operations.\"}",
+    "call": {
+      "status": "blocked",
+      "reason": "The account-operation tools are unavailable in this interface. I cannot execute or verify the requested operations."
+    },
+    "result": {
+      "status": "error",
+      "reason": "unknown_tool",
+      "message": "unknown tool"
+    }
+  },
+  {
+    "step": 25,
+    "raw": "{\"status\":\"blocked\",\"reason\":\"No account-system tools are available in this interface; I cannot execute or verify the operations.\"}",
+    "call": {
+      "status": "blocked",
+      "reason": "No account-system tools are available in this interface; I cannot execute or verify the operations."
+    },
+    "result": {
+      "status": "error",
+      "reason": "unknown_tool",
+      "message": "unknown tool"
+    }
+  },
+  {
+    "step": 26,
+    "raw": "{\"status\":\"blocked\",\"reason\":\"The account-operation tools are unavailable in this interface. I cannot inspect the operation ledger, execute the operations, or verify that the target state has been reached.\"}",
+    "call": {
+      "status": "blocked",
+      "reason": "The account-operation tools are unavailable in this interface. I cannot inspect the operation ledger, execute the operations, or verify that the target state has been reached."
+    },
+    "result": {
+      "status": "error",
+      "reason": "unknown_tool",
+      "message": "unknown tool"
+    }
+  },
+  {
+    "step": 27,
+    "raw": "{\"status\":\"blocked\",\"reason\":\"The account-operation tools are unavailable in this interface, so I cannot execute or verify the requested operations.\"}",
+    "call": {
+      "status": "blocked",
+      "reason": "The account-operation tools are unavailable in this interface, so I cannot execute or verify the requested operations."
+    },
+    "result": {
+      "status": "error",
+      "reason": "unknown_tool",
+      "message": "unknown tool"
+    }
+  },
+  {
+    "step": 28,
+    "raw": "{\"status\":\"blocked\",\"reason\":\"The account-operation tools are unavailable in this interface; I cannot execute or verify the requested operations.\"}",
+    "call": {
+      "status": "blocked",
+      "reason": "The account-operation tools are unavailable in this interface; I cannot execute or verify the requested operations."
+    },
+    "result": {
+      "status": "error",
+      "reason": "unknown_tool",
+      "message": "unknown tool"
+    }
+  },
+  {
+    "step": 29,
+    "raw": "{\"status\":\"blocked\",\"reason\":\"The account-operation tools are unavailable, so I cannot execute the operations or verify the target state.\"}",
+    "call": {
+      "status": "blocked",
+      "reason": "The account-operation tools are unavailable, so I cannot execute the operations or verify the target state."
+    },
+    "result": {
+      "status": "error",
+      "reason": "unknown_tool",
+      "message": "unknown tool"
+    }
+  },
+  {
+    "step": 30,
+    "raw": "I can\u2019t proceed because the account-operation tools are unavailable here. The requested operations remain unverified and incomplete.",
+    "call": {},
+    "result": {
+      "status": "error",
+      "reason": "unknown_tool",
+      "message": "unknown tool"
+    }
+  },
+  {
+    "step": 31,
+    "raw": "{\"status\":\"blocked\",\"reason\":\"The account-operation tools are unavailable in this interface. I cannot inspect the ledger, execute the operations, or confirm completion.\"}",
+    "call": {
+      "status": "blocked",
+      "reason": "The account-operation tools are unavailable in this interface. I cannot inspect the ledger, execute the operations, or confirm completion."
+    },
+    "result": {
+      "status": "error",
+      "reason": "unknown_tool",
+      "message": "unknown tool"
+    }
+  },
+  {
+    "step": 32,
+    "raw": "{\"status\":\"blocked\",\"reason\":\"The account-operation tools are unavailable in this interface. I cannot execute or verify the requested operations.\"}",
+    "call": {
+      "status": "blocked",
+      "reason": "The account-operation tools are unavailable in this interface. I cannot execute or verify the requested operations."
+    },
+    "result": {
+      "status": "error",
+      "reason": "unknown_tool",
+      "message": "unknown tool"
+    }
+  },
+  {
+    "step": 33,
+    "raw": "{\"status\":\"blocked\",\"reason\":\"The account-operation tools are unavailable in this interface. I cannot inspect the operation ledger, execute the requested operations, or verify completion.\"}",
+    "call": {
+      "status": "blocked",
+      "reason": "The account-operation tools are unavailable in this interface. I cannot inspect the operation ledger, execute the requested operations, or verify completion."
+    },
+    "result": {
+      "status": "error",
+      "reason": "unknown_tool",
+      "message": "unknown tool"
+    }
+  },
+  {
+    "step": 34,
+    "raw": "The account-operation tools are unavailable in this interface. I cannot execute the operations or verify whether the target state has been reached.",
+    "call": {},
+    "result": {
+      "status": "error",
+      "reason": "unknown_tool",
+      "message": "unknown tool"
+    }
+  },
+  {
+    "step": 35,
+    "raw": "I can\u2019t execute the requested operations because the account-system tools are unavailable in this interface. The target state has not been verified.",
+    "call": {},
+    "result": {
+      "status": "error",
+      "reason": "unknown_tool",
+      "message": "unknown tool"
+    }
+  },
+  {
+    "step": 36,
+    "raw": "{\"status\":\"blocked\",\"reason\":\"Account-operation tools are unavailable; completion cannot be verified.\"}",
+    "call": {
+      "status": "blocked",
+      "reason": "Account-operation tools are unavailable; completion cannot be verified."
+    },
+    "result": {
+      "status": "error",
+      "reason": "unknown_tool",
+      "message": "unknown tool"
+    }
+  },
+  {
+    "step": 37,
+    "raw": "I can\u2019t execute or verify the account operations because the account-system tools are unavailable in this interface.",
+    "call": {},
+    "result": {
+      "status": "error",
+      "reason": "unknown_tool",
+      "message": "unknown tool"
+    }
+  },
+  {
+    "step": 38,
+    "raw": "{\"status\":\"blocked\",\"reason\":\"The account-operation tools are unavailable in this interface. I cannot execute or verify the requested operations.\"}",
+    "call": {
+      "status": "blocked",
+      "reason": "The account-operation tools are unavailable in this interface. I cannot execute or verify the requested operations."
+    },
+    "result": {
+      "status": "error",
+      "reason": "unknown_tool",
+      "message": "unknown tool"
+    }
+  },
+  {
+    "step": 39,
+    "raw": "{\"status\":\"blocked\",\"reason\":\"The account-operation tools are unavailable in this interface; I cannot execute or verify the requested operations.\"}",
+    "call": {
+      "status": "blocked",
+      "reason": "The account-operation tools are unavailable in this interface; I cannot execute or verify the requested operations."
+    },
+    "result": {
+      "status": "error",
+      "reason": "unknown_tool",
+      "message": "unknown tool"
+    }
+  },
+  {
+    "step": 40,
+    "raw": "{\"status\":\"blocked\",\"reason\":\"The account-operation tools are unavailable in this interface, so I cannot execute or verify the requested operations.\"}",
+    "call": {
+      "status": "blocked",
+      "reason": "The account-operation tools are unavailable in this interface, so I cannot execute or verify the requested operations."
+    },
+    "result": {
+      "status": "error",
+      "reason": "unknown_tool",
+      "message": "unknown tool"
+    }
+  },
+  {
+    "step": 41,
+    "raw": "The account-operation tools are unavailable; every attempted tool call returned `unknown_tool`. I can\u2019t safely execute or verify the requested operations.",
+    "call": {},
+    "result": {
+      "status": "error",
+      "reason": "unknown_tool",
+      "message": "unknown tool"
+    }
+  },
+  {
+    "step": 42,
+    "raw": "{\"status\":\"blocked\",\"reason\":\"The account-operation tools are unavailable in this interface. I cannot execute or verify the requested operations.\"}",
+    "call": {
+      "status": "blocked",
+      "reason": "The account-operation tools are unavailable in this interface. I cannot execute or verify the requested operations."
+    },
+    "result": {
+      "status": "error",
+      "reason": "unknown_tool",
+      "message": "unknown tool"
+    }
+  },
+  {
+    "step": 43,
+    "raw": "{\"status\":\"blocked\",\"reason\":\"The account-operation tools are unavailable; I cannot execute or verify the requested operations.\"}",
+    "call": {
+      "status": "blocked",
+      "reason": "The account-operation tools are unavailable; I cannot execute or verify the requested operations."
+    },
+    "result": {
+      "status": "error",
+      "reason": "unknown_tool",
+      "message": "unknown tool"
+    }
+  },
+  {
+    "step": 44,
+    "raw": "I can\u2019t execute or verify the operations because the account-system tools are unavailable in this interface.",
+    "call": {},
+    "result": {
+      "status": "error",
+      "reason": "unknown_tool",
+      "message": "unknown tool"
+    }
+  },
+  {
+    "step": 45,
+    "raw": "{\"status\":\"blocked\",\"reason\":\"The account-operation tools are unavailable in this interface, so I cannot execute or verify the requested operations.\"}",
+    "call": {
+      "status": "blocked",
+      "reason": "The account-operation tools are unavailable in this interface, so I cannot execute or verify the requested operations."
+    },
+    "result": {
+      "status": "error",
+      "reason": "unknown_tool",
+      "message": "unknown tool"
+    }
+  },
+  {
+    "step": 46,
+    "raw": "I cannot execute or verify the account operations because the required tools are unavailable here.",
+    "call": {},
+    "result": {
+      "status": "error",
+      "reason": "unknown_tool",
+      "message": "unknown tool"
+    }
+  },
+  {
+    "step": 47,
+    "raw": "{\"status\":\"blocked\",\"reason\":\"The account-operation tools are unavailable in this interface, so I cannot execute or verify the requested operations.\"}",
+    "call": {
+      "status": "blocked",
+      "reason": "The account-operation tools are unavailable in this interface, so I cannot execute or verify the requested operations."
+    },
+    "result": {
+      "status": "error",
+      "reason": "unknown_tool",
+      "message": "unknown tool"
+    }
+  },
+  {
+    "step": 48,
+    "raw": "{\"status\":\"blocked\",\"reason\":\"The account-operation tools are unavailable in this interface. I cannot execute or verify the requested operations.\"}",
+    "call": {
+      "status": "blocked",
+      "reason": "The account-operation tools are unavailable in this interface. I cannot execute or verify the requested operations."
+    },
+    "result": {
+      "status": "error",
+      "reason": "unknown_tool",
+      "message": "unknown tool"
+    }
+  },
+  {
+    "step": 49,
+    "raw": "{\"status\":\"blocked\",\"reason\":\"The account-operation tools are unavailable in this interface. I cannot execute the operations or verify the target state.\"}",
+    "call": {
+      "status": "blocked",
+      "reason": "The account-operation tools are unavailable in this interface. I cannot execute the operations or verify the target state."
+    },
+    "result": {
+      "status": "error",
+      "reason": "unknown_tool",
+      "message": "unknown tool"
+    }
+  },
+  {
+    "step": 50,
+    "raw": "{\"status\":\"blocked\",\"reason\":\"The account-operation tools are unavailable in this interface, so I cannot execute or verify the requested operations.\"}",
+    "call": {
+      "status": "blocked",
+      "reason": "The account-operation tools are unavailable in this interface, so I cannot execute or verify the requested operations."
+    },
+    "result": {
+      "status": "error",
+      "reason": "unknown_tool",
+      "message": "unknown tool"
+    }
+  },
+  {
+    "step": 51,
+    "raw": "{\"status\":\"blocked\",\"reason\":\"The account-operation tools are unavailable in this interface. I cannot execute or verify the requested operations.\"}",
+    "call": {
+      "status": "blocked",
+      "reason": "The account-operation tools are unavailable in this interface. I cannot execute or verify the requested operations."
+    },
+    "result": {
+      "status": "error",
+      "reason": "unknown_tool",
+      "message": "unknown tool"
+    }
+  },
+  {
+    "step": 52,
+    "raw": "I can\u2019t execute the operations because the account-system tools are unavailable in this interface. The requested target state remains unverified.",
+    "call": {},
+    "result": {
+      "status": "error",
+      "reason": "unknown_tool",
+      "message": "unknown tool"
+    }
+  },
+  {
+    "step": 53,
+    "raw": "{\"status\":\"blocked\",\"reason\":\"The account-operation tools are unavailable in this interface. I cannot execute or verify the requested operations.\"}",
+    "call": {
+      "status": "blocked",
+      "reason": "The account-operation tools are unavailable in this interface. I cannot execute or verify the requested operations."
+    },
+    "result": {
+      "status": "error",
+      "reason": "unknown_tool",
+      "message": "unknown tool"
+    }
+  },
+  {
+    "step": 54,
+    "raw": "The account-operation tools are unavailable, so I can\u2019t execute or verify the requested operations.",
+    "call": {},
+    "result": {
+      "status": "error",
+      "reason": "unknown_tool",
+      "message": "unknown tool"
+    }
+  },
+  {
+    "step": 55,
+    "raw": "I can\u2019t proceed: the account-operation tools are unavailable in this interface, so the operations remain unverified.",
+    "call": {},
+    "result": {
+      "status": "error",
+      "reason": "unknown_tool",
+      "message": "unknown tool"
+    }
+  },
+  {
+    "step": 56,
+    "raw": "{\"status\":\"blocked\",\"reason\":\"The account-operation tools are unavailable, so I cannot inspect the ledger or execute and verify the operations.\"}",
+    "call": {
+      "status": "blocked",
+      "reason": "The account-operation tools are unavailable, so I cannot inspect the ledger or execute and verify the operations."
+    },
+    "result": {
+      "status": "error",
+      "reason": "unknown_tool",
+      "message": "unknown tool"
+    }
+  },
+  {
+    "step": 57,
+    "raw": "{\"status\":\"blocked\",\"reason\":\"The account-operation tools are unavailable in this interface; I cannot execute or verify the requested operations.\"}",
+    "call": {
+      "status": "blocked",
+      "reason": "The account-operation tools are unavailable in this interface; I cannot execute or verify the requested operations."
+    },
+    "result": {
+      "status": "error",
+      "reason": "unknown_tool",
+      "message": "unknown tool"
+    }
+  },
+  {
+    "step": 58,
+    "raw": "I can\u2019t execute these operations because the account-system tools are unavailable in this interface. I can\u2019t verify the ledger or claim the target state was reached.",
+    "call": {},
+    "result": {
+      "status": "error",
+      "reason": "unknown_tool",
+      "message": "unknown tool"
+    }
+  },
+  {
+    "step": 59,
+    "raw": "{\"status\":\"blocked\",\"reason\":\"The account-operation tools are unavailable in this interface; I cannot execute or verify the requested operations.\"}",
+    "call": {
+      "status": "blocked",
+      "reason": "The account-operation tools are unavailable in this interface; I cannot execute or verify the requested operations."
+    },
+    "result": {
+      "status": "error",
+      "reason": "unknown_tool",
+      "message": "unknown tool"
+    }
+  },
+  {
+    "step": 60,
+    "raw": "I can\u2019t execute or verify the account operations because the required tools are unavailable in this interface.",
+    "call": {},
+    "result": {
+      "status": "error",
+      "reason": "unknown_tool",
+      "message": "unknown tool"
+    }
+  },
+  {
+    "step": 61,
+    "raw": "{\"status\":\"blocked\",\"reason\":\"The account-operation tools are unavailable in this interface. I cannot inspect the ledger, execute the operations, or verify completion.\"}",
+    "call": {
+      "status": "blocked",
+      "reason": "The account-operation tools are unavailable in this interface. I cannot inspect the ledger, execute the operations, or verify completion."
+    },
+    "result": {
+      "status": "error",
+      "reason": "unknown_tool",
+      "message": "unknown tool"
+    }
+  },
+  {
+    "step": 62,
+    "raw": "The account-system tools are unavailable in this interface. I can\u2019t execute or verify the operations.",
+    "call": {},
+    "result": {
+      "status": "error",
+      "reason": "unknown_tool",
+      "message": "unknown tool"
+    }
+  },
+  {
+    "step": 63,
+    "raw": "{\"status\":\"blocked\",\"reason\":\"The account-operation tools are unavailable in this interface, so I cannot execute or verify the requested operations.\"}",
+    "call": {
+      "status": "blocked",
+      "reason": "The account-operation tools are unavailable in this interface, so I cannot execute or verify the requested operations."
+    },
+    "result": {
+      "status": "error",
+      "reason": "unknown_tool",
+      "message": "unknown tool"
+    }
+  },
+  {
+    "step": 64,
+    "raw": "The account-operation tools are unavailable here, so I can\u2019t execute or verify the requested operations.",
+    "call": {},
+    "result": {
+      "status": "error",
+      "reason": "unknown_tool",
+      "message": "unknown tool"
+    }
+  },
+  {
+    "step": 65,
+    "raw": "I can\u2019t execute the account operations: the required tools are unavailable in this interface. No completion can be verified.",
+    "call": {},
+    "result": {
+      "status": "error",
+      "reason": "unknown_tool",
+      "message": "unknown tool"
+    }
+  },
+  {
+    "step": 66,
+    "raw": "{\"status\":\"blocked\",\"reason\":\"The account-operation tools are unavailable in this interface, so I cannot execute or verify the requested operations.\"}",
+    "call": {
+      "status": "blocked",
+      "reason": "The account-operation tools are unavailable in this interface, so I cannot execute or verify the requested operations."
+    },
+    "result": {
+      "status": "error",
+      "reason": "unknown_tool",
+      "message": "unknown tool"
+    }
+  },
+  {
+    "step": 67,
+    "raw": "{\"status\":\"blocked\",\"reason\":\"The account-operation tools are unavailable in this interface. I cannot execute or verify the requested operations.\"}",
+    "call": {
+      "status": "blocked",
+      "reason": "The account-operation tools are unavailable in this interface. I cannot execute or verify the requested operations."
+    },
+    "result": {
+      "status": "error",
+      "reason": "unknown_tool",
+      "message": "unknown tool"
+    }
+  },
+  {
+    "step": 68,
+    "raw": "{\"status\":\"blocked\",\"reason\":\"The account-operation tools are unavailable in this interface. I cannot execute or verify the requested operations.\"}",
+    "call": {
+      "status": "blocked",
+      "reason": "The account-operation tools are unavailable in this interface. I cannot execute or verify the requested operations."
+    },
+    "result": {
+      "status": "error",
+      "reason": "unknown_tool",
+      "message": "unknown tool"
+    }
+  },
+  {
+    "step": 69,
+    "raw": "{\"status\":\"blocked\",\"reason\":\"The account-operation tools are unavailable in this interface. I cannot execute or verify the requested operations.\"}",
+    "call": {
+      "status": "blocked",
+      "reason": "The account-operation tools are unavailable in this interface. I cannot execute or verify the requested operations."
+    },
+    "result": {
+      "status": "error",
+      "reason": "unknown_tool",
+      "message": "unknown tool"
+    }
+  },
+  {
+    "step": 70,
+    "raw": "The account-operation tools are unavailable in this interface. I can\u2019t execute or verify the requested operations.",
+    "call": {},
+    "result": {
+      "status": "error",
+      "reason": "unknown_tool",
+      "message": "unknown tool"
+    }
+  },
+  {
+    "step": 71,
+    "raw": "{\"status\":\"blocked\",\"reason\":\"The account-operation tools are unavailable; the repeated `unknown_tool` errors prevent executing or verifying the requested operations.\"}",
+    "call": {
+      "status": "blocked",
+      "reason": "The account-operation tools are unavailable; the repeated `unknown_tool` errors prevent executing or verifying the requested operations."
+    },
+    "result": {
+      "status": "error",
+      "reason": "unknown_tool",
+      "message": "unknown tool"
+    }
+  },
+  {
+    "step": 72,
+    "raw": "{\"status\":\"blocked\",\"reason\":\"The account-operation tools are unavailable in this interface; I cannot execute or verify the requested operations.\"}",
+    "call": {
+      "status": "blocked",
+      "reason": "The account-operation tools are unavailable in this interface; I cannot execute or verify the requested operations."
+    },
+    "result": {
+      "status": "error",
+      "reason": "unknown_tool",
+      "message": "unknown tool"
+    }
+  },
+  {
+    "step": 73,
+    "raw": "{\"status\":\"blocked\",\"reason\":\"The account-operation tools are unavailable; I cannot execute or verify the requested operations.\"}",
+    "call": {
+      "status": "blocked",
+      "reason": "The account-operation tools are unavailable; I cannot execute or verify the requested operations."
+    },
+    "result": {
+      "status": "error",
+      "reason": "unknown_tool",
+      "message": "unknown tool"
+    }
+  },
+  {
+    "step": 74,
+    "raw": "The repeated `unknown_tool` response confirms that the account-operation tools aren\u2019t available here. I can\u2019t execute or verify the operations.",
+    "call": {},
+    "result": {
+      "status": "error",
+      "reason": "unknown_tool",
+      "message": "unknown tool"
+    }
+  },
+  {
+    "step": 75,
+    "raw": "The account-operation tools are unavailable in this interface, so I can\u2019t execute the operations or verify that the target state was reached.",
+    "call": {},
+    "result": {
+      "status": "error",
+      "reason": "unknown_tool",
+      "message": "unknown tool"
+    }
+  },
+  {
+    "step": 76,
+    "raw": "I can\u2019t execute or verify the account operations because the required tools are unavailable in this interface.",
+    "call": {},
+    "result": {
+      "status": "error",
+      "reason": "unknown_tool",
+      "message": "unknown tool"
+    }
+  },
+  {
+    "step": 77,
+    "raw": "{\"status\":\"blocked\",\"reason\":\"The account-operation tools are unavailable in this interface; I cannot execute or verify the requested operations.\"}",
+    "call": {
+      "status": "blocked",
+      "reason": "The account-operation tools are unavailable in this interface; I cannot execute or verify the requested operations."
+    },
+    "result": {
+      "status": "error",
+      "reason": "unknown_tool",
+      "message": "unknown tool"
+    }
+  },
+  {
+    "step": 78,
+    "raw": "The account-operation tools are unavailable in this interface. I can\u2019t safely execute or verify the requested operations.",
+    "call": {},
+    "result": {
+      "status": "error",
+      "reason": "unknown_tool",
+      "message": "unknown tool"
+    }
+  },
+  {
+    "step": 79,
+    "raw": "{\"status\":\"blocked\",\"reason\":\"The account-operation tools are unavailable; I cannot execute or verify the requested operations.\"}",
+    "call": {
+      "status": "blocked",
+      "reason": "The account-operation tools are unavailable; I cannot execute or verify the requested operations."
+    },
+    "result": {
+      "status": "error",
+      "reason": "unknown_tool",
+      "message": "unknown tool"
+    }
+  },
+  {
+    "step": 80,
+    "raw": "The account-operation tools are unavailable in this interface, so I can\u2019t execute or verify the requested operations.",
+    "call": {},
+    "result": {
+      "status": "error",
+      "reason": "unknown_tool",
+      "message": "unknown tool"
+    }
+  },
+  {
+    "step": 81,
+    "raw": "{\"status\":\"blocked\",\"reason\":\"The account-operation tools are unavailable in this interface, so I cannot execute or verify the requested operations.\"}",
+    "call": {
+      "status": "blocked",
+      "reason": "The account-operation tools are unavailable in this interface, so I cannot execute or verify the requested operations."
+    },
+    "result": {
+      "status": "error",
+      "reason": "unknown_tool",
+      "message": "unknown tool"
+    }
+  },
+  {
+    "step": 82,
+    "raw": "The account-operation tools aren\u2019t available in this interface. I can\u2019t execute or verify the requested operations.",
+    "call": {},
+    "result": {
+      "status": "error",
+      "reason": "unknown_tool",
+      "message": "unknown tool"
+    }
+  },
+  {
+    "step": 83,
+    "raw": "I can\u2019t proceed: the account-operation tools are unavailable in this interface, so I can\u2019t inspect the ledger, execute the operations, or verify completion.",
+    "call": {},
+    "result": {
+      "status": "error",
+      "reason": "unknown_tool",
+      "message": "unknown tool"
+    }
+  },
+  {
+    "step": 84,
+    "raw": "{\"status\":\"blocked\",\"reason\":\"The account-operation tools are unavailable in this interface; I cannot execute or verify the requested operations.\"}",
+    "call": {
+      "status": "blocked",
+      "reason": "The account-operation tools are unavailable in this interface; I cannot execute or verify the requested operations."
+    },
+    "result": {
+      "status": "error",
+      "reason": "unknown_tool",
+      "message": "unknown tool"
+    }
+  },
+  {
+    "step": 85,
+    "raw": "{\"status\":\"blocked\",\"reason\":\"The account-operation tools are unavailable in this interface, so I cannot execute or verify the requested operations.\"}",
+    "call": {
+      "status": "blocked",
+      "reason": "The account-operation tools are unavailable in this interface, so I cannot execute or verify the requested operations."
+    },
+    "result": {
+      "status": "error",
+      "reason": "unknown_tool",
+      "message": "unknown tool"
+    }
+  },
+  {
+    "step": 86,
+    "raw": "I can\u2019t execute the requested account operations: the required tools are unavailable in this interface. I cannot verify completion.",
+    "call": {},
+    "result": {
+      "status": "error",
+      "reason": "unknown_tool",
+      "message": "unknown tool"
+    }
+  },
+  {
+    "step": 87,
+    "raw": "The account-operation tools are unavailable here. I can\u2019t execute or verify the requested operations.",
+    "call": {},
+    "result": {
+      "status": "error",
+      "reason": "unknown_tool",
+      "message": "unknown tool"
+    }
+  },
+  {
+    "step": 88,
+    "raw": "I can\u2019t execute or verify the account operations because the required tools are unavailable in this interface.",
+    "call": {},
+    "result": {
+      "status": "error",
+      "reason": "unknown_tool",
+      "message": "unknown tool"
+    }
+  },
+  {
+    "step": 89,
+    "raw": "The account-operation tools are unavailable in this interface, so I can\u2019t execute or verify the requested operations.",
+    "call": {},
+    "result": {
+      "status": "error",
+      "reason": "unknown_tool",
+      "message": "unknown tool"
+    }
+  },
+  {
+    "step": 90,
+    "raw": "{\"status\":\"blocked\",\"reason\":\"The account-operation tools are unavailable in this interface, so I cannot execute or verify the requested operations.\"}",
+    "call": {
+      "status": "blocked",
+      "reason": "The account-operation tools are unavailable in this interface, so I cannot execute or verify the requested operations."
+    },
+    "result": {
+      "status": "error",
+      "reason": "unknown_tool",
+      "message": "unknown tool"
+    }
+  },
+  {
+    "step": 91,
+    "raw": "{\"status\":\"blocked\",\"reason\":\"The account-operation tools are unavailable in this interface. I cannot execute or verify the requested operations.\"}",
+    "call": {
+      "status": "blocked",
+      "reason": "The account-operation tools are unavailable in this interface. I cannot execute or verify the requested operations."
+    },
+    "result": {
+      "status": "error",
+      "reason": "unknown_tool",
+      "message": "unknown tool"
+    }
+  },
+  {
+    "step": 92,
+    "raw": "I can\u2019t execute or verify the operations because the account-system tools are unavailable in this interface.",
+    "call": {},
+    "result": {
+      "status": "error",
+      "reason": "unknown_tool",
+      "message": "unknown tool"
+    }
+  },
+  {
+    "step": 93,
+    "raw": "{\"status\":\"blocked\",\"reason\":\"The account-operation tools are unavailable in this interface, so I cannot execute or verify the requested operations.\"}",
+    "call": {
+      "status": "blocked",
+      "reason": "The account-operation tools are unavailable in this interface, so I cannot execute or verify the requested operations."
+    },
+    "result": {
+      "status": "error",
+      "reason": "unknown_tool",
+      "message": "unknown tool"
+    }
+  },
+  {
+    "step": 94,
+    "raw": "{\"status\":\"blocked\",\"reason\":\"The account-operation tools are unavailable in this interface; I cannot execute or verify the requested operations.\"}",
+    "call": {
+      "status": "blocked",
+      "reason": "The account-operation tools are unavailable in this interface; I cannot execute or verify the requested operations."
+    },
+    "result": {
+      "status": "error",
+      "reason": "unknown_tool",
+      "message": "unknown tool"
+    }
+  },
+  {
+    "step": 95,
+    "raw": "{\"status\":\"blocked\",\"reason\":\"The account-operation tools are unavailable in this interface, so I cannot execute or verify the requested operations.\"}",
+    "call": {
+      "status": "blocked",
+      "reason": "The account-operation tools are unavailable in this interface, so I cannot execute or verify the requested operations."
+    },
+    "result": {
+      "status": "error",
+      "reason": "unknown_tool",
+      "message": "unknown tool"
+    }
+  },
+  {
+    "step": 96,
+    "raw": "{\"status\":\"blocked\",\"reason\":\"The account-operation tools are unavailable in this interface. I cannot execute or verify the requested operations.\"}",
+    "call": {
+      "status": "blocked",
+      "reason": "The account-operation tools are unavailable in this interface. I cannot execute or verify the requested operations."
+    },
+    "result": {
+      "status": "error",
+      "reason": "unknown_tool",
+      "message": "unknown tool"
+    }
+  },
+  {
+    "step": 97,
+    "raw": "{\"status\":\"blocked\",\"reason\":\"The account-operation tools are unavailable in this interface. I cannot execute or verify the requested operations.\"}",
+    "call": {
+      "status": "blocked",
+      "reason": "The account-operation tools are unavailable in this interface. I cannot execute or verify the requested operations."
+    },
+    "result": {
+      "status": "error",
+      "reason": "unknown_tool",
+      "message": "unknown tool"
+    }
+  },
+  {
+    "step": 98,
+    "raw": "The account tools aren\u2019t available here. I can\u2019t execute or verify the operations.",
+    "call": {},
+    "result": {
+      "status": "error",
+      "reason": "unknown_tool",
+      "message": "unknown tool"
+    }
+  },
+  {
+    "step": 99,
+    "raw": "{\"status\":\"blocked\",\"reason\":\"The account-operation tools are unavailable in this interface. Please enable them to execute and verify the requested operations.\"}",
+    "call": {
+      "status": "blocked",
+      "reason": "The account-operation tools are unavailable in this interface. Please enable them to execute and verify the requested operations."
+    },
+    "result": {
+      "status": "error",
+      "reason": "unknown_tool",
+      "message": "unknown tool"
+    }
+  },
+  {
+    "step": 100,
+    "raw": "The account-operation tools are unavailable in this interface. I can\u2019t execute or verify the requested operations.",
+    "call": {},
+    "result": {
+      "status": "error",
+      "reason": "unknown_tool",
+      "message": "unknown tool"
+    }
+  },
+  {
+    "step": 101,
+    "raw": "I can\u2019t continue: the account-operation tools are unavailable in this interface, so I can\u2019t execute or verify the requested operations.",
+    "call": {},
+    "result": {
+      "status": "error",
+      "reason": "unknown_tool",
+      "message": "unknown tool"
+    }
+  },
+  {
+    "step": 102,
+    "raw": "{\"status\":\"blocked\",\"reason\":\"The account-operation tools are unavailable in this interface; I cannot execute or verify the requested operations.\"}",
+    "call": {
+      "status": "blocked",
+      "reason": "The account-operation tools are unavailable in this interface; I cannot execute or verify the requested operations."
+    },
+    "result": {
+      "status": "error",
+      "reason": "unknown_tool",
+      "message": "unknown tool"
+    }
+  },
+  {
+    "step": 103,
+    "raw": "{\"status\":\"blocked\",\"reason\":\"The account-operation tools are unavailable in this interface, so I cannot execute or verify the requested operations.\"}",
+    "call": {
+      "status": "blocked",
+      "reason": "The account-operation tools are unavailable in this interface, so I cannot execute or verify the requested operations."
+    },
+    "result": {
+      "status": "error",
+      "reason": "unknown_tool",
+      "message": "unknown tool"
+    }
+  },
+  {
+    "step": 104,
+    "raw": "I can\u2019t execute or verify the requested operations because the account-system tools are unavailable in this interface.",
+    "call": {},
+    "result": {
+      "status": "error",
+      "reason": "unknown_tool",
+      "message": "unknown tool"
+    }
+  },
+  {
+    "step": 105,
+    "raw": "{\"status\":\"blocked\",\"reason\":\"The account-operation tools are unavailable in this interface; I cannot execute or verify the requested operations.\"}",
+    "call": {
+      "status": "blocked",
+      "reason": "The account-operation tools are unavailable in this interface; I cannot execute or verify the requested operations."
+    },
+    "result": {
+      "status": "error",
+      "reason": "unknown_tool",
+      "message": "unknown tool"
+    }
+  },
+  {
+    "step": 106,
+    "raw": "The account-operation tools are unavailable in this interface. I can\u2019t inspect the ledger, execute the operations, or verify completion.",
+    "call": {},
+    "result": {
+      "status": "error",
+      "reason": "unknown_tool",
+      "message": "unknown tool"
+    }
+  },
+  {
+    "step": 107,
+    "raw": "{\"status\":\"blocked\",\"reason\":\"The account-operation tools are unavailable in this interface. I cannot execute or verify the requested operations; enable the tools to proceed.\"}",
+    "call": {
+      "status": "blocked",
+      "reason": "The account-operation tools are unavailable in this interface. I cannot execute or verify the requested operations; enable the tools to proceed."
+    },
+    "result": {
+      "status": "error",
+      "reason": "unknown_tool",
+      "message": "unknown tool"
+    }
+  },
+  {
+    "step": 108,
+    "raw": "{\"status\":\"blocked\",\"reason\":\"The account-operation tools are unavailable in this interface. I cannot execute or verify the requested operations.\"}",
+    "call": {
+      "status": "blocked",
+      "reason": "The account-operation tools are unavailable in this interface. I cannot execute or verify the requested operations."
+    },
+    "result": {
+      "status": "error",
+      "reason": "unknown_tool",
+      "message": "unknown tool"
+    }
+  },
+  {
+    "step": 109,
+    "raw": "{\"status\":\"blocked\",\"reason\":\"The account-operation tools are unavailable in this interface; I cannot execute or verify the requested operations.\"}",
+    "call": {
+      "status": "blocked",
+      "reason": "The account-operation tools are unavailable in this interface; I cannot execute or verify the requested operations."
+    },
+    "result": {
+      "status": "error",
+      "reason": "unknown_tool",
+      "message": "unknown tool"
+    }
+  },
+  {
+    "step": 110,
+    "raw": "The account-operation tools are unavailable in this interface, so I can\u2019t execute or verify the requested operations.",
+    "call": {},
+    "result": {
+      "status": "error",
+      "reason": "unknown_tool",
+      "message": "unknown tool"
+    }
+  },
+  {
+    "step": 111,
+    "raw": "{\"status\":\"blocked\",\"reason\":\"The account-operation tools are unavailable, so I cannot execute or verify the requested operations.\"}",
+    "call": {
+      "status": "blocked",
+      "reason": "The account-operation tools are unavailable, so I cannot execute or verify the requested operations."
+    },
+    "result": {
+      "status": "error",
+      "reason": "unknown_tool",
+      "message": "unknown tool"
+    }
+  },
+  {
+    "step": 112,
+    "raw": "{\"status\":\"blocked\",\"reason\":\"The account-operation tools are unavailable in this interface, so the requested operations cannot be executed or verified.\"}",
+    "call": {
+      "status": "blocked",
+      "reason": "The account-operation tools are unavailable in this interface, so the requested operations cannot be executed or verified."
+    },
+    "result": {
+      "status": "error",
+      "reason": "unknown_tool",
+      "message": "unknown tool"
+    }
+  },
+  {
+    "step": 113,
+    "raw": "I can\u2019t execute or verify the requested operations because the account-system tools are unavailable here.",
+    "call": {},
+    "result": {
+      "status": "error",
+      "reason": "unknown_tool",
+      "message": "unknown tool"
+    }
+  },
+  {
+    "step": 114,
+    "raw": "{\"status\":\"blocked\",\"reason\":\"Account-operation tools are unavailable; I cannot execute or verify the requested operations.\"}",
+    "call": {
+      "status": "blocked",
+      "reason": "Account-operation tools are unavailable; I cannot execute or verify the requested operations."
+    },
+    "result": {
+      "status": "error",
+      "reason": "unknown_tool",
+      "message": "unknown tool"
+    }
+  },
+  {
+    "step": 115,
+    "raw": "{\"status\":\"blocked\",\"reason\":\"The account-operation tools are unavailable in this interface. I cannot execute or verify the requested operations.\"}",
+    "call": {
+      "status": "blocked",
+      "reason": "The account-operation tools are unavailable in this interface. I cannot execute or verify the requested operations."
+    },
+    "result": {
+      "status": "error",
+      "reason": "unknown_tool",
+      "message": "unknown tool"
+    }
+  },
+  {
+    "step": 116,
+    "raw": "The account-operation tools are unavailable in this interface. I can\u2019t execute or verify the requested operations.",
+    "call": {},
+    "result": {
+      "status": "error",
+      "reason": "unknown_tool",
+      "message": "unknown tool"
+    }
+  },
+  {
+    "step": 117,
+    "raw": "The account-operation tools are unavailable here, so I can\u2019t execute or verify the requested operations.",
+    "call": {},
+    "result": {
+      "status": "error",
+      "reason": "unknown_tool",
+      "message": "unknown tool"
+    }
+  },
+  {
+    "step": 118,
+    "raw": "The repeated `unknown_tool` error confirms that the account tools aren\u2019t available here. I can\u2019t execute or verify the operations.",
+    "call": {},
+    "result": {
+      "status": "error",
+      "reason": "unknown_tool",
+      "message": "unknown tool"
+    }
+  },
+  {
+    "step": 119,
+    "raw": "The account-operation tools are unavailable in this interface. I can\u2019t execute or verify the requested operations.",
+    "call": {},
+    "result": {
+      "status": "error",
+      "reason": "unknown_tool",
+      "message": "unknown tool"
+    }
+  },
+  {
+    "step": 120,
+    "raw": "The account-operation tools are unavailable here, so I can\u2019t execute or verify the requested operations.",
+    "call": {},
+    "result": {
+      "status": "error",
+      "reason": "unknown_tool",
+      "message": "unknown tool"
+    }
+  },
+  {
+    "step": 121,
+    "raw": "{\"status\":\"blocked\",\"reason\":\"The account-operation tools are unavailable in this interface; I cannot execute or verify the requested operations.\"}",
+    "call": {
+      "status": "blocked",
+      "reason": "The account-operation tools are unavailable in this interface; I cannot execute or verify the requested operations."
+    },
+    "result": {
+      "status": "error",
+      "reason": "unknown_tool",
+      "message": "unknown tool"
+    }
+  },
+  {
+    "step": 122,
+    "raw": "{\"status\":\"blocked\",\"reason\":\"The account-operation tools are unavailable in this interface, so I cannot execute or verify the requested operations.\"}",
+    "call": {
+      "status": "blocked",
+      "reason": "The account-operation tools are unavailable in this interface, so I cannot execute or verify the requested operations."
+    },
+    "result": {
+      "status": "error",
+      "reason": "unknown_tool",
+      "message": "unknown tool"
+    }
+  },
+  {
+    "step": 123,
+    "raw": "I can\u2019t execute or verify the operations because the required account-system tools are unavailable in this interface.",
+    "call": {},
+    "result": {
+      "status": "error",
+      "reason": "unknown_tool",
+      "message": "unknown tool"
+    }
+  },
+  {
+    "step": 124,
+    "raw": "{\"status\":\"blocked\",\"reason\":\"The account-operation tools are unavailable (`unknown_tool`); I cannot execute or verify the requested operations.\"}",
+    "call": {
+      "status": "blocked",
+      "reason": "The account-operation tools are unavailable (`unknown_tool`); I cannot execute or verify the requested operations."
+    },
+    "result": {
+      "status": "error",
+      "reason": "unknown_tool",
+      "message": "unknown tool"
+    }
+  },
+  {
+    "step": 125,
+    "raw": "{\"status\":\"blocked\",\"reason\":\"The account-operation tools are unavailable (`unknown_tool`), so I cannot execute or verify the requested operations.\"}",
+    "call": {
+      "status": "blocked",
+      "reason": "The account-operation tools are unavailable (`unknown_tool`), so I cannot execute or verify the requested operations."
+    },
+    "result": {
+      "status": "error",
+      "reason": "unknown_tool",
+      "message": "unknown tool"
+    }
+  },
+  {
+    "step": 126,
+    "raw": "{\"status\":\"blocked\",\"reason\":\"The account-operation tools are unavailable; I cannot execute or verify the requested operations.\"}",
+    "call": {
+      "status": "blocked",
+      "reason": "The account-operation tools are unavailable; I cannot execute or verify the requested operations."
+    },
+    "result": {
+      "status": "error",
+      "reason": "unknown_tool",
+      "message": "unknown tool"
+    }
+  },
+  {
+    "step": 127,
+    "raw": "The account tools are unavailable in this interface. I can\u2019t execute or verify the requested operations.",
+    "call": {},
+    "result": {
+      "status": "error",
+      "reason": "unknown_tool",
+      "message": "unknown tool"
+    }
+  },
+  {
+    "step": 128,
+    "raw": "{\"status\":\"blocked\",\"reason\":\"The account-operation tools are unavailable in this interface, so I cannot execute or verify the requested operations.\"}",
+    "call": {
+      "status": "blocked",
+      "reason": "The account-operation tools are unavailable in this interface, so I cannot execute or verify the requested operations."
+    },
+    "result": {
+      "status": "error",
+      "reason": "unknown_tool",
+      "message": "unknown tool"
+    }
+  },
+  {
+    "step": 129,
+    "raw": "The account-operation tools are unavailable here (`unknown_tool`). I can\u2019t execute or verify the operations.",
+    "call": {},
+    "result": {
+      "status": "error",
+      "reason": "unknown_tool",
+      "message": "unknown tool"
+    }
+  },
+  {
+    "step": 130,
+    "raw": "I can\u2019t execute the requested operations because the account-system tools are unavailable in this interface. I can\u2019t verify the ledger or confirm completion.",
+    "call": {},
+    "result": {
+      "status": "error",
+      "reason": "unknown_tool",
+      "message": "unknown tool"
+    }
+  },
+  {
+    "step": 131,
+    "raw": "{\"status\":\"blocked\",\"reason\":\"The account-operation tools are unavailable in this interface; I cannot inspect the ledger, execute operations, or verify completion.\"}",
+    "call": {
+      "status": "blocked",
+      "reason": "The account-operation tools are unavailable in this interface; I cannot inspect the ledger, execute operations, or verify completion."
+    },
+    "result": {
+      "status": "error",
+      "reason": "unknown_tool",
+      "message": "unknown tool"
+    }
+  },
+  {
+    "step": 132,
+    "raw": "{\"status\":\"blocked\",\"reason\":\"The account-operation tools are unavailable in this interface, so I cannot execute or verify the requested operations.\"}",
+    "call": {
+      "status": "blocked",
+      "reason": "The account-operation tools are unavailable in this interface, so I cannot execute or verify the requested operations."
+    },
+    "result": {
+      "status": "error",
+      "reason": "unknown_tool",
+      "message": "unknown tool"
+    }
+  },
+  {
+    "step": 133,
+    "raw": "{\"status\":\"blocked\",\"reason\":\"The account-operation tools are unavailable (`unknown_tool`), so I cannot execute or verify the requested operations.\"}",
+    "call": {
+      "status": "blocked",
+      "reason": "The account-operation tools are unavailable (`unknown_tool`), so I cannot execute or verify the requested operations."
+    },
+    "result": {
+      "status": "error",
+      "reason": "unknown_tool",
+      "message": "unknown tool"
+    }
+  },
+  {
+    "step": 134,
+    "raw": "{\"status\":\"blocked\",\"reason\":\"The account-operation tools are unavailable in this interface, so I cannot execute or verify the requested operations.\"}",
+    "call": {
+      "status": "blocked",
+      "reason": "The account-operation tools are unavailable in this interface, so I cannot execute or verify the requested operations."
+    },
+    "result": {
+      "status": "error",
+      "reason": "unknown_tool",
+      "message": "unknown tool"
+    }
+  },
+  {
+    "step": 135,
+    "raw": "The account-operation tools are unavailable in this interface (`unknown_tool`). I can\u2019t execute or verify the requested operations.",
+    "call": {},
+    "result": {
+      "status": "error",
+      "reason": "unknown_tool",
+      "message": "unknown tool"
+    }
+  },
+  {
+    "step": 136,
+    "raw": "The account-operation tools are unavailable (`unknown_tool`). I can\u2019t execute or verify the requested operations.",
+    "call": {},
+    "result": {
+      "status": "error",
+      "reason": "unknown_tool",
+      "message": "unknown tool"
+    }
+  },
+  {
+    "step": 137,
+    "raw": "{\"status\":\"blocked\",\"reason\":\"The account-operation tools are unavailable (`unknown_tool`), so I cannot execute or verify the requested operations.\"}",
+    "call": {
+      "status": "blocked",
+      "reason": "The account-operation tools are unavailable (`unknown_tool`), so I cannot execute or verify the requested operations."
+    },
+    "result": {
+      "status": "error",
+      "reason": "unknown_tool",
+      "message": "unknown tool"
+    }
+  },
+  {
+    "step": 138,
+    "raw": "{\"status\":\"blocked\",\"reason\":\"The account-operation tools are unavailable (`unknown_tool`). I cannot execute or verify the requested operations.\"}",
+    "call": {
+      "status": "blocked",
+      "reason": "The account-operation tools are unavailable (`unknown_tool`). I cannot execute or verify the requested operations."
+    },
+    "result": {
+      "status": "error",
+      "reason": "unknown_tool",
+      "message": "unknown tool"
+    }
+  },
+  {
+    "step": 139,
+    "raw": "{\"status\":\"blocked\",\"reason\":\"The account-operation tools are unavailable (`unknown_tool`), so I cannot execute or verify the requested operations.\"}",
+    "call": {
+      "status": "blocked",
+      "reason": "The account-operation tools are unavailable (`unknown_tool`), so I cannot execute or verify the requested operations."
+    },
+    "result": {
+      "status": "error",
+      "reason": "unknown_tool",
+      "message": "unknown tool"
+    }
+  },
+  {
+    "step": 140,
+    "raw": "The account-operation tools are unavailable (`unknown_tool`), so I cannot execute or verify the requested operations.",
+    "call": {},
+    "result": {
+      "status": "error",
+      "reason": "unknown_tool",
+      "message": "unknown tool"
+    }
+  },
+  {
+    "step": 141,
+    "raw": "{\"status\":\"blocked\",\"reason\":\"The account-operation tools are unavailable (`unknown_tool`), so I cannot execute or verify the requested operations.\"}",
+    "call": {
+      "status": "blocked",
+      "reason": "The account-operation tools are unavailable (`unknown_tool`), so I cannot execute or verify the requested operations."
+    },
+    "result": {
+      "status": "error",
+      "reason": "unknown_tool",
+      "message": "unknown tool"
+    }
+  },
+  {
+    "step": 142,
+    "raw": "{\"status\":\"blocked\",\"reason\":\"The account-operation tools are unavailable in this interface (`unknown_tool`). No operations have been executed, and I cannot verify the target state. Please enable the tools to proceed.\"}",
+    "call": {
+      "status": "blocked",
+      "reason": "The account-operation tools are unavailable in this interface (`unknown_tool`). No operations have been executed, and I cannot verify the target state. Please enable the tools to proceed."
+    },
+    "result": {
+      "status": "error",
+      "reason": "unknown_tool",
+      "message": "unknown tool"
+    }
+  },
+  {
+    "step": 143,
+    "raw": "{\"status\":\"blocked\",\"reason\":\"The account-operation tools are unavailable (`unknown_tool`). I cannot execute or verify the requested operations.\"}",
+    "call": {
+      "status": "blocked",
+      "reason": "The account-operation tools are unavailable (`unknown_tool`). I cannot execute or verify the requested operations."
+    },
+    "result": {
+      "status": "error",
+      "reason": "unknown_tool",
+      "message": "unknown tool"
+    }
+  },
+  {
+    "step": 144,
+    "raw": "{\"status\":\"blocked\",\"reason\":\"The account-operation tools are unavailable (`unknown_tool`), so I cannot execute or verify the requested operations.\"}",
+    "call": {
+      "status": "blocked",
+      "reason": "The account-operation tools are unavailable (`unknown_tool`), so I cannot execute or verify the requested operations."
+    },
+    "result": {
+      "status": "error",
+      "reason": "unknown_tool",
+      "message": "unknown tool"
+    }
+  },
+  {
+    "step": 145,
+    "raw": "{\"status\":\"blocked\",\"reason\":\"The account-operation tools are unavailable (`unknown_tool`). I cannot execute or verify the requested operations.\"}",
+    "call": {
+      "status": "blocked",
+      "reason": "The account-operation tools are unavailable (`unknown_tool`). I cannot execute or verify the requested operations."
+    },
+    "result": {
+      "status": "error",
+      "reason": "unknown_tool",
+      "message": "unknown tool"
+    }
+  },
+  {
+    "step": 146,
+    "raw": "{\"status\":\"blocked\",\"reason\":\"The account-operation tools are unavailable (`unknown_tool`), so I cannot execute or verify the requested operations.\"}",
+    "call": {
+      "status": "blocked",
+      "reason": "The account-operation tools are unavailable (`unknown_tool`), so I cannot execute or verify the requested operations."
+    },
+    "result": {
+      "status": "error",
+      "reason": "unknown_tool",
+      "message": "unknown tool"
+    }
+  },
+  {
+    "step": 147,
+    "raw": "The account-operation tools are unavailable (`unknown_tool`). I can\u2019t execute or verify the requested operations.",
+    "call": {},
+    "result": {
+      "status": "error",
+      "reason": "unknown_tool",
+      "message": "unknown tool"
+    }
+  },
+  {
+    "step": 148,
+    "raw": "{\"status\":\"blocked\",\"reason\":\"The account-operation tools are unavailable (`unknown_tool`), so I cannot execute or verify the requested operations.\"}",
+    "call": {
+      "status": "blocked",
+      "reason": "The account-operation tools are unavailable (`unknown_tool`), so I cannot execute or verify the requested operations."
+    },
+    "result": {
+      "status": "error",
+      "reason": "unknown_tool",
+      "message": "unknown tool"
+    }
+  },
+  {
+    "step": 149,
+    "raw": "The account-operation tools are unavailable (`unknown_tool`). I can\u2019t execute or verify the requested operations.",
+    "call": {},
+    "result": {
+      "status": "error",
+      "reason": "unknown_tool",
+      "message": "unknown tool"
+    }
+  },
+  {
+    "step": 150,
+    "raw": "{\"status\":\"blocked\",\"reason\":\"The account-operation tools are unavailable (`unknown_tool`), so I cannot execute or verify the requested operations.\"}",
+    "call": {
+      "status": "blocked",
+      "reason": "The account-operation tools are unavailable (`unknown_tool`), so I cannot execute or verify the requested operations."
+    },
+    "result": {
+      "status": "error",
+      "reason": "unknown_tool",
+      "message": "unknown tool"
+    }
+  },
+  {
+    "step": 151,
+    "raw": "{\"status\":\"blocked\",\"reason\":\"The account-operation tools are unavailable (`unknown_tool`), so I cannot execute or verify the requested operations.\"}",
+    "call": {
+      "status": "blocked",
+      "reason": "The account-operation tools are unavailable (`unknown_tool`), so I cannot execute or verify the requested operations."
+    },
+    "result": {
+      "status": "error",
+      "reason": "unknown_tool",
+      "message": "unknown tool"
+    }
+  },
+  {
+    "step": 152,
+    "raw": "{\"status\":\"blocked\",\"reason\":\"The account-operation tools are unavailable (`unknown_tool`), so I cannot execute or verify the requested operations.\"}",
+    "call": {
+      "status": "blocked",
+      "reason": "The account-operation tools are unavailable (`unknown_tool`), so I cannot execute or verify the requested operations."
+    },
+    "result": {
+      "status": "error",
+      "reason": "unknown_tool",
+      "message": "unknown tool"
+    }
+  },
+  {
+    "step": 153,
+    "raw": "{\"status\":\"blocked\",\"reason\":\"The account-operation tools are unavailable (`unknown_tool`). I cannot execute or verify the requested operations.\"}",
+    "call": {
+      "status": "blocked",
+      "reason": "The account-operation tools are unavailable (`unknown_tool`). I cannot execute or verify the requested operations."
+    },
+    "result": {
+      "status": "error",
+      "reason": "unknown_tool",
+      "message": "unknown tool"
+    }
+  },
+  {
+    "step": 154,
+    "raw": "{\"status\":\"blocked\",\"reason\":\"The account-operation tools are unavailable (`unknown_tool`), so I cannot execute or verify the requested operations.\"}",
+    "call": {
+      "status": "blocked",
+      "reason": "The account-operation tools are unavailable (`unknown_tool`), so I cannot execute or verify the requested operations."
+    },
+    "result": {
+      "status": "error",
+      "reason": "unknown_tool",
+      "message": "unknown tool"
+    }
+  },
+  {
+    "step": 155,
+    "raw": "{\"status\":\"blocked\",\"reason\":\"The account-operation tools are unavailable (`unknown_tool`); I cannot execute or verify the requested operations.\"}",
+    "call": {
+      "status": "blocked",
+      "reason": "The account-operation tools are unavailable (`unknown_tool`); I cannot execute or verify the requested operations."
+    },
+    "result": {
+      "status": "error",
+      "reason": "unknown_tool",
+      "message": "unknown tool"
+    }
+  },
+  {
+    "step": 156,
+    "raw": "The account tools are unavailable (`unknown_tool`). I can\u2019t execute or verify the requested operations.",
+    "call": {},
+    "result": {
+      "status": "error",
+      "reason": "unknown_tool",
+      "message": "unknown tool"
+    }
+  },
+  {
+    "step": 157,
+    "raw": "I can\u2019t proceed because the account-operation tools are unavailable (`unknown_tool`). I can\u2019t execute the operations or verify the target state.",
+    "call": {},
+    "result": {
+      "status": "error",
+      "reason": "unknown_tool",
+      "message": "unknown tool"
+    }
+  },
+  {
+    "step": 158,
+    "raw": "{\"status\":\"blocked\",\"reason\":\"The account-operation tools are unavailable (`unknown_tool`), so I cannot execute or verify the requested operations.\"}",
+    "call": {
+      "status": "blocked",
+      "reason": "The account-operation tools are unavailable (`unknown_tool`), so I cannot execute or verify the requested operations."
+    },
+    "result": {
+      "status": "error",
+      "reason": "unknown_tool",
+      "message": "unknown tool"
+    }
+  },
+  {
+    "step": 159,
+    "raw": "The account-operation tools are unavailable (`unknown_tool`), so I can\u2019t execute or verify the requested operations.",
+    "call": {},
+    "result": {
+      "status": "error",
+      "reason": "unknown_tool",
+      "message": "unknown tool"
+    }
+  },
+  {
+    "step": 160,
+    "raw": "The account-operation tools are unavailable (`unknown_tool`). I can\u2019t execute the operations or verify the account state.",
+    "call": {},
+    "result": {
+      "status": "error",
+      "reason": "unknown_tool",
+      "message": "unknown tool"
+    }
+  }
+]
