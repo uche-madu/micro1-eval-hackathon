@@ -9,6 +9,16 @@ of prior trials. Runs are serial, one model at a time.
 - GPT: `exec_gpt_rep5` + `exec_gpt_rep5b`, 20 trials (10 per variant), 0 errors.
   3,593,632 input tokens, 85,380 output tokens.
 
+| Job | Model | Variants | Trials | Start (UTC) | End (UTC) | Input tok | Output tok | Errors |
+| --- | --- | --- | ---: | --- | --- | ---: | ---: | ---: |
+| exec_qwen_rep5 | opencode-go/qwen3.8-flash | A, B | 10 | 10:39 | 11:04 | 1,935,304 | 56,769 | 0 |
+| exec_gpt_rep5 | opencode-go/gpt-6-luna | A, B | 10 | 13:03 | 13:32 | 1,866,392 | 45,674 | 0 |
+| exec_gpt_rep5b | opencode-go/gpt-6-luna | A, B | 10 | 13:39 | 14:04 | 1,727,240 | 39,706 | 0 |
+| exec_deepseek_rep5 | opencode-go/deepseek-v4.1-flash | A, B | 5 valid | 14:25 | stopped | 1,442,792 | 36,576 | 1 |
+
+The fault schedule is in `README.md`. Cost was reported as 0.0 by the endpoint
+for all runs.
+
 ## Summary
 
 | Model | Trials | Pass | Fail | Failure signature |
